@@ -20,7 +20,7 @@ export const siteConfig = {
   errorBadge: "Critical System Error",
   errorException: "> java.lang.NullPointerException",
   maxPosts: 4,
-  googleAdsenseId: "",
+  googleAdsenseId: "ca-pub-1141353426428601",
 };
 
 // 2. Data Spesifik Bahasa (i18n)
