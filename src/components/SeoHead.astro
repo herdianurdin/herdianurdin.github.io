@@ -94,6 +94,8 @@ const articleSchema = isArticle
 <link rel="apple-touch-icon" href="/images/icon-192.png" />
 
 {siteConfig.googleAdsenseId && (
+  <>
+  <meta name="google-adsense-account" content={siteConfig.googleAdsenseId} />
   <script is:inline define:vars={{ adId: siteConfig.googleAdsenseId }}>
     let adsLoaded = false;
 
@@ -116,4 +118,5 @@ const articleSchema = isArticle
 
     setTimeout(loadAdsense, 5000);
   </script>
+    </>
 )}
