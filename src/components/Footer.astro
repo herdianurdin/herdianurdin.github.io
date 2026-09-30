@@ -9,7 +9,7 @@ export interface Props {
 }
 const { language = "id" } = Astro.props;
 
-const t = siteTranslation[language];
+const t = siteTranslation[language as keyof typeof siteTranslation];
 const currentYear = new Date().getFullYear();
 ---
 

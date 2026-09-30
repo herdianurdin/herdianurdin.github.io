@@ -10,7 +10,7 @@ export interface Props {
 }
 
 const { post, language } = Astro.props;
-const siteConfigs = siteTranslation[language];
+const siteConfigs = siteTranslation[language as keyof typeof siteTranslation];
 
 // Parameter URL menggunakan .id (Astro 5)
 const postUrl = language === "id" ? `/blog/${post.id}` : `/en/blog/${post.id}`;

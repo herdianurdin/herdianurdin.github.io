@@ -24,7 +24,7 @@ export const siteConfig = {
 };
 
 // 2. Data Spesifik Bahasa (i18n)
-export const siteTranslation: Record<"id" | "en", any> = {
+export const siteTranslation = {
   id: {
     siteTitle: "Jurnal IT & Arsitektur Kode",
     siteDescription:

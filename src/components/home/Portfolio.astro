@@ -8,7 +8,7 @@ export interface Props {
 const { language } = Astro.props;
 
 // Ekstrak data berdasarkan properti bahasa
-const t = siteTranslation[language];
+const t = siteTranslation[language as keyof typeof siteTranslation];
 ---
 
 <section class="mb-20" aria-labelledby="portfolio-heading">
