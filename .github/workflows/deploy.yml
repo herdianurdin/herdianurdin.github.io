@@ -24,10 +24,10 @@ jobs:
       - name: Mengambil kode dari repositori
         uses: actions/checkout@v4
 
-      - name: Menyiapkan Node.js 20
+      - name: Menyiapkan Node.js 24
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
           cache: "npm"
 
       - name: Menginstal Dependensi
