@@ -1,0 +1,95 @@
+---
+// src/pages/privacy-policy.astro
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { siteConfig, siteTranslation } from "../../config/site";
+
+const t = siteTranslation.en;
+
+// Mengekstrak nama domain murni dari URL konfigurasi (menghapus https:// atau http://)
+const domainName = siteConfig.url.replace(/^https?:\/\//, "");
+
+// Variabel tanggal agar mudah diubah di satu tempat
+const lastUpdated = "23 September 2026";
+---
+
+<BaseLayout
+  title={t.privacyPolicy}
+  description={`${t.privacyDesc} ${domainName}.`}
+  language="en"
+>
+  <main class="max-w-4xl mx-auto p-6 md:p-12 w-full flex-grow">
+    <div
+      class="bg-neutral-800 border-4 border-white p-8 md:p-12 shadow-[12px_12px_0px_0px_#00e5ff] mb-12"
+    >
+      <h1
+        class="text-4xl md:text-5xl font-black tracking-tight mb-8 uppercase border-l-8 border-[#00e5ff] pl-6"
+      >
+        {t.privacyPolicy}
+      </h1>
+
+      <div
+        class="prose prose-invert prose-lg max-w-none prose-headings:font-black prose-a:text-[#c6ff00]"
+      >
+        <p class="font-mono text-neutral-400 text-sm">
+          Last updated: {lastUpdated}
+        </p>
+
+        <p>
+          At <strong>{domainName}</strong>, the privacy of our visitors is a top
+          priority. This Privacy Policy document outlines the types of personal
+          information received and collected by {domainName} and how that information
+          is used.
+        </p>
+
+        <h2>File Log</h2>
+        <p>
+          {domainName} follows a standard procedure of using log files. These files
+          log visitors when they visit websites. The information collected by log
+          files includes internet protocol (IP) addresses, browser type, Internet
+          Service Provider (ISP), date and time stamp, referring/exit pages, and possibly
+          the number of clicks.
+        </p>
+
+        <h2>Cookies dan Web Beacons</h2>
+        <p>
+          Like any other website, {domainName} uses "cookies". These cookies are used
+          to store information including visitors' preferences, and the pages on the
+          website that the visitor accessed or visited. The information is used to
+          optimize the user experience by customizing our web page content based on
+          visitors' browser type and/or other information.
+        </p>
+
+        <h2>Google DoubleClick DART Cookie</h2>
+        <p>
+          Google is one of the third-party vendors on our site. Google also uses
+          cookies, known as DART cookies, to serve ads to our site's visitors
+          based on their visits to our site and other sites on the internet.
+          However, visitors may choose to decline the use of DART cookies by
+          visiting the Google ad and content network Privacy Policy at the
+          following URL: <a
+            href="https://policies.google.com/technologies/ads"
+            target="_blank"
+            rel="noopener noreferrer"
+            >https://policies.google.com/technologies/ads</a
+          >
+        </p>
+
+        <h2>Consent</h2>
+        <p>
+          By using our website, you hereby agree to our Privacy Policy and
+          consent to its terms and conditions.
+        </p>
+
+        <p>
+          <em class="text-neutral-400">
+            Note: This privacy policy applies only to online activities on this
+            website and does not apply to Android applications published on the
+            Google Play Store. The privacy policy for each application is
+            provided separately within the app or on the corresponding Play
+            Store page.
+          </em>
+        </p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

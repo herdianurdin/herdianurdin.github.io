@@ -1,0 +1,46 @@
+---
+// src/components/header/LanguageSwitcher.astro
+import { siteTranslation } from "../../config/site";
+
+export interface Props {
+  currentLang: "id" | "en";
+  variant?: "home" | "page" | "article";
+}
+const { currentLang, variant } = Astro.props;
+
+// Tarik data terjemahan
+const t = siteTranslation[currentLang];
+
+const idBtnClass =
+  currentLang === "id"
+    ? "bg-white text-black font-bold border-2 border-white px-3 py-1 shadow-[2px_2px_0px_0px_#c6ff00]"
+    : "hover:bg-[#c6ff00] hover:text-black border-2 border-transparent hover:border-white px-3 py-1 transition-colors";
+
+const enBtnClass =
+  currentLang === "en"
+    ? "bg-white text-black font-bold border-2 border-white px-3 py-1 shadow-[2px_2px_0px_0px_#c6ff00]"
+    : "hover:bg-[#c6ff00] hover:text-black border-2 border-transparent hover:border-white px-3 py-1 transition-colors";
+---
+
+{
+  variant != "article" && (
+    <div class="flex gap-4 font-mono text-sm">
+      <a
+        href="/"
+        class={idBtnClass}
+        aria-label={t.switchId}
+        aria-current={currentLang === "id" ? "page" : undefined}
+      >
+        /ID
+      </a>
+      <a
+        href="/en/"
+        class={enBtnClass}
+        aria-label={t.switchEn}
+        aria-current={currentLang === "en" ? "page" : undefined}
+      >
+        /EN
+      </a>
+    </div>
+  )
+}

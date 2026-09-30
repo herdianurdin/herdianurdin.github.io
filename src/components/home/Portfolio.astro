@@ -1,0 +1,78 @@
+---
+// src/components/home/Portfolio.astro
+import { siteConfig, siteTranslation } from "../../config/site";
+
+export interface Props {
+  language: 'id' | 'en';
+}
+const { language } = Astro.props;
+
+// Ekstrak data berdasarkan properti bahasa
+const t = siteTranslation[language];
+---
+
+<section class="mb-20" aria-labelledby="portfolio-heading">
+  <!-- Header Bagian & Tombol GitHub Global -->
+  <div class="flex items-center justify-between mb-10 gap-4">
+    <div class="flex items-center gap-4 flex-grow">
+      <h2 id="portfolio-heading" class="text-3xl font-black uppercase tracking-tight">
+        {t.portfolioTitle}
+      </h2>
+      <div class="h-1 flex-grow bg-white hidden md:block" aria-hidden="true"></div>
+    </div>
+    
+    <a 
+      href={siteConfig.github} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      aria-label={t.githubBtnMobile}
+      class="hidden md:inline-block bg-neutral-800 text-white font-mono font-bold border-2 border-white px-4 py-2 hover:bg-[#c6ff00] hover:text-black hover:border-black active:translate-y-1 active:shadow-none transition-all flex-shrink-0 shadow-[4px_4px_0px_0px_#000]"
+    >
+      {t.githubBtnDesktop}
+    </a>
+  </div>
+  
+  <!-- Grid 3 Kolom untuk Aplikasi dengan Array Map Dinamis -->
+  <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {t.portfolioApps.map((app) => (
+      <div class="bg-black border-4 border-white p-6 shadow-[6px_6px_0px_0px_#00e5ff] hover:shadow-[10px_10px_0px_0px_#00e5ff] hover:-translate-y-1 transition-all duration-200 flex flex-col group">
+        
+        <!-- Tag Kategori -->
+        <div class="flex gap-2 mb-3 font-mono text-xs font-bold uppercase">
+          <span class="bg-[#c6ff00] text-black px-2 py-1">{app.tags[0]}</span>
+          <span class="bg-white text-black px-2 py-1">{app.tags[1]}</span>
+        </div>
+        
+        <!-- Judul & Deskripsi -->
+        <h3 class="text-xl font-bold mb-3 group-hover:text-[#00e5ff] transition-colors leading-tight">
+          {app.title}
+        </h3>
+        <p class="text-neutral-400 text-sm mb-6 flex-grow leading-relaxed">
+          {app.desc}
+        </p>
+        
+        <!-- Tombol Play Store -->
+        <a 
+          href={app.link} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          aria-label={`${t.playstoreBtn} ${app.title}`}
+          class="inline-block bg-white text-black font-mono font-bold text-center border-2 border-white px-3 py-2 text-sm hover:bg-[#00e5ff] hover:border-black active:translate-y-1 active:translate-x-1 active:shadow-none shadow-[2px_2px_0px_0px_#000] hover:shadow-[4px_4px_0px_0px_#000] transition-all mt-auto"
+        >
+          {t.playstoreBtn}
+        </a>
+      </div>
+    ))}
+  </div>
+
+  <!-- Tombol GitHub Khusus Mode Mobile -->
+  <a 
+    href={siteConfig.github} 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    aria-label={t.githubBtnMobile}
+    class="md:hidden mt-6 block w-full text-center bg-neutral-800 text-white font-mono font-bold border-2 border-white px-4 py-3 shadow-[4px_4px_0px_0px_#c6ff00] hover:bg-[#c6ff00] hover:text-black hover:border-black active:translate-y-1 active:translate-x-1 active:shadow-none transition-all"
+  >
+    {t.githubBtnMobile}
+  </a>
+</section>

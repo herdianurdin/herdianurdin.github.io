@@ -1,0 +1,74 @@
+---
+// src/components/home/HeroProfile.astro
+import { siteConfig, siteTranslation } from "../../config/site";
+import { Image } from "astro:assets"; // Impor komponen Image Astro
+
+export interface Props {
+  language: "id" | "en";
+}
+const { language } = Astro.props;
+
+// Tarik data bahasa yang sesuai
+const t = siteTranslation[language];
+---
+
+<section
+  class="mb-20 mt-8 border-4 border-white bg-neutral-800 shadow-[12px_12px_0px_0px_#d946ef] relative flex flex-col md:flex-row"
+>
+  <div
+    class="absolute -top-6 -left-6 bg-white text-black font-mono font-bold px-4 py-2 border-4 border-black shadow-[4px_4px_0px_0px_#d946ef] z-10"
+  >
+    {t.whoami}
+  </div>
+
+  <div
+    class="md:w-1/3 border-b-4 md:border-b-0 md:border-r-4 border-white bg-black"
+  >
+    <!-- Ganti <img> dengan <Image /> untuk kompresi otomatis -->
+    <Image
+      src={siteConfig.profileImage}
+      alt={siteConfig.author}
+      class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+      width={400}
+      height={400}
+      loading="eager"
+      fetchpriority="high"
+    />
+  </div>
+
+  <div class="p-8 md:p-12 md:w-2/3 flex flex-col">
+    <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-2">
+      {siteConfig.author}
+    </h1>
+    <p class="text-xl text-[#c6ff00] font-bold mb-6 font-mono">
+      {t.heroTitle}
+    </p>
+    <p class="text-lg text-neutral-300 mb-8 leading-relaxed flex-grow">
+      {t.heroBio}
+    </p>
+
+    <!-- BARIS TAUTAN JEJARING PROFESIONAL -->
+    <div
+      class="flex flex-wrap gap-4 mt-auto border-t-2 border-neutral-600 pt-6"
+    >
+      <a
+        href={siteConfig.linkedin}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Profil LinkedIn ${siteConfig.author}`}
+        class="bg-[#00e5ff] text-black font-mono font-bold px-6 py-2 border-2 border-white shadow-[4px_4px_0px_0px_#fff] hover:shadow-[6px_6px_0px_0px_#c6ff00] hover:-translate-y-1 active:translate-y-0 active:shadow-none transition-all"
+      >
+        LinkedIn
+      </a>
+      <a
+        href={siteConfig.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Profil GitHub ${siteConfig.author}`}
+        class="bg-white text-black font-mono font-bold px-6 py-2 border-2 border-white shadow-[4px_4px_0px_0px_#d946ef] hover:shadow-[6px_6px_0px_0px_#c6ff00] hover:-translate-y-1 active:translate-y-0 active:shadow-none transition-all"
+      >
+        GitHub
+      </a>
+    </div>
+  </div>
+</section>

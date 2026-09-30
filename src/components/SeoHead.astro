@@ -1,0 +1,119 @@
+---
+import { siteConfig, siteTranslation } from "../config/site";
+
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  isArticle?: boolean;
+  language: "id" | "en";
+}
+
+const {
+  title,
+  description,
+  image = "/images/og-default.jpg",
+  isArticle = false,
+  language,
+} = Astro.props;
+
+const t = siteTranslation[language];
+
+const domainName = siteConfig.url.replace(/^https?:\/\//, "");
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const alternateLang = language === "id" ? "en" : "id";
+const alternatePath =
+  language === "id"
+    ? `/en${Astro.url.pathname}`
+    : Astro.url.pathname.replace(/^\/en/, "");
+const alternateURL = new URL(alternatePath, Astro.site);
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteConfig.author,
+  jobTitle: t.heroTitle, // Menggunakan job title dari terjemahan
+  url: siteConfig.url,
+  sameAs: [siteConfig.github, siteConfig.linkedin, siteConfig.playStore],
+};
+
+const articleSchema = isArticle
+  ? {
+      "@context": "https://schema.org",
+      "@type": "TechArticle",
+      headline: title,
+      description: description,
+      image: new URL(image, Astro.site).toString(),
+      author: {
+        "@type": "Person",
+        name: siteConfig.author,
+        url: siteConfig.url,
+      },
+      inLanguage: language,
+    }
+  : null;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>{title} | {domainName}</title>
+<meta name="description" content={description} />
+
+<link rel="canonical" href={canonicalURL} />
+<link rel="alternate" hreflang={language} href={canonicalURL} />
+<link rel="alternate" hreflang={alternateLang} href={alternateURL} />
+<link rel="alternate" hreflang="x-default" href={canonicalURL} />
+
+<meta property="og:type" content={isArticle ? "article" : "website"} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.site)} />
+
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+{
+  isArticle && (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(articleSchema)}
+    />
+  )
+}
+
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="theme-color" content="#c6ff00" />
+
+<meta name="mobile-web-app-capable" content="yes" />
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+<link rel="apple-touch-icon" href="/images/icon-192.png" />
+
+{siteConfig.googleAdsenseId && (
+  <script is:inline define:vars={{ adId: siteConfig.googleAdsenseId }}>
+    let adsLoaded = false;
+
+    const loadAdsense = () => {
+      if (adsLoaded) return;
+      adsLoaded = true;
+
+      const script = document.createElement("script");
+      script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adId}`;
+      script.async = true;
+      script.crossOrigin = "anonymous";
+      
+      document.head.appendChild(script);
+      console.log("[Optimalisasi SEO] Skrip AdSense berhasil dimuat.");
+    };
+
+    window.addEventListener("scroll", loadAdsense, { once: true, passive: true });
+    window.addEventListener("mousemove", loadAdsense, { once: true, passive: true });
+    window.addEventListener("touchstart", loadAdsense, { once: true, passive: true });
+
+    setTimeout(loadAdsense, 5000);
+  </script>
+)}

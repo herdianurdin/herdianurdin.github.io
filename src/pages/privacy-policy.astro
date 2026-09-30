@@ -1,0 +1,96 @@
+---
+// src/pages/privacy-policy.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteConfig, siteTranslation } from "../config/site";
+
+const t = siteTranslation.id;
+
+// Mengekstrak nama domain murni dari URL konfigurasi (menghapus https:// atau http://)
+const domainName = siteConfig.url.replace(/^https?:\/\//, "");
+
+// Variabel tanggal agar mudah diubah di satu tempat
+const lastUpdated = "23 September 2026";
+---
+
+<BaseLayout
+  title={t.privacyPolicy}
+  description={`${t.privacyDesc} ${domainName}.`}
+  language="id"
+>
+  <main class="max-w-4xl mx-auto p-6 md:p-12 w-full flex-grow">
+    <div
+      class="bg-neutral-800 border-4 border-white p-8 md:p-12 shadow-[12px_12px_0px_0px_#00e5ff] mb-12"
+    >
+      <h1
+        class="text-4xl md:text-5xl font-black tracking-tight mb-8 uppercase border-l-8 border-[#00e5ff] pl-6"
+      >
+        {t.privacyPolicy}
+      </h1>
+
+      <div
+        class="prose prose-invert prose-lg max-w-none prose-headings:font-black prose-a:text-[#c6ff00]"
+      >
+        <p class="font-mono text-neutral-400 text-sm">
+          Terakhir diperbarui: {lastUpdated}
+        </p>
+
+        <p>
+          Di <strong>{domainName}</strong>, privasi pengunjung kami adalah
+          prioritas utama. Dokumen Kebijakan Privasi ini menguraikan jenis
+          informasi pribadi yang diterima dan dikumpulkan oleh {domainName} dan bagaimana
+          informasi tersebut digunakan.
+        </p>
+
+        <h2>File Log</h2>
+        <p>
+          {domainName} mengikuti prosedur standar menggunakan file log. File-file
+          ini mencatat pengunjung ketika mereka mengunjungi situs web. Informasi yang
+          dikumpulkan oleh file log termasuk alamat protokol internet (IP), jenis
+          browser, Penyedia Layanan Internet (ISP), tanggal dan cap waktu, halaman
+          rujukan/keluar, dan mungkin jumlah klik.
+        </p>
+
+        <h2>Cookies dan Web Beacons</h2>
+        <p>
+          Seperti situs web lainnya, {domainName} menggunakan "cookies". Cookie ini
+          digunakan untuk menyimpan informasi termasuk preferensi pengunjung, dan
+          halaman-halaman di situs web yang diakses atau dikunjungi pengunjung. Informasi
+          tersebut digunakan untuk mengoptimalkan pengalaman pengguna dengan menyesuaikan
+          konten halaman web kami berdasarkan jenis browser pengunjung dan/atau informasi
+          lainnya.
+        </p>
+
+        <h2>Google DoubleClick DART Cookie</h2>
+        <p>
+          Google adalah salah satu vendor pihak ketiga di situs kami. Google
+          juga menggunakan cookie, yang dikenal sebagai cookie DART, untuk
+          menayangkan iklan kepada pengunjung situs kami berdasarkan kunjungan
+          mereka ke situs kami dan situs lain di internet. Namun, pengunjung
+          dapat memilih untuk menolak penggunaan cookie DART dengan mengunjungi
+          Kebijakan Privasi jaringan iklan dan konten Google di URL berikut: <a
+            href="https://policies.google.com/technologies/ads"
+            target="_blank"
+            rel="noopener noreferrer"
+            >https://policies.google.com/technologies/ads</a
+          >
+        </p>
+
+        <h2>Persetujuan</h2>
+        <p>
+          Dengan menggunakan situs web kami, Anda dengan ini menyetujui
+          Kebijakan Privasi kami dan menyetujui syarat dan ketentuannya.
+        </p>
+
+        <p>
+          <em class="text-neutral-400">
+            Catatan: Kebijakan privasi ini hanya berlaku untuk aktivitas online
+            di situs web ini dan tidak berlaku untuk aplikasi Android yang
+            dipublikasikan di Google Play Store. Kebijakan privasi masing-masing
+            aplikasi disediakan secara terpisah di dalam aplikasi atau halaman
+            Play Store terkait.
+          </em>
+        </p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

@@ -1,0 +1,53 @@
+name: Deploy Jurnal IT Astro ke GitHub Pages
+
+# Kapan skrip ini dijalankan?
+on:
+  push:
+    branches: [main] # Pastikan branch utama Anda bernama 'main'
+  workflow_dispatch: # Mengizinkan eksekusi manual dari tombol di GitHub
+
+# Izin yang diperlukan oleh GitHub Actions untuk mempublikasikan halaman
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Batalkan proses yang sedang berjalan jika ada push baru (hemat resource)
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mengambil kode dari repositori
+        uses: actions/checkout@v4
+
+      - name: Menyiapkan Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Menginstal Dependensi
+        run: npm install
+
+      - name: Kompilasi Astro (Membangun fail HTML statis)
+        run: npm run build
+
+      - name: Mengunggah Artifact (Hasil Build)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist # Astro secara default menyimpan hasil build di folder 'dist'
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Publikasi ke GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

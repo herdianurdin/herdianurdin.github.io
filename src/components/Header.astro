@@ -1,0 +1,61 @@
+---
+// src/components/Header.astro
+import SiteLogo from './header/SiteLogo.astro';
+import LanguageSwitcher from './header/LanguageSwitcher.astro';
+import { siteTranslation } from '../config/site'; // <-- 1. Impor konfigurasi
+
+export interface Props {
+  currentLang: 'id' | 'en';
+  variant?: 'home' | 'page' | 'article';
+}
+
+const { currentLang, variant = 'page' } = Astro.props;
+const homeUrl = currentLang === 'id' ? '/' : '/en/';
+
+// 2. Tarik data terjemahan
+const t = siteTranslation[currentLang as keyof typeof siteTranslation];
+---
+
+<header class="sticky top-0 z-50 bg-black border-b-4 border-white relative">
+  <nav class="p-4 md:px-8 flex justify-between items-center">
+    
+    <div class="flex items-center gap-4">
+      <!-- Tombol Kembali: Hanya muncul di mode artikel -->
+      {variant === 'article' && (
+        <a 
+          href={homeUrl} 
+          class="hidden md:flex text-neutral-400 hover:text-[#00e5ff] font-mono font-bold text-2xl border-r-2 border-neutral-700 pr-4 hover:-translate-x-1 transition-all" 
+          aria-label={t.backToHome}
+        >
+          &larr;
+        </a>
+      )}
+      <SiteLogo currentLang={currentLang} />
+    </div>
+
+    <LanguageSwitcher currentLang={currentLang} variant={variant} />
+  </nav>
+
+  <!-- Bilah Progres Membaca: Hanya dirender di mode artikel -->
+  {variant === 'article' && (
+    <div class="absolute bottom-[-4px] left-0 h-1 bg-[#00e5ff] w-0 z-50 transition-all duration-100 ease-out" id="reading-progress"></div>
+  )}
+</header>
+
+<!-- Skrip Klien (Client-side JS) untuk bilah progres membaca -->
+{variant === 'article' && (
+  <script is:inline>
+    document.addEventListener('scroll', () => {
+      const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      
+      // Hitung persentase dan batasi maksimal 100% untuk mencegah overflow-x saat overscroll
+      const scrolled = Math.min((winScroll / height) * 100, 100);
+      
+      const progressBar = document.getElementById('reading-progress');
+      if (progressBar) {
+        progressBar.style.width = scrolled + '%';
+      }
+    });
+  </script>
+)}

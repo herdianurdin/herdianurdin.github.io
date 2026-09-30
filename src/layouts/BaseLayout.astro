@@ -1,0 +1,39 @@
+---
+// src/layouts/BaseLayout.astro
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/inter/900.css";
+import "@fontsource/fira-code/400.css";
+import "@fontsource/fira-code/700.css";
+import "../styles/global.css";
+
+import SeoHead from "../components/SeoHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro"; // 1. Import Footer
+
+export interface Props {
+  title: string;
+  description: string;
+  language: "id" | "en";
+  headerVariant?: "home" | "page";
+}
+
+const { title, description, language, headerVariant = "page" } = Astro.props;
+---
+
+<html lang={language}>
+  <head>
+    <SeoHead title={title} description={description} language={language} />
+  </head>
+  <!-- Tambahkan overflow-x-hidden di awal class -->
+  <body
+    class="overflow-x-hidden min-h-screen bg-neutral-900 text-white font-sans selection:bg-[#c6ff00] selection:text-black antialiased flex flex-col"
+  >
+    <Header currentLang={language} variant={headerVariant} />
+    <!-- Slot adalah tempat di mana konten spesifik halaman akan disisipkan -->
+    <slot />
+
+    <!-- Footer Standar -->
+    <Footer language={language} />
+  </body>
+</html>

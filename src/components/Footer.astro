@@ -1,0 +1,32 @@
+---
+// src/components/Footer.astro
+import { siteConfig, siteTranslation } from "../config/site";
+
+// Menambahkan opsi properti bahasa dengan nilai bawaan 'id' agar tidak memicu galat
+// jika ada layout lama yang belum mengirimkan properti ini.
+export interface Props {
+  language?: "id" | "en";
+}
+const { language = "id" } = Astro.props;
+
+const t = siteTranslation[language];
+const currentYear = new Date().getFullYear();
+---
+
+<footer
+  class="border-t-4 border-white mt-auto p-8 bg-black flex flex-col md:flex-row justify-between items-center gap-4 w-full"
+>
+  <p class="font-mono text-neutral-400 text-sm">
+    &copy; {currentYear}
+    {siteConfig.author}.
+  </p>
+  <div class="flex gap-4 text-sm font-mono text-neutral-400">
+    <a
+      href={language == "id" ? "/privacy-policy" : "/en/privacy-policy"}
+      aria-label={`${t.privacyPolicy} ${siteConfig.author}`}
+      class="hover:text-[#c6ff00] hover:underline underline-offset-4 decoration-2 transition-colors"
+    >
+      {t.privacyPolicy}
+    </a>
+  </div>
+</footer>

@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import HeroProfile from "../../components/home/HeroProfile.astro";
+import Portfolio from "../../components/home/Portfolio.astro";
+import ArticleCard from "../../components/ui/ArticleCard.astro";
+import { siteTranslation } from "../../config/site";
+import { getCollection } from "astro:content";
+
+const siteConfigs = siteTranslation.en;
+const allPosts =
+  (await getCollection("en", ({ data }) => data.isDraft !== true)) || [];
+
+const latestPosts = allPosts
+  .sort((a, b) => {
+    const timeA = a.data.pubDate.valueOf();
+    const timeB = b.data.pubDate.valueOf();
+
+    if (timeA !== timeB) {
+      return timeB - timeA;
+    }
+
+    return a.data.title.localeCompare(b.data.title);
+  })
+  .slice(0, 4);
+---
+
+<BaseLayout
+  title={siteConfigs.siteTitle}
+  description={siteConfigs.siteDescription}
+  language="en"
+  headerVariant="home"
+>
+  <main class="max-w-5xl mx-auto p-6 md:p-12 w-full flex-grow">
+    <HeroProfile language="en" />
+    <Portfolio language="en" />
+
+    <!-- Tambahkan aria-labelledby yang merujuk ke ID heading -->
+    <section aria-labelledby="latest-journal-heading">
+      <div class="flex items-center gap-4 mb-10">
+        <!-- Tambahkan ID di sini -->
+        <h2
+          id="latest-journal-heading"
+          class="text-3xl font-black uppercase tracking-tight"
+        >
+          {siteConfigs.latestJournal}
+        </h2>
+        <!-- Sembunyikan garis dekoratif dari perayap dan screen reader -->
+        <div class="h-1 flex-grow bg-white" aria-hidden="true"></div>
+      </div>
+
+      <!-- Loop Kartu Artikel -->
+      {
+        latestPosts.length > 0 ? (
+          <div class="grid md:grid-cols-2 gap-8 mb-12">
+            {latestPosts.map((post) => (
+              <ArticleCard post={post} language="en" />
+            ))}
+          </div>
+        ) : (
+          <div class="border-4 border-white bg-neutral-900 p-8 md:p-12 text-center shadow-[8px_8px_0px_0px_#00e5ff] mb-12 flex flex-col items-center justify-center">
+            <h3 class="text-2xl md:text-3xl font-black uppercase text-white tracking-tight mb-4">
+              {siteConfigs.emptyPostTitle}
+            </h3>
+            <p class="font-mono text-neutral-400 max-w-lg">
+              {siteConfigs.emptyPostMessage}
+            </p>
+          </div>
+        )
+      }
+
+      {
+        allPosts.length > 4 && (
+          <div class="text-center">
+            <a
+              href="/blog"
+              aria-label={siteConfigs.ariaOpenArchive}
+              class="inline-block bg-black text-white font-mono font-bold text-lg border-4 border-white px-8 py-4 hover:bg-[#c6ff00] hover:text-black transition-all shadow-[6px_6px_0px_0px_#fff] hover:shadow-[8px_8px_0px_0px_#c6ff00] active:translate-x-1 active:translate-y-1 active:shadow-none"
+            >
+              {siteConfigs.openArchive}
+            </a>
+          </div>
+        )
+      }
+    </section>
+  </main>
+</BaseLayout>

@@ -1,0 +1,18 @@
+---
+// src/components/header/SiteLogo.astro
+import { siteConfig } from "../../config/site";
+
+export interface Props {
+  currentLang: "id" | "en";
+}
+const { currentLang } = Astro.props;
+const homeUrl = currentLang === "id" ? "/" : "/en/";
+---
+
+<div class="font-black text-xl md:text-2xl tracking-tighter uppercase">
+  <a href={homeUrl} class="hover:text-[#c6ff00] transition-colors">
+    {siteConfig.logoText}<span class="text-[#c6ff00]"
+      >{siteConfig.logoHighlight}</span
+    >
+  </a>
+</div>

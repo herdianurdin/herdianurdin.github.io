@@ -1,0 +1,24 @@
+---
+// src/pages/blog/[...slug].astro
+import { getCollection, render } from "astro:content"; // <-- 1. Impor fungsi 'render'
+import BlogLayout from "../../layouts/BlogLayout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("id", ({ data }) => data.isDraft !== true);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post }, // Data dikirim dengan nama 'post'
+  }));
+}
+
+// 2. Tangkap variabel 'post' dari properti
+const { post } = Astro.props;
+
+// 3. Gunakan fungsi render() independen ala Astro 5
+const { Content } = await render(post);
+---
+
+<!-- 4. Gunakan post.data untuk frontmatter -->
+<BlogLayout frontmatter={post.data} language="id">
+  <Content />
+</BlogLayout>
