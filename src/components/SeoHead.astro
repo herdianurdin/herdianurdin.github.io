@@ -17,7 +17,7 @@ const {
   language,
 } = Astro.props;
 
-const t = siteTranslation[language];
+const t = siteTranslation[language as keyof typeof siteTranslation];
 
 const domainName = siteConfig.url.replace(/^https?:\/\//, "");
 
@@ -83,6 +83,7 @@ const articleSchema = isArticle
 }
 
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="icon" href="/images/favicon-96x96.png" type="image/png">
 <link rel="manifest" href="/manifest.json" />
 <meta name="theme-color" content="#c6ff00" />
 
