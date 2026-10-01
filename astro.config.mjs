@@ -2,6 +2,8 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
+import rehypeExternalLinks from "rehype-external-links";
+import { unified } from "@astrojs/markdown-remark";
 
 export default defineConfig({
   site: "https://herdianurdin.my.id",
@@ -11,6 +13,17 @@ export default defineConfig({
       theme: "dracula",
       wrap: true,
     },
+    processor: unified({
+      rehypePlugins: [
+        [
+          rehypeExternalLinks,
+          {
+            target: "_blank",
+            rel: ["noopener", "noreferrer"],
+          },
+        ],
+      ],
+    }),
   },
 
   image: {
