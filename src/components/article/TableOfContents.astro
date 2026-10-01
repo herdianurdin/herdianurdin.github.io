@@ -1,0 +1,58 @@
+---
+// src/components/article/TableOfContents.astro
+export interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+export interface Props {
+  headings: Heading[];
+  language?: "id" | "en";
+}
+
+const { headings, language = "id" } = Astro.props;
+
+// Filter tajuk untuk menyembunyikan H1 (karena sudah jadi judul utama artikel)
+// dan H4, H5, H6 agar daftar isi tidak terlalu panjang.
+const filteredHeadings =
+  headings?.filter((h) => h.depth === 2 || h.depth === 3) || [];
+
+const title = language === "id" ? "Daftar Isi" : "Table of Contents";
+---
+
+{
+  filteredHeadings.length > 0 && (
+    <details
+      class="bg-black border-4 border-white p-6 mb-10 shadow-[8px_8px_0px_0px_#00e5ff] group cursor-pointer"
+      open
+    >
+      <summary class="text-xl md:text-2xl font-black uppercase text-[#c6ff00] font-mono list-none flex justify-between items-center outline-none">
+        <span>{title}</span>
+        <span class="text-white transform group-open:rotate-180 transition-transform duration-300">
+          ▼
+        </span>
+      </summary>
+
+      <ul class="flex flex-col gap-3 mt-6 border-t-4 border-white pt-6">
+        {filteredHeadings.map((heading) => (
+          <li
+            class={`transition-transform hover:translate-x-2 ${
+              heading.depth === 3
+                ? "ml-6 border-l-4 border-neutral-600 pl-4"
+                : ""
+            }`}
+          >
+            <a
+              href={`#${heading.slug}`}
+              class="text-neutral-300 hover:text-white font-bold font-mono text-sm md:text-base hover:underline underline-offset-4 decoration-[#c6ff00] decoration-4 transition-colors"
+            >
+              {heading.depth === 3 ? "└ " : "■ "}
+              {heading.text}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </details>
+  )
+}

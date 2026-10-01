@@ -15,10 +15,10 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 
 // 3. Gunakan fungsi render() independen ala Astro 5
-const { Content } = await render(post);
+const { Content, headings } = await render(post); // 👈 Tambahkan headings di sini
 ---
 
 <!-- 4. Gunakan post.data untuk frontmatter -->
-<BlogLayout frontmatter={post.data} language="id">
+<BlogLayout frontmatter={post.data} language="id" headings={headings}>
   <Content />
 </BlogLayout>

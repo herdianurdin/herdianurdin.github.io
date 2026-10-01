@@ -5,6 +5,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import AuthorBox from "../components/article/AuthorBox.astro";
 import Giscus from "../components/article/Giscus.astro";
+import TableOfContents from "../components/article/TableOfContents.astro";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/700.css";
 import "@fontsource/inter/900.css";
@@ -12,7 +13,7 @@ import "@fontsource/fira-code/400.css";
 import "@fontsource/fira-code/700.css";
 import "../styles/global.css";
 
-const { frontmatter, language } = Astro.props;
+const { frontmatter, headings, language } = Astro.props;
 const homeUrl = language === "id" ? "/" : "/en/";
 ---
 
@@ -92,9 +93,11 @@ const homeUrl = language === "id" ? "/" : "/en/";
             </div>
           </header>
 
+          <TableOfContents headings={headings} language={language} />
+
           <!-- 4. Area Konten Utama -->
           <div
-            class="prose prose-invert prose-lg max-w-none prose-pre:border-4 prose-pre:border-white prose-pre:rounded-none prose-pre:shadow-[8px_8px_0px_0px_#00e5ff] prose-headings:font-black prose-a:text-[#c6ff00] prose-a:underline-offset-4 hover:prose-a:bg-[#c6ff00] hover:prose-a:text-black"
+            class="prose prose-invert prose-lg max-w-none prose-pre:border-4 prose-pre:border-white prose-pre:rounded-none prose-pre:shadow-[8px_8px_0px_0px_#00e5ff] prose-headings:font-black prose-headings:scroll-mt-24 prose-a:text-[#c6ff00] prose-a:underline-offset-4 hover:prose-a:bg-[#c6ff00] hover:prose-a:text-black"
           >
             <slot />
           </div>
