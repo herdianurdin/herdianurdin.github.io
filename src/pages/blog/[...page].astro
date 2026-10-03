@@ -12,37 +12,36 @@ export async function getStaticPaths({
 }: {
   paginate: PaginateFunction;
 }) {
-  // 1. Tarik koleksi "id" (Bahasa Indonesia)
+  // 1. [PERBAIKAN] Tarik koleksi "id" (Bahasa Inggris)
   const allPosts = await getCollection("id", ({ data }) => {
     return data.isDraft !== true;
   });
 
-  // 2. Terapkan logika urutan kebal-tanggal-sama yang sudah kita perbaiki
   const sortedPosts = allPosts.sort((a, b) => {
     const timeA = a.data.pubDate.valueOf();
     const timeB = b.data.pubDate.valueOf();
 
     if (timeA !== timeB) {
-      return timeB - timeA; // Descending (Terbaru di atas)
+      return timeB - timeA;
     }
-    return a.data.title.localeCompare(b.data.title); // Ascending berdasarkan Abjad
+    return a.data.title.localeCompare(b.data.title);
   });
 
   return paginate(sortedPosts, { pageSize: siteConfig.maxPosts });
 }
 
-// 3. Sesuaikan tipe props dengan koleksi "id"
+// 2. [PERBAIKAN] Sesuaikan tipe props dengan koleksi "id"
 export interface Props {
   page: Page<CollectionEntry<"id">>;
 }
 
 const { page } = Astro.props;
 
-// 4. Tarik data terjemahan Bahasa Inggris
-const t = siteTranslation.id;
+// 3. [PERBAIKAN] Tarik data terjemahan Bahasa Inggris
+const t = siteTranslation.en;
 ---
 
-<!-- 5. Pastikan language prop diatur ke "id" -->
+{/* 4. [PERBAIKAN] language prop diatur ke "id" */}
 <BaseLayout
   title={`${t.archiveTitle} - ${t.pageText} ${page.currentPage}`}
   description={t.archiveDesc}
@@ -56,63 +55,69 @@ const t = siteTranslation.id;
       >
         {t.archiveTitle}
       </h1>
-      {page.data.length > 0 &&  (
-      <p class="font-mono text-neutral-400 mt-4">
-        {t.pageText}
-        {page.currentPage}
-        {t.ofText}
-        {page.lastPage}
-      </p>)}
+      {
+        page.data.length > 0 && (
+          <p class="font-mono text-neutral-400 mt-4">
+            {t.pageText}
+            {page.currentPage}
+            {t.ofText}
+            {page.lastPage}
+          </p>
+        )
+      }
     </header>
 
-    {page.data.length > 0 ? (    <div class="grid md:grid-cols-2 gap-8 mb-16">
-      <!-- 6. Oper bahasa "id" ke ArticleCard -->
-      {page.data.map((post) => <ArticleCard post={post} language="id" />)}
-    </div>
+    {
+      page.data.length > 0 ? (
+        /* 5. [PERBAIKAN KRUSIAL] Bungkus grid artikel dan navigasi dengan Fragment <> */
+        <>
+          <div class="grid md:grid-cols-2 gap-8 mb-16">
+            {/* 6. [PERBAIKAN] Oper bahasa "id" ke ArticleCard */}
+            {page.data.map((post) => (
+              <ArticleCard post={post} language="id" />
+            ))}
+          </div>
 
-    <!-- Kontrol Navigasi Peginasi (Prev / Next) -->
-    <nav
-      class="flex justify-between items-center border-t-4 border-white pt-8 font-mono font-bold text-sm md:text-base"
-      aria-label="Pagination"
-    >
-      {
-        page.url.prev ? (
-          <a
-            href={page.url.prev}
-            aria-label={t.ariaPrev}
-            class="bg-white text-black px-4 md:px-6 py-2 md:py-3 border-4 border-white shadow-[4px_4px_0px_0px_#00e5ff] hover:bg-[#00e5ff] hover:border-black active:translate-y-1 active:translate-x-1 active:shadow-none transition-all"
+          <nav
+            class="flex justify-between items-center border-t-4 border-white pt-8 font-mono font-bold text-sm md:text-base"
+            aria-label="Pagination"
           >
-            &larr; {t.prevPage}
-          </a>
-        ) : (
-          <span class="px-4 md:px-6 py-2 md:py-3 border-4 border-neutral-700 text-neutral-600 cursor-not-allowed bg-neutral-900">
-            &larr; {t.prevPage}
-          </span>
-        )
-      }
+            {page.url.prev ? (
+              <a
+                href={page.url.prev}
+                aria-label={t.ariaPrev}
+                class="bg-white text-black px-4 md:px-6 py-2 md:py-3 border-4 border-white shadow-[4px_4px_0px_0px_#00e5ff] hover:bg-[#00e5ff] hover:border-black active:translate-y-1 active:translate-x-1 active:shadow-none transition-all"
+              >
+                &larr; {t.prevPage}
+              </a>
+            ) : (
+              <span class="px-4 md:px-6 py-2 md:py-3 border-4 border-neutral-700 text-neutral-600 cursor-not-allowed bg-neutral-900">
+                &larr; {t.prevPage}
+              </span>
+            )}
 
-      <span class="text-neutral-400 hidden md:inline">
-        {t.shortPageText}
-        {page.currentPage}
-      </span>
+            <span class="text-neutral-400 hidden md:inline">
+              {t.shortPageText}
+              {page.currentPage}
+            </span>
 
-      {
-        page.url.next ? (
-          <a
-            href={page.url.next}
-            aria-label={t.ariaNext}
-            class="bg-white text-black px-4 md:px-6 py-2 md:py-3 border-4 border-white shadow-[4px_4px_0px_0px_#00e5ff] hover:bg-[#00e5ff] hover:border-black active:translate-y-1 active:translate-x-1 active:shadow-none transition-all"
-          >
-            {t.nextPage} &rarr;
-          </a>
-        ) : (
-          <span class="px-4 md:px-6 py-2 md:py-3 border-4 border-neutral-700 text-neutral-600 cursor-not-allowed bg-neutral-900">
-            {t.nextPage} &rarr;
-          </span>
-        )
-      }
-    </nav>)
-    : (<div class="border-4 border-white bg-black p-10 md:p-16 text-center shadow-[12px_12px_0px_0px_#c6ff00] mb-16">
+            {page.url.next ? (
+              <a
+                href={page.url.next}
+                aria-label={t.ariaNext}
+                class="bg-white text-black px-4 md:px-6 py-2 md:py-3 border-4 border-white shadow-[4px_4px_0px_0px_#00e5ff] hover:bg-[#00e5ff] hover:border-black active:translate-y-1 active:translate-x-1 active:shadow-none transition-all"
+              >
+                {t.nextPage} &rarr;
+              </a>
+            ) : (
+              <span class="px-4 md:px-6 py-2 md:py-3 border-4 border-neutral-700 text-neutral-600 cursor-not-allowed bg-neutral-900">
+                {t.nextPage} &rarr;
+              </span>
+            )}
+          </nav>
+        </>
+      ) : (
+        <div class="border-4 border-white bg-black p-10 md:p-16 text-center shadow-[12px_12px_0px_0px_#c6ff00] mb-16">
           <span class="text-6xl mb-6 block">🚧</span>
           <h2 class="text-3xl md:text-4xl font-black uppercase text-white mb-4">
             {t.emptyArchiveTitle}
@@ -120,6 +125,8 @@ const t = siteTranslation.id;
           <p class="font-mono text-neutral-400 text-lg">
             {t.emptyArchiveMessage}
           </p>
-        </div>)}
+        </div>
+      )
+    }
   </main>
 </BaseLayout>

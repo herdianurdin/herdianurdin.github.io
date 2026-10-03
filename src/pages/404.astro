@@ -21,32 +21,32 @@ const tEn = siteTranslation.en;
   <body
     class="min-h-screen w-full bg-neutral-900 text-white font-sans flex items-center justify-center p-4 md:p-8 selection:bg-[#c6ff00] selection:text-black overflow-x-hidden relative"
   >
-    <!-- Latar Belakang Pola Titik -->
+    {/* Latar Belakang Pola Titik */}
     <div
       class="absolute inset-0 z-0 opacity-10"
       style="background-image: radial-gradient(#ffffff 2px, transparent 2px); background-size: 32px 32px; background-position: 0 0;"
     >
     </div>
 
-    <!-- Kotak Utama Neo-Brutalism -->
+    {/* Kotak Utama Neo-Brutalism */}
     <main
       class="relative z-10 bg-black border-4 border-white max-w-3xl w-full p-6 md:p-12 shadow-[16px_16px_0px_0px_#00e5ff] flex flex-col items-center justify-center text-center mx-auto"
     >
-      <!-- Lencana Status -->
+      {/* Lencana Status */}
       <div
         class="bg-[#d946ef] text-white font-mono font-bold text-sm md:text-base px-4 py-1 border-4 border-white shadow-[4px_4px_0px_0px_#fff] mb-6 uppercase tracking-wider -rotate-2"
       >
         {siteConfig.errorBadge}
       </div>
 
-      <!-- Teks 404 -->
+      {/* Teks 404 */}
       <h1
         class="text-7xl md:text-9xl font-black tracking-tighter text-[#c6ff00] mb-2 drop-shadow-[6px_6px_0px_#fff]"
       >
         404
       </h1>
 
-      <!-- Judul Bilingual -->
+      {/* Judul Bilingual */}
       <h2 class="text-2xl md:text-3xl font-black uppercase mb-8 leading-tight">
         {tEn.notFoundTitle}
         <br class="md:hidden" />
@@ -54,7 +54,7 @@ const tEn = siteTranslation.en;
         {tId.notFoundTitle}
       </h2>
 
-      <!-- Kotak Terminal Bilingual -->
+      {/* Kotak Terminal Bilingual */}
       <div
         class="w-full bg-neutral-800 border-4 border-white p-5 md:p-8 mb-10 text-left font-mono text-sm md:text-base"
       >
@@ -63,7 +63,7 @@ const tEn = siteTranslation.en;
           {siteConfig.errorException}
         </p>
 
-        <!-- Pesan Bahasa Inggris -->
+        {/* Pesan Bahasa Inggris */}
         <div class="border-l-4 border-[#00e5ff] pl-4 mb-6">
           <p class="text-white font-bold mb-1">{tEn.errorLogLabel}</p>
           <p class="text-neutral-400 leading-relaxed">
@@ -71,7 +71,7 @@ const tEn = siteTranslation.en;
           </p>
         </div>
 
-        <!-- Pesan Bahasa Indonesia -->
+        {/* Pesan Bahasa Indonesia */}
         <div class="border-l-4 border-[#d946ef] pl-4 mb-4">
           <p class="text-white font-bold mb-1">{tId.errorLogLabel}</p>
           <p class="text-neutral-400 leading-relaxed">
@@ -82,11 +82,11 @@ const tEn = siteTranslation.en;
         <p class="text-[#c6ff00] animate-pulse font-black text-xl mt-4">_</p>
       </div>
 
-      <!-- Tombol Aksi -->
+      {/* Tombol Aksi */}
       <div
         class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full font-mono font-bold uppercase text-sm md:text-base"
       >
-        <!-- Tombol Kembali -->
+        {/* Tombol Kembali */}
         <button
           onclick="history.back()"
           aria-label={`${tEn.btnBack} / ${tId.btnBack}`}
@@ -95,7 +95,7 @@ const tEn = siteTranslation.en;
           &larr; {tEn.btnBack} ({tId.btnBack})
         </button>
 
-        <!-- Tombol Beranda Utama -->
+        {/* Tombol Beranda Utama */}
         <a
           href="/"
           aria-label={`${tEn.btnHome} / ${tId.btnHome}`}

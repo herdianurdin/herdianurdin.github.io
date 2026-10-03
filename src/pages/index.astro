@@ -34,21 +34,21 @@ const latestPosts = allPosts
     <HeroProfile language="id" />
     <Portfolio language="id" />
 
-    <!-- Tambahkan aria-labelledby yang merujuk ke ID heading -->
+    {/* Tambahkan aria-labelledby yang merujuk ke ID heading */}
     <section aria-labelledby="latest-journal-heading">
       <div class="flex items-center gap-4 mb-10">
-        <!-- Tambahkan ID di sini -->
+        {/* Tambahkan ID di sini */}
         <h2
           id="latest-journal-heading"
           class="text-3xl font-black uppercase tracking-tight"
         >
           {siteConfigs.latestJournal}
         </h2>
-        <!-- Sembunyikan garis dekoratif dari perayap dan screen reader -->
+        {/* Sembunyikan garis dekoratif dari perayap dan screen reader */}
         <div class="h-1 flex-grow bg-white" aria-hidden="true"></div>
       </div>
 
-      <!-- Loop Kartu Artikel -->
+      {/* Loop Kartu Artikel */}
       {
         latestPosts.length > 0 ? (
           <div class="grid md:grid-cols-2 gap-8 mb-12">

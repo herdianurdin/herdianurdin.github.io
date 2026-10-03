@@ -20,7 +20,7 @@ const t = siteTranslation[currentLang as keyof typeof siteTranslation];
   <nav class="p-4 md:px-8 flex justify-between items-center">
     
     <div class="flex items-center gap-4">
-      <!-- Tombol Kembali: Hanya muncul di mode artikel -->
+      {/* Tombol Kembali: Hanya muncul di mode artikel */}
       {variant === 'article' && (
         <a 
           href={homeUrl} 
@@ -36,13 +36,13 @@ const t = siteTranslation[currentLang as keyof typeof siteTranslation];
     <LanguageSwitcher currentLang={currentLang} variant={variant} />
   </nav>
 
-  <!-- Bilah Progres Membaca: Hanya dirender di mode artikel -->
+  {/* Bilah Progres Membaca: Hanya dirender di mode artikel */}
   {variant === 'article' && (
     <div class="absolute bottom-[-4px] left-0 h-1 bg-[#00e5ff] w-0 z-50 transition-all duration-100 ease-out" id="reading-progress"></div>
   )}
 </header>
 
-<!-- Skrip Klien (Client-side JS) untuk bilah progres membaca -->
+{/* Skrip Klien (Client-side JS) untuk bilah progres membaca */}
 {variant === 'article' && (
   <script is:inline>
     document.addEventListener('scroll', () => {

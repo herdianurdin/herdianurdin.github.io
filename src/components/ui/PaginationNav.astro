@@ -1,0 +1,60 @@
+---
+// src/components/ui/PaginationNav.astro
+import type { Page } from "astro";
+
+export interface Props {
+  // Objek 'page' ini dihasilkan otomatis oleh fungsi paginate() di Astro
+  page: Page<any>;
+  language: "id" | "en";
+}
+
+const { page, language } = Astro.props;
+
+// Teks dinamis berdasarkan bahasa
+const prevText = language === "id" ? "← Sebelumnya" : "← Previous";
+const nextText = language === "id" ? "Selanjutnya →" : "Next →";
+---
+
+<nav
+  class="flex flex-wrap justify-between items-center gap-4 mt-16 mb-8 font-mono font-bold"
+  aria-label="Navigasi Halaman"
+>
+  {/* Tombol Sebelumnya */}
+  {
+    page.url.prev ? (
+      <a
+        href={page.url.prev}
+        class="bg-white text-black border-4 border-black px-4 md:px-6 py-2 shadow-[4px_4px_0px_0px_#d946ef] hover:shadow-[6px_6px_0px_0px_#c6ff00] hover:-translate-y-1 transition-all"
+      >
+        {prevText}
+      </a>
+    ) : (
+      <span class="px-4 md:px-6 py-2 text-neutral-500 border-4 border-neutral-700 bg-neutral-900 cursor-not-allowed">
+        {prevText}
+      </span>
+    )
+  }
+
+  {/* Indikator Nomor Halaman */}
+  <span
+    class="text-white bg-black border-4 border-white px-4 py-2 shadow-[4px_4px_0px_0px_#00e5ff]"
+  >
+    {page.currentPage} / {page.lastPage}
+  </span>
+
+  {/* Tombol Selanjutnya */}
+  {
+    page.url.next ? (
+      <a
+        href={page.url.next}
+        class="bg-[#c6ff00] text-black border-4 border-black px-4 md:px-6 py-2 shadow-[4px_4px_0px_0px_#d946ef] hover:shadow-[6px_6px_0px_0px_#00e5ff] hover:-translate-y-1 transition-all"
+      >
+        {nextText}
+      </a>
+    ) : (
+      <span class="px-4 md:px-6 py-2 text-neutral-500 border-4 border-neutral-700 bg-neutral-900 cursor-not-allowed">
+        {nextText}
+      </span>
+    )
+  }
+</nav>

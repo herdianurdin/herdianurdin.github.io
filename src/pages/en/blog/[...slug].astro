@@ -18,7 +18,7 @@ const { post } = Astro.props;
 const { Content, headings } = await render(post); // 👈 Tambahkan headings di sini
 ---
 
-<!-- 4. Gunakan post.data untuk frontmatter -->
+{/* 4. Gunakan post.data untuk frontmatter */}
 <BlogLayout frontmatter={post.data} language="en" headings={headings}>
   <Content />
 </BlogLayout>

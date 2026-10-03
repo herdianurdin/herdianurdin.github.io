@@ -95,21 +95,25 @@ const homeUrl = language === "id" ? "/" : "/en/";
 
           <TableOfContents headings={headings} language={language} />
 
-          <!-- 4. Area Konten Utama -->
+          {/* 4. Area Konten Utama */}
           <div
             class="prose prose-invert prose-lg max-w-none prose-pre:border-4 prose-pre:border-white prose-pre:rounded-none prose-pre:shadow-[8px_8px_0px_0px_#00e5ff] prose-headings:font-black prose-headings:scroll-mt-24 prose-a:text-[#c6ff00] prose-a:underline-offset-4 hover:prose-a:bg-[#c6ff00] hover:prose-a:text-black"
           >
             <slot />
           </div>
 
-          <!-- 5. SEO Fix: Gunakan tag <footer> semantik untuk kotak penulis di dalam artikel -->
+          {
+            /* 5. SEO Fix: Gunakan tag <footer> semantik untuk kotak penulis di dalam artikel */
+          }
           <footer class="mt-16 pt-8 border-t-4 border-white">
             <AuthorBox language={language} />
           </footer>
         </div>
       </article>
 
-      <!-- Ruang Diskusi di luar tag <article> karena ini adalah interaksi user, bukan isi jurnal inti -->
+      {
+        /* Ruang Diskusi di luar tag <article> karena ini adalah interaksi user, bukan isi jurnal inti */
+      }
       <section class="mt-12">
         <Giscus language={language} />
       </section>
