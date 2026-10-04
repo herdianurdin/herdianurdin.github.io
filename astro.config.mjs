@@ -44,6 +44,10 @@ export default defineConfig({
     // tailwind() sudah DIHAPUS dari sini
     sitemap({
       filter: (page) => !page.includes("/404") && !page.includes("/rss.xml"),
+      serialize(item) {
+        item.lastmod = new Date().toISOString();
+        return item;
+      },
     }),
     mdx(),
   ],
