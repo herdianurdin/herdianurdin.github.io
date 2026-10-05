@@ -1,0 +1,91 @@
+---
+// src/pages/terms-of-service.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteConfig } from "../config/site";
+
+const domainName = siteConfig.url.replace(/^https?:\/\//, "");
+const lastUpdated = "5 Oktober 2026";
+---
+
+<BaseLayout
+  title="Terms of Service"
+  description={`Syarat dan ketentuan layanan penggunaan situs web ${domainName}.`}
+  language="id"
+>
+  <main class="max-w-4xl mx-auto p-6 md:p-12 w-full flex-grow">
+    <div
+      class="bg-neutral-800 border-4 border-white p-8 md:p-12 shadow-[12px_12px_0px_0px_#00e5ff] mb-12"
+    >
+      <h1
+        class="text-4xl md:text-5xl font-black tracking-tight mb-8 uppercase border-l-8 border-[#00e5ff] pl-6"
+      >
+        Terms of Service
+      </h1>
+
+      <div
+        class="prose prose-invert prose-lg max-w-none prose-headings:font-black prose-a:text-[#c6ff00]"
+      >
+        <p class="font-mono text-neutral-400 text-sm">
+          Terakhir diperbarui: {lastUpdated}
+        </p>
+
+        <p>
+          Selamat datang di <strong>{domainName}</strong>. Dengan mengakses
+          situs web ini, Anda setuju untuk terikat oleh Syarat dan Ketentuan
+          Layanan ini, serta seluruh hukum dan peraturan yang berlaku. Jika Anda
+          tidak setuju dengan salah satu ketentuan ini, Anda dilarang
+          menggunakan atau mengakses situs ini.
+        </p>
+
+        <h2>1. Kekayaan Intelektual</h2>
+        <p>
+          Kecuali dinyatakan lain, materi asli berupa tulisan, analisis, dan
+          desain antarmuka yang ada di dalam jurnal ini adalah hak milik Herdi
+          Herdianurdin. Anda diperbolehkan menggunakan potongan kode (<em
+            >code snippets</em
+          >) yang dibagikan dalam tutorial untuk keperluan proyek pribadi maupun
+          komersial Anda.
+        </p>
+        <p>
+          Namun, Anda <strong
+            >dilarang menyalin, mendistribusikan ulang, atau mengeklaim artikel
+            tutorial secara utuh</strong
+          > sebagai karya Anda sendiri di platform lain tanpa memberikan atribusi
+          berupa tautan aktif (<em>backlink</em>) ke sumber asli.
+        </p>
+
+        <h2>2. Komentar Pengguna (Giscus)</h2>
+        <p>
+          Situs ini menggunakan sistem komentar pihak ketiga. Anda setuju untuk
+          tidak mengirimkan komentar yang mengandung:
+        </p>
+        <ul>
+          <li>Ujaran kebencian, pelecehan, atau ancaman.</li>
+          <li>Tautan <em>spam</em> atau promosi ilegal.</li>
+          <li>
+            Informasi pribadi atau kredensial rahasia (<em
+              >passwords, API keys</em
+            >).
+          </li>
+        </ul>
+        <p>
+          Kami berhak menghapus komentar yang melanggar norma etika komunikasi
+          tanpa pemberitahuan sebelumnya.
+        </p>
+
+        <h2>3. Iklan dan Layanan Pihak Ketiga</h2>
+        <p>
+          Situs ini mungkin menampilkan iklan yang disediakan oleh Google
+          AdSense atau pihak ketiga lainnya. Vendor ini menggunakan <em
+            >cookies</em
+          > untuk menampilkan iklan berdasarkan kunjungan Anda ke situs ini dan situs
+          lainnya di internet. Anda dapat merujuk pada halaman <a
+            href="/privacy-policy">Kebijakan Privasi</a
+          > kami untuk informasi lebih lanjut mengenai pengelolaan <em
+            >cookie</em
+          > iklan.
+        </p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

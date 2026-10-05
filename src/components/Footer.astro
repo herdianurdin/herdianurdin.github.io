@@ -16,17 +16,42 @@ const currentYear = new Date().getFullYear();
 <footer
   class="border-t-4 border-white mt-auto p-8 bg-black flex flex-col md:flex-row justify-between items-center gap-4 w-full"
 >
-  <p class="font-mono text-neutral-400 text-sm">
+  <p class="font-mono text-neutral-400 text-sm text-center md:text-left">
     &copy; {currentYear}
     {siteConfig.author}.
   </p>
-  <div class="flex gap-4 text-sm font-mono text-neutral-400">
+
+  {/* Menambahkan flex-wrap agar rapi di layar HP */}
+  <div
+    class="flex flex-wrap justify-center gap-4 text-sm font-mono text-neutral-400"
+  >
+    <a
+      href={language == "id" ? "/about" : "/en/about"}
+      class="hover:text-[#c6ff00] hover:underline underline-offset-4 decoration-2 transition-colors"
+    >
+      {t.aboutMe}
+    </a>
+
     <a
       href={language == "id" ? "/privacy-policy" : "/en/privacy-policy"}
       aria-label={`${t.privacyPolicy} ${siteConfig.author}`}
       class="hover:text-[#c6ff00] hover:underline underline-offset-4 decoration-2 transition-colors"
     >
       {t.privacyPolicy}
+    </a>
+
+    <a
+      href={language == "id" ? "/disclaimer" : "/en/disclaimer"}
+      class="hover:text-[#c6ff00] hover:underline underline-offset-4 decoration-2 transition-colors"
+    >
+      {t.disclaimer}
+    </a>
+
+    <a
+      href={language == "id" ? "/terms-of-service" : "/en/terms-of-service"}
+      class="hover:text-[#c6ff00] hover:underline underline-offset-4 decoration-2 transition-colors"
+    >
+      {t.termsOfService}
     </a>
   </div>
 </footer>

@@ -1,0 +1,77 @@
+---
+// src/pages/en/disclaimer.astro
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../config/site";
+
+const domainName = siteConfig.url.replace(/^https?:\/\//, "");
+const lastUpdated = "October 5, 2026";
+---
+
+<BaseLayout
+  title="Disclaimer"
+  description={`Disclaimer and limitation of liability for the use of information on ${domainName}.`}
+  language="en"
+>
+  <main class="max-w-4xl mx-auto p-6 md:p-12 w-full flex-grow">
+    <div
+      class="bg-neutral-800 border-4 border-white p-8 md:p-12 shadow-[12px_12px_0px_0px_#00e5ff] mb-12"
+    >
+      <h1
+        class="text-4xl md:text-5xl font-black tracking-tight mb-8 uppercase border-l-8 border-[#00e5ff] pl-6"
+      >
+        Disclaimer
+      </h1>
+
+      <div
+        class="prose prose-invert prose-lg max-w-none prose-headings:font-black prose-a:text-[#c6ff00]"
+      >
+        <p class="font-mono text-neutral-400 text-sm">
+          Last updated: {lastUpdated}
+        </p>
+
+        <p>
+          All information provided on <strong>{domainName}</strong> is published in
+          good faith and purely for informational, educational, and personal technical
+          documentation purposes.
+        </p>
+
+        <p>
+          This IT journal is managed by <strong>Herdi Herdianurdin</strong>, an
+          independent <em>Solo Android Developer</em> who publishes his works on the
+          Google Play Store. While I strive to present tutorials, <em
+            >code snippets</em
+          >, and case studies as accurately as possible based on practical
+          experience in the mobile app development industry, I make no
+          representations or warranties of any kind—express or implied—about the
+          completeness, reliability, and accuracy of this information.
+        </p>
+
+        <h2>1. Use of Code and Tutorials</h2>
+        <p>
+          Any action you take upon the information and lines of code you find on
+          this website is strictly at <strong
+            >your own risk and responsibility</strong
+          >. We highly recommend testing everything in a local environment
+          before deploying server configurations, database modifications, or
+          application code to a production environment.
+        </p>
+
+        <h2>2. External Links</h2>
+        <p>
+          This website may contain links to other external websites. We strive
+          to provide only quality, safe, and ethical links to useful websites.
+          However, we have no control over the content and nature of these
+          sites. A link to another website does not imply a blanket
+          recommendation for all the content found on that site.
+        </p>
+
+        <h2>3. Consent</h2>
+        <p>
+          By using our website, you hereby consent to our Disclaimer and agree
+          to its terms. We will not be liable for any losses and/or damages in
+          connection with the use of our website.
+        </p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

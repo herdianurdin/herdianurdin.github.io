@@ -1,0 +1,85 @@
+---
+// src/pages/en/terms-of-service.astro
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { siteConfig } from "../../config/site";
+
+const domainName = siteConfig.url.replace(/^https?:\/\//, "");
+const lastUpdated = "October 5, 2026";
+---
+
+<BaseLayout
+  title="Terms of Service"
+  description={`Terms and conditions of use for ${domainName}.`}
+  language="en"
+>
+  <main class="max-w-4xl mx-auto p-6 md:p-12 w-full flex-grow">
+    <div
+      class="bg-neutral-800 border-4 border-white p-8 md:p-12 shadow-[12px_12px_0px_0px_#00e5ff] mb-12"
+    >
+      <h1
+        class="text-4xl md:text-5xl font-black tracking-tight mb-8 uppercase border-l-8 border-[#00e5ff] pl-6"
+      >
+        Terms of Service
+      </h1>
+
+      <div
+        class="prose prose-invert prose-lg max-w-none prose-headings:font-black prose-a:text-[#c6ff00]"
+      >
+        <p class="font-mono text-neutral-400 text-sm">
+          Last updated: {lastUpdated}
+        </p>
+
+        <p>
+          Welcome to <strong>{domainName}</strong>. By accessing this website,
+          you agree to be bound by these Terms of Service, as well as all
+          applicable laws and regulations. If you do not agree with any of these
+          terms, you are prohibited from using or accessing this site.
+        </p>
+
+        <h2>1. Intellectual Property</h2>
+        <p>
+          Unless otherwise stated, original materials such as writings,
+          analysis, and interface designs on this journal are the intellectual
+          property of Herdi Herdianurdin. You are free to use the <em
+            >code snippets</em
+          > shared in tutorials for your personal or commercial projects.
+        </p>
+        <p>
+          However, you are <strong
+            >prohibited from copying, redistributing, or claiming full tutorial
+            articles</strong
+          > as your own work on other platforms without providing proper attribution
+          in the form of an active <em>backlink</em> to the original source.
+        </p>
+
+        <h2>2. User Comments (Giscus)</h2>
+        <p>
+          This site utilizes a third-party commenting system. You agree not to
+          post comments that contain:
+        </p>
+        <ul>
+          <li>Hate speech, harassment, or threats.</li>
+          <li><em>Spam</em> links or illegal promotions.</li>
+          <li>
+            Personal information or confidential credentials (<em
+              >passwords, API keys</em
+            >).
+          </li>
+        </ul>
+        <p>
+          We reserve the right to remove comments that violate ethical
+          communication standards without prior notice.
+        </p>
+
+        <h2>3. Ads and Third-Party Services</h2>
+        <p>
+          This site may display advertisements provided by Google AdSense or
+          other third parties. These vendors use <em>cookies</em> to serve ads based
+          on your visits to this site and other sites on the internet. You can refer
+          to our <a href="/en/privacy-policy">Privacy Policy</a> page for more information
+          regarding ad <em>cookie</em> management.
+        </p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

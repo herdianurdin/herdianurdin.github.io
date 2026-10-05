@@ -54,6 +54,11 @@ const articleSchema = isArticle
       inLanguage: language,
     }
   : null;
+
+const currentPath = Astro.url.pathname;
+// Mengecek URL dengan akurasi tinggi menggunakan Regex
+const isLegalPage = /^\/(en\/)?(privacy-policy|disclaimer|terms-of-service|about)\/?$/.test(currentPath);
+const shouldShowAds = siteConfig.googleAdsenseId && !isLegalPage;
 ---
 
 <meta charset="utf-8" />
@@ -96,7 +101,7 @@ const articleSchema = isArticle
 
 <link rel="apple-touch-icon" href="/images/icon-192.png" />
 
-{siteConfig.googleAdsenseId && (
+{shouldShowAds && (
   <>
   <meta name="google-adsense-account" content={siteConfig.googleAdsenseId} />
   <script is:inline define:vars={{ adId: siteConfig.googleAdsenseId }}>

@@ -1,0 +1,145 @@
+---
+// src/pages/about.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Tentang Saya"
+  description="Profil Herdi Herdianurdin, Solo Android Developer dan pengelola Jurnal IT herdianurdin.my.id."
+  language="id"
+>
+  <main class="max-w-4xl mx-auto p-6 md:p-12 w-full flex-grow">
+    <div
+      class="bg-neutral-800 border-4 border-white p-8 md:p-12 shadow-[12px_12px_0px_0px_#00e5ff] mb-12"
+    >
+      <h1
+        class="text-4xl md:text-5xl font-black tracking-tight mb-8 uppercase border-l-8 border-[#c6ff00] pl-6"
+      >
+        Tentang Saya
+      </h1>
+
+      <div
+        class="prose prose-invert prose-lg max-w-none prose-headings:font-black prose-a:text-[#00e5ff] hover:prose-a:text-[#c6ff00]"
+      >
+        <p>
+          Halo! Saya <strong>Herdi Herdianurdin</strong>, seorang <em
+            >Solo Android Developer</em
+          > independen.
+        </p>
+
+        <p>
+          Tujuan awal saya terjun ke ekosistem Google Play Console adalah bentuk
+          tanggung jawab moral atas ilmu yang telah saya pelajari: saya ingin
+          membuat alat yang benar-benar bermanfaat bagi diri saya sendiri dan
+          orang lain. Fokus utama saya adalah mengembangkan aplikasi bertema
+          edukasi dan utilitas produktivitas.
+        </p>
+
+        <h2>Filosofi Pengembangan</h2>
+        <p>
+          Salah satu karya yang paling mewakili filosofi saya adalah aplikasi <a
+            href="https://play.google.com/store/apps/details?id=audio_dakwah.asmaul_husna_99.audio_belajar_asmaul_husna"
+            target="_blank"
+            rel="noopener noreferrer">Asmaul Husna Arti dan Makna</a
+          >. Aplikasi ini lahir dari rasa risih saya melihat banyaknya aplikasi
+          serupa di <em>store</em> yang lambat, berat, dan yang paling parah, dijejali
+          oleh iklan-iklan yang tidak senonoh dan mengganggu kekhusyukan. Saya membangunnya
+          agar menjadi alternatif yang cepat, bersih, dan aman.
+        </p>
+
+        <h2>Realitas di Balik Layar (Tech Stack)</h2>
+        <p>
+          Senjata utama saya adalah <strong>Android Native dengan Kotlin</strong
+          >. Meskipun tren saat ini mengarah ke Jetpack Compose, saya masih
+          setia menggunakan sistem XML untuk tata letak (<em>layouting</em>).
+          Alasannya sangat pragmatis: keterbatasan perangkat.
+        </p>
+        <p>
+          Saya memulai perjalanan ini dengan laptop Dell Latitude E5450 (Core i5
+          Gen 5, RAM 16GB, berjalan di Arch Linux), dan kini menggunakan Dell
+          Latitude 5300 (Core i5 Gen 8, Windows 11). Spesifikasi ini sangat
+          andal untuk <em>coding</em>, tetapi belum cukup mumpuni untuk merender
+          Jetpack Compose dengan nyaman. Ini mengajarkan saya untuk
+          memaksimalkan alat yang ada di depan mata daripada menunggu <em
+            >setup</em
+          > yang sempurna.
+        </p>
+        <p>
+          Untuk monetisasi, saya mengandalkan AdMob dengan kombinasi mediasi
+          Meta. Di luar ekosistem Android Native, saya juga memiliki riwayat
+          mengeksplorasi React Native, Flutter, hingga <em>Full-Stack</em> web dengan
+          Laravel.
+        </p>
+
+        <h2>Latar Belakang & Pendidikan</h2>
+        <ul>
+          <li>
+            <strong>S1 Teknik Informatika</strong> di Universitas Putra Indonesia
+            (UPI) Cianjur (Lulus 2023, IPK 3.93). Skripsi saya, <a
+              href="https://play.google.com/store/apps/details?id=mathphotoai.aritmatikageometri.kalkulatorbarisanderet"
+              target="_blank"
+              rel="noopener noreferrer">Kalkulator Barisan dan Deret</a
+            >, yang juga saya rilis di Play Store, adalah proyek pragmatis
+            dengan satu fokus utama: lulus cepat, aman, dan tanpa kendala.
+          </li>
+          <li>
+            <strong>Lulusan Terbaik</strong> - Studi Independen Bersertifikat (SIB)
+            Kampus Merdeka Batch 3 di Dicoding Indonesia (Pengembangan Aplikasi Android,
+            2022).
+          </li>
+          <li>
+            <strong>Lulusan Terbaik</strong> - Pelatihan Candradimuka Jabar Coding
+            Camp Batch 1 (React Native, 2021).
+          </li>
+        </ul>
+
+        <h2>Mengapa Jurnal IT Ini Ada?</h2>
+        <p>
+          Saya membangun <code>herdianurdin.my.id</code> sebagai jejak digital. Ini
+          adalah tempat saya berbagi keluh kesah kode, membagikan solusi agar <em
+            >developer</em
+          > lain tidak perlu membenturkan kepala pada masalah (<em>bug</em>)
+          yang sama, dan sebagai bukti bahwa saya pernah berkarya. Lebih dari
+          itu, menulis memaksa otak saya untuk tetap memproses informasi secara
+          aktif, bukan sekadar menjadi konsumen pasif.
+        </p>
+
+        <h2>Sisi Manusiawi</h2>
+        <p>
+          Saat layar laptop ditutup, saya adalah seorang <em>introvert</em> yang menikmati
+          waktu sendiri, meskipun saya juga sangat menghargai kebersamaan dengan orang-orang
+          yang benar-benar peduli. Saya menikmati anime, membaca komik (Jepang & Korea),
+          serta buku-buku novel dan pengembangan diri.
+        </p>
+        <p>
+          Saya memiliki ketertarikan besar pada modifikasi motor dan eksperimen
+          elektronika. Saat ini, pelarian dari <em>coding</em> favorit saya adalah
+          berkendara sendirian menikmati pemandangan alam dengan <strong
+            >Honda Beat Karbu Gen 2</strong
+          > yang sudah saya modifikasi di sektor mesin, pengapian, CDI, dan CVT untuk
+          mengejar performa. Walaupun jauh di lubuk hati saya lebih menyukai mesin
+          injeksi, saya menyesuaikan diri dengan ekosistem bengkel di wilayah saya
+          yang lebih mumpuni menangani karburator.
+        </p>
+        <div class="mt-12 flex flex-wrap gap-4 border-t-4 border-white pt-8">
+          <a
+            href="https://play.google.com/store/search?q=pub%3AHerdi%20Herdianurdin&c=apps"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="no-underline bg-white text-black px-6 py-3 font-bold border-4 border-black shadow-[4px_4px_0px_0px_#00e5ff] hover:bg-[#00e5ff] hover:text-black hover:-translate-y-1 focus:ring-4 focus:ring-white transition-all"
+          >
+            Google Play Console
+          </a>
+          <a
+            href="https://www.linkedin.com/in/herdianurdin"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="no-underline bg-[#c6ff00] text-black px-6 py-3 font-bold border-4 border-black shadow-[4px_4px_0px_0px_#d946ef] hover:bg-[#d946ef] hover:text-black hover:-translate-y-1 focus:ring-4 focus:ring-white transition-all"
+          >
+            LinkedIn Profile
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

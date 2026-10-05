@@ -1,0 +1,145 @@
+---
+// src/pages/en/about.astro
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="About Me"
+  description="Profile of Herdi Herdianurdin, a Solo Android Developer and the author behind herdianurdin.my.id."
+  language="en"
+>
+  <main class="max-w-4xl mx-auto p-6 md:p-12 w-full flex-grow">
+    <div
+      class="bg-neutral-800 border-4 border-white p-8 md:p-12 shadow-[12px_12px_0px_0px_#00e5ff] mb-12"
+    >
+      <h1
+        class="text-4xl md:text-5xl font-black tracking-tight mb-8 uppercase border-l-8 border-[#c6ff00] pl-6"
+      >
+        About Me
+      </h1>
+
+      <div
+        class="prose prose-invert prose-lg max-w-none prose-headings:font-black prose-a:text-[#00e5ff] hover:prose-a:text-[#c6ff00]"
+      >
+        <p>
+          Hello! I am <strong>Herdi Herdianurdin</strong>, an independent <em
+            >Solo Android Developer</em
+          >.
+        </p>
+
+        <p>
+          My initial goal in entering the Google Play Console ecosystem was a
+          form of moral responsibility for the knowledge I have acquired: I
+          wanted to build tools that are genuinely useful to myself and others.
+          My primary focus is developing educational and productivity utility
+          apps.
+        </p>
+
+        <h2>Development Philosophy</h2>
+        <p>
+          One of the works that best represents my philosophy is the <a
+            href="https://play.google.com/store/apps/details?id=audio_dakwah.asmaul_husna_99.audio_belajar_asmaul_husna"
+            target="_blank"
+            rel="noopener noreferrer">Asmaul Husna Arti dan Makna</a
+          > app. This app was born out of my frustration with seeing so many similar
+          apps on the <em>store</em> that were slow, bloated, and worst of all, stuffed
+          with inappropriate ads that disrupt focus and reverence. I built it to be
+          a fast, clean, and safe alternative.
+        </p>
+
+        <h2>Behind the Scenes Reality (Tech Stack)</h2>
+        <p>
+          My main weapon is <strong>Native Android with Kotlin</strong>.
+          Although the current trend is shifting towards Jetpack Compose, I am
+          still loyal to using the XML system for <em>layouting</em>. The reason
+          is purely pragmatic: hardware limitations.
+        </p>
+        <p>
+          I started this journey with a Dell Latitude E5450 laptop (Core i5 Gen
+          5, 16GB RAM, running on Arch Linux), and I am currently using a Dell
+          Latitude 5300 (Core i5 Gen 8, Windows 11). These specs are very
+          reliable for <em>coding</em>, but not quite powerful enough to render
+          Jetpack Compose comfortably. This taught me to maximize the tools
+          right in front of me rather than waiting for the perfect <em>setup</em
+          >.
+        </p>
+        <p>
+          For monetization, I rely on AdMob combined with Meta mediation.
+          Outside the Native Android ecosystem, I also have a history of
+          exploring React Native, Flutter, and <em>Full-Stack</em> web development
+          using Laravel.
+        </p>
+
+        <h2>Background & Education</h2>
+        <ul>
+          <li>
+            <strong>Bachelor of Informatics Engineering</strong> at Putra Indonesia
+            University (UPI) Cianjur (Graduated 2023, GPA 3.93). My thesis, <a
+              href="https://play.google.com/store/apps/details?id=mathphotoai.aritmatikageometri.kalkulatorbarisanderet"
+              target="_blank"
+              rel="noopener noreferrer">Sequence and Series Calculator</a
+            >, which I also released on the Play Store, was a pragmatic project
+            with one main focus: graduating quickly, safely, and without
+            obstacles.
+          </li>
+          <li>
+            <strong>Best Graduate</strong> - Certified Independent Study (SIB) Kampus
+            Merdeka Batch 3 at Dicoding Indonesia (Android App Development, 2022).
+          </li>
+          <li>
+            <strong>Best Graduate</strong> - Candradimuka Jabar Coding Camp Batch
+            1 (React Native, 2021).
+          </li>
+        </ul>
+
+        <h2>Why Does This IT Journal Exist?</h2>
+        <p>
+          I built <code>herdianurdin.my.id</code> as a digital footprint. This is
+          a place where I share coding struggles, provide solutions so other <em
+            >developers</em
+          > don't have to bang their heads against the same <em>bugs</em>, and
+          serve as proof that I have created something. Moreover, writing forces
+          my brain to actively process information, rather than just being a
+          passive consumer.
+        </p>
+
+        <h2>The Human Side</h2>
+        <p>
+          When the laptop screen is closed, I am an <em>introvert</em> who enjoys
+          alone time, though I also deeply appreciate moments spent with people who
+          genuinely care. I enjoy anime, reading comics (Japanese & Korean), as well
+          as self-improvement books and novels.
+        </p>
+        <p>
+          I have a huge interest in motorcycle modifications and electronics
+          experiments. Currently, my favorite escape from <em>coding</em> is riding
+          alone to enjoy natural scenery with my <strong
+            >Honda Beat Karbu Gen 2</strong
+          >, which I have modified in the engine, ignition, CDI, and CVT sectors
+          to chase performance. Even though deep down I prefer injection
+          engines, I adapt to the local mechanic ecosystem in my area, which is
+          more capable of handling carburetors.
+        </p>
+
+        <div class="mt-12 flex flex-wrap gap-4 border-t-4 border-white pt-8">
+          <a
+            href="https://play.google.com/store/search?q=pub%3AHerdi%20Herdianurdin&c=apps"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="no-underline bg-white text-black px-6 py-3 font-bold border-4 border-black shadow-[4px_4px_0px_0px_#00e5ff] hover:bg-[#00e5ff] hover:text-black hover:-translate-y-1 focus:ring-4 focus:ring-white transition-all"
+          >
+            Google Play Console
+          </a>
+          <a
+            href="https://www.linkedin.com/in/herdianurdin"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="no-underline bg-[#c6ff00] text-black px-6 py-3 font-bold border-4 border-black shadow-[4px_4px_0px_0px_#d946ef] hover:bg-[#d946ef] hover:text-black hover:-translate-y-1 focus:ring-4 focus:ring-white transition-all"
+          >
+            LinkedIn Profile
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

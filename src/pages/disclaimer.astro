@@ -1,0 +1,78 @@
+---
+// src/pages/disclaimer.astro
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { siteConfig } from "../config/site";
+
+const domainName = siteConfig.url.replace(/^https?:\/\//, "");
+const lastUpdated = "5 Oktober 2026";
+---
+
+<BaseLayout
+  title="Disclaimer"
+  description={`Sanggahan dan batasan tanggung jawab untuk penggunaan informasi di ${domainName}.`}
+  language="id"
+>
+  <main class="max-w-4xl mx-auto p-6 md:p-12 w-full flex-grow">
+    <div
+      class="bg-neutral-800 border-4 border-white p-8 md:p-12 shadow-[12px_12px_0px_0px_#00e5ff] mb-12"
+    >
+      <h1
+        class="text-4xl md:text-5xl font-black tracking-tight mb-8 uppercase border-l-8 border-[#00e5ff] pl-6"
+      >
+        Disclaimer (Sanggahan)
+      </h1>
+
+      <div
+        class="prose prose-invert prose-lg max-w-none prose-headings:font-black prose-a:text-[#c6ff00]"
+      >
+        <p class="font-mono text-neutral-400 text-sm">
+          Terakhir diperbarui: {lastUpdated}
+        </p>
+
+        <p>
+          Semua informasi yang disediakan di <strong>{domainName}</strong> diterbitkan
+          dengan iktikad baik dan murni untuk tujuan informasi, edukasi, serta dokumentasi
+          teknis pribadi.
+        </p>
+
+        <p>
+          Jurnal IT ini dikelola oleh <strong>Herdi Herdianurdin</strong>,
+          seorang <em>Solo Android Developer</em> independen yang memublikasikan karyanya
+          di Google Play Store. Meskipun saya berusaha menyajikan tutorial, potongan
+          kode (<em>code snippets</em>), dan studi kasus seakurat mungkin
+          berdasarkan pengalaman praktis di industri pengembangan aplikasi
+          seluler, saya tidak membuat pernyataan atau jaminan apa pun—baik
+          tersurat maupun tersirat—mengenai kelengkapan, keandalan, dan
+          keakuratan informasi ini.
+        </p>
+
+        <h2>1. Penggunaan Kode dan Tutorial</h2>
+        <p>
+          Setiap tindakan yang Anda ambil atas informasi dan baris kode yang
+          Anda temukan di situs web ini sepenuhnya merupakan <strong
+            >tanggung jawab dan risiko Anda sendiri</strong
+          >. Kami sangat menyarankan Anda untuk melakukan pengujian secara lokal
+          sebelum menerapkan konfigurasi server, modifikasi basis data, atau
+          kode aplikasi ke lingkungan produksi.
+        </p>
+
+        <h2>2. Tautan Eksternal</h2>
+        <p>
+          Situs web ini mungkin berisi tautan ke situs web eksternal lainnya.
+          Kami berusaha hanya menyediakan tautan ke situs web yang berkualitas,
+          aman, dan etis. Namun, kami tidak memiliki kendali atas konten dan
+          sifat situs-situs tersebut. Tautan ke situs web lain tidak menyiratkan
+          rekomendasi penuh atas seluruh konten yang ditemukan di sana.
+        </p>
+
+        <h2>3. Persetujuan</h2>
+        <p>
+          Dengan menggunakan situs web kami, Anda dengan ini menyetujui
+          Disclaimer kami dan menyetujui ketentuan-ketentuannya. Kami tidak
+          bertanggung jawab atas kerugian dan/atau kerusakan sehubungan dengan
+          penggunaan situs web kami.
+        </p>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

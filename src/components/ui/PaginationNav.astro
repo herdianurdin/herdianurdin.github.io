@@ -25,6 +25,7 @@ const nextText = language === "id" ? "Selanjutnya →" : "Next →";
       <a
         href={page.url.prev}
         class="bg-white text-black border-4 border-black px-4 md:px-6 py-2 shadow-[4px_4px_0px_0px_#d946ef] hover:shadow-[6px_6px_0px_0px_#c6ff00] hover:-translate-y-1 transition-all"
+        data-astro-prefetch="hover"
       >
         {prevText}
       </a>
@@ -48,6 +49,7 @@ const nextText = language === "id" ? "Selanjutnya →" : "Next →";
       <a
         href={page.url.next}
         class="bg-[#c6ff00] text-black border-4 border-black px-4 md:px-6 py-2 shadow-[4px_4px_0px_0px_#d946ef] hover:shadow-[6px_6px_0px_0px_#00e5ff] hover:-translate-y-1 transition-all"
+        data-astro-prefetch="hover"
       >
         {nextText}
       </a>

@@ -70,7 +70,7 @@ const formattedDate = post.data.pubDate.toLocaleDateString(
     </div>
 
     {/* Judul Artikel */}
-    <a href={postUrl} class="group mb-2">
+    <a href={postUrl} class="group mb-2" data-astro-prefetch="hover">
       <h3
         class="text-2xl font-black text-white leading-tight group-hover:text-[#00e5ff] transition-colors"
       >
@@ -96,6 +96,7 @@ const formattedDate = post.data.pubDate.toLocaleDateString(
       href={postUrl}
       class="inline-block mt-auto text-[#c6ff00] font-mono font-bold uppercase hover:underline w-fit"
       aria-label={`${language === "id" ? "Baca artikel lengkap tentang" : "Read full article about"} ${post.data.title}`}
+      data-astro-prefetch="hover"
     >
       {siteConfigs.readArticle}
     </a>
