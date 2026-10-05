@@ -8,6 +8,11 @@ import { unified } from "@astrojs/markdown-remark";
 export default defineConfig({
   site: "https://herdianurdin.my.id",
 
+  prefetch: {
+    prefetchAll: true,
+    defaultStrategy: "hover",
+  },
+
   markdown: {
     shikiConfig: {
       theme: "dracula",
