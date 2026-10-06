@@ -14,7 +14,7 @@ const id = defineCollection({
     coverImage: z
       .string()
       .default(
-        "https://placehold.co/1200x600/000000/c6ff00?text=Herdi.Dev+Journal",
+        "https://placehold.co/1200x600/000000/c6ff00?text=Journal+IT+|+herdianurdin.my.id",
       ),
     tags: z.array(z.string()).optional(),
     isDraft: z.boolean().default(false),
@@ -29,7 +29,11 @@ const en = defineCollection({
     title: z.string(),
     description: z.string().min(10),
     pubDate: z.date(),
-    coverImage: z.string().optional(),
+    coverImage: z
+      .string()
+      .default(
+        "https://placehold.co/1200x600/000000/c6ff00?text=Journal+IT+|+herdianurdin.my.id",
+      ),
     tags: z.array(z.string()).optional(),
     isDraft: z.boolean().default(false),
   }),
