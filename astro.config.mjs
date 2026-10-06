@@ -1,6 +1,5 @@
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
-import sitemap from "@astrojs/sitemap";
 import mdx from "@astrojs/mdx";
 import rehypeExternalLinks from "rehype-external-links";
 import { unified } from "@astrojs/markdown-remark";
@@ -47,13 +46,6 @@ export default defineConfig({
 
   integrations: [
     // tailwind() sudah DIHAPUS dari sini
-    sitemap({
-      filter: (page) => !page.includes("/404") && !page.includes("/rss.xml"),
-      serialize(item) {
-        item.lastmod = new Date().toISOString();
-        return item;
-      },
-    }),
     mdx(),
   ],
 
