@@ -45,7 +45,7 @@ Kini, di era modern, Anda adalah sang arsitek logika tersebut, dan bahasa Python
 
 Namun, sebelum Anda mulai dengan penuh semangat menyuruh mesin Python Anda berhitung, ada satu "jebakan" konyol yang hampir selalu menelan korban para pemula.
 
-Mari kita buktikan. Buka **[Python Quest Playground](/python-playground)** Anda, dan ketikkan kode penjumlahan sederhana di bawah ini:
+Mari kita buktikan. Buka **[Python Playground](/python-playground)** Anda, dan ketikkan kode penjumlahan sederhana di bawah ini:
 
 ```python
 angka1 = input("Masukkan angka pertama: ")

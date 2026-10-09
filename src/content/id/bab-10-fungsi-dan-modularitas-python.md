@@ -47,7 +47,7 @@ Di Python, kita menggunakan kata kunci `def` (singkatan dari _Define_ / Definisi
 
 ## 1. Merakit Fungsi Dasar (`def`)
 
-Mari kita buat sebuah cetakan sapaan paling sederhana di **[Python Quest Playground](/python-playground)**.
+Mari kita buat sebuah cetakan sapaan paling sederhana di **[Python Playground](/python-playground)**.
 
 ```python
 # Tahap 1: Membuat cetakan mesin (Program belum jalan, baru disimpan di memori)
@@ -169,6 +169,6 @@ ___ True:
         print("Pilihan tidak valid, coba lagi.")
 ```
 
-Berhasilkah Anda menyelesaikannya di **[Python Quest Playground](/python-playground)** tanpa menemukan _IndentationError_ atau _TypeError_? Jika iya, salin seluruh kode rampung Anda dan pamerkan di kolom komentar! Anda kini resmi telah menamatkan fondasi dasar logika mesin.
+Berhasilkah Anda menyelesaikannya di **[Python Playground](/python-playground)** tanpa menemukan _IndentationError_ atau _TypeError_? Jika iya, salin seluruh kode rampung Anda dan pamerkan di kolom komentar! Anda kini resmi telah menamatkan fondasi dasar logika mesin.
 
 _(Artikel ini adalah Bagian ke-10 sekaligus penutup dari Seri Fundamental Python. Teruslah berkarya, merakit cetakan, dan menulis kode!)_

@@ -35,7 +35,7 @@ Dalam keseharian, komunikasi dasar terdiri dari aksi _berbicara_ (menyampaikan i
 
 Secara teori formal akademis, **Output** adalah proses pengiriman data dari dalam program menuju perangkat luar (biasanya layar atau monitor). Di bahasa Python, fungsi `print()` bertugas mencetak tipe data ke standar keluaran (_standard output_ atau _stdout_).
 
-Ini adalah komunikasi sepihak. Komputer menyampaikan informasi, dan ia tidak peduli apakah Anda ingin membalasnya atau tidak. Mari praktikkan. Buka **[Python Quest Playground](/python-playground)**, lalu ketikkan:
+Ini adalah komunikasi sepihak. Komputer menyampaikan informasi, dan ia tidak peduli apakah Anda ingin membalasnya atau tidak. Mari praktikkan. Buka **[Python Playground](/python-playground)**, lalu ketikkan:
 
 ```python
 print("Halo, saya adalah sistem bot otomatis.")

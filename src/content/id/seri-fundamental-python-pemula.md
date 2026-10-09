@@ -50,7 +50,7 @@ Pemrograman bukanlah tentang seberapa cepat Anda mengetik, melainkan tentang kem
 
 Karena fokus kita di sini adalah belajar merancang logika, saya tidak ingin energi Anda habis di hari pertama hanya karena pusing melakukan instalasi aplikasi di laptop.
 
-Untuk menyelesaikan seri ini, Anda tidak perlu menginstal perangkat lunak apa pun. Anda bisa mempraktikkan semua baris kode langsung dari peramban (_browser_) menggunakan ekosistem teks editor dan _interpreter_ yang telah saya sediakan: **[Python Quest Playground](/python-playground)**. (Tentu, Anda juga bebas menggunakan _compiler online_ lain seperti _Programiz_ jika merasa lebih nyaman).
+Untuk menyelesaikan seri ini, Anda tidak perlu menginstal perangkat lunak apa pun. Anda bisa mempraktikkan semua baris kode langsung dari peramban (_browser_) menggunakan ekosistem teks editor dan _interpreter_ yang telah saya sediakan: **[Python Playground](/python-playground)**. (Tentu, Anda juga bebas menggunakan _compiler online_ lain seperti _Programiz_ jika merasa lebih nyaman).
 
 ## Peta Kurikulum: 10 Langkah Menuju Logika Mesin
 

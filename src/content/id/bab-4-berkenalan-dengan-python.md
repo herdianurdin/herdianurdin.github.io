@@ -66,7 +66,7 @@ Menguasai Python adalah sebuah investasi jangka panjang. Karena bahasa ini ibara
 - **Data Scientist & AI Engineer:** Menggunakan pustaka ( _library_ ) khusus untuk melatih kecerdasan buatan, seperti yang dilakukan raksasa Google dan OpenAI (pembuat ChatGPT).
 - **Cybersecurity / Penetration Tester:** Menulis _script_ otomatis untuk menguji keamanan _server_ perusahaan.
 
-## Senjata Kita: Python Quest Playground
+## Senjata Kita: Python Playground
 
 ![Ilustrasi Cloud Playground](/images/playground-python.webp)
 
@@ -75,7 +75,7 @@ Biasanya, rintangan terberat bagi pemula (terutama yang memiliki laptop spesifik
 Untuk mengatasi hal tersebut, kita akan melewatkan proses instalasi lokal yang merepotkan. Saya telah menyediakan sebuah "laboratorium _cloud_" yang sangat ringan dan bisa dibuka langsung dari _browser_ (Google Chrome/Firefox) Anda, apa pun jenis laptop Anda!
 
 Perkenalkan senjata utama kita selama seri tutorial ini:
-👉 **[Python Quest Playground](/python-playground)**
+👉 **[Python Playground](/python-playground)**
 
 Di _website_ tersebut, Anda bisa mengetikkan kode di layar kiri, menekan tombol **Jalankan**, dan langsung melihat hasilnya secara _real-time_ di layar kanan. Tanpa instalasi, tanpa membebani RAM laptop Anda.
 
@@ -89,7 +89,7 @@ Tradisi itu sudah terlalu membosankan. Kita akan membuat gebrakan baru. Kita aka
 
 **Tugas Anda:**
 
-1. Buka tautan **[Python Quest Playground](/python-playground)**.
+1. Buka tautan **[Python Playground](/python-playground)**.
 2. Di kolom teks (editor), ketikkan perintah ini secara persis (perhatikan huruf kecil pada perintah awal dan tanda kutip ganda yang mengapit teks):
 
 ```python

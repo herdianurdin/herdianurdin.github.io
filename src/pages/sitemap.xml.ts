@@ -25,6 +25,7 @@ export async function GET() {
     "/privacy-policy",
     "/disclaimer",
     "/terms-of-service",
+    "/python-playground",
     "/en",
     "/en/blog",
     "/en/about",
