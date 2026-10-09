@@ -43,7 +43,7 @@ Di Python, kita memiliki dua senjata utama untuk melakukan hal ini: **For Loop**
 
 Perulangan `for` digunakan ketika Anda **sudah mengetahui secara pasti** berapa kali pekerjaan tersebut harus diulang. Ibarat Anda disuruh berlari memutari lapangan sebanyak 5 kali.
 
-Di Python, `for` biasanya dipasangkan dengan fungsi `range()`, yang bertugas menciptakan deret angka sebagai batas perulangan. Buka **[Python Quest Playground](https://herdianurdin.my.id/python-quest/#/playground)** dan jalankan kode ini:
+Di Python, `for` biasanya dipasangkan dengan fungsi `range()`, yang bertugas menciptakan deret angka sebagai batas perulangan. Buka **[Python Quest Playground](/python-playground)** dan jalankan kode ini:
 
 ```python
 # Komputer akan mengulang kode di bawahnya sebanyak 5 kali
@@ -106,7 +106,7 @@ Mari kita padukan ilmu Bab 8 (If-Else) dengan Bab 9 (While Loop & Break).
 Bayangkan Anda sedang membuat sebuah sistem _Login_ keamanan. Anda ingin mesin terus-menerus menanyakan _password_ secara berulang-ulang tanpa henti, dan siklus tersebut **hanya** bisa dihancurkan (`break`) jika pengguna memasukkan _password_ yang benar.
 
 **Tugas Anda:**
-Saya telah membuat kerangka kodenya di bawah ini, tetapi saya sengaja mengosongkan beberapa perintah kuncinya (ditandai dengan `___`). Lengkapilah kode tersebut di **[Python Quest Playground](https://herdianurdin.my.id/python-quest/#/playground)**!
+Saya telah membuat kerangka kodenya di bawah ini, tetapi saya sengaja mengosongkan beberapa perintah kuncinya (ditandai dengan `___`). Lengkapilah kode tersebut di **[Python Quest Playground](/python-playground)**!
 
 ```python
 # 'while True' akan menciptakan perulangan waktu abadi (Infinite Loop)

@@ -148,7 +148,7 @@ else:                # Ini juga diabaikan
 Mari kita gabungkan ilmu dari Bab 5 (Input), Bab 6 (Variabel/Tipe Data), dan materi Pengkondisian ini ke dalam studi kasus nyata. Sebagai tenaga pengajar, setiap akhir semester saya selalu berhadapan dengan logika pengelompokan nilai siswa berdasarkan batas Kriteria Ketuntasan Minimal (KKM).
 
 **Tugas Anda:**
-Buatlah **Aplikasi Penilai KKM Sekolah** di **[Python Quest Playground](https://herdianurdin.my.id/python-quest/#/playground)**.
+Buatlah **Aplikasi Penilai KKM Sekolah** di **[Python Quest Playground](/python-playground)**.
 
 1. Program harus meminta _input_ **Nama Siswa** (Ingat, ini tipe data Teks/String).
 2. Program meminta _input_ **Nilai Akhir**. (Wajib diubah menjadi angka dengan pembungkus `int()` atau `float()`!).
@@ -158,7 +158,7 @@ Buatlah **Aplikasi Penilai KKM Sekolah** di **[Python Quest Playground](https://
    - Jika nilai `>= 75`, cetak: `"[Nama Siswa], Anda mendapat predikat C (Lulus KKM)."`
    - Jika nilainya di bawah 75 (Gunakan penutup `else`), cetak: `"Mohon maaf [Nama Siswa], Anda harus mengikuti Remedial."`
 
-Susun kodenya di **[Python Quest Playground](https://herdianurdin.my.id/python-quest/#/playground)**. Hati-hati dengan **spasi (indentasi)** Anda! Jika program berjalan mulus, mengelompokkan nilai dengan benar, dan bebas dari _IndentationError_, _copy_ mahakarya Anda dan _paste_ di kolom komentar!
+Susun kodenya di **[Python Quest Playground](/python-playground)**. Hati-hati dengan **spasi (indentasi)** Anda! Jika program berjalan mulus, mengelompokkan nilai dengan benar, dan bebas dari _IndentationError_, _copy_ mahakarya Anda dan _paste_ di kolom komentar!
 
 _(Artikel ini adalah Bagian ke-8 dari Seri Fundamental Python)._
 

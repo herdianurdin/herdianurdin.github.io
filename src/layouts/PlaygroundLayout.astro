@@ -1,0 +1,33 @@
+---
+// src/layouts/PlaygroundLayout.astro
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/inter/900.css";
+import "@fontsource/fira-code/400.css";
+import "@fontsource/fira-code/700.css";
+import "../styles/global.css";
+
+import SeoHead from "../components/SeoHead.astro";
+
+export interface Props {
+  title: string;
+  description: string;
+  language?: "id" | "en";
+}
+
+const { title, description, language = "id" } = Astro.props;
+---
+
+<html lang={language}>
+  <head>
+    <SeoHead title={title} description={description} language={language} />
+  </head>
+  <body
+    class="h-screen w-full bg-neutral-900 text-white font-sans selection:bg-[#c6ff00] selection:text-black antialiased flex flex-col overflow-hidden"
+  >
+    <!-- Navigasi dihapus untuk layout super minimalis -->
+    <main class="flex-1 flex flex-col w-full h-full overflow-hidden relative">
+      <slot />
+    </main>
+  </body>
+</html>

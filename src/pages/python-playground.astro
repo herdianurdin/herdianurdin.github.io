@@ -1,0 +1,134 @@
+---
+// src/pages/python-playground.astro
+
+import PlaygroundLayout from "../layouts/PlaygroundLayout.astro";
+import CodeEditor from "../components/playground/CodeEditor.astro";
+import Terminal from "../components/playground/Terminal.astro";
+import PlaygroundModals from "../components/playground/PlaygroundModals.astro"; // Komponen Modal
+
+// 1. REVISI SEO: String dipotong agar SeoHead.astro hanya menambahkan nama domain
+const seoTitle = "Python Web Playground";
+const seoDescription =
+  "Lingkungan eksekusi Python native di browser. Mendukung multi-file import dan terminal interaktif.";
+---
+
+<PlaygroundLayout title={seoTitle} description={seoDescription}>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css"
+  />
+  <script
+    is:inline
+    src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"
+  ></script>
+  <script
+    is:inline
+    src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"
+  ></script>
+
+  <script
+    is:inline
+    src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js"></script>
+  <script
+    is:inline
+    src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt-stdlib.js"
+  ></script>
+
+  <!-- HEADER -->
+  <header
+    class="bg-black border-b-4 border-[#00e5ff] px-6 py-4 flex justify-between items-center shrink-0 z-20"
+  >
+    <a
+      href="/"
+      class="text-white font-black text-lg md:text-xl uppercase hover:text-[#00e5ff] transition-colors tracking-tighter"
+    >
+      <div class="flex items-center gap-2">
+        <svg
+          class="w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          ><path
+            stroke-linecap="square"
+            stroke-linejoin="miter"
+            stroke-width="3"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg
+        >
+        <div>
+          HERDIANURDIN.<span class="text-[#c6ff00]">MY.ID</span>
+        </div>
+      </div>
+    </a>
+    <h1
+      class="text-white font-bold text-xs md:text-sm uppercase tracking-widest hidden sm:block border-2 border-white px-3 py-1 bg-neutral-900"
+    >
+      PYTHON <span class="text-[#c6ff00]">PLAYGROUND</span>
+    </h1>
+  </header>
+
+  <!-- AREA KERJA -->
+  <div
+    class="flex flex-1 flex-col lg:flex-row overflow-hidden p-4 md:p-8 gap-6 md:gap-8 bg-neutral-900"
+  >
+    <CodeEditor />
+    <Terminal />
+  </div>
+
+  <!-- MEMUAT KOMPONEN MODAL -->
+  <PlaygroundModals />
+
+  <!-- CSS KHUSUS HALAMAN INI -->
+  <style is:global>
+    .CodeMirror {
+      font-family: "Fira Code", monospace;
+      font-size: 15px;
+      height: 100% !important;
+    }
+    .CodeMirror-gutters {
+      border-right: 2px solid #444 !important;
+      background-color: #282a36 !important;
+    }
+    ::-webkit-scrollbar {
+      width: 14px;
+      height: 14px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1e1e1e;
+      border-left: 2px solid #fff;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #c6ff00;
+      border: 2px solid #1e1e1e;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00e5ff;
+    }
+
+    .terminal-input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-family: inherit;
+      font-size: inherit;
+      width: 60%;
+      margin-left: 8px;
+      border-bottom: 2px solid #c6ff00;
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+
+  <!-- MEMUAT LOGIKA APLIKASI (Otomatis dipaketkan oleh Vite) -->
+  <script src="../scripts/python-playground.js"></script>
+</PlaygroundLayout>

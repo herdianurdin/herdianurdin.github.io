@@ -1,0 +1,74 @@
+---
+// src/components/playground/PlaygroundModals.astro
+---
+
+<!-- MODAL: TAMBAH/RENAME FILE -->
+<div
+  id="file-modal"
+  class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4"
+>
+  <div
+    class="bg-neutral-900 border-4 border-white shadow-[8px_8px_0px_0px_#00e5ff] p-6 w-full max-w-sm flex flex-col gap-4"
+  >
+    <h2
+      id="modal-title"
+      class="text-xl font-black text-white uppercase tracking-tight"
+    >
+      Tambah Modul
+    </h2>
+    <div class="flex flex-col gap-1">
+      <input
+        type="text"
+        id="modal-input"
+        class="w-full border-4 border-white bg-black p-2 font-mono text-white focus:outline-none focus:border-[#c6ff00] placeholder-neutral-600"
+        placeholder="nama_modul.py"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <p id="modal-error" class="text-[#ff0055] font-bold text-xs hidden"></p>
+    </div>
+    <div class="flex justify-end gap-2 mt-2">
+      <button
+        id="modal-cancel"
+        class="px-4 py-2 bg-black text-white font-bold border-4 border-white hover:bg-neutral-800 transition-colors uppercase text-sm"
+        >Batal</button
+      >
+      <button
+        id="modal-save"
+        class="px-4 py-2 bg-[#c6ff00] text-black font-black border-4 border-white hover:bg-white transition-colors uppercase text-sm"
+        >Simpan</button
+      >
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: KONFIRMASI HAPUS -->
+<div
+  id="delete-modal"
+  class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4"
+>
+  <div
+    class="bg-neutral-900 border-4 border-[#ff0055] shadow-[8px_8px_0px_0px_#ff0055] p-6 w-full max-w-sm flex flex-col gap-4"
+  >
+    <h2 class="text-xl font-black text-white uppercase tracking-tight">
+      Hapus Modul?
+    </h2>
+    <p
+      id="delete-modal-text"
+      class="text-neutral-300 font-mono text-sm leading-relaxed"
+    >
+    </p>
+    <div class="flex justify-end gap-2 mt-2">
+      <button
+        id="delete-cancel"
+        class="px-4 py-2 bg-black text-white font-bold border-4 border-white hover:bg-neutral-800 transition-colors uppercase text-sm"
+        >Batal</button
+      >
+      <button
+        id="delete-confirm"
+        class="px-4 py-2 bg-[#ff0055] text-white font-black border-4 border-white hover:bg-red-500 transition-colors uppercase text-sm"
+        >Hapus</button
+      >
+    </div>
+  </div>
+</div>
