@@ -23,10 +23,12 @@ const { title, description, language = "id" } = Astro.props;
     <SeoHead title={title} description={description} language={language} />
   </head>
   <body
-    class="h-screen w-full bg-neutral-900 text-white font-sans selection:bg-[#c6ff00] selection:text-black antialiased flex flex-col overflow-hidden"
+    class="h-dvh w-full bg-neutral-900 text-white font-sans selection:bg-[#c6ff00] selection:text-black antialiased flex flex-col overflow-x-hidden lg:overflow-hidden"
   >
-    <!-- Navigasi dihapus untuk layout super minimalis -->
-    <main class="flex-1 flex flex-col w-full h-full overflow-hidden relative">
+    <!-- main diubah menjadi overflow-y-auto agar bisa digulir saat di HP, tapi tetap terkunci (hidden) di layar besar (lg) -->
+    <main
+      class="flex-1 flex flex-col w-full h-full relative overflow-y-auto lg:overflow-hidden"
+    >
       <slot />
     </main>
   </body>

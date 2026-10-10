@@ -72,10 +72,16 @@ const seoDescription =
 
   <!-- AREA KERJA -->
   <div
-    class="flex flex-1 flex-col lg:flex-row overflow-hidden p-4 md:p-8 gap-6 md:gap-8 bg-neutral-900"
+    class="flex flex-1 flex-col lg:flex-row overflow-y-auto lg:overflow-hidden p-4 md:p-8 gap-6 md:gap-8 bg-neutral-900"
   >
-    <CodeEditor />
-    <Terminal />
+    <!-- Menambahkan min-h-[400px] pada HP agar editor tidak gepeng saat keyboard muncul -->
+    <div class="flex-1 flex min-h-[400px] lg:min-h-0">
+      <CodeEditor />
+    </div>
+    <!-- Terminal juga diberikan tinggi minimum di HP -->
+    <div class="flex-1 flex min-h-[300px] lg:min-h-0">
+      <Terminal />
+    </div>
   </div>
 
   <!-- MEMUAT KOMPONEN MODAL -->
