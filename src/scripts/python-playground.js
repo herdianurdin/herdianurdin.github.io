@@ -66,6 +66,11 @@ document.addEventListener("DOMContentLoaded", () => {
   editor.setSize("100%", "100%");
   editor.setValue(vfs[activeTab]);
 
+  const cmTextarea = document.querySelector(".CodeMirror textarea");
+  if (cmTextarea) {
+    cmTextarea.setAttribute("aria-label", "Input Editor Kode Python");
+  }
+
   function renderTabs() {
     tabsContainer.innerHTML = "";
 
