@@ -5,6 +5,7 @@ pubDate: 2026-10-07T09:00:00Z
 coverImage: "/images/dark-reality-of-google-play-ecosystem.webp"
 tags: ["journal", "google-play", "aso", "mindset", "indie-developer"]
 isDraft: false
+idSlug: "realitas-gelap-ekosistem-google-play"
 ---
 
 Long before I built the `herdianurdin.my.id` blog, newly released this October 2026, I navigated the dark alleys of internet monetization. A long discussion with a college friend in 2023—right before I graduated—opened my eyes to the brutal reality behind the Google Play Console.

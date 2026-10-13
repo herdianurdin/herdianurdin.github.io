@@ -5,6 +5,7 @@ pubDate: 2026-10-01T09:56:00Z
 coverImage: "/images/perjalanan-android-developer-indonesia.webp"
 tags: ["solo-developer", "android", "google-play", "jurnal", "kotlin"]
 isDraft: false
+enSlug: "indonesian-solo-android-developer-journey"
 ---
 
 Bertahan sebagai _solo developer_ di ekosistem Google Play bukanlah tentang siapa yang bisa membuat aplikasi paling canggih dalam semalam. Ini adalah permainan daya tahan, konsistensi pemeliharaan kode, dan kemampuan menelan ego saat berhadapan dengan penolakan algoritma.

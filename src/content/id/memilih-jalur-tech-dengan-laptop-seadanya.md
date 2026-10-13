@@ -5,6 +5,7 @@ pubDate: 2026-10-07T16:00:00+07:00
 coverImage: "/images/quarter-life-crisis-tech-path.webp"
 tags: ["jurnal", "software-engineer", "kampus-merdeka", "mindset", "kehidupan"]
 isDraft: false
+enSlug: "choosing-tech-path-low-end-laptop"
 ---
 
 Di tahun 2022, saat kami menginjak semester 7, sebuah diskusi krisis eksistensial meledak di ruang sekretariat BEM Fakultas Teknik. Di luar ruangan, suara tawa mahasiswa lain yang sedang asyik "mabar" menggema di lorong kampus tanpa beban. Namun di dalam ruangan itu, saya dan dua orang teman dihadapkan pada realitas yang menakutkan: status mahasiswa kami akan segera _expired_, modal kuliah yang keluar sudah sangat banyak, namun _skill_ kami untuk menghadapi dunia industri masih nol besar.

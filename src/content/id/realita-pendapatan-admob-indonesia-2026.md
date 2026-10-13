@@ -3,6 +3,7 @@ title: "Bongkar Realita AdMob Indonesia 2026: Dari Rp14 Ribu Menjadi Rp1,2 Juta 
 description: "Membongkar data asli penghasilan AdMob Indonesia dari 1.500 tayangan per hari. Studi kasus nyata eCPM, strategi ASO, kegagalan reskin, dan celah aturan Play Store."
 pubDate: 2026-10-12T08:00:00+07:00
 coverImage: "/images/realita-pendapatan-admob-indonesia-2026.webp"
+enSlug: "admob-indonesia-revenue-reality-2026"
 tags:
   [
     "admob-indonesia",

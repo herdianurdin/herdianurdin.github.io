@@ -5,6 +5,7 @@ pubDate: 2026-10-04T08:00:00Z
 coverImage: "/images/coding-mindset.webp"
 tags: ["jurnal", "mindset", "algoritma", "sdlc", "pengembangan-diri"]
 isDraft: false
+enSlug: "the-impact-of-coding-on-life"
 ---
 
 Pada dasarnya, saya adalah individu yang tidak sistematis. Selama bertahun-tahun, saya menjalani hidup dengan prinsip "mengalir saja" dan mengikuti aturan yang ada tanpa pernah memikirkan proyeksi jauh ke depan. Pola pikir ini mendominasi keseharian saya sebelum akhirnya bersinggungan dengan dunia algoritma dan pemrograman dasar.

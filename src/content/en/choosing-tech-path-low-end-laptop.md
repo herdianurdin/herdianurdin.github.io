@@ -12,6 +12,7 @@ tags:
     "low-end-laptop",
   ]
 isDraft: false
+idSlug: "memilih-jalur-tech-dengan-laptop-seadanya"
 ---
 
 If you are a university student facing a quarter-life crisis and wondering how to start a **software engineering career** with a low-end laptop, you are not alone.

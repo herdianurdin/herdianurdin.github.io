@@ -5,6 +5,7 @@ pubDate: 2026-10-07T09:00:00Z
 coverImage: "/images/realitas-gelap-ekosistem-google-play.webp"
 tags: ["jurnal", "google-play", "aso", "mindset", "indie-developer"]
 isDraft: false
+enSlug: "dark-reality-of-google-play-ecosystem"
 ---
 
 Jauh sebelum saya membangun blog `herdianurdin.my.id` yang baru rilis di bulan Oktober 2026 ini, saya sempat menelusuri lorong gelap ekosistem pencarian uang di internet. Sebuah diskusi panjang dengan teman kampus pada tahun 2023—tepat sebelum saya lulus—membuka mata saya tentang brutalnya realitas di balik layar Google Play Console.

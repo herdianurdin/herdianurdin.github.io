@@ -5,6 +5,7 @@ pubDate: 2026-10-05T10:00:00Z
 coverImage: "/images/the-reality-of-being-a-programmer.webp"
 tags: ["journal", "software-engineer", "opinion", "mindset", "beginner"]
 isDraft: false
+idSlug: "realitas-menjadi-programmer"
 ---
 
 If you plan to dive into the world of _software engineering_, prepare yourself to face a technical reality that is rarely discussed: you must build the mental endurance to read.

@@ -5,6 +5,7 @@ pubDate: 2026-10-06T10:00:00Z
 coverImage: "/images/etika-software-dan-pembajakan.webp"
 tags: ["jurnal", "opini", "open-source", "indie-developer", "mindset"]
 isDraft: false
+enSlug: "software-ethics-and-piracy"
 ---
 
 Menjadi seorang _software engineer_ tidak hanya merombak cara saya berpikir secara logis, tetapi juga menghancurkan paradigma lama saya tentang hak kekayaan intelektual.

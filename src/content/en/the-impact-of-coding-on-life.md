@@ -5,6 +5,7 @@ pubDate: 2026-10-04T08:00:00Z
 coverImage: "/images/coding-mindset.webp"
 tags: ["journal", "mindset", "algorithms", "sdlc", "self-improvement"]
 isDraft: false
+idSlug: "pengaruh-coding-dalam-kehidupan"
 ---
 
 Fundamentally, I have always been an unsystematic individual. For years, I navigated life simply by "going with the flow" and following existing rules without ever projecting far into the future. This unstructured mindset dominated my daily life before I finally crossed paths with the world of basic algorithms and programming.

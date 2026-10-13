@@ -5,6 +5,7 @@ pubDate: 2026-10-05T10:00:00Z
 coverImage: "/images/realitas-menjadi-programmer.webp"
 tags: ["jurnal", "software-engineer", "opini", "mindset", "pemula"]
 isDraft: false
+enSlug: "the-reality-of-being-a-programmer"
 ---
 
 Jika Anda berencana terjun ke dunia _software engineering_, bersiaplah untuk menghadapi satu realitas teknis yang jarang dibicarakan: Anda harus memiliki ketahanan mental untuk membaca.

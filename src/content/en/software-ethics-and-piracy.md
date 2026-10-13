@@ -5,6 +5,7 @@ pubDate: 2026-10-06T10:00:00Z
 coverImage: "/images/software-ethics-and-piracy.webp"
 tags: ["journal", "opinion", "open-source", "indie-developer", "mindset"]
 isDraft: false
+idSlug: "etika-software-dan-pembajakan"
 ---
 
 Becoming a _software engineer_ didn't just overhaul how I think logically; it also shattered my old paradigm regarding intellectual property.

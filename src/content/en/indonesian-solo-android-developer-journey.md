@@ -5,6 +5,7 @@ pubDate: 2026-10-01T09:56:00Z
 coverImage: "/images/indonesian-solo-android-developer-journey.webp"
 tags: ["solo-developer", "android", "google-play", "journal", "kotlin"]
 isDraft: false
+idSlug: "perjalanan-android-developer-indonesia"
 ---
 
 Surviving as a _solo developer_ in the Google Play ecosystem is not about who can build the most advanced application overnight. It is a game of endurance, consistent code maintenance, and the ability to swallow your ego when faced with algorithmic rejections.
