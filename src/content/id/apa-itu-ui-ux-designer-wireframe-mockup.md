@@ -23,6 +23,8 @@ Namun, bagaimana praktiknya jika Anda adalah seorang **Solo Developer**? Di arti
 
 ## Menganalogikan UI dan UX: Nasi Goreng dan Motor Sport
 
+![Ilustrasi perbedaan UI dan UX menggunakan analogi nasi goreng dan orang makan bahagia](/images/analogi-nasi-goreng.webp)
+
 Mari kita luruskan dulu perbedaan fundamental dari UI dan UX menggunakan analogi kehidupan sehari-hari, agar Anda tidak pusing dengan istilah teknis.
 
 **UI (User Interface) adalah "Plating" atau Tampilan Luar.**
@@ -35,9 +37,9 @@ Analogi lain: Bayangkan sebuah motor _sport_ dengan _fairing_ aerodinamis super 
 
 Singkatnya: **UX memastikan aplikasi Anda memecahkan masalah dan nyaman dipakai, sementara UI memastikan aplikasi tersebut menawan untuk dipandang.** Keduanya harus berjalan beriringan.
 
-![Ilustrasi perbedaan UI dan UX menggunakan analogi nasi goreng dan orang makan bahagia](/images/analogi-nasi-goreng.webp)
-
 ## Bahaya Langsung "Ngoding" dan Evolusi Desain yang Mengalir
+
+![Ilustrasi programmer stres yang langsung ngoding tanpa merancang desain wireframe](/images/ilustrasi-programmer-stress-ngoding.webp)
 
 Banyak _programmer_ pemula yang meremehkan proses desain. _"Ah, buat apa gambar-gambar dulu, mending langsung buka Android Studio!"_
 
@@ -67,17 +69,15 @@ Bisa Anda lihat pada gambar di atas:
 - Mengalir ke **Wireframe**, bentuk digitalnya mulai terlihat. Teks Arab (_Zul-Jalali wal-Ikram_) mulai dimasukkan untuk mengetes porsi ruang layar, namun elemen lain masih berupa kotak silang tanpa warna.
 - Bermuara di **Mockup**, visualnya hidup. Warna hijau disuntikkan, ikon _Material Design_ (suara, getar, reset) dipasang, dan _stroke_ (garis batas) abu-abu mempertegas lingkaran tasbih.
 
-![Ilustrasi programmer stres yang langsung ngoding tanpa merancang desain wireframe](/images/ilustrasi-programmer-stress-ngoding.webp)
-
 ## Studi Kasus Solo Developer: Merumuskan UX Lewat Analisis Kompetitor
+
+![Ilustrasi meriset aplikasi kompetitor yang penuh iklan dan merancang blueprint aplikasi bersih](/images/ilustrasi-riset-aplikasi-berantakan.webp)
 
 Teori memang indah, tapi realita menuntut kecepatan. Pada akhir 2023, tiga minggu sebelum saya mulai mengabdi sebagai guru, saya menantang diri sendiri untuk mengembangkan aplikasi keagamaan dari nol hingga rilis dalam waktu dua minggu.
 
 Sebagai _Solo Developer_, saya tidak punya waktu menyebar kuesioner _UX Research_. Sebagai gantinya, saya menggunakan jurus **Analisis Kompetitor**. Saya mengunduh aplikasi Asmaul Husna yang bertebaran di Play Store dan menganalisis penyakit utamanya.
 
 Saya menemukan _pain point_ terbesar pengguna: Aplikasi pesaing sangat berat, antarmukanya kaku, dan yang paling mengecewakan, **banyak iklan yang kurang pantas bermunculan**. Ini sangat menghancurkan _User Experience_ untuk sebuah aplikasi ibadah.
-
-![Ilustrasi meriset aplikasi kompetitor yang penuh iklan dan merancang blueprint aplikasi bersih](/images/ilustrasi-riset-aplikasi-berantakan.webp)
 
 Dari masalah tersebut, lahirlah **[Asmaul Husna Arti dan Makna](https://play.google.com/store/apps/details?id=audio_dakwah.asmaul_husna_99.audio_belajar_asmaul_husna)**. Saya merumuskan UX-nya dengan prinsip: harus _offline-first_, ukurannya sangat ringan, simpel, dan bersih dari iklan yang tidak senonoh. Palet UI-nya saya balut dengan warna hijau yang merepresentasikan nuansa keindahan alam ciptaan Allah SWT.
 
