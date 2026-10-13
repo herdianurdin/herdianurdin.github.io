@@ -2,7 +2,7 @@
 title: "The Reality of AdMob Revenue in Indonesia (2026): From $1 to $80 a Month (Zero Promotion Cost)"
 description: "Unveiling real AdMob revenue data from Indonesia with 1,500 daily impressions. A true case study on eCPM, ASO strategy, reskin failures, and Play Store loopholes."
 pubDate: 2026-10-12T08:00:00+07:00
-coverImage: "/images/realita-pendapatan-admob-indonesia-2026.webp"
+coverImage: "/images/admob-indonesia-revenue-reality-2026.webp"
 idSlug: "realita-pendapatan-admob-indonesia-2026"
 tags:
   [

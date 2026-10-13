@@ -13,6 +13,7 @@ tags:
     "studi-kasus",
   ]
 isDraft: false
+enSlug: "what-is-ui-ux-designer-wireframe-mockup"
 ---
 
 Di dunia pengembangan produk digital, profesi **UI/UX Designer** sering kali disalahpahami sekadar sebagai "si tukang gambar" atau pembuat tampilan cantik. Padahal, di balik sebuah tombol sederhana, terdapat proses psikologi dan analisis mendalam untuk memecahkan masalah pengguna.
