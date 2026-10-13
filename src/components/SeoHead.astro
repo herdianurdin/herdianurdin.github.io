@@ -7,6 +7,8 @@ export interface Props {
   image?: string;
   isArticle?: boolean;
   language: "id" | "en";
+  enSlug?: string;
+  idSlug?: string;
 }
 
 const {
@@ -15,28 +17,49 @@ const {
   image = "/images/og-default.webp",
   isArticle = false,
   language,
+  enSlug,
+  idSlug
 } = Astro.props;
 
 const t = siteTranslation[language as keyof typeof siteTranslation];
-
 const domainName = siteConfig.url.replace(/^https?:\/\//, "");
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// URL Halaman Saat Ini
+const currentPath = Astro.url.pathname.replace(/\/$/, "");
+const canonicalURL = new URL(currentPath === "" ? "/" : currentPath, Astro.site);
+
+// LOGIKA HREFLANG PINTAR
+let alternatePath = "";
+let hasAlternate = false;
+
+if (isArticle) {
+  // Jika ini artikel, KITA HANYA membuat Hreflang alternatif JIKA slug pasangannya diisi di Frontmatter
+  if (language === "id" && enSlug) {
+    alternatePath = `/en/blog/${enSlug}`;
+    hasAlternate = true;
+  } else if (language === "en" && idSlug) {
+    alternatePath = `/blog/${idSlug}`;
+    hasAlternate = true;
+  }
+  // Jika artikel tidak punya pasangan terjemahan, hasAlternate tetap false
+} else {
+  // Jika ini halaman statis (Home, About, Playground), lakukan penggantian rute standar
+  hasAlternate = true;
+  const rawPath = language === "id"
+    ? `/en${Astro.url.pathname}`
+    : Astro.url.pathname.replace(/^\/en/, "");
+  alternatePath = rawPath === "" ? "/" : rawPath;
+}
 
 const alternateLang = language === "id" ? "en" : "id";
+const alternateURL = hasAlternate ? new URL(alternatePath, Astro.site) : null;
 
-// Memastikan replace tidak menghasilkan string kosong untuk root URL
-const rawAlternatePath = language === "id"
-  ? `/en${Astro.url.pathname}`
-  : Astro.url.pathname.replace(/^\/en/, "");
-const alternatePath = rawAlternatePath === "" ? "/" : rawAlternatePath;
+// x-default mengarah ke versi EN jika ada, jika tidak, kembali ke halaman saat ini
+const xDefaultURL = (language === "en" || (language === "id" && hasAlternate)) 
+  ? (language === "en" ? canonicalURL : alternateURL)
+  : canonicalURL;
 
-const alternateURL = new URL(alternatePath, Astro.site);
-
-// Menentukan bahasa fallback universal (x-default).
-// Direkomendasikan menggunakan bahasa Inggris ('en') sebagai fallback global.
-const xDefaultURL = language === "en" ? canonicalURL : alternateURL;
-
+// --- SCHEMA & LAINNYA ---
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -62,8 +85,6 @@ const articleSchema = isArticle
     }
   : null;
 
-const currentPath = Astro.url.pathname;
-// Mengecek URL dengan akurasi tinggi menggunakan Regex
 const isLegalPage = /^\/(en\/)?(privacy-policy|disclaimer|terms-of-service|about)\/?$/.test(currentPath);
 const shouldShowAds = siteConfig.googleAdsenseId && !isLegalPage;
 ---
@@ -72,13 +93,14 @@ const shouldShowAds = siteConfig.googleAdsenseId && !isLegalPage;
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>{title} | {domainName}</title>
 <meta name="description" content={description} />
-
 <meta name="google-site-verification" content="lw-c6ZH1h_WwhMgPtvg-uG6ZXuxprZ2GlVwY3oPFV7Q" />
 
-{/* SEO Multi-bahasa (Hreflang & Canonical) */}
+{/* SEO Multi-bahasa (Hreflang Dinamis & Aman dari 404) */}
 <link rel="canonical" href={canonicalURL} />
 <link rel="alternate" hreflang={language} href={canonicalURL} />
-<link rel="alternate" hreflang={alternateLang} href={alternateURL} />
+{hasAlternate && alternateURL && (
+  <link rel="alternate" hreflang={alternateLang} href={alternateURL} />
+)}
 <link rel="alternate" hreflang="x-default" href={xDefaultURL} />
 
 {/* Open Graph / Facebook / LinkedIn */}
@@ -97,14 +119,9 @@ const shouldShowAds = siteConfig.googleAdsenseId && !isLegalPage;
 
 {/* Schema.org JSON-LD */}
 <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
-{
-  isArticle && (
-    <script
-      type="application/ld+json"
-      set:html={JSON.stringify(articleSchema)}
-    />
-  )
-}
+{isArticle && (
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+)}
 
 {/* PWA & Favicon */}
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -122,24 +139,18 @@ const shouldShowAds = siteConfig.googleAdsenseId && !isLegalPage;
   <meta name="google-adsense-account" content={siteConfig.googleAdsenseId} />
   <script is:inline define:vars={{ adId: siteConfig.googleAdsenseId }}>
     let adsLoaded = false;
-
     const loadAdsense = () => {
       if (adsLoaded) return;
       adsLoaded = true;
-
       const script = document.createElement("script");
       script.src = `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adId}`;
       script.async = true;
       script.crossOrigin = "anonymous";
-      
       document.head.appendChild(script);
-      console.log("[Optimalisasi SEO] Skrip AdSense berhasil dimuat.");
     };
-
     window.addEventListener("scroll", loadAdsense, { once: true, passive: true });
     window.addEventListener("mousemove", loadAdsense, { once: true, passive: true });
     window.addEventListener("touchstart", loadAdsense, { once: true, passive: true });
-
     setTimeout(loadAdsense, 5000);
   </script>
   </>

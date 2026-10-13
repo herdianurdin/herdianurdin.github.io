@@ -18,6 +18,8 @@ const id = defineCollection({
       ),
     tags: z.array(z.string()).optional(),
     isDraft: z.boolean().default(false),
+    enSlug: z.string().optional(),
+    idSlug: z.string().optional(),
   }),
 });
 
@@ -36,6 +38,8 @@ const en = defineCollection({
       ),
     tags: z.array(z.string()).optional(),
     isDraft: z.boolean().default(false),
+    enSlug: z.string().optional(),
+    idSlug: z.string().optional(),
   }),
 });
 
