@@ -46,7 +46,7 @@ Many beginner _programmers_ underestimate the design process. _"Ah, what's the p
 
 Please, don't repeat my foolishness. Back then, when I first learned visual programming (in the era of Microsoft Visual Basic and Delphi), I did exactly that. Without thinking twice about layout design, I just _drag-and-dropped_ components and wrote code. The result? My app was a chaotic mess, unresponsive when the screen size changed, and the design hurt the eyes. Ultimately, I threw away all that code and completely rebuilt it from scratch, **after** forcing myself to make a rough design using... Microsoft PowerPoint!
 
-From that bitter experience, I realized that **[designing an app blueprint before you start coding](/en/blog/bab-3-cara-menulis-algoritma)** (both in terms of algorithms and design) will save us so much time from agonizing code revisions. To avoid ending up using PowerPoint like I did, a proper app design workflow should flow through these three stages:
+From that bitter experience, I realized that **[designing an app blueprint before you start coding](/blog/bab-3-cara-menulis-algoritma)** (both in terms of algorithms and design) will save us so much time from agonizing code revisions. To avoid ending up using PowerPoint like I did, a proper app design workflow should flow through these three stages:
 
 ### 1. Start with Paper (Paper Prototype)
 
