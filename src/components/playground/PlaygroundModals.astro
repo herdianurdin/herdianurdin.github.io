@@ -72,3 +72,111 @@
     </div>
   </div>
 </div>
+
+<!-- MODAL PANDUAN EDUKASI (SEO RESCUE KONTEN ADSENSE) -->
+<div
+  id="modal-guide"
+  class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden px-4"
+>
+  <div
+    class="bg-neutral-900 border-4 border-white shadow-[12px_12px_0px_0px_#00e5ff] w-full max-w-3xl max-h-[85vh] overflow-y-auto relative p-6 md:p-10"
+  >
+    <!-- Tombol Tutup -->
+    <button
+      onclick="document.getElementById('modal-guide').classList.add('hidden')"
+      class="absolute top-4 right-4 bg-white text-black border-4 border-black font-black w-10 h-10 flex justify-center items-center hover:bg-[#c6ff00] transition-colors shadow-[2px_2px_0px_0px_#000]"
+      aria-label="Tutup panduan"
+    >
+      X
+    </button>
+
+    <!-- KONTEN TEKS EDUKASI -->
+    <article
+      class="prose prose-invert prose-p:font-sans prose-p:text-neutral-300 prose-headings:font-black prose-headings:uppercase prose-a:text-[#c6ff00] max-w-none"
+    >
+      <h2
+        class="text-[#c6ff00] text-3xl mb-4 border-b-2 border-neutral-700 pb-4"
+      >
+        Dokumentasi & Laboratorium Interaktif
+      </h2>
+
+      <p>
+        Selamat datang di Python Web Playground, sebuah lingkungan laboratorium
+        koding komputasi awan yang dapat dijalankan tanpa instalasi. Alat ini
+        didesain sebagai pendamping modul pembelajaran <strong
+          >Fundamental Python: Belajar Algoritma dan Pemrograman Dasar Tanpa
+          Pusing Matematika</strong
+        >.
+      </p>
+
+      <h3>Mengapa Platform Ini Diperlukan?</h3>
+      <p>
+        Bagi pelajar sekolah menengah kejuruan dan pengembang perangkat lunak
+        pemula, rintangan awal terbesar dalam mempelajari pemrograman sering
+        kali bukan pada logikanya, melainkan pada tahap pengaturan lingkungan
+        kerja (<em>environment setup</em>). Masalah instalasi <em
+          >interpreter</em
+        >, bentrok jalur <em>path</em> pada sistem operasi, hingga spesifikasi memori
+        laptop yang kurang memadai sering kali menghambat proses pembelajaran di tahap
+        awal.
+      </p>
+
+      <p>
+        Melalui implementasi kompilator JavaScript (Skulpt) pada platform ini,
+        Anda tidak perlu khawatir tentang membebani <em>server</em> atau komputer
+        lokal. Segala bentuk kompilasi kode dan eksekusi algoritma dilakukan secara
+        langsung pada sisi <em>client</em>, sehingga memberikan kecepatan
+        respons secara seketika dan memastikan <em>User Experience</em> yang stabil.
+      </p>
+
+      <h3>Petunjuk Praktikum</h3>
+      <ol
+        class="font-mono bg-black p-4 border-2 border-white text-sm list-decimal list-inside space-y-3"
+      >
+        <li>
+          Gunakan panel <strong>Code Editor</strong> di sisi kiri untuk merancang
+          algoritma. Anda bisa mengimpor modul bawaan standar.
+        </li>
+        <li>
+          Tekan ikon eksekusi untuk memulai proses pembacaan <em>script</em>.
+        </li>
+        <li>
+          Bila ada <em>error</em> atau interaksi input data, silakan perhatikan respons
+          di jendela <strong>Terminal</strong> sebelah kanan.
+        </li>
+      </ol>
+
+      <h3>Rujukan Modul Akademik</h3>
+      <p>
+        Alat ini merupakan pelengkap ekosistem pembelajaran interaktif dari
+        situs web ini. Untuk memaksimalkan pengalaman praktik, sangat disarankan
+        bagi pengguna untuk merujuk dan mempelajari artikel pilar kami:
+      </p>
+
+      <!-- Penambahan Internal Link yang Diminta -->
+      <ul
+        class="font-sans text-neutral-300 list-disc list-inside space-y-2 my-4 p-4 border-l-4 border-[#c6ff00] bg-neutral-800"
+      >
+        <li>
+          <a
+            href="/blog/seri-fundamental-python-pemula/"
+            class="font-bold underline hover:text-white transition-colors"
+            title="Baca Seri Fundamental Python"
+          >
+            Seri Fundamental Python: Belajar Algoritma & Pemrograman Dasar
+          </a>
+        </li>
+      </ul>
+
+      <p
+        class="text-sm mt-8 p-4 bg-black border-l-4 border-[#00e5ff] text-neutral-400"
+      >
+        <em
+          >*Peringatan Teknis: Seluruh <em>state</em> terminal dan <em>cache</em
+          > modul berjalan murni di memori peramban (browser RAM). Jika Anda menyegarkan
+          (refresh) halaman, seluruh sesi kode akan diatur ulang ke kondisi awal.</em
+        >
+      </p>
+    </article>
+  </div>
+</div>

@@ -9,6 +9,7 @@ export interface Props {
   language: "id" | "en";
   enSlug?: string;
   idSlug?: string;
+  noindex?: boolean;
 }
 
 const {
@@ -18,7 +19,8 @@ const {
   isArticle = false,
   language,
   enSlug,
-  idSlug
+  idSlug,
+  noindex = false
 } = Astro.props;
 
 const t = siteTranslation[language as keyof typeof siteTranslation];
@@ -94,6 +96,7 @@ const shouldShowAds = siteConfig.googleAdsenseId && !isLegalPage;
 <title>{title} | {domainName}</title>
 <meta name="description" content={description} />
 <meta name="google-site-verification" content="lw-c6ZH1h_WwhMgPtvg-uG6ZXuxprZ2GlVwY3oPFV7Q" />
+{noindex && <meta name="robots" content="noindex, follow" />}
 
 {/* SEO Multi-bahasa (Hreflang Dinamis & Aman dari 404) */}
 <link rel="canonical" href={canonicalURL} />

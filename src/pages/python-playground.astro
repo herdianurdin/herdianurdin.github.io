@@ -4,15 +4,15 @@
 import PlaygroundLayout from "../layouts/PlaygroundLayout.astro";
 import CodeEditor from "../components/playground/CodeEditor.astro";
 import Terminal from "../components/playground/Terminal.astro";
-import PlaygroundModals from "../components/playground/PlaygroundModals.astro"; // Komponen Modal
+import PlaygroundModals from "../components/playground/PlaygroundModals.astro";
 
-// 1. REVISI SEO: String dipotong agar SeoHead.astro hanya menambahkan nama domain
 const seoTitle = "Python Web Playground";
 const seoDescription =
   "Lingkungan eksekusi Python native di browser. Mendukung multi-file import dan terminal interaktif.";
 ---
 
 <PlaygroundLayout title={seoTitle} description={seoDescription}>
+  {/* Preload resources... */}
   <link
     rel="preload"
     as="style"
@@ -45,7 +45,6 @@ const seoDescription =
     defer
     src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"
   ></script>
-
   <script
     is:inline
     defer
@@ -56,17 +55,17 @@ const seoDescription =
     src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt-stdlib.js"
   ></script>
 
-  <!-- HEADER -->
+  <!-- HEADER DENGAN TOMBOL PANDUAN BARU -->
   <header
-    class="bg-black border-b-4 border-[#00e5ff] px-6 py-4 flex justify-between items-center shrink-0 z-20"
+    class="bg-black border-b-4 border-[#00e5ff] px-4 md:px-6 py-4 flex justify-between items-center shrink-0 z-20"
   >
     <a
       href="/"
-      class="text-white font-black text-lg md:text-xl uppercase hover:text-[#00e5ff] transition-colors tracking-tighter"
+      class="text-white font-black text-base md:text-xl uppercase hover:text-[#00e5ff] transition-colors tracking-tighter"
     >
       <div class="flex items-center gap-2">
         <svg
-          class="w-5 h-5"
+          class="w-5 h-5 hidden sm:block"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -81,31 +80,41 @@ const seoDescription =
         </div>
       </div>
     </a>
-    <h1
-      class="text-white font-bold text-xs md:text-sm uppercase tracking-widest hidden sm:block border-2 border-white px-3 py-1 bg-neutral-900"
-    >
-      PYTHON <span class="text-[#c6ff00]">PLAYGROUND</span>
-    </h1>
+
+    <div class="flex items-center gap-4">
+      <!-- TOMBOL PANDUAN (Memanggil id modal-guide) -->
+      <button
+        onclick="document.getElementById('modal-guide').classList.remove('hidden')"
+        class="bg-[#c6ff00] text-black font-black text-xs md:text-sm px-3 py-1.5 border-2 border-white shadow-[2px_2px_0px_0px_#fff] hover:bg-white hover:translate-y-px hover:translate-x-px hover:shadow-none transition-all"
+        aria-label="Buka Panduan Edukasi"
+      >
+        📖 PANDUAN
+      </button>
+
+      <h1
+        class="text-white font-bold text-xs md:text-sm uppercase tracking-widest hidden lg:block border-2 border-white px-3 py-1 bg-neutral-900"
+      >
+        PYTHON <span class="text-[#c6ff00]">PLAYGROUND</span>
+      </h1>
+    </div>
   </header>
 
-  <!-- AREA KERJA -->
+  <!-- AREA KERJA IDE ASLI (Flex-basis utuh, tidak diganggu teks) -->
   <div
     class="flex flex-1 flex-col lg:flex-row overflow-y-auto lg:overflow-hidden p-4 md:p-8 gap-6 md:gap-8 bg-neutral-900"
   >
-    <!-- Menambahkan min-h-[400px] pada HP agar editor tidak gepeng saat keyboard muncul -->
     <div class="flex-1 flex min-h-[400px] lg:min-h-0">
       <CodeEditor />
     </div>
-    <!-- Terminal juga diberikan tinggi minimum di HP -->
     <div class="flex-1 flex min-h-[300px] lg:min-h-0">
       <Terminal />
     </div>
   </div>
 
-  <!-- MEMUAT KOMPONEN MODAL -->
+  <!-- MEMUAT KOMPONEN MODAL (TERMASUK KONTEN TEKS) -->
   <PlaygroundModals />
 
-  <!-- CSS KHUSUS HALAMAN INI -->
+  <!-- CSS KHUSUS -->
   <style is:global>
     .CodeMirror {
       font-family: "Fira Code", monospace;
@@ -131,7 +140,6 @@ const seoDescription =
     ::-webkit-scrollbar-thumb:hover {
       background: #00e5ff;
     }
-
     .terminal-input {
       background: transparent;
       border: none;
@@ -143,7 +151,6 @@ const seoDescription =
       margin-left: 8px;
       border-bottom: 2px solid #c6ff00;
     }
-
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
@@ -153,6 +160,5 @@ const seoDescription =
     }
   </style>
 
-  <!-- MEMUAT LOGIKA APLIKASI (Otomatis dipaketkan oleh Vite) -->
   <script src="../scripts/python-playground.js"></script>
 </PlaygroundLayout>
