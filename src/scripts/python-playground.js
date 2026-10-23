@@ -261,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     runBtn.disabled = true;
     runBtn.classList.add("opacity-75");
-    runText.innerText = "RUNNING";
+    runText.innerText = "MENJALANKAN";
     outputTerminal.textContent = "";
 
     Sk.configure({
@@ -280,7 +280,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } finally {
       runBtn.disabled = false;
       runBtn.classList.remove("opacity-75");
-      runText.innerText = "RUN";
+      runText.innerText = "JALANKAN";
     }
   });
 
