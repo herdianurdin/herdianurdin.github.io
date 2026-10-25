@@ -20,6 +20,14 @@ const id = defineCollection({
     isDraft: z.boolean().default(false),
     enSlug: z.string().optional(),
     idSlug: z.string().optional(),
+    faq: z
+      .array(
+        z.object({
+          q: z.string(), // Pertanyaan (Question)
+          a: z.string(), // Jawaban (Answer)
+        }),
+      )
+      .optional(),
   }),
 });
 
@@ -40,6 +48,14 @@ const en = defineCollection({
     isDraft: z.boolean().default(false),
     enSlug: z.string().optional(),
     idSlug: z.string().optional(),
+    faq: z
+      .array(
+        z.object({
+          q: z.string(), // Pertanyaan (Question)
+          a: z.string(), // Jawaban (Answer)
+        }),
+      )
+      .optional(),
   }),
 });
 

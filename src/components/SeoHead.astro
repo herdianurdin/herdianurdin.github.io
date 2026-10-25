@@ -10,6 +10,7 @@ export interface Props {
   enSlug?: string;
   idSlug?: string;
   noindex?: boolean;
+  faq?: { q: string; a: string }[];
 }
 
 const {
@@ -20,7 +21,8 @@ const {
   language,
   enSlug,
   idSlug,
-  noindex = false
+  noindex = false,
+  faq
 } = Astro.props;
 
 const t = siteTranslation[language as keyof typeof siteTranslation];
@@ -62,6 +64,21 @@ const xDefaultURL = (language === "en" || (language === "id" && hasAlternate))
   : canonicalURL;
 
 // --- SCHEMA & LAINNYA ---
+const faqSchema = faq && faq.length > 0
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faq.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.a,
+        },
+      })),
+    }
+  : null;
+
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -124,6 +141,10 @@ const shouldShowAds = siteConfig.googleAdsenseId && !isLegalPage;
 <script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
 {isArticle && (
   <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+)}
+{/* INJEKSI FAQ SCHEMA YANG TERLEWAT */}
+{faqSchema && (
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 )}
 
 {/* PWA & Favicon */}
