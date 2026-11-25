@@ -1,6 +1,4 @@
 ---
-// src/pages/python-playground.astro
-
 import PlaygroundLayout from "../layouts/PlaygroundLayout.astro";
 import CodeEditor from "../components/playground/CodeEditor.astro";
 import Terminal from "../components/playground/Terminal.astro";
@@ -12,50 +10,47 @@ const seoDescription =
 ---
 
 <PlaygroundLayout title={seoTitle} description={seoDescription}>
-  {/* Preload resources... */}
   <link
-    rel="preload"
-    as="style"
+    rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css"
-    onload="this.onload=null;this.rel='stylesheet'"
+    integrity="sha384-zaeBlB/vwYsDRSlFajnDd7OydJ0cWk+c2OWybl3eSUf6hW2EbhlCsQPqKr3gkznT"
+    crossorigin="anonymous"
   />
   <link
-    rel="preload"
-    as="style"
+    rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css"
-    onload="this.onload=null;this.rel='stylesheet'"
+    integrity="sha384-ccdJwIIg/K0Ab6aXF4MPACh7ckk61tvQFTrfkhXZEALgAETURNZIAuQLcS/aPbrM"
+    crossorigin="anonymous"
   />
-  <noscript>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/dracula.min.css"
-    />
-  </noscript>
   <script
     is:inline
     defer
     src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"
+    integrity="sha384-ZYmwuq4n2gOcNxMSiJ6jyTj+BbIrilr7p6dlq6q5nmSWKmsH9UU4K1qqjycMkfmR"
+    crossorigin="anonymous"
   ></script>
   <script
     is:inline
     defer
     src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"
+    integrity="sha384-Xy+2exU6lBoT4OpUOtnQb+cUpn+nlJQEHvRobWVtwz6wIsw4oNoO7xyd/l8rYgMy"
+    crossorigin="anonymous"
   ></script>
   <script
     is:inline
     defer
-    src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js"></script>
+    src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js"
+    integrity="sha384-xKdsXwmsmIOznHB5nMknv/xlle/iCeNcEabalNUx5oSJIBHdxM1Qfnb50Y/w1zRU"
+    crossorigin="anonymous"
+  ></script>
   <script
     is:inline
     defer
     src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt-stdlib.js"
+    integrity="sha384-b3ccRbwiT8uaTe6Waa6GHLF96Yp3wDxTEVKf885pMqeZUqj4hG2zY3rwMD7WmX1g"
+    crossorigin="anonymous"
   ></script>
 
-  <!-- HEADER DENGAN TOMBOL PANDUAN BARU -->
   <header
     class="bg-black border-b-4 border-[#00e5ff] px-4 md:px-6 py-4 flex justify-between items-center shrink-0 z-20"
   >
@@ -69,12 +64,14 @@ const seoDescription =
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
-          ><path
+        >
+          <path
             stroke-linecap="square"
             stroke-linejoin="miter"
             stroke-width="3"
-            d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg
-        >
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          ></path>
+        </svg>
         <div>
           HERDIANURDIN.<span class="text-[#c6ff00]">MY.ID</span>
         </div>
@@ -82,41 +79,43 @@ const seoDescription =
     </a>
 
     <div class="flex items-center gap-4">
-      <!-- TOMBOL PANDUAN (Memanggil id modal-guide) -->
       <button
-        onclick="document.getElementById('modal-guide').classList.remove('hidden')"
+        id="guide-open-btn"
+        type="button"
+        aria-haspopup="dialog"
+        aria-controls="modal-guide"
         class="bg-[#c6ff00] text-black font-black text-xs md:text-sm px-3 py-1.5 border-2 border-white shadow-[2px_2px_0px_0px_#fff] hover:bg-white hover:translate-y-px hover:translate-x-px hover:shadow-none transition-all"
         aria-label="Buka Panduan Edukasi"
       >
         📖 PANDUAN
       </button>
 
-      <h1
-        class="text-white font-bold text-xs md:text-sm uppercase tracking-widest hidden lg:block border-2 border-white px-3 py-1 bg-neutral-900"
-      >
-        PYTHON <span class="text-[#c6ff00]">PLAYGROUND</span>
-      </h1>
     </div>
   </header>
 
-  <!-- AREA KERJA IDE ASLI (Flex-basis utuh, tidak diganggu teks) -->
+  <div class="bg-neutral-900 px-4 md:px-8 pt-3">
+    <h1 class="text-white font-bold text-sm md:text-base uppercase tracking-widest">
+      PYTHON <span class="text-[#c6ff00]">PLAYGROUND</span>
+    </h1>
+  </div>
+
   <div
     class="flex flex-1 flex-col lg:flex-row overflow-y-auto lg:overflow-hidden p-4 md:p-8 gap-6 md:gap-8 bg-neutral-900"
   >
-    <div class="flex-1 flex min-h-[400px] lg:min-h-0">
+    <div class="flex-1 flex min-w-0 min-h-[400px] lg:min-h-0">
       <CodeEditor />
     </div>
-    <div class="flex-1 flex min-h-[300px] lg:min-h-0">
+    <div class="flex-1 flex min-w-0 min-h-[300px] lg:min-h-0">
       <Terminal />
     </div>
   </div>
 
-  <!-- MEMUAT KOMPONEN MODAL (TERMASUK KONTEN TEKS) -->
   <PlaygroundModals />
 
-  <!-- CSS KHUSUS -->
   <style is:global>
     .CodeMirror {
+      width: 100%;
+      min-width: 0;
       font-family: "Fira Code", monospace;
       font-size: 15px;
       height: 100% !important;

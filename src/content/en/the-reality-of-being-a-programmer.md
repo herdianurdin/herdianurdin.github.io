@@ -2,6 +2,7 @@
 title: "The Reality of Being a Programmer: Why Reading Code is Far More Important Than Writing It"
 description: "A survival guide for aspiring software engineers: from the illusion of generative AI speed, the importance of algorithmic foundations, reading technical documentation, to the value of internships."
 pubDate: 2026-10-05T10:00:00Z
+updatedDate: 2026-11-25
 coverImage: "/images/the-reality-of-being-a-programmer.webp"
 tags: ["journal", "software-engineer", "opinion", "mindset", "beginner"]
 isDraft: false
@@ -91,7 +92,7 @@ To be honest, I am a bit embarrassed discussing this part because I personally n
 **"Does a programmer have to be good at math?"**
 The answer is **No**, unless you specifically take the _Machine Learning_ or _Data Science_ path, which strictly requires an understanding of calculus and linear algebra.
 
-For the majority of _software engineering_ fields, you are only required to master **logic**. [As I previously discussed in my journal about the impact of coding on life](https://herdianurdin.my.id/en/blog/the-impact-of-coding-on-life/), in the realm of mathematics, you have to calculate from A to Z manually. In the programming world, you simply design the framework and rules, then let the computer's processor execute the rest.
+For the majority of _software engineering_ fields, you are only required to master **logic**. [As I previously discussed in my journal about the impact of coding on life](/en/blog/the-impact-of-coding-on-life/), in the realm of mathematics, you have to calculate from A to Z manually. In the programming world, you simply design the framework and rules, then let the computer's processor execute the rest.
 
 **"Does a programmer have to be fluent in English?"**
 The answer is **Absolutely, at least passively (reading comprehension).**

@@ -1,14 +1,15 @@
 ---
-// src/components/playground/PlaygroundModals.astro
+// Native dialogs provide modal focus handling and Escape-key dismissal.
 ---
 
 <!-- MODAL: TAMBAH/RENAME FILE -->
-<div
+<dialog
   id="file-modal"
-  class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4"
+  class="fixed inset-0 m-auto w-11/12 max-w-sm max-h-[calc(100dvh_-_2rem)] border-0 bg-transparent p-0"
+  aria-labelledby="modal-title"
 >
   <div
-    class="bg-neutral-900 border-4 border-white shadow-[8px_8px_0px_0px_#00e5ff] p-6 w-full max-w-sm flex flex-col gap-4"
+    class="bg-neutral-900 border-4 border-white shadow-[8px_8px_0px_0px_#00e5ff] p-6 w-full flex flex-col gap-4"
   >
     <h2
       id="modal-title"
@@ -17,84 +18,100 @@
       Tambah Modul
     </h2>
     <div class="flex flex-col gap-1">
+      <label for="modal-input" class="sr-only">Nama modul Python</label>
       <input
         type="text"
         id="modal-input"
-        class="w-full border-4 border-white bg-black p-2 font-mono text-white focus:outline-none focus:border-[#c6ff00] placeholder-neutral-600"
+        class="w-full border-4 border-white bg-black p-2 font-mono text-white focus:border-[#c6ff00] placeholder-neutral-600"
         placeholder="nama_modul.py"
         autocomplete="off"
         spellcheck="false"
+        aria-describedby="modal-error"
       />
-      <p id="modal-error" class="text-[#ff0055] font-bold text-xs hidden"></p>
+      <p
+        id="modal-error"
+        role="alert"
+        aria-live="assertive"
+        class="text-[#ff0055] font-bold text-xs hidden"
+      ></p>
     </div>
     <div class="flex justify-end gap-2 mt-2">
       <button
         id="modal-cancel"
+        type="button"
         class="px-4 py-2 bg-black text-white font-bold border-4 border-white hover:bg-neutral-800 transition-colors uppercase text-sm"
         >Batal</button
       >
       <button
         id="modal-save"
+        type="button"
         class="px-4 py-2 bg-[#c6ff00] text-black font-black border-4 border-white hover:bg-white transition-colors uppercase text-sm"
         >Simpan</button
       >
     </div>
   </div>
-</div>
+</dialog>
 
 <!-- MODAL: KONFIRMASI HAPUS -->
-<div
+<dialog
   id="delete-modal"
-  class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm px-4"
+  class="fixed inset-0 m-auto w-11/12 max-w-sm max-h-[calc(100dvh_-_2rem)] border-0 bg-transparent p-0"
+  aria-labelledby="delete-modal-title"
+  aria-describedby="delete-modal-text"
 >
   <div
-    class="bg-neutral-900 border-4 border-[#ff0055] shadow-[8px_8px_0px_0px_#ff0055] p-6 w-full max-w-sm flex flex-col gap-4"
+    class="bg-neutral-900 border-4 border-[#ff0055] shadow-[8px_8px_0px_0px_#ff0055] p-6 w-full flex flex-col gap-4"
   >
-    <h2 class="text-xl font-black text-white uppercase tracking-tight">
+    <h2
+      id="delete-modal-title"
+      class="text-xl font-black text-white uppercase tracking-tight"
+    >
       Hapus Modul?
     </h2>
     <p
       id="delete-modal-text"
       class="text-neutral-300 font-mono text-sm leading-relaxed"
-    >
-    </p>
+    ></p>
     <div class="flex justify-end gap-2 mt-2">
       <button
         id="delete-cancel"
+        type="button"
         class="px-4 py-2 bg-black text-white font-bold border-4 border-white hover:bg-neutral-800 transition-colors uppercase text-sm"
         >Batal</button
       >
       <button
         id="delete-confirm"
+        type="button"
         class="px-4 py-2 bg-[#ff0055] text-white font-black border-4 border-white hover:bg-red-500 transition-colors uppercase text-sm"
         >Hapus</button
       >
     </div>
   </div>
-</div>
+</dialog>
 
-<!-- MODAL PANDUAN EDUKASI (SEO RESCUE KONTEN ADSENSE) -->
-<div
+<!-- MODAL PANDUAN EDUKASI -->
+<dialog
   id="modal-guide"
-  class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden px-4"
+  class="fixed inset-0 m-auto w-11/12 max-w-3xl max-h-[85vh] border-0 bg-transparent p-0"
+  aria-labelledby="guide-modal-title"
 >
   <div
-    class="bg-neutral-900 border-4 border-white shadow-[12px_12px_0px_0px_#00e5ff] w-full max-w-3xl max-h-[85vh] overflow-y-auto relative p-6 md:p-10"
+    class="bg-neutral-900 border-4 border-white shadow-[12px_12px_0px_0px_#00e5ff] w-full max-h-[85vh] overflow-y-auto relative p-6 md:p-10"
   >
-    <!-- Tombol Tutup -->
     <button
-      onclick="document.getElementById('modal-guide').classList.add('hidden')"
+      id="guide-close-btn"
+      type="button"
       class="absolute top-4 right-4 bg-white text-black border-4 border-black font-black w-10 h-10 flex justify-center items-center hover:bg-[#c6ff00] transition-colors shadow-[2px_2px_0px_0px_#000]"
       aria-label="Tutup panduan"
     >
       X
     </button>
 
-    <!-- KONTEN TEKS EDUKASI -->
     <article
       class="prose prose-invert prose-p:font-sans prose-p:text-neutral-300 prose-headings:font-black prose-headings:uppercase prose-a:text-[#c6ff00] max-w-none"
     >
       <h2
+        id="guide-modal-title"
         class="text-[#c6ff00] text-3xl mb-4 border-b-2 border-neutral-700 pb-4"
       >
         Dokumentasi & Laboratorium Interaktif
@@ -138,13 +155,18 @@
           algoritma. Anda bisa mengimpor modul bawaan standar.
         </li>
         <li>
-          Tekan ikon eksekusi untuk memulai proses pembacaan <em>script</em>.
+          Tekan tombol <strong>Jalankan</strong> untuk memulai proses pembacaan <em>script</em>.
         </li>
         <li>
           Bila ada <em>error</em> atau interaksi input data, silakan perhatikan respons
           di jendela <strong>Terminal</strong> sebelah kanan.
         </li>
       </ol>
+
+      <p class="text-sm border-l-4 border-[#ff0055] bg-black p-4 text-neutral-300">
+        Untuk menjaga browser tetap responsif, setiap eksekusi dibatasi maksimal
+        10 detik dan output terminal dibatasi 100.000 karakter.
+      </p>
 
       <h3>Rujukan Modul Akademik</h3>
       <p>
@@ -153,7 +175,6 @@
         bagi pengguna untuk merujuk dan mempelajari artikel pilar kami:
       </p>
 
-      <!-- Penambahan Internal Link yang Diminta -->
       <ul
         class="font-sans text-neutral-300 list-disc list-inside space-y-2 my-4 p-4 border-l-4 border-[#c6ff00] bg-neutral-800"
       >
@@ -179,4 +200,4 @@
       </p>
     </article>
   </div>
-</div>
+</dialog>

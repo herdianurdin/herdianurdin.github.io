@@ -1,63 +1,47 @@
-// src/content.config.ts
 import { defineCollection } from "astro:content";
 import { z } from "astro/zod";
 import { glob } from "astro/loaders";
 
-// Definisi koleksi bahasa Indonesia
+const contentIdSchema = z.string().regex(
+  /^[a-z0-9]+(?:-[a-z0-9]+)*(?:\/[a-z0-9]+(?:-[a-z0-9]+)*)*$/,
+  "Translation slug must match a lowercase kebab-case content ID.",
+);
+
+const postSchema = z.object({
+  title: z.string(),
+  description: z.string().min(10),
+  pubDate: z.date(),
+  updatedDate: z.date().optional(),
+  coverImage: z
+    .string()
+    .default(
+      "https://placehold.co/1200x600/000000/c6ff00?text=Journal+IT+|+herdianurdin.my.id",
+    ),
+  tags: z.array(z.string()).optional(),
+  isDraft: z.boolean().default(false),
+  enSlug: contentIdSchema.optional(),
+  idSlug: contentIdSchema.optional(),
+  faq: z
+    .array(
+      z.object({
+        q: z.string(),
+        a: z.string(),
+      }),
+    )
+    .optional(),
+}).refine(
+  (data) => !data.updatedDate || data.updatedDate >= data.pubDate,
+  { path: ["updatedDate"], message: "updatedDate cannot be earlier than pubDate." },
+);
+
 const id = defineCollection({
-  // Loader glob mencari semua file .md dan .mdx di folder id
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/id" }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string().min(10), // Sesuaikan batas karakter jika perlu
-    pubDate: z.date(),
-    coverImage: z
-      .string()
-      .default(
-        "https://placehold.co/1200x600/000000/c6ff00?text=Journal+IT+|+herdianurdin.my.id",
-      ),
-    tags: z.array(z.string()).optional(),
-    isDraft: z.boolean().default(false),
-    enSlug: z.string().optional(),
-    idSlug: z.string().optional(),
-    faq: z
-      .array(
-        z.object({
-          q: z.string(), // Pertanyaan (Question)
-          a: z.string(), // Jawaban (Answer)
-        }),
-      )
-      .optional(),
-  }),
+  schema: postSchema,
 });
 
-// Definisi koleksi bahasa Inggris
 const en = defineCollection({
-  // Loader glob mencari semua file .md dan .mdx di folder en
   loader: glob({ pattern: "**/*.{md,mdx}", base: "./src/content/en" }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string().min(10),
-    pubDate: z.date(),
-    coverImage: z
-      .string()
-      .default(
-        "https://placehold.co/1200x600/000000/c6ff00?text=Journal+IT+|+herdianurdin.my.id",
-      ),
-    tags: z.array(z.string()).optional(),
-    isDraft: z.boolean().default(false),
-    enSlug: z.string().optional(),
-    idSlug: z.string().optional(),
-    faq: z
-      .array(
-        z.object({
-          q: z.string(), // Pertanyaan (Question)
-          a: z.string(), // Jawaban (Answer)
-        }),
-      )
-      .optional(),
-  }),
+  schema: postSchema,
 });
 
-// Ekspor koleksi agar dikenali oleh Astro
 export const collections = { id, en };

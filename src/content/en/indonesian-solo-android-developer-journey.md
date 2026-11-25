@@ -2,6 +2,7 @@
 title: "The Reality of a Solo Android Developer: Surviving the Google Play Console Ecosystem"
 description: "A true story of a journey from a beginner blogger, through account bans, to building sustainable digital assets while working as a full-time teacher."
 pubDate: 2026-10-01T09:56:00Z
+updatedDate: 2026-11-25
 coverImage: "/images/indonesian-solo-android-developer-journey.webp"
 tags: ["solo-developer", "android", "google-play", "journal", "kotlin"]
 isDraft: false
@@ -25,6 +26,8 @@ The year 2020 was a turning point. Amid a financial crisis and the COVID-19 pand
 Desperate for direction, I opened my very first Google Play Console account. Blind to copyright rules and Google's strict policies, I released a _Flappy Bird_ clone using the original assets and characters. The result? A bug-ridden app, a barrage of copyright strikes, and ultimately, a permanent _ban_ on that account.
 
 > **First Technical Lesson:** Google Play leaves no room for asset negligence. This failure forced me to understand that _development_ is not just about writing code that compiles; it is about originality, licensing, and absolute compliance with the ecosystem's policies.
+
+For a broader reflection on licensing, piracy, and respecting developers' work, read [From Pirate to Developer](/en/blog/software-ethics-and-piracy/).
 
 ## The Pivot to Native Kotlin and Kampus Merdeka
 

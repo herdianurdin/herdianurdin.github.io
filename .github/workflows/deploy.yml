@@ -1,18 +1,15 @@
 name: Deploy Jurnal IT Astro ke GitHub Pages
 
-# Kapan skrip ini dijalankan?
 on:
   push:
-    branches: [main] # Pastikan branch utama Anda bernama 'main'
-  workflow_dispatch: # Mengizinkan eksekusi manual dari tombol di GitHub
+    branches: [main]
+  workflow_dispatch:
 
-# Izin yang diperlukan oleh GitHub Actions untuk mempublikasikan halaman
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Batalkan proses yang sedang berjalan jika ada push baru (hemat resource)
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -30,16 +27,16 @@ jobs:
           node-version: "24"
           cache: "npm"
 
-      - name: Menginstal Dependensi
-        run: npm install
+      - name: Menginstal Dependensi dari Lockfile
+        run: npm ci
 
-      - name: Kompilasi Astro (Membangun fail HTML statis)
+      - name: Pemeriksaan dan Build Astro
         run: npm run build
 
-      - name: Mengunggah Artifact (Hasil Build)
+      - name: Mengunggah Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist # Astro secara default menyimpan hasil build di folder 'dist'
+          path: ./dist
 
   deploy:
     needs: build

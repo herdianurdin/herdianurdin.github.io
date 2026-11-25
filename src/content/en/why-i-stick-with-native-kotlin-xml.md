@@ -34,7 +34,7 @@ However, the honeymoon phase ended quickly when I crashed into technical realiti
 1. **The Tragedy of Dependency Hell:** In the React Native ecosystem, the convenience of JavaScript is paid for with the infamous `node_modules` folder—a black hole that devours laptop storage. Whenever I tried to maintain an app after leaving it for a few months, I'd always find third-party libraries that were deprecated or causing fatal build errors due to version conflicts.
 2. **Bloated APK Size:** Flutter is indeed much more stable in performance compared to React Native. Unfortunately, the resulting APK size is massively bloated. A simple app that should be 3 MB can easily skyrocket to over 20 MB because Flutter has to bundle its own C++ rendering engine within the app.
 
-For my target market in Indonesia, a large file size is the number one reason users hit the _Uninstall_ button. As I mentioned in my **[AdMob Revenue Case Study](/en/blog/admob-indonesia-revenue-reality-2026)**, maintaining User Experience (UX) and app stability is the ultimate key if you want to survive long-term in this industry.
+For my target market in Indonesia, a large file size is the number one reason users hit the _Uninstall_ button. As I mentioned in my **[AdMob Revenue Case Study](/en/blog/admob-indonesia-revenue-reality-2026/)**, maintaining User Experience (UX) and app stability is the ultimate key if you want to survive long-term in this industry.
 
 ## Heartbreak with Jetpack Compose
 
@@ -56,7 +56,7 @@ Eventually, I returned to the classic combination: Native Kotlin and XML. This i
 
 ### 1. Instant UI Rendering and Zero Lags
 
-Writing UI layouts using XML in Android Studio feels like taking a deep breath of fresh air. The XML _Design Preview_ feature is incredibly lightweight and instantaneous without burdening the CPU. Even though XML has rigid structural limitations, these constraints actually force us to be more disciplined in designing component hierarchies—a principle that perfectly aligns with ideal **[UI/UX Design Theories](/en/blog/what-is-ui-ux-designer-wireframe-mockup)**.
+Writing UI layouts using XML in Android Studio feels like taking a deep breath of fresh air. The XML _Design Preview_ feature is incredibly lightweight and instantaneous without burdening the CPU. Even though XML has rigid structural limitations, these constraints actually force us to be more disciplined in designing component hierarchies—a principle that perfectly aligns with ideal **[UI/UX Design Theories](/en/blog/what-is-ui-ux-designer-wireframe-mockup/)**.
 
 ### 2. Strict APK Diet (Under 10 MB)
 

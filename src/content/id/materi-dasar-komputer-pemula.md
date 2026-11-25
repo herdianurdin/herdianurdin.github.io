@@ -2,6 +2,7 @@
 title: "Materi Dasar Komputer: Evolusi, OS, dan Literasi Digital Pemula"
 description: "Panduan dasar komputer untuk pemula dan siswa SMK. Pelajari sejarah komputer, sistem operasi, manajemen file, dan konsep dasar internet."
 pubDate: 2026-11-01T08:00:00+07:00
+updatedDate: 2026-11-25
 coverImage: "/images/materi-dasar-komputer-pemula-smk.webp"
 tags:
   ["dasar-komputer", "literasi-digital", "smk-rpl", "smk-tkj", "sistem-operasi"]
@@ -84,4 +85,4 @@ Karena menumpang di server milik perusahaan, keamanan datamu sangat bergantung p
 
 Dengan menguasai lima materi dasar di atas, literasi digitalmu kini sudah siap. Kamu telah memahami evolusi perangkat, batasan sistem operasi, cara mengelola _file_, hingga fondasi dasar internet.
 
-Di Modul 2 selanjutnya, kita akan meninggalkan perangkat lunak dan mulai membedah wujud fisik perangkat keras (_hardware_). Bersiaplah untuk mengenal "organ dalam" komputer sebelum kita merakitnya!
+Di Modul 2A selanjutnya, kita akan membahas Segitiga Sistem dan siklus kerja komputer. Lanjutkan ke [Modul 2A: Segitiga Sistem dan Siklus Input-Proses-Output](/blog/cara-kerja-komputer-siklus-input-proses-output/) sebelum membedah setiap komponen _hardware_ lebih rinci.

@@ -1,5 +1,4 @@
 ---
-// src/components/playground/CodeEditor.astro
 export interface Props {
   id?: string;
 }
@@ -12,13 +11,20 @@ const { id = "code-editor" } = Astro.props;
   <div
     class="bg-black flex border-b-4 border-white z-10 shrink-0 w-full justify-between overflow-hidden"
   >
-    <div class="flex overflow-x-auto no-scrollbar">
-      <div id="tabs-container" class="flex"></div>
+    <div class="flex overflow-x-auto no-scrollbar min-w-0">
+      <div
+        id="tabs-container"
+        class="flex"
+        role="group"
+        aria-label="Daftar file Python"
+      ></div>
 
       <button
         id="add-tab-btn"
-        class="px-4 py-2 bg-[#1e1e1e] text-white font-black border-r-4 border-white hover:bg-[#00e5ff] hover:text-black transition-colors shrink-0"
+        type="button"
+        aria-label="Tambah modul Python baru"
         title="Tambah Modul Baru"
+        class="px-4 py-2 bg-[#1e1e1e] text-white font-black border-r-4 border-white hover:bg-[#00e5ff] hover:text-black transition-colors shrink-0"
       >
         +
       </button>
@@ -26,19 +32,21 @@ const { id = "code-editor" } = Astro.props;
 
     <button
       id="run-btn"
+      type="button"
+      aria-controls="output-terminal"
       class="px-6 py-2 bg-[#c6ff00] text-black font-black uppercase hover:bg-white transition-colors flex items-center justify-center gap-2 cursor-pointer border-l-4 border-white shrink-0"
     >
       <svg
         class="w-5 h-5 hidden sm:block"
         fill="currentColor"
-        viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"><path d="M8 5v14l11-7z"></path></svg
       >
-      <span id="run-text">JALANKAN</span>
+      <span id="run-text" aria-live="polite" aria-atomic="true">JALANKAN</span>
     </button>
   </div>
 
   <div class="flex-1 w-full relative overflow-hidden">
-    <textarea id={id} style="display: none;" aria-label="Editor Kode Python"
-    ></textarea>
+    <textarea id={id} style="display: none;" aria-label="Editor kode Python"></textarea>
   </div>
 </div>

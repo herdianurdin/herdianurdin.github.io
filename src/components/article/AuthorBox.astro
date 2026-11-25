@@ -1,5 +1,4 @@
 ---
-// src/components/article/AuthorBox.astro
 import { siteConfig, siteTranslation } from "../../config/site";
 
 export interface Props {
@@ -7,9 +6,8 @@ export interface Props {
 }
 const { language } = Astro.props;
 
-// Ekstrak data berdasarkan properti bahasa
-const t = siteTranslation[language as keyof typeof siteTranslation];
-const homeUrl = language === "id" ? "/" : "/en/";
+const t = siteTranslation[language];
+const homeUrl = language === "id" ? "/" : "/en";
 ---
 
 <div

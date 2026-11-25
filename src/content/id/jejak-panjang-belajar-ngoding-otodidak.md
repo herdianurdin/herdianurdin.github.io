@@ -2,6 +2,7 @@
 title: "Pengalaman Belajar Coding Otodidak: Dari Warisan Delphi hingga Realita Era AI"
 description: "Kisah nyata belajar coding otodidak dari nol, lulusan terbaik bootcamp, merilis 15 aplikasi di Play Store, hingga tantangan menjadi programmer di era AI."
 pubDate: 2026-11-23T08:00:00+07:00
+updatedDate: 2026-11-25
 coverImage: "/images/perjalanan-belajar-ngoding-otodidak.webp"
 tags:
   [
@@ -55,6 +56,8 @@ Merasa mulai menemukan ritme di pembuatan aplikasi HP, saya melanjutkan langkah 
 Lucunya, tidak ada euforia berlebihan saat menyandang predikat tersebut. Di kepala saya justru muncul pertanyaan-pertanyaan sunyi: _Habis ini ke mana? Apakah perjalanannya cuma sampai di sini? Bakal kerja di tempat yang saya inginkan atau tidak?_
 
 Saya akhirnya memutuskan fokus mendalami pengembangan aplikasi Android dan membuka akun pengembang di **[Google Play Console](https://play.google.com/store/search?q=pub%3AHerdi%20Herdianurdin&c=apps)**. Alasannya cukup pragmatis: merilis aplikasi ke Play Store membuat karya saya bisa langsung diinstal dan dipakai orang banyak, tanpa perlu pusing memikirkan urusan _hosting_ dan _server_ web yang terasa terlalu luas saat itu. Saya tidak mau mengulangi kesalahan lama karena terlalu sering berpindah jalur.
+
+Untuk kisah yang lebih khusus tentang jatuh-bangun merilis dan memelihara aplikasi Android di Play Store, baca juga [perjalanan saya sebagai solo Android developer](/blog/perjalanan-android-developer-indonesia/).
 
 Hingga akhirnya lulus kuliah pada tahun **2023**, total ada **15 aplikasi** yang pernah saya bangun dan rilis. Merilis aplikasi menjadi hobi—semacam "mainan" orang dewasa untuk menyalurkan rasa penasaran dan berbagi hal bermanfaat.
 

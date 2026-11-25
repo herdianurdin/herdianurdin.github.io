@@ -1,21 +1,18 @@
 ---
-// src/components/ui/ArticleCard.astro
 import type { CollectionEntry } from "astro:content";
 import { siteTranslation } from "../../config/site";
 
 export interface Props {
-  // Menggunakan tipe data koleksi ID (bisa disesuaikan jika menerima campuran ID/EN)
   post: CollectionEntry<"id"> | CollectionEntry<"en">;
   language: "id" | "en";
 }
 
 const { post, language } = Astro.props;
-const siteConfigs = siteTranslation[language as keyof typeof siteTranslation];
+const siteConfigs = siteTranslation[language];
+const postUrl = language === "id"
+  ? `/blog/${post.id}/`
+  : `/en/blog/${post.id}/`;
 
-// Parameter URL menggunakan .id (Astro 5)
-const postUrl = language === "id" ? `/blog/${post.id}` : `/en/blog/${post.id}`;
-
-// Format tanggal dinamis berdasarkan bahasa
 const dateOptions: Intl.DateTimeFormatOptions = {
   year: "numeric",
   month: "long",
@@ -30,9 +27,6 @@ const formattedDate = post.data.pubDate.toLocaleDateString(
 <article
   class="border-4 border-white bg-black flex flex-col h-full hover:-translate-y-2 hover:shadow-[8px_8px_0px_0px_#c6ff00] transition-all duration-300"
 >
-  {
-    /* Gambar Cover (Perlindungan Zod memastikan properti ini sekarang selalu ada nilainya) */
-  }
   {
     post.data.coverImage && (
       <a
@@ -56,21 +50,16 @@ const formattedDate = post.data.pubDate.toLocaleDateString(
   }
 
   <div class="p-6 flex flex-col flex-grow">
-    {/* Meta: Tags */}
     <div class="flex flex-wrap gap-2 mb-4">
       {
-        post.data.tags
-          ?.slice(0, 2)
-          .map((tag: string) => (
-            <span class="bg-white text-black text-xs font-bold px-2 py-1 uppercase border-2 border-black shadow-[2px_2px_0px_0px_#d946ef]">
-              {" "}
-              {tag}
-            </span>
-          ))
+        post.data.tags?.slice(0, 2).map((tag: string) => (
+          <span class="bg-white text-black text-xs font-bold px-2 py-1 uppercase border-2 border-black shadow-[2px_2px_0px_0px_#d946ef]">
+            {tag}
+          </span>
+        ))
       }
     </div>
 
-    {/* Judul Artikel */}
     <a href={postUrl} class="group mb-2" data-astro-prefetch="hover">
       <h3
         class="text-2xl font-black text-white leading-tight group-hover:text-[#00e5ff] transition-colors"
@@ -79,7 +68,6 @@ const formattedDate = post.data.pubDate.toLocaleDateString(
       </h3>
     </a>
 
-    {/* Meta: Tanggal (SEO Freshness) */}
     <time
       datetime={post.data.pubDate.toISOString()}
       class="text-neutral-400 text-sm mb-4 font-mono block"
@@ -87,12 +75,10 @@ const formattedDate = post.data.pubDate.toLocaleDateString(
       {formattedDate}
     </time>
 
-    {/* Deskripsi Singkat (SEO Context) */}
     <p class="text-neutral-300 line-clamp-3 mb-6 flex-grow leading-relaxed">
       {post.data.description}
     </p>
 
-    {/* CTA Semantik */}
     <a
       href={postUrl}
       class="inline-block mt-auto text-[#c6ff00] font-mono font-bold uppercase hover:underline w-fit"

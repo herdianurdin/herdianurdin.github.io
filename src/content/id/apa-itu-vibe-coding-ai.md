@@ -2,6 +2,7 @@
 title: "Apa Itu Vibe Coding? Realita AI Menggantikan Programmer & Jebakan Biayanya"
 description: "Membongkar apa itu vibe coding AI. Benarkah programmer entry-level mulai tergantikan? Pelajari studi kasusnya, pentingnya PRD, dan mitos efisiensi biaya AI."
 pubDate: 2026-10-17T08:00:00+07:00
+updatedDate: 2026-11-25
 coverImage: "/images/apa-itu-vibe-coding-ai.webp"
 tags:
   [
@@ -48,6 +49,8 @@ Lewat _vibe coding_ murni (kebanyakan menggunakan React JS atau Next.js), saya b
 5.  **Sleep Well Finance** (Aplikasi pencatatan keuangan pribadi).
 
 Bahkan, struktur kode _website_ **[Astro](https://astro.build/)** yang sedang Anda baca ini dibangun murni lewat perintah ke Gemini Pro.
+
+Jika ingin melihat bagaimana pendekatan yang lebih terstruktur mengendalikan AI dalam pengembangan sistem, lanjutkan ke [Vibe Engineering vs Vibe Coding](/blog/vibe-engineering-vs-vibe-coding/), yang membahas studi kasus Python Quest.
 
 Tetapi, apakah _vibe coding_ benar-benar efisien? **Ternyata tidak selalu.**
 

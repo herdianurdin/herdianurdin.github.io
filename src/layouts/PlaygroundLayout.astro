@@ -1,5 +1,4 @@
 ---
-// src/layouts/PlaygroundLayout.astro
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/700.css";
 import "@fontsource/inter/900.css";
@@ -20,12 +19,16 @@ const { title, description, language = "id" } = Astro.props;
 
 <html lang={language}>
   <head>
-    <SeoHead title={title} description={description} language={language} />
+    <SeoHead
+      title={title}
+      description={description}
+      language={language}
+      languageAlternate={false}
+    />
   </head>
   <body
     class="h-dvh w-full bg-neutral-900 text-white font-sans selection:bg-[#c6ff00] selection:text-black antialiased flex flex-col overflow-x-hidden lg:overflow-hidden"
   >
-    <!-- main diubah menjadi overflow-y-auto agar bisa digulir saat di HP, tapi tetap terkunci (hidden) di layar besar (lg) -->
     <main
       class="flex-1 flex flex-col w-full h-full relative overflow-y-auto lg:overflow-hidden"
     >

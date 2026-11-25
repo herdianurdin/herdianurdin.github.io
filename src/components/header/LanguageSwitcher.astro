@@ -1,46 +1,63 @@
 ---
-// src/components/header/LanguageSwitcher.astro
 import { siteTranslation } from "../../config/site";
 
 export interface Props {
   currentLang: "id" | "en";
   variant?: "home" | "page" | "article";
+  translationHref?: string;
 }
-const { currentLang, variant } = Astro.props;
 
-// Tarik data terjemahan
+const { currentLang, variant, translationHref } = Astro.props;
 const t = siteTranslation[currentLang];
+const currentPath = Astro.url.pathname.replace(/\/+$/, "") || "/";
+const isArchivePath = /^\/(?:en\/)?blog(?:\/\d+)?$/.test(currentPath);
+const idHref = currentLang === "en"
+  ? (isArchivePath ? "/blog" : currentPath.replace(/^\/en(?=\/|$)/, "") || "/")
+  : currentPath;
+const enHref = currentLang === "id"
+  ? (isArchivePath ? "/en/blog" : currentPath === "/" ? "/en" : `/en${currentPath}`)
+  : currentPath;
 
-const idBtnClass =
-  currentLang === "id"
-    ? "bg-white text-black font-bold border-2 border-white px-3 py-1 shadow-[2px_2px_0px_0px_#c6ff00]"
-    : "hover:bg-[#c6ff00] hover:text-black border-2 border-transparent hover:border-white px-3 py-1 transition-colors";
+const idBtnClass = currentLang === "id"
+  ? "bg-white text-black font-bold border-2 border-white px-3 py-1 shadow-[2px_2px_0px_0px_#c6ff00]"
+  : "hover:bg-[#c6ff00] hover:text-black border-2 border-transparent hover:border-white px-3 py-1 transition-colors";
 
-const enBtnClass =
-  currentLang === "en"
-    ? "bg-white text-black font-bold border-2 border-white px-3 py-1 shadow-[2px_2px_0px_0px_#c6ff00]"
-    : "hover:bg-[#c6ff00] hover:text-black border-2 border-transparent hover:border-white px-3 py-1 transition-colors";
+const enBtnClass = currentLang === "en"
+  ? "bg-white text-black font-bold border-2 border-white px-3 py-1 shadow-[2px_2px_0px_0px_#c6ff00]"
+  : "hover:bg-[#c6ff00] hover:text-black border-2 border-transparent hover:border-white px-3 py-1 transition-colors";
 ---
 
 {
-  variant != "article" && (
-    <div class="flex gap-4 font-mono text-sm">
-      <a
-        href="/"
-        class={idBtnClass}
-        aria-label={t.switchId}
-        aria-current={currentLang === "id" ? "page" : undefined}
-      >
-        /ID
-      </a>
-      <a
-        href="/en/"
-        class={enBtnClass}
-        aria-label={t.switchEn}
-        aria-current={currentLang === "en" ? "page" : undefined}
-      >
-        /EN
-      </a>
-    </div>
-  )
+  variant === "article"
+    ? translationHref && (
+        <div class="flex gap-4 font-mono text-sm">
+          <a
+            href={translationHref}
+            class="hover:bg-[#c6ff00] hover:text-black border-2 border-transparent hover:border-white px-3 py-1 transition-colors"
+            aria-label={currentLang === "id" ? t.switchEn : t.switchId}
+          >
+            {currentLang === "id" ? "/EN" : "/ID"}
+          </a>
+        </div>
+      )
+    : (
+        <div class="flex gap-4 font-mono text-sm">
+          <a
+            href={idHref}
+            class={idBtnClass}
+            aria-label={t.switchId}
+            aria-current={currentLang === "id" ? "page" : undefined}
+          >
+            /ID
+          </a>
+          <a
+            href={enHref}
+            class={enBtnClass}
+            aria-label={t.switchEn}
+            aria-current={currentLang === "en" ? "page" : undefined}
+          >
+            /EN
+          </a>
+        </div>
+      )
 }

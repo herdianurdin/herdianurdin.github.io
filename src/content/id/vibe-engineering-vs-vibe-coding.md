@@ -2,6 +2,7 @@
 title: "Vibe Engineering vs Vibe Coding: Analogi Liburan dan Tragedi Race Condition"
 description: "Pahami perbedaan mendasar vibe engineering vs vibe coding. Belajar dari studi kasus LMS Python Quest, tragedi Firebase, dan rahasia prompt AI terstruktur."
 pubDate: 2026-10-19T08:00:00+07:00
+updatedDate: 2026-11-25
 coverImage: "/images/vibe-engineering-vs-vibe-coding.webp"
 tags:
   [
@@ -24,6 +25,8 @@ Jika Anda menggunakan pendekatan **Vibe Coding**, Anda akan langsung melompat ke
 Sebaliknya, **Vibe Engineering** adalah ketika Anda duduk sejenak untuk menyusun rencana. Anda menentukan kota tujuan, menghitung _budget_, membuat _itinerary_ kegiatan, dan memesan tiket sejak jauh hari. Perjalanan Anda menjadi terstruktur, aman, dan efisien.
 
 Analogi ini sangat relevan di dunia pemrograman modern. Di artikel ini, kita akan membedah secara teknis perbandingan **vibe engineering vs vibe coding**, membedah gaya _prompt_ (perintah AI) yang digunakan, dan menarik pelajaran penting dari tragedi sistem yang pernah saya alami sendiri.
+
+Jika Anda belum mengenal istilah dasarnya, mulai dari [Apa Itu Vibe Coding?](/blog/apa-itu-vibe-coding-ai/); artikel ini melanjutkan pembahasan ke proses rekayasa dan studi kasusnya.
 
 ## Miskonsepsi AI dan Eksperimen Python Quest
 

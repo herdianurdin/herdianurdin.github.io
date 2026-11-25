@@ -2,6 +2,7 @@
 title: "Materi Dasar Komputer: Segitiga Sistem dan Siklus Input Proses Output"
 description: "Mengenal pengertian hardware, software, brainware, dan cara kerja komputer berdasarkan siklus input, proses, output beserta contoh perangkatnya."
 pubDate: 2026-11-03T08:00:00+07:00
+updatedDate: 2026-11-25
 coverImage: "/images/segitiga-sistem-komputer-input-proses-output.webp"
 tags:
   [
@@ -87,4 +88,4 @@ Siklus ini sangat mirip dengan proses belajar mengajar di sekolah. Saya memberik
 
 Setelah menyadari bahwa komputer yang paling canggih sekalipun tidak bisa hidup tanpa Segitiga Sistem dan selalu bergantung pada siklus _Input-Proses-Output_, kamu kini sudah siap melangkah ke tahap teknis.
 
-Pada artikel **Modul 2B** selanjutnya, kita akan mulai membongkar "raga" komputer dan berkenalan lebih dalam dengan fungsi spesifik CPU, RAM, serta perangkat penyimpanan daya.
+Pada artikel **Modul 2B** selanjutnya, kita akan mulai membongkar "raga" komputer dan berkenalan lebih dalam dengan [fungsi spesifik motherboard, CPU, RAM, SSD, dan PSU](/blog/fungsi-komponen-cpu-ram-ssd-psu-komputer/).

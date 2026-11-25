@@ -7,8 +7,11 @@ import { unified } from "@astrojs/markdown-remark";
 export default defineConfig({
   site: "https://herdianurdin.my.id",
 
+  // Target deployment: GitHub Pages serves pre-rendered static files.
+  output: "static",
+
   prefetch: {
-    prefetchAll: true,
+    prefetchAll: false,
     defaultStrategy: "hover",
   },
 
@@ -32,7 +35,6 @@ export default defineConfig({
 
   image: {
     domains: ["placehold.co", "ui-avatars.com"],
-    dangerouslyProcessSVG: true,
   },
 
   build: {

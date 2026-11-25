@@ -2,6 +2,7 @@
 title: "The Reality of AdMob Revenue in Indonesia (2026): From $1 to $80 a Month (Zero Promotion Cost)"
 description: "Unveiling real AdMob revenue data from Indonesia with 1,500 daily impressions. A true case study on eCPM, ASO strategy, reskin failures, and Play Store loopholes."
 pubDate: 2026-10-12T08:00:00+07:00
+updatedDate: 2026-11-25
 coverImage: "/images/admob-indonesia-revenue-reality-2026.webp"
 idSlug: "realita-pendapatan-admob-indonesia-2026"
 tags:
@@ -19,11 +20,11 @@ Many beginner developers dive into the world of Android app creation with one bi
 
 Indeed, those success stories exist and are very real. One example comes from a factory worker (not an IT practitioner) who happened to collaborate with one of my senior colleagues. The factory worker spent around $100 to buy the source code and reskin services for a children's drawing and sound app from that senior. The result? He successfully raked in $1,000 to $1,500 per month!
 
-However, what is rarely told in forums is the dark side: far more people end up losing hundreds of dollars, wasting time, or having their accounts kicked out by Google due to a lack of knowledge and just blindly following trends.
+However, what is rarely told in forums is the dark side: far more people end up losing hundreds of dollars, wasting time, or having their accounts kicked out by Google due to a lack of knowledge and just blindly following trends. I explored these ecosystem practices further in [The Dark Reality of the Google Play Ecosystem](/en/blog/dark-reality-of-google-play-ecosystem/).
 
 I am not a saint free from developer sins either. Long before the Play Console account I use today existed, I had an account named _herdaynote_ between 2020-2021. Back then, I was very naive. Armed with source code found on the internet, I tried to make a clone game of _Flappy Bird_ using the exact same name. The game was repeatedly rejected because the code was a mess and unoptimized. The end result? My first account was permanently banned by Google.
 
-From that destruction, I learned. I started building applications focused on utility, like my **[Algorithms and Programming Book (Buku Algoritma dan Pemrograman)](https://play.google.com/store/apps/details?id=buku.belajar.algoritmapemrograman)** app, purely as a digital footprint and a moral responsibility for the knowledge I acquired. If that work later generated money from ads, it was purely a bonus.
+From that destruction, I learned. I started building applications focused on utility, like my **[Algorithms and Programming Book (Buku Algoritma dan Pemrograman)](https://play.google.com/store/apps/details?id=buku.belajar.algoritmapemrograman)** app, purely as a digital footprint and a moral responsibility for the knowledge I acquired. If that work later generated money from ads, it was purely a bonus. For the fuller story behind my journey as an Android developer, read [The Reality of a Solo Android Developer](/en/blog/indonesian-solo-android-developer-journey/).
 
 Today, I invite you to see the reality of the AdMob world in the Indonesian market (Tier 3) in 2026. No sweet promises here, only transparent data, market reality, and expensive lessons learned from past mistakes.
 

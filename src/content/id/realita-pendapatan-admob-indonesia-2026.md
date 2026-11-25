@@ -2,6 +2,7 @@
 title: "Bongkar Realita AdMob Indonesia 2026: Dari Rp14 Ribu Menjadi Rp1,2 Juta per Bulan (Tanpa Modal Promosi)"
 description: "Membongkar data asli penghasilan AdMob Indonesia dari 1.500 tayangan per hari. Studi kasus nyata eCPM, strategi ASO, kegagalan reskin, dan celah aturan Play Store."
 pubDate: 2026-10-12T08:00:00+07:00
+updatedDate: 2026-11-25
 coverImage: "/images/realita-pendapatan-admob-indonesia-2026.webp"
 enSlug: "admob-indonesia-revenue-reality-2026"
 tags:
@@ -23,7 +24,7 @@ Namun, yang jarang diceritakan di forum-forum adalah sisi gelapnya: jauh lebih b
 
 Saya sendiri bukanlah orang suci yang bebas dari dosa _developer_. Jauh sebelum akun Play Console yang saya gunakan hari ini berdiri, saya pernah memiliki akun di rentang tahun 2020-2021. Saat itu saya masih sangat awam. Bermodal _source code_ yang beredar di internet, saya mencoba membuat _game cloning_ dari _Flappy Bird_. _Game_ itu berulang kali ditolak karena kodenya berantakan. Pada akhirnya? Akun pertama saya itu di-_banned_ permanen oleh Google.
 
-Dari kehancuran itu saya belajar. Saya mulai membangun aplikasi yang berfokus pada manfaat, seperti aplikasi **[Buku Algoritma dan Pemrograman](https://play.google.com/store/apps/details?id=buku.belajar.algoritmapemrograman)**, murni sebagai jejak digital dan tanggung jawab moral. Jika kemudian karya tersebut menghasilkan uang dari iklan, itu murni sebuah bonus.
+Dari kehancuran itu saya belajar. Saya mulai membangun aplikasi yang berfokus pada manfaat, seperti aplikasi **[Buku Algoritma dan Pemrograman](https://play.google.com/store/apps/details?id=buku.belajar.algoritmapemrograman)**, murni sebagai jejak digital dan tanggung jawab moral. Jika kemudian karya tersebut menghasilkan uang dari iklan, itu murni sebuah bonus. Untuk kisah lengkap dari kegagalan akun pertama hingga pemeliharaan aplikasi yang berkelanjutan, baca [perjalanan saya sebagai solo Android developer](/blog/perjalanan-android-developer-indonesia/).
 
 Hari ini, saya ingin mengajak Anda melihat realitas dunia AdMob di pasar Indonesia pada tahun 2026. Tidak ada janji manis di sini, hanya data transparan, realita pasar, dan pelajaran mahal dari kesalahan masa lalu.
 

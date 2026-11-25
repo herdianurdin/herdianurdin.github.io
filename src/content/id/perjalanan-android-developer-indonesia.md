@@ -2,6 +2,7 @@
 title: "Realitas Solo Android Developer: Bertahan di Ekosistem Google Play Console"
 description: "Kisah nyata perjalanan dari blogger pemula, melewati fase banned akun, hingga membangun aset digital yang berkelanjutan di tengah kesibukan mengajar."
 pubDate: 2026-10-01T09:56:00Z
+updatedDate: 2026-11-25
 coverImage: "/images/perjalanan-android-developer-indonesia.webp"
 tags: ["solo-developer", "android", "google-play", "jurnal", "kotlin"]
 isDraft: false
@@ -25,6 +26,8 @@ Tahun 2020 adalah titik balik. Di tengah krisis keuangan dan pandemi COVID-19, s
 Di tengah keputusasaan mencari arah, saya membuka akun Google Play Console pertama saya. Karena buta terhadap aturan hak cipta dan kebijakan Google, saya merilis kloningan _Flappy Bird_ menggunakan aset dan karakter asli. Hasilnya? Aplikasi penuh _bug_, rentetan peringatan pelanggaran hak cipta, dan berujung pada _banned_ permanen akun tersebut.
 
 > **Pelajaran Teknis Pertama:** Google Play tidak memberikan ruang untuk kelalaian aset. Kegagalan ini memaksa saya memahami bahwa _development_ bukan hanya soal kode yang bisa di-_compile_, tapi soal orisinalitas, lisensi, dan kepatuhan absolut terhadap kebijakan ekosistem.
+
+Jika ingin membaca refleksi yang lebih luas tentang lisensi, pembajakan, dan penghargaan terhadap karya pengembang, lanjutkan ke [Dari Pembajak Menjadi Pengembang](/blog/etika-software-dan-pembajakan/).
 
 ## Pivot ke Native Kotlin dan Kampus Merdeka
 

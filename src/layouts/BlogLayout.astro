@@ -1,5 +1,4 @@
 ---
-// src/layouts/BlogLayout.astro
 import SeoHead from "../components/SeoHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -14,7 +13,10 @@ import "@fontsource/fira-code/700.css";
 import "../styles/global.css";
 
 const { frontmatter, headings, language } = Astro.props;
-const homeUrl = language === "id" ? "/" : "/en/";
+const homeUrl = language === "id" ? "/" : "/en";
+const translationHref = language === "id"
+  ? (frontmatter.enSlug ? `/en/blog/${frontmatter.enSlug}/` : undefined)
+  : (frontmatter.idSlug ? `/blog/${frontmatter.idSlug}/` : undefined);
 ---
 
 <html lang={language}>
@@ -27,13 +29,15 @@ const homeUrl = language === "id" ? "/" : "/en/";
       language={language}
       enSlug={frontmatter.enSlug}
       idSlug={frontmatter.idSlug}
+      pubDate={frontmatter.pubDate}
+      updatedDate={frontmatter.updatedDate}
       faq={frontmatter.faq}
     />
   </head>
   <body
     class="overflow-x-hidden min-h-screen bg-neutral-900 text-white font-sans selection:bg-[#c6ff00] selection:text-black antialiased flex flex-col"
   >
-    <Header currentLang={language} variant="article" />
+    <Header currentLang={language} variant="article" translationHref={translationHref} />
 
     <main class="max-w-4xl mx-auto p-4 md:p-8 mt-8 flex-grow w-full">
       <article
@@ -94,30 +98,31 @@ const homeUrl = language === "id" ? "/" : "/en/";
                   )
                 }
               </time>
+              {frontmatter.updatedDate && (
+                <time datetime={frontmatter.updatedDate.toISOString()}>
+                  {language === "id" ? "Diperbarui" : "Updated"}: {new Date(frontmatter.updatedDate).toLocaleDateString(
+                    language === "id" ? "id-ID" : "en-US",
+                    { year: "numeric", month: "long", day: "numeric" },
+                  )}
+                </time>
+              )}
             </div>
           </header>
 
           <TableOfContents headings={headings} language={language} />
 
-          {/* 4. Area Konten Utama */}
           <div
             class="prose prose-invert prose-lg max-w-none prose-pre:border-4 prose-pre:border-white prose-pre:rounded-none prose-pre:shadow-[8px_8px_0px_0px_#00e5ff] prose-headings:font-black prose-headings:scroll-mt-24 prose-a:text-[#c6ff00] prose-a:underline-offset-4 hover:prose-a:bg-[#c6ff00] hover:prose-a:text-black"
           >
             <slot />
           </div>
 
-          {
-            /* 5. SEO Fix: Gunakan tag <footer> semantik untuk kotak penulis di dalam artikel */
-          }
           <footer class="mt-16 pt-8 border-t-4 border-white">
             <AuthorBox language={language} />
           </footer>
         </div>
       </article>
 
-      {
-        /* Ruang Diskusi di luar tag <article> karena ini adalah interaksi user, bukan isi jurnal inti */
-      }
       <section class="mt-12">
         <Giscus language={language} />
       </section>
@@ -126,49 +131,88 @@ const homeUrl = language === "id" ? "/" : "/en/";
     <Footer language={language} />
     <script is:inline>
       document.addEventListener("DOMContentLoaded", () => {
-        // --- 1. PERBAIKAN TABEL MARKDOWN ---
+        // Keep wide Markdown tables scrollable on narrow screens.
         const tables = document.querySelectorAll(".prose table");
         tables.forEach((table) => {
+          if (table.parentElement?.classList.contains("overflow-x-auto")) return;
           const wrapper = document.createElement("div");
           wrapper.className =
             "overflow-x-auto w-full shadow-[8px_8px_0px_0px_#c6ff00] my-10";
-          table.parentNode.insertBefore(wrapper, table);
+          table.parentNode?.insertBefore(wrapper, table);
           wrapper.appendChild(table);
         });
 
-        // --- 2. YOUTUBE LAZY LOAD (KLIK UNTUK MEMUAT) ---
+        // Load YouTube only after an explicit user action.
         const ytPlaceholders = document.querySelectorAll(".youtube-defer");
         ytPlaceholders.forEach((container) => {
-          const videoId = container.getAttribute("data-video");
-          if (!videoId) return;
+          const videoId = container.getAttribute("data-video") ?? "";
 
-          // PERBAIKAN: Tambahkan kelas Tailwind agar kontainer memiliki rasio 16:9 (aspect-video)
-          // dan berikan gaya Neo-Brutalism secara dinamis
+          // A YouTube video ID is exactly 11 URL-safe characters.
+          if (!/^[A-Za-z0-9_-]{11}$/.test(videoId)) {
+            container.remove();
+            return;
+          }
+
           container.className =
             "youtube-defer relative w-full aspect-video cursor-pointer border-4 border-white shadow-[8px_8px_0px_0px_#00e5ff] my-10 group overflow-hidden bg-black";
+          container.setAttribute("role", "button");
+          container.setAttribute("tabindex", "0");
+          container.setAttribute(
+            "aria-label",
+            language === "id" ? "Putar video YouTube" : "Play YouTube video",
+          );
 
-          // Buat elemen gambar kelumit (thumbnail) dari YouTube
           const img = document.createElement("img");
           img.src = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-          img.alt = "Thumbnail Video";
+          img.alt = language === "id"
+            ? "Thumbnail video YouTube"
+            : "YouTube video thumbnail";
           img.className =
             "w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300";
 
-          // Buat tombol Putar bergaya Neo-Brutalism
           const playBtnWrapper = document.createElement("div");
           playBtnWrapper.className =
             "absolute inset-0 flex items-center justify-center pointer-events-none";
-          playBtnWrapper.innerHTML = `<span class="bg-[#c6ff00] text-black font-black px-6 py-3 border-4 border-white shadow-[4px_4px_0px_0px_#fff] text-lg md:text-xl transform group-hover:scale-105 transition-transform">▶ TAMPILKAN VIDEO</span>`;
 
-          container.appendChild(img);
-          container.appendChild(playBtnWrapper);
+          const playLabel = document.createElement("span");
+          playLabel.className =
+            "bg-[#c6ff00] text-black font-black px-6 py-3 border-4 border-white shadow-[4px_4px_0px_0px_#fff] text-lg md:text-xl transform group-hover:scale-105 transition-transform";
+          playLabel.textContent = language === "id"
+            ? "▶ TAMPILKAN VIDEO"
+            : "▶ PLAY VIDEO";
+          playBtnWrapper.appendChild(playLabel);
 
-          // Event saat pengguna mengeklik penampung
-          container.addEventListener("click", () => {
-            // Ganti isi div dengan iframe asli dan hapus border/shadow agar rapi saat diputar
+          container.replaceChildren(img, playBtnWrapper);
+
+          const activateVideo = () => {
+            const iframe = document.createElement("iframe");
+            iframe.width = "100%";
+            iframe.height = "100%";
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            iframe.title = language === "id"
+              ? "Pemutar video YouTube"
+              : "YouTube video player";
+            iframe.setAttribute(
+              "allow",
+              "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share",
+            );
+            iframe.allowFullscreen = true;
+            iframe.className = "absolute top-0 left-0 w-full h-full";
+
             container.className =
               "youtube-defer relative w-full aspect-video my-10 bg-black";
-            container.innerHTML = `<iframe width="100%" height="100%" src="https://www.youtube.com/embed/${videoId}?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="absolute top-0 left-0 w-full h-full"></iframe>`;
+            container.removeAttribute("role");
+            container.removeAttribute("tabindex");
+            container.removeAttribute("aria-label");
+            container.replaceChildren(iframe);
+          };
+
+          container.addEventListener("click", activateVideo);
+          container.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              activateVideo();
+            }
           });
         });
       });
