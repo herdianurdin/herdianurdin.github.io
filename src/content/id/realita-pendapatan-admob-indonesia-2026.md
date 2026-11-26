@@ -73,7 +73,7 @@ Ada seorang adik tingkat saya yang bermain aplikasi _reskin_ Twibbon dan meraup 
 
 UI-nya bermasalah, _banner ads_ menumpuk, dan setiap kali tombol diklik, iklan layar penuh (_Interstitial_) meledak di wajah Anda. Pendapatan kotor ini mungkin manis di bulan pertama, tapi aplikasi dengan UX seburuk itu tidak akan bertahan lama.
 
-Strategi monetisasi saya sangat berkebalikan: **Batasi iklan, jaga aplikasi tetap cepat, dan buat pengguna nyaman.** (Jika Anda ingin tahu bagaimana saya merancang kenyamanan ini, silakan baca artikel saya tentang **[pentingnya merancang UI/UX yang baik bagi Solo Developer](/blog/apa-itu-ui-ux-designer-wireframe-mockup)**).
+Strategi monetisasi saya sangat berkebalikan: **Batasi iklan, jaga aplikasi tetap cepat, dan buat pengguna nyaman.** (Jika Anda ingin tahu bagaimana saya merancang kenyamanan ini, silakan baca artikel saya tentang **[pentingnya merancang UI/UX yang baik bagi Solo Developer](/blog/apa-itu-ui-ux-designer-wireframe-mockup/)**).
 
 Saya hanya mengandalkan dua format iklan:
 

@@ -32,7 +32,7 @@ Jika Anda belum mengenal istilah dasarnya, mulai dari [Apa Itu Vibe Coding?](/bl
 
 Sebelum kita membedah lebih jauh, ada satu miskonsepsi yang sering mampir ke saya: _"Apakah semua aplikasi buatan Bapak murni hasil ketikan AI?"_
 
-Jawabannya: Tentu tidak. Untuk aplikasi Android yang tayang di Play Store, saya sangat selektif. Saya tetap **[bertahan dengan Native Kotlin dan XML](/blog/opini-native-kotlin-xml-vs-cross-platform)** karena saya membutuhkan kestabilan arsitektur luring (_offline-first_). Di ekosistem _mobile_ ini, AI hanya saya gunakan sebagai asisten kecil untuk mencari _bug_ pemanggilan iklan (_AdMob_), bukan untuk merakit sistem dari nol.
+Jawabannya: Tentu tidak. Untuk aplikasi Android yang tayang di Play Store, saya sangat selektif. Saya tetap **[bertahan dengan Native Kotlin dan XML](/blog/opini-native-kotlin-xml-vs-cross-platform/)** karena saya membutuhkan kestabilan arsitektur luring (_offline-first_). Di ekosistem _mobile_ ini, AI hanya saya gunakan sebagai asisten kecil untuk mencari _bug_ pemanggilan iklan (_AdMob_), bukan untuk merakit sistem dari nol.
 
 Namun, untuk ranah pengembangan _web_, ceritanya berbeda. Saya melakukan eksperimen ekstrem menggunakan kecerdasan buatan secara penuh.
 
@@ -50,7 +50,7 @@ Namun, saya memilih pendekatan **vibe engineering**. Langkah yang saya lakukan d
 
 1.  **Perdebatan Database:** Saya merancang skema _database_ berformat JSON secara manual, lalu melemparkannya ke **[Google AI Studio (Gemini)](https://aistudio.google.com/)**. Saya menantang AI untuk merevisi struktur tersebut agar kinerjanya tidak rakus dan melebihi batas kuota gratis Firebase.
 2.  **Pembuatan Mock UI:** Setelah kerangka _database_ disetujui, saya menyuruh AI membangun Antarmuka Pengguna (UI) secara total menggunakan data palsu (_mock data_). Pada tahap ini, saya melarang keras AI untuk menyentuh sistem autentikasi atau _database_.
-3.  **Audit Arsitektur Visual:** Meskipun sudah dikendalikan, kode UI yang dihasilkan AI masih sering berantakan dan tidak modular (berlawanan dengan **[prinsip dasar UI/UX yang baik](/blog/apa-itu-ui-ux-designer-wireframe-mockup)**). Saya harus turun tangan melakukan pembersihan (_refactoring_) agar struktur _folder_ dan komponennya rapi sebelum melangkah ke tahap selanjutnya.
+3.  **Audit Arsitektur Visual:** Meskipun sudah dikendalikan, kode UI yang dihasilkan AI masih sering berantakan dan tidak modular (berlawanan dengan **[prinsip dasar UI/UX yang baik](/blog/apa-itu-ui-ux-designer-wireframe-mockup/)**). Saya harus turun tangan melakukan pembersihan (_refactoring_) agar struktur _folder_ dan komponennya rapi sebelum melangkah ke tahap selanjutnya.
 
 ## Tragedi Firebase: Ketika Vibe Coding Menjadi Bencana
 
@@ -62,7 +62,7 @@ Di sinilah sistem mulai kacau:
 - **Tragedi Race Condition:** Ini adalah _bug_ yang paling mematikan di pemrograman. Saat mengimplementasikan _Firebase Realtime Database_, AI gagal menyusun logika antrean data (_asynchronous_). Akibatnya, saat _Player A_ mengirim kode, dan _Player B_ melakukan hal yang sama dalam waktu berdekatan, data mereka saling bertabrakan dan tertimpa.
 - **Tragedi Kuota:** Kode pencarian data (_query_) buatan AI sangat tidak efisien. Saat diuji coba oleh 20 pengguna secara bersamaan, performa aplikasi melambat drastis dan kuota Firebase saya langsung terkuras habis dalam sekejap.
 
-Coba bayangkan jika saya tidak memiliki **[fondasi logika algoritma dasar](/blog/bab-1-mengenal-algoritma-dan-pola-pikir)**. Saya pasti tidak akan tahu letak masalah _Race Condition_ tersebut, dan aplikasi itu kemungkinan besar akan mati sebelum dirilis.
+Coba bayangkan jika saya tidak memiliki **[fondasi logika algoritma dasar](/blog/bab-1-mengenal-algoritma-dan-pola-pikir/)**. Saya pasti tidak akan tahu letak masalah _Race Condition_ tersebut, dan aplikasi itu kemungkinan besar akan mati sebelum dirilis.
 
 ## Perbedaan Prompt: Amatir vs Arsitek
 

@@ -7,7 +7,7 @@ tags: ["tutorial-python", "dasar-pemrograman", "operator-matematika", "pemula"]
 isDraft: false
 ---
 
-Di **[Bab 6: Variabel dan Tipe Data](/blog/bab-6-variabel-dan-tipe-data-python)** sebelumnya, kita telah belajar cara menyiapkan memori dan menyortir tipe data untuk menampung informasi. Namun, data yang hanya diam di dalam kotak penyimpanan tentu tidak memiliki nilai guna. Data tersebut harus diolah.
+Di **[Bab 6: Variabel dan Tipe Data](/blog/bab-6-variabel-dan-tipe-data-python/)** sebelumnya, kita telah belajar cara menyiapkan memori dan menyortir tipe data untuk menampung informasi. Namun, data yang hanya diam di dalam kotak penyimpanan tentu tidak memiliki nilai guna. Data tersebut harus diolah.
 
 Dan ketika kita berbicara tentang pengolahan data di dalam komputer, ujung-ujungnya kita akan selalu bermuara pada satu hal: **Matematika**.
 
@@ -31,7 +31,7 @@ Kecuali Anda kelak memilih spesialisasi di bidang _Data Science_ atau _Artificia
 
 ![Ilustrasi programmer pemula yang kebingungan karena komputer menyambung angka teks alih-alih menjumlahkannya](/images/ilustrasi-jebakan-matematika-programmer.webp)
 
-Namun, sebelum Anda mulai menyuruh mesin Python Anda berhitung, ada satu "jebakan" konyol yang sering menelan korban pemula. Buka **[Python Playground](/python-playground)** Anda, dan ketikkan kode di bawah ini:
+Namun, sebelum Anda mulai menyuruh mesin Python Anda berhitung, ada satu "jebakan" konyol yang sering menelan korban pemula. Buka **[Python Playground](/python-playground/)** Anda, dan ketikkan kode di bawah ini:
 
 ```python
 angka1 = input("Masukkan angka pertama: ")
@@ -43,7 +43,7 @@ print("Hasil penjumlahannya adalah: " + hasil)
 
 Silakan jalankan. Masukkan angka `5` pada pertanyaan pertama, lalu `10` pada pertanyaan kedua. Berapa hasil yang keluar? Bukannya `15`, komputer justru dengan polosnya menjawab **`510`**.
 
-Mengapa aplikasi hitung kita tiba-tiba menjadi bodoh? Jika Anda menyimak materi tentang **[Fungsi Input di Bab 5](/blog/bab-5-input-dan-output-python)** dengan saksama, Anda pasti tahu letak kesalahannya. Perintah `input()` diciptakan dengan satu aturan kaku: ia akan **SELALU** menangkap apa pun ketikan Anda sebagai tipe data teks (_String_).
+Mengapa aplikasi hitung kita tiba-tiba menjadi bodoh? Jika Anda menyimak materi tentang **[Fungsi Input di Bab 5](/blog/bab-5-input-dan-output-python/)** dengan saksama, Anda pasti tahu letak kesalahannya. Perintah `input()` diciptakan dengan satu aturan kaku: ia akan **SELALU** menangkap apa pun ketikan Anda sebagai tipe data teks (_String_).
 
 Karena mesin menganggap angka 5 dan 10 tersebut sebagai teks, maka tanda tambah (`+`) tidak dilihat sebagai rumus matematika, melainkan perintah untuk **menyambung kata** (persis seperti menyambung `"Kupu"` dan `"kupu"` menjadi `"Kupukupu"`).
 
@@ -119,7 +119,7 @@ print("Waktu tersisa:", menit, "Menit", detik_sisa, "Detik")
 
 Berbekal seluruh pengetahuan operator di atas, kini giliran Anda untuk menciptakan mesin hitung Anda sendiri.
 
-Di **[Bab 3: Cara Menulis Algoritma](/blog/bab-3-cara-menulis-algoritma)**, saya pernah menantang Anda untuk merancang _Pseudocode_ (cetak biru) Kalkulator Luas Segitiga. Saat itu, program tersebut baru sebatas coretan di atas kertas. Hari ini, Anda sudah memiliki semua amunisi sintaksis untuk mewujudkannya secara nyata.
+Di **[Bab 3: Cara Menulis Algoritma](/blog/bab-3-cara-menulis-algoritma/)**, saya pernah menantang Anda untuk merancang _Pseudocode_ (cetak biru) Kalkulator Luas Segitiga. Saat itu, program tersebut baru sebatas coretan di atas kertas. Hari ini, Anda sudah memiliki semua amunisi sintaksis untuk mewujudkannya secara nyata.
 
 **Tugas Anda:**
 Terjemahkan cetak biru Anda menjadi **Kalkulator Luas Segitiga** nyata di terminal _Playground_!
@@ -134,4 +134,4 @@ Jika kalkulator Anda tidak lagi menyambung teks melainkan berhasil menghitung lu
 
 _(Artikel ini adalah Bagian ke-7 dari Seri Fundamental Python)._
 
-**[Baca Selanjutnya: Bab 8 - Persimpangan Jalan (Gerbang Logika & Kondisi) >>](/blog/bab-8-pengkondisian-if-else-python)**
+**[Baca Selanjutnya: Bab 8 - Persimpangan Jalan (Gerbang Logika & Kondisi) >>](/blog/bab-8-pengkondisian-if-else-python/)**

@@ -29,13 +29,13 @@ Suatu ketika, saya memberanikan diri mencoba menyentuh _keyboard_ dan _mouse_-ny
 
 Beberapa tahun berselang, rasa penasaran itu membawa saya iseng mengulik **HTML** dan **CSS**. Pada rentang tahun 2014 hingga 2016, nalar saya belum cukup matang untuk memahami logika bahasa pemrograman yang sesungguhnya. Saya baru sanggup bermain-main mengatur tata letak dan warna pada halaman web statis.
 
-Meski terkesan cuma main-main, fase ini ternyata mewariskan satu _skill_ paling krusial dalam literasi digital (seperti yang pernah saya bahas pada panduan **[materi dasar komputer untuk pemula](/blog/materi-dasar-komputer-pemula)**), yaitu **ilmu _searching_**. Dari kebiasaan mencari referensi di internet pada masa itu, saya terlatih membedakan mana tombol _download_ asli dan mana jebakan iklan palsu, mana informasi yang valid dan mana yang cuma hoaks, hingga membedakan _software_ resmi dari aplikasi bajakan yang disusupi virus.
+Meski terkesan cuma main-main, fase ini ternyata mewariskan satu _skill_ paling krusial dalam literasi digital (seperti yang pernah saya bahas pada panduan **[materi dasar komputer untuk pemula](/blog/materi-dasar-komputer-pemula/)**), yaitu **ilmu _searching_**. Dari kebiasaan mencari referensi di internet pada masa itu, saya terlatih membedakan mana tombol _download_ asli dan mana jebakan iklan palsu, mana informasi yang valid dan mana yang cuma hoaks, hingga membedakan _software_ resmi dari aplikasi bajakan yang disusupi virus.
 
 ## Tersesat di Awal Kuliah dan Pahitnya Belajar Tanpa Mentor (2019–2021)
 
 Tahun 2019 menjadi momen pertama saya benar-benar belajar _coding_ secara serius, bertepatan dengan semester awal perkuliahan. Jujur saja, sejak awal tidak ada niat besar untuk kuliah; saya cuma ingin segera bekerja. Impian kuliah sempat saya kubur dalam-dalam setelah gagal menembus perguruan tinggi negeri favorit maupun sekolah kedinasan. Namun, seiring bertambahnya usia, mau tidak mau saya harus beradaptasi dengan keadaan.
 
-Di bangku kuliah, saya mulai sadar satu hal: pendidikan formal lebih banyak melatih pola pikir dasar dan materinya sering kali tertinggal dari laju industri. Supaya tidak ketinggalan zaman, saya mulai mempelajari **[algoritma dan pemrograman dasar](/blog/bab-1-mengenal-algoritma-dan-pola-pikir)** secara mandiri.
+Di bangku kuliah, saya mulai sadar satu hal: pendidikan formal lebih banyak melatih pola pikir dasar dan materinya sering kali tertinggal dari laju industri. Supaya tidak ketinggalan zaman, saya mulai mempelajari **[algoritma dan pemrograman dasar](/blog/bab-1-mengenal-algoritma-dan-pola-pikir/)** secara mandiri.
 
 Kesalahan konyol saya pada masa itu adalah tidak tahu arah spesialisasi yang harus diambil. Saya sempat bingung memilih bahasa pemrograman dan berkali-kali gonta-ganti haluan, sebelum akhirnya sadar bahwa **bahasa hanyalah alat, sedangkan inti dari pemrograman adalah logika**.
 

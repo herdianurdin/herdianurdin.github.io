@@ -8,7 +8,7 @@ tags:
 isDraft: false
 ---
 
-Pada **[Bab 5 sebelumnya](/blog/bab-5-input-dan-output-python)**, kita telah membuat komputer mampu mendengarkan ketikan pengguna melalui perintah `input()`. Namun, ada satu celah logika dalam proses tersebut: saat komputer bertanya dan Anda menjawab, ke mana jawaban itu pergi? Jika tidak disimpan, data tersebut akan menguap dan dilupakan oleh mesin sedetik kemudian.
+Pada **[Bab 5 sebelumnya](/blog/bab-5-input-dan-output-python/)**, kita telah membuat komputer mampu mendengarkan ketikan pengguna melalui perintah `input()`. Namun, ada satu celah logika dalam proses tersebut: saat komputer bertanya dan Anda menjawab, ke mana jawaban itu pergi? Jika tidak disimpan, data tersebut akan menguap dan dilupakan oleh mesin sedetik kemudian.
 
 Agar komputer memiliki "ingatan", kita harus mengatur ruang penyimpanannya. Dan berbicara soal ruang penyimpanan, saya memiliki sebuah pengalaman buruk yang tidak akan pernah saya lupakan.
 
@@ -128,4 +128,4 @@ Silakan tuliskan jawaban perbaikan variabel dan analisis tipe data Anda di kolom
 
 _(Artikel ini adalah Bagian ke-6 dari Seri Fundamental Python)._
 
-[Baca Selanjutnya: Bab 7 - Operator (Matematika Mesin) >>](/blog/bab-7-operator-aritmatika-python)
+[Baca Selanjutnya: Bab 7 - Operator (Matematika Mesin) >>](/blog/bab-7-operator-aritmatika-python/)

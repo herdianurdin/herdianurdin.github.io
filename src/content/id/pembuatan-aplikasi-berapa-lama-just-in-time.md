@@ -26,7 +26,7 @@ Tidak ada patokan baku untuk durasi pembuatan aplikasi. Semuanya bergantung pada
 
 - **Aplikasi Sederhana (1-3 Hari):** Untuk aplikasi _Native_ Android yang berfokus pada logika atau utilitas tunggal—seperti **[Kalkulator Barisan dan Deret](https://play.google.com/store/apps/details?id=mathphotoai.aritmatikageometri.kalkulatorbarisanderet)**, referensi interaktif **[Buku Algoritma dan Pemrograman](https://play.google.com/store/apps/details?id=buku.belajar.algoritmapemrograman)**, hingga simulasi **[Kraepelin Tes (Tes Koran)](https://play.google.com/store/apps/details?id=psikotes.kraepelinpaulitest.teskoran)**—prosesnya sangat cepat. Dari pembuatan desain antarmuka hingga siap rilis, saya biasanya hanya membutuhkan waktu maksimal 3 hari.
 - **Aplikasi Kompleks & Padat Data (1 Minggu):** Aplikasi religi seperti **[Asmaul Husna Arti dan Makna](https://play.google.com/store/apps/details?id=audio_dakwah.asmaul_husna_99.audio_belajar_asmaul_husna)** memakan waktu lebih lama. Tantangan utamanya sama sekali bukan pada penulisan kode, melainkan proses kurasi dan pengumpulan data secara manual agar akurasi dan kualitas teksnya terjamin.
-- **Eksperimen Vibe Coding (1-2 Minggu):** Untuk proyek _web_ seperti **[sistem LMS Python Quest](/blog/vibe-engineering-vs-vibe-coding)** yang dirakit menggunakan perintah AI (Google AI Studio), teorinya bisa selesai dalam 1 hari. Namun realitanya, limitasi token AI dan kode yang berantakan membuat prosesnya molor hingga 1 minggu penuh, ditambah 1 minggu ekstra khusus untuk pengujian manual (_blackbox testing_) dan perbaikan _bug_.
+- **Eksperimen Vibe Coding (1-2 Minggu):** Untuk proyek _web_ seperti **[sistem LMS Python Quest](/blog/vibe-engineering-vs-vibe-coding/)** yang dirakit menggunakan perintah AI (Google AI Studio), teorinya bisa selesai dalam 1 hari. Namun realitanya, limitasi token AI dan kode yang berantakan membuat prosesnya molor hingga 1 minggu penuh, ditambah 1 minggu ekstra khusus untuk pengujian manual (_blackbox testing_) dan perbaikan _bug_.
 
 ## Rahasia Kecepatan: Just In Time Scheduling
 
@@ -36,7 +36,7 @@ Banyak kolega yang heran bagaimana saya bisa menyeimbangkan jam mengajar di seko
 
 Dalam industri manufaktur, _Just in Time_ berarti memproduksi suku cadang tepat saat dibutuhkan untuk menghindari penumpukan di gudang. Di ranah penulisan kode, saya menerapkan prinsip ini melalui efisiensi manipulasi komponen visual.
 
-Sebagai langkah awal, alih-alih merakit semuanya dari nol, saya biasa memanfaatkan _library_ antarmuka pihak ketiga yang sudah stabil (seperti _loading skeleton_). Tujuannya agar purwarupa (**[baca tentang pentingnya Wireframe dan UI di sini](/blog/apa-itu-ui-ux-designer-wireframe-mockup)**) bisa segera diuji fungsinya. Di era modern ini, pendekatan JIT sangat krusial: tunjukkan gambaran aplikasinya kepada klien atau _end-user_ sedini mungkin.
+Sebagai langkah awal, alih-alih merakit semuanya dari nol, saya biasa memanfaatkan _library_ antarmuka pihak ketiga yang sudah stabil (seperti _loading skeleton_). Tujuannya agar purwarupa (**[baca tentang pentingnya Wireframe dan UI di sini](/blog/apa-itu-ui-ux-designer-wireframe-mockup/)**) bisa segera diuji fungsinya. Di era modern ini, pendekatan JIT sangat krusial: tunjukkan gambaran aplikasinya kepada klien atau _end-user_ sedini mungkin.
 
 Setelah aplikasi berjalan, barulah saya melakukan optimalisasi ke dalam. Jika _library_ pihak ketiga terbukti lambat atau membengkakkan ukuran aplikasi, saya akan mencabutnya dan membangun komponen _custom_ secara spesifik (seperti yang saya lakukan pada komponen _circle loading bar_ dan _card quiz_ di aplikasi Asmaul Husna). Intinya: rilis dengan cepat menggunakan apa yang ada, lalu sempurnakan performanya di belakang layar tepat saat keterbatasan itu mulai terasa.
 
@@ -52,7 +52,7 @@ Ada sebuah studi kasus menarik di tahun 2024 yang menjadi rahasia umum di portof
 
 Ia akhirnya meminta saya mengambil alih proyek tersebut setelah melihat performa aplikasi _Simulasi Tes CPNS_ saya (yang saat itu sempat menduduki peringkat 7 di Google Play Store pada kategori _Event_).
 
-Berapa lama waktu yang saya butuhkan untuk membangun ulang sistem ujiannya beserta integrasi _API backend_? **Hanya 2 minggu pengerjaan**, dengan biaya yang sangat terjangkau (sekitar Rp500 ribu). Sistemnya berjalan mulus dan klien sangat puas. Tragedi ini membuktikan bahwa metrik "harga selalu menentukan kualitas" tidak selamanya berlaku di dunia perangkat lunak. Kualitas sesungguhnya ditentukan oleh siapa yang memegang kendali penuh atas fondasi **[logika dan algoritmanya](/blog/bab-1-mengenal-algoritma-dan-pola-pikir)**.
+Berapa lama waktu yang saya butuhkan untuk membangun ulang sistem ujiannya beserta integrasi _API backend_? **Hanya 2 minggu pengerjaan**, dengan biaya yang sangat terjangkau (sekitar Rp500 ribu). Sistemnya berjalan mulus dan klien sangat puas. Tragedi ini membuktikan bahwa metrik "harga selalu menentukan kualitas" tidak selamanya berlaku di dunia perangkat lunak. Kualitas sesungguhnya ditentukan oleh siapa yang memegang kendali penuh atas fondasi **[logika dan algoritmanya](/blog/bab-1-mengenal-algoritma-dan-pola-pikir/)**.
 
 ## Rumus Mental Estimasi Waktu ala "Take It or Leave It"
 

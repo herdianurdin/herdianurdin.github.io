@@ -8,7 +8,7 @@ tags:
 isDraft: false
 ---
 
-Pada **[Bab 1 sebelumnya](/blog/bab-1-mengenal-algoritma-dan-pola-pikir)**, kita telah bersepakat bahwa _coding_ bukanlah tentang kecepatan mengetik, melainkan seni menyusun **Algoritma**.
+Pada **[Bab 1 sebelumnya](/blog/bab-1-mengenal-algoritma-dan-pola-pikir/)**, kita telah bersepakat bahwa _coding_ bukanlah tentang kecepatan mengetik, melainkan seni menyusun **Algoritma**.
 
 Bagi Anda yang sudah mengerjakan tantangan di akhir bab kemarin—seperti menyusun langkah menyeduh kopi atau memesan ojek _online_—Anda pasti menyadari satu hal krusial: jika ada satu saja langkah yang terlewat atau tertukar (misalnya menuangkan air panas sebelum menaruh bubuk kopi di gelas), hasil akhirnya adalah bencana. Algoritma menuntut urutan logis yang mutlak.
 
@@ -100,4 +100,4 @@ Kita akan melihat betapa pusingnya mengendalikan mesin bodoh ini, dan bagaimana 
 
 _(Artikel ini adalah Bagian ke-2 dari Seri Fundamental Python)._
 
-[Baca Selanjutnya: Bab 3 - Cara Menulis Algoritma >>](/blog/bab-3-cara-menulis-algoritma)
+[Baca Selanjutnya: Bab 3 - Cara Menulis Algoritma >>](/blog/bab-3-cara-menulis-algoritma/)

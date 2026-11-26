@@ -7,7 +7,7 @@ tags: ["tutorial-python", "dasar-pemrograman", "sejarah-python", "pemula"]
 isDraft: false
 ---
 
-Pada **[Bab 3 sebelumnya](/blog/bab-3-cara-menulis-algoritma)**, Anda telah membuktikan bahwa Anda tidak gegabah. Anda telah berhasil merancang _Pseudocode_ (cetak biru) untuk menghitung luas segitiga. Anda telah menyusun logika dengan aman di atas kertas.
+Pada **[Bab 3 sebelumnya](/blog/bab-3-cara-menulis-algoritma/)**, Anda telah membuktikan bahwa Anda tidak gegabah. Anda telah berhasil merancang _Pseudocode_ (cetak biru) untuk menghitung luas segitiga. Anda telah menyusun logika dengan aman di atas kertas.
 
 Sekarang, saatnya kita membuka layar hitam sesungguhnya dan menerjemahkan logika tersebut ke dalam bahasa pemrograman tingkat tinggi. Dan bahasa yang akan menemani perjalanan kita adalah **Python**.
 
@@ -75,7 +75,7 @@ Biasanya, rintangan terberat bagi pemula (terutama yang memiliki laptop spesifik
 Untuk mengatasi hal tersebut, kita akan melewatkan proses instalasi lokal yang merepotkan. Saya telah menyediakan sebuah "laboratorium _cloud_" yang sangat ringan dan bisa dibuka langsung dari _browser_ (Google Chrome/Firefox) Anda, apa pun jenis laptop Anda!
 
 Perkenalkan senjata utama kita selama seri tutorial ini:
-👉 **[Python Playground](/python-playground)**
+👉 **[Python Playground](/python-playground/)**
 
 Di _website_ tersebut, Anda bisa mengetikkan kode di layar kiri, menekan tombol **Jalankan**, dan langsung melihat hasilnya secara _real-time_ di layar kanan. Tanpa instalasi, tanpa membebani RAM laptop Anda.
 
@@ -89,7 +89,7 @@ Tradisi itu sudah terlalu membosankan. Kita akan membuat gebrakan baru. Kita aka
 
 **Tugas Anda:**
 
-1. Buka tautan **[Python Playground](/python-playground)**.
+1. Buka tautan **[Python Playground](/python-playground/)**.
 2. Di kolom teks (editor), ketikkan perintah ini secara persis (perhatikan huruf kecil pada perintah awal dan tanda kutip ganda yang mengapit teks):
 
 ```python
@@ -104,4 +104,4 @@ Di materi selanjutnya, kita akan mulai bermain-main dengan komunikasi interaktif
 
 _(Artikel ini adalah Bagian ke-4 dari Seri Fundamental Python)._
 
-[Baca Selanjutnya: Bab 5 - Berbicara dengan Mesin (Input & Output) >>](/blog/bab-5-input-dan-output-python)
+[Baca Selanjutnya: Bab 5 - Berbicara dengan Mesin (Input & Output) >>](/blog/bab-5-input-dan-output-python/)

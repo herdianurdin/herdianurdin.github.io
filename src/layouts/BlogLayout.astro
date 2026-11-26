@@ -13,7 +13,7 @@ import "@fontsource/fira-code/700.css";
 import "../styles/global.css";
 
 const { frontmatter, headings, language } = Astro.props;
-const homeUrl = language === "id" ? "/" : "/en";
+const homeUrl = language === "id" ? "/" : "/en/";
 const translationHref = language === "id"
   ? (frontmatter.enSlug ? `/en/blog/${frontmatter.enSlug}/` : undefined)
   : (frontmatter.idSlug ? `/blog/${frontmatter.idSlug}/` : undefined);
@@ -31,7 +31,6 @@ const translationHref = language === "id"
       idSlug={frontmatter.idSlug}
       pubDate={frontmatter.pubDate}
       updatedDate={frontmatter.updatedDate}
-      faq={frontmatter.faq}
     />
   </head>
   <body
@@ -115,6 +114,19 @@ const translationHref = language === "id"
             class="prose prose-invert prose-lg max-w-none prose-pre:border-4 prose-pre:border-white prose-pre:rounded-none prose-pre:shadow-[8px_8px_0px_0px_#00e5ff] prose-headings:font-black prose-headings:scroll-mt-24 prose-a:text-[#c6ff00] prose-a:underline-offset-4 hover:prose-a:bg-[#c6ff00] hover:prose-a:text-black"
           >
             <slot />
+            {frontmatter.faq?.length > 0 && (
+              <section class="mt-12" aria-labelledby="article-faq-heading">
+                <h2 id="article-faq-heading">
+                  {language === "id" ? "Pertanyaan yang Sering Diajukan" : "Frequently Asked Questions"}
+                </h2>
+                {frontmatter.faq.map((item: { q: string; a: string }) => (
+                  <div class="mb-8">
+                    <h3>{item.q}</h3>
+                    <p>{item.a}</p>
+                  </div>
+                ))}
+              </section>
+            )}
           </div>
 
           <footer class="mt-16 pt-8 border-t-4 border-white">

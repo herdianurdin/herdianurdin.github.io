@@ -8,7 +8,7 @@ tags:
 isDraft: false
 ---
 
-Di **[Bab 2 sebelumnya](/blog/bab-2-mengenal-pemrograman-dan-bahasa)**, kita telah menyadari sebuah ironi besar: komputer adalah mesin yang sangat cepat, tetapi sangat bodoh. Ia menelan instruksi secara harfiah.
+Di **[Bab 2 sebelumnya](/blog/bab-2-mengenal-pemrograman-dan-bahasa/)**, kita telah menyadari sebuah ironi besar: komputer adalah mesin yang sangat cepat, tetapi sangat bodoh. Ia menelan instruksi secara harfiah.
 
 Jika kemarin Anda mencoba memecah instruksi "menyuruh robot DUM-E membuka pintu", Anda pasti merasakan betapa melelahkannya menstrukturkan bahasa mesin. Karena komputer menuntut instruksi yang sangat rinci dan kaku, seorang _programmer_ pantang hukumnya langsung mengetik baris kode (_coding_) ketika berhadapan dengan sebuah masalah.
 
@@ -125,4 +125,4 @@ Di materi selanjutnya, kita akan membawa _pseudocode_ ini ke dalam _Playground_ 
 
 _(Artikel ini adalah Bagian ke-3 dari Seri Fundamental Python)._
 
-[Baca Selanjutnya: Bab 4 - Berkenalan dengan Python & Senjata Kita >>](/blog/bab-4-berkenalan-dengan-python)
+[Baca Selanjutnya: Bab 4 - Berkenalan dengan Python & Senjata Kita >>](/blog/bab-4-berkenalan-dengan-python/)

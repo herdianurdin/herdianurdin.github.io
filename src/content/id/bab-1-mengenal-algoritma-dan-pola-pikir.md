@@ -94,4 +94,4 @@ Simpan urutan logika yang Anda tulis di Notepad, buku catatan, atau bagikan lang
 
 _(Artikel ini adalah Bagian ke-1 dari Seri Fundamental Python)._
 
-[Baca materi selanjutnya: Bab 2 - Mengenal Pemrograman & Menjembatani Mesin di sini](/blog/bab-2-mengenal-pemrograman-dan-bahasa)
+[Lanjut ke Bab 2: Mengenal Pemrograman dan Bahasa](/blog/bab-2-mengenal-pemrograman-dan-bahasa/)

@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import rehypeExternalLinks from "rehype-external-links";
+import rehypeLocalImageAttributes from "./scripts/rehype-local-image-attributes.mjs";
 import { unified } from "@astrojs/markdown-remark";
 
 export default defineConfig({
@@ -9,6 +10,7 @@ export default defineConfig({
 
   // Target deployment: GitHub Pages serves pre-rendered static files.
   output: "static",
+  trailingSlash: "always",
 
   prefetch: {
     prefetchAll: false,
@@ -29,6 +31,7 @@ export default defineConfig({
             rel: ["noopener", "noreferrer"],
           },
         ],
+        rehypeLocalImageAttributes,
       ],
     }),
   },

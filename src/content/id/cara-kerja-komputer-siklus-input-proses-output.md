@@ -15,7 +15,7 @@ tags:
 isDraft: false
 ---
 
-Pada **[materi sebelumnya](/blog/materi-dasar-komputer-pemula)**, kita telah membahas bagaimana antarmuka komputer berevolusi dan bagaimana sebuah sistem operasi menjadi "lingkungan" tempat aplikasi berjalan. Namun, tahukah kamu bahwa secanggih apa pun sistem operasi tersebut, komputer pada dasarnya hanyalah sebuah mesin yang pasif?
+Pada **[materi sebelumnya](/blog/materi-dasar-komputer-pemula/)**, kita telah membahas bagaimana antarmuka komputer berevolusi dan bagaimana sebuah sistem operasi menjadi "lingkungan" tempat aplikasi berjalan. Namun, tahukah kamu bahwa secanggih apa pun sistem operasi tersebut, komputer pada dasarnya hanyalah sebuah mesin yang pasif?
 
 Sebuah komputer tidak bisa berpikir sendiri. Ia hanya akan bekerja jika ada instruksi yang jelas dari manusia. Agar mesin ini bisa hidup dan mematuhi perintah kita, ia membutuhkan fondasi yang utuh dan alur kerja yang sistematis.
 
@@ -37,7 +37,7 @@ Berbicara tentang _Brainware_, istilah ini tidak hanya merujuk pada satu jenis o
 
 1.  **End User (Operator):** Ini adalah pengguna tingkat akhir, seperti kasir minimarket atau admin kantor. Mereka hanya menggunakan aplikasi yang sudah jadi tanpa perlu tahu bagaimana aplikasi itu dibuat.
 2.  **Teknisi Jaringan & Komputer (Fokus TKJ):** Mereka adalah ahli infrastruktur yang fokus pada perakitan raga (_hardware_). Seorang teknisi TKJ (yang standarnya merujuk pada kurikulum jaringan global seperti **[Cisco Networking Academy](https://www.netacad.com/)**) bertugas memastikan kelistrikan komputer aman dan mengatur lalu lintas jaringan kabel antarkomputer.
-3.  **Programmer / Developer (Fokus RPL):** Mereka adalah pencipta jiwa (_software_). Siswa RPL akan lebih banyak duduk di depan layar untuk merancang **[logika dan algoritma](/blog/bab-1-mengenal-algoritma-dan-pola-pikir)**, lalu menuliskan baris kode agar mesin tahu tugas apa yang harus ia selesaikan.
+3.  **Programmer / Developer (Fokus RPL):** Mereka adalah pencipta jiwa (_software_). Siswa RPL akan lebih banyak duduk di depan layar untuk merancang **[logika dan algoritma](/blog/bab-1-mengenal-algoritma-dan-pola-pikir/)**, lalu menuliskan baris kode agar mesin tahu tugas apa yang harus ia selesaikan.
 
 ## 3. Siklus Seblak: Memahami Alur Kerja Komputer
 

@@ -41,7 +41,7 @@ Di era AI sekarang, trik teks putih ini berevolusi menjadi ancaman _Data Poisoni
 
 ## Tragedi CMS Klasik: Mengapa Mitigasi Itu Penting
 
-Bergeser dari dokumen PDF, celah keamanan sistem yang paling klasik justru sering kali datang dari hal sepele, yakni fitur _Upload File_. Membangun aplikasi yang fungsional memang penting, namun melindunginya adalah prioritas utama (sebuah filosofi yang selalu saya pegang saat **[merancang arsitektur aplikasi offline-first](/blog/opini-native-kotlin-xml-vs-cross-platform)** maupun saat meracik **[prompt Vibe Engineering di AI Studio](/blog/vibe-engineering-vs-vibe-coding)**).
+Bergeser dari dokumen PDF, celah keamanan sistem yang paling klasik justru sering kali datang dari hal sepele, yakni fitur _Upload File_. Membangun aplikasi yang fungsional memang penting, namun melindunginya adalah prioritas utama (sebuah filosofi yang selalu saya pegang saat **[merancang arsitektur aplikasi offline-first](/blog/opini-native-kotlin-xml-vs-cross-platform/)** maupun saat meracik **[prompt Vibe Engineering di AI Studio](/blog/vibe-engineering-vs-vibe-coding/)**).
 
 Sewaktu kuliah, saya pernah diminta membantu mereparasi sistem _Content Management System_ (CMS) sekolah milik seorang teman. Sistem itu masih dibangun menggunakan PHP klasik (tanpa _framework_) dengan arsitektur akses _file_ langsung (_Direct Access_). Hasilnya? _Website_ itu bagaikan kebun binatang _hacker_.
 

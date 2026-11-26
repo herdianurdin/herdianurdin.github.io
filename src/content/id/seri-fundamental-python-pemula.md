@@ -62,7 +62,7 @@ Jika Anda penasaran tentang **[realitas menjadi programmer di dunia nyata](/blog
 
 ## Peta Kurikulum: 10 Langkah Menuju Logika Mesin
 
-Karena fokus kita di sini adalah belajar merancang logika, saya tidak ingin energi Anda habis di hari pertama karena pusing memikirkan instalasi aplikasi _coding_ di laptop. Semua bab di bawah ini bisa Anda praktikkan langsung melalui peramban (_browser_) menggunakan **[Python Playground](/python-playground)** yang telah saya sediakan.
+Karena fokus kita di sini adalah belajar merancang logika, saya tidak ingin energi Anda habis di hari pertama karena pusing memikirkan instalasi aplikasi _coding_ di laptop. Semua bab di bawah ini bisa Anda praktikkan langsung melalui peramban (_browser_) menggunakan **[Python Playground](/python-playground/)** yang telah saya sediakan.
 
 Kita akan membangun nalar komputasional Anda lapis demi lapis. Silakan pelajari kurikulum ini secara berurutan:
 
@@ -70,26 +70,26 @@ Kita akan membangun nalar komputasional Anda lapis demi lapis. Silakan pelajari 
 
 Sebelum menyentuh kode, kita harus mencuci otak kita agar bisa berpikir terstruktur layaknya seorang insinyur perangkat lunak.
 
-- **[Bab 1: Mengenal Algoritma dan Pola Pikir Komputasional](/blog/bab-1-mengenal-algoritma-dan-pola-pikir)**
-- **[Bab 2: Mengenal Pemrograman sebagai Jembatan Manusia dan Mesin](/blog/bab-2-mengenal-pemrograman-dan-bahasa)**
-- **[Bab 3: Cara Menulis Algoritma (Cetak Biru Aplikasi)](/blog/bab-3-cara-menulis-algoritma)**
+- **[Bab 1: Mengenal Algoritma dan Pola Pikir Komputasional](/blog/bab-1-mengenal-algoritma-dan-pola-pikir/)**
+- **[Bab 2: Mengenal Pemrograman sebagai Jembatan Manusia dan Mesin](/blog/bab-2-mengenal-pemrograman-dan-bahasa/)**
+- **[Bab 3: Cara Menulis Algoritma (Cetak Biru Aplikasi)](/blog/bab-3-cara-menulis-algoritma/)**
 
 ### Fase 2: Fondasi Ekosistem & Memori Mesin
 
 Menyambut Anda secara resmi di ekosistem Python dan belajar bagaimana komputer menyimpan data yang Anda berikan.
 
-- **[Bab 4: Berkenalan dengan Python dan Senjata Utama Kita](/blog/bab-4-berkenalan-dengan-python)**
-- **[Bab 5: Berbicara dengan Mesin (Input & Output)](/blog/bab-5-input-dan-output-python)**
-- **[Bab 6: Variabel dan Tipe Data (Menyortir Memori Mesin)](/blog/bab-6-variabel-dan-tipe-data-python)**
+- **[Bab 4: Berkenalan dengan Python dan Senjata Utama Kita](/blog/bab-4-berkenalan-dengan-python/)**
+- **[Bab 5: Berbicara dengan Mesin (Input & Output)](/blog/bab-5-input-dan-output-python/)**
+- **[Bab 6: Variabel dan Tipe Data (Menyortir Memori Mesin)](/blog/bab-6-variabel-dan-tipe-data-python/)**
 
 ### Fase 3: Logika, Pengambilan Keputusan, dan Otomatisasi
 
 Di fase ini, Anda akan merakit aplikasi yang bisa berpikir, berhitung, dan melakukan pekerjaan berulang kali tanpa lelah.
 
-- **[Bab 7: Matematika Mesin (Operator Aritmatika)](/blog/bab-7-operator-aritmatika-python)**
-- **[Bab 8: Persimpangan Jalan (Gerbang Logika & Kondisi)](/blog/bab-8-pengkondisian-if-else-python)**
-- **[Bab 9: Menolak Jadi Pekerja Paksa (Perulangan / Looping)](/blog/bab-9-perulangan-looping-python)**
-- **[Bab 10: Meracik Cetakan Pabrik (Fungsi / Function)](/blog/bab-10-fungsi-dan-modularitas-python)**
+- **[Bab 7: Matematika Mesin (Operator Aritmatika)](/blog/bab-7-operator-aritmatika-python/)**
+- **[Bab 8: Persimpangan Jalan (Gerbang Logika & Kondisi)](/blog/bab-8-pengkondisian-if-else-python/)**
+- **[Bab 9: Menolak Jadi Pekerja Paksa (Perulangan / Looping)](/blog/bab-9-perulangan-looping-python/)**
+- **[Bab 10: Meracik Cetakan Pabrik (Fungsi / Function)](/blog/bab-10-fungsi-dan-modularitas-python/)**
 
 ## FAQ (Pertanyaan Umum Pemula)
 
@@ -107,4 +107,4 @@ Belajar _coding_ itu persis seperti belajar bahasa asing (misalnya bahasa Jepang
 
 Sangat banyak! Berkat sintaksnya yang sederhana, Python digunakan oleh para ilmuwan untuk _Data Science_, melatih mesin AI (Kecerdasan Buatan), merakit _backend_ untuk _website_ berkinerja tinggi, meretas sistem keamanan (_Cybersecurity_), hingga sekadar membuat skrip otomatisasi untuk men-_download_ ribuan gambar dalam hitungan detik.
 
-Apakah Anda sudah siap untuk mengubah cara Anda berpikir dan mulai mengobrol dengan mesin? Tarik napas panjang, siapkan secangkir kopi, dan mari kita mulai langkah pertama kita menuju **[Bab 1: Mengenal Algoritma dan Pola Pikir Komputasional](/blog/bab-1-mengenal-algoritma-dan-pola-pikir)**.
+Apakah Anda sudah siap untuk mengubah cara Anda berpikir dan mulai mengobrol dengan mesin? Tarik napas panjang, siapkan secangkir kopi, dan mari kita mulai langkah pertama kita menuju **[Bab 1: Mengenal Algoritma dan Pola Pikir Komputasional](/blog/bab-1-mengenal-algoritma-dan-pola-pikir/)**.

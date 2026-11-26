@@ -34,7 +34,7 @@ Namun, masa itu berakhir cepat saat saya berbenturan dengan realita teknis di la
 1. **Tragedi _Dependency Hell_:** Di ekosistem React Native, kemudahan JavaScript dibayar mahal dengan ukuran folder `node_modules` yang rakus memori. Setiap kali saya ingin melakukan pemeliharaan aplikasi (_maintenance_) setelah beberapa bulan, selalu ada _library_ pihak ketiga yang usang (_deprecated_) atau memicu _error_ fatal karena bentrok versi.
 2. **Ukuran Aplikasi (APK size) yang Membengkak:** Flutter memang jauh lebih stabil secara performa dibandingkan React Native. Sayangnya, ukuran APK yang dihasilkan sangat bengkak. Aplikasi sederhana yang seharusnya hanya 3 MB bisa melonjak menjadi 20 MB lebih karena Flutter harus menyertakan _engine rendering_ C++ miliknya sendiri.
 
-Bagi target pasar saya di Indonesia, ukuran _file_ yang besar adalah alasan utama pengguna melakukan _uninstall_. Seperti yang pernah saya singgung dalam **[Bongkar Realita Pendapatan AdMob Indonesia](/blog/realita-pendapatan-admob-indonesia-2026)**, mempertahankan _User Experience (UX)_ dan kestabilan aplikasi adalah kunci utama jika Anda ingin bertahan lama di industri ini.
+Bagi target pasar saya di Indonesia, ukuran _file_ yang besar adalah alasan utama pengguna melakukan _uninstall_. Seperti yang pernah saya singgung dalam **[Bongkar Realita Pendapatan AdMob Indonesia](/blog/realita-pendapatan-admob-indonesia-2026/)**, mempertahankan _User Experience (UX)_ dan kestabilan aplikasi adalah kunci utama jika Anda ingin bertahan lama di industri ini.
 
 ## Patah Hati dengan Jetpack Compose
 
@@ -56,7 +56,7 @@ Akhirnya, saya kembali ke pangkuan kombinasi klasik: Native Kotlin dan XML. Ini 
 
 ### 1. Rendering UI Instan dan Bebas Hang
 
-Menulis _layout_ UI menggunakan XML di Android Studio ibarat bernapas lega. Fitur _Design Preview_ XML bekerja sangat ringan dan instan tanpa membebani CPU. Meskipun XML memiliki batasan struktur yang kaku, batasan ini justru memaksa kita untuk lebih disiplin dalam mendesain hierarki komponen—sebuah prinsip yang sejalan dengan **[Teori Dasar UI/UX Designer](/blog/apa-itu-ui-ux-designer-wireframe-mockup)** yang ideal.
+Menulis _layout_ UI menggunakan XML di Android Studio ibarat bernapas lega. Fitur _Design Preview_ XML bekerja sangat ringan dan instan tanpa membebani CPU. Meskipun XML memiliki batasan struktur yang kaku, batasan ini justru memaksa kita untuk lebih disiplin dalam mendesain hierarki komponen—sebuah prinsip yang sejalan dengan **[Teori Dasar UI/UX Designer](/blog/apa-itu-ui-ux-designer-wireframe-mockup/)** yang ideal.
 
 ### 2. Diet Ketat APK (Di Bawah 10 MB)
 

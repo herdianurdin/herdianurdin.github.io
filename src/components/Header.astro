@@ -10,7 +10,7 @@ export interface Props {
 }
 
 const { currentLang, variant = 'page', translationHref } = Astro.props;
-const homeUrl = currentLang === 'id' ? '/' : '/en';
+const homeUrl = currentLang === 'id' ? '/' : '/en/';
 const t = siteTranslation[currentLang];
 ---
 

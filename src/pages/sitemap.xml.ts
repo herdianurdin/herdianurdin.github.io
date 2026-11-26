@@ -27,16 +27,16 @@ export async function GET() {
 
   const staticPages = [
     "/",
-    "/about",
-    "/privacy-policy",
-    "/disclaimer",
-    "/terms-of-service",
-    "/python-playground",
-    "/en",
-    "/en/about",
-    "/en/privacy-policy",
-    "/en/disclaimer",
-    "/en/terms-of-service",
+    "/about/",
+    "/privacy-policy/",
+    "/disclaimer/",
+    "/terms-of-service/",
+    "/python-playground/",
+    "/en/",
+    "/en/about/",
+    "/en/privacy-policy/",
+    "/en/disclaimer/",
+    "/en/terms-of-service/",
   ];
 
   // Archive pages intentionally use noindex, so they are not listed here.

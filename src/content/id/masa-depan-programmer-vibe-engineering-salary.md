@@ -31,7 +31,7 @@ Secara sederhana:
 - **Vibe Coding** adalah proses menyuruh AI membuat program agar cepat jadi. Fokus utamanya adalah aplikasi bisa dijalankan di layar, sering kali tanpa memedulikan betapa kotor dan tidak efisiennya kode di balik layar tersebut.
 - **Vibe Engineering** adalah tingkat lanjutannya. Anda tidak hanya menyuruh AI membuat fitur, tetapi Anda merancang arsitekturnya, memastikan sistem berfungsi optimal, mengelola keamanan, dan merencanakan skalabilitasnya.
 
-Pola pikir inilah yang membedakan seorang amatir dengan profesional. Sama halnya ketika saya memutuskan untuk **[bertahan menggunakan Native Kotlin (XML)](/blog/opini-native-kotlin-xml-vs-cross-platform)** demi membangun ekosistem aplikasi _offline-first_. Seorang insinyur (_engineer_) sejati akan selalu memprioritaskan kestabilan dan kemudahan pemeliharaan jangka panjang, bukan sekadar tampilan antarmuka yang cepat selesai hari ini.
+Pola pikir inilah yang membedakan seorang amatir dengan profesional. Sama halnya ketika saya memutuskan untuk **[bertahan menggunakan Native Kotlin (XML)](/blog/opini-native-kotlin-xml-vs-cross-platform/)** demi membangun ekosistem aplikasi _offline-first_. Seorang insinyur (_engineer_) sejati akan selalu memprioritaskan kestabilan dan kemudahan pemeliharaan jangka panjang, bukan sekadar tampilan antarmuka yang cepat selesai hari ini.
 
 ## Tragedi "Bersih-Bersih" Kode AI: 3 Hari Bikin, Seminggu Perbaikan
 
@@ -45,7 +45,7 @@ Namun, mimpi buruknya baru dimulai saat aplikasi itu dijalankan.
 
 Karena aplikasi tersebut harus menarik data dari berbagai server, sering kali terjadi **[Race Condition](https://www.geeksforgeeks.org/operating-systems/race-condition-in-operating-systems/)** pada bagian kode yang berjalan secara asinkron (_asynchronous_). AI sering gagal memahami urutan eksekusi pengambilan data yang benar. Akibatnya, aplikasi sering _crash_ secara acak saat diuji.
 
-Selain masalah logika, AI juga sangat malas melakukan pemecahan komponen visual. Daripada memecah elemen desain menjadi bagian-bagian kecil yang bisa digunakan kembali (sebagaimana **[prinsip dasar UI/UX dan Wireframing yang baik](/blog/apa-itu-ui-ux-designer-wireframe-mockup)**), AI sering menjejalkan ratusan baris kode ke dalam satu dokumen secara berulang-ulang.
+Selain masalah logika, AI juga sangat malas melakukan pemecahan komponen visual. Daripada memecah elemen desain menjadi bagian-bagian kecil yang bisa digunakan kembali (sebagaimana **[prinsip dasar UI/UX dan Wireframing yang baik](/blog/apa-itu-ui-ux-designer-wireframe-mockup/)**), AI sering menjejalkan ratusan baris kode ke dalam satu dokumen secara berulang-ulang.
 
 Berapa lama waktu yang saya butuhkan untuk memeriksa ulang struktur, menambal _race condition_, dan melakukan _Blackbox Testing_? **Satu minggu penuh.** Jauh lebih lama dan lebih melelahkan daripada proses pengetikan awalnya!
 
@@ -79,6 +79,6 @@ Sangat sederhana. Mengutip filosofi **[Clean Code](https://en.wikipedia.org/wiki
 
 Satu-satunya cara agar Anda tidak tertipu oleh kode halusinasi AI adalah dengan menguasai fondasinya secara manual terlebih dahulu. Jika Anda tidak paham konsep perulangan (_looping_), tipe data, atau gerbang logika, Anda tidak akan tahu bagian mana yang harus diperbaiki saat terjadi _error_.
 
-_(Untuk memperkuat fondasi logika ini dari titik nol, Anda bisa mengikuti **[Seri Fundamental Python Gratis](/blog/seri-fundamental-python-pemula)** di blog ini, atau langsung membaca **[Buku Algoritma Pemrograman karya saya di Google Play Books](https://play.google.com/store/books/details?id=1YcZEgAAQBAJ)**)._
+_(Untuk memperkuat fondasi logika ini dari titik nol, Anda bisa mengikuti **[Seri Fundamental Python Gratis](/blog/seri-fundamental-python-pemula/)** di blog ini, atau langsung membaca **[Buku Algoritma Pemrograman karya saya di Google Play Books](https://play.google.com/store/books/details?id=1YcZEgAAQBAJ)**)._
 
 Masa depan _programmer_ masih sangat cerah. Berhentilah menjadi _coder_ yang hanya bisa menghafal baris sintaks, dan mulailah berevolusi menjadi seorang insinyur yang berfokus pada penyelesaian masalah. Kecerdasan buatan adalah alat berat Anda, bukan mesin yang akan menggantikan peran Anda!

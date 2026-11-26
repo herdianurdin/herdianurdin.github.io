@@ -14,7 +14,7 @@ tags:
 isDraft: false
 ---
 
-Selamat! Anda telah mencapai bab puncak dari Seri Fundamental Python ini. Dari **[Bab 5](/blog/bab-5-input-dan-output-python)** hingga **[Bab 9](/blog/bab-9-perulangan-looping-python)**, Anda telah menguasai Input, Tipe Data, Operator Matematika, Pengkondisian, dan Perulangan.
+Selamat! Anda telah mencapai bab puncak dari Seri Fundamental Python ini. Dari **[Bab 5](/blog/bab-5-input-dan-output-python/)** hingga **[Bab 9](/blog/bab-9-perulangan-looping-python/)**, Anda telah menguasai Input, Tipe Data, Operator Matematika, Pengkondisian, dan Perulangan.
 
 Sekarang, bayangkan Anda ingin membuat sebuah aplikasi berskala besar. Di Bab 9, kita belajar bahwa _Looping_ berguna untuk mengeksekusi kode berulang kali di satu tempat yang sama. Namun, bagaimana jika ada satu barisan logika yang sama persis, tetapi Anda butuh memanggilnya di puluhan halaman yang berbeda-beda?
 
@@ -47,7 +47,7 @@ Di Python, kita menggunakan kata kunci `def` (singkatan dari _Define_ / Definisi
 
 ## 1. Merakit Fungsi Dasar (`def`)
 
-Mari kita buat sebuah cetakan sapaan paling sederhana di **[Python Playground](/python-playground)**.
+Mari kita buat sebuah cetakan sapaan paling sederhana di **[Python Playground](/python-playground/)**.
 
 ```python
 # Tahap 1: Membuat cetakan mesin (Program belum jalan, baru disimpan di memori)
@@ -169,6 +169,6 @@ ___ True:
         print("Pilihan tidak valid, coba lagi.")
 ```
 
-Berhasilkah Anda menyelesaikannya di **[Python Playground](/python-playground)** tanpa menemukan _IndentationError_ atau _TypeError_? Jika iya, salin seluruh kode rampung Anda dan pamerkan di kolom komentar! Anda kini resmi telah menamatkan fondasi dasar logika mesin.
+Berhasilkah Anda menyelesaikannya di **[Python Playground](/python-playground/)** tanpa menemukan _IndentationError_ atau _TypeError_? Jika iya, salin seluruh kode rampung Anda dan pamerkan di kolom komentar! Anda kini resmi telah menamatkan fondasi dasar logika mesin.
 
 _(Artikel ini adalah Bagian ke-10 sekaligus penutup dari Seri Fundamental Python. Teruslah berkarya, merakit cetakan, dan menulis kode!)_

@@ -14,7 +14,7 @@ tags:
 isDraft: false
 ---
 
-Di **[Bab 7 sebelumnya](/blog/bab-7-operator-aritmatika-python)**, aplikasi kita telah berevolusi dari sekadar beo yang mengulang teks menjadi kalkulator yang mampu berhitung. Namun, kehidupan ini bukanlah sebuah jalan lurus yang hanya berisi hitung-hitungan matematis.
+Di **[Bab 7 sebelumnya](/blog/bab-7-operator-aritmatika-python/)**, aplikasi kita telah berevolusi dari sekadar beo yang mengulang teks menjadi kalkulator yang mampu berhitung. Namun, kehidupan ini bukanlah sebuah jalan lurus yang hanya berisi hitung-hitungan matematis.
 
 Kehidupan nyata dipenuhi dengan persimpangan dan pengambilan keputusan. _Jika_ hari ini Anda baru gajian, Anda memutuskan beli kopi mahal; _jika tidak_, Anda cukup minum air putih dari rumah. _Jika_ rencana A gagal, Anda harus mengevaluasi keadaan dan mengeksekusi rencana B.
 
@@ -148,7 +148,7 @@ else:                # Ini juga diabaikan
 Mari kita gabungkan ilmu dari Bab 5 (Input), Bab 6 (Variabel/Tipe Data), dan materi Pengkondisian ini ke dalam studi kasus nyata. Sebagai tenaga pengajar, setiap akhir semester saya selalu berhadapan dengan logika pengelompokan nilai siswa berdasarkan batas Kriteria Ketuntasan Minimal (KKM).
 
 **Tugas Anda:**
-Buatlah **Aplikasi Penilai KKM Sekolah** di **[Python Playground](/python-playground)**.
+Buatlah **Aplikasi Penilai KKM Sekolah** di **[Python Playground](/python-playground/)**.
 
 1. Program harus meminta _input_ **Nama Siswa** (Ingat, ini tipe data Teks/String).
 2. Program meminta _input_ **Nilai Akhir**. (Wajib diubah menjadi angka dengan pembungkus `int()` atau `float()`!).
@@ -158,8 +158,8 @@ Buatlah **Aplikasi Penilai KKM Sekolah** di **[Python Playground](/python-playgr
    - Jika nilai `>= 75`, cetak: `"[Nama Siswa], Anda mendapat predikat C (Lulus KKM)."`
    - Jika nilainya di bawah 75 (Gunakan penutup `else`), cetak: `"Mohon maaf [Nama Siswa], Anda harus mengikuti Remedial."`
 
-Susun kodenya di **[Python Playground](/python-playground)**. Hati-hati dengan **spasi (indentasi)** Anda! Jika program berjalan mulus, mengelompokkan nilai dengan benar, dan bebas dari _IndentationError_, _copy_ mahakarya Anda dan _paste_ di kolom komentar!
+Susun kodenya di **[Python Playground](/python-playground/)**. Hati-hati dengan **spasi (indentasi)** Anda! Jika program berjalan mulus, mengelompokkan nilai dengan benar, dan bebas dari _IndentationError_, _copy_ mahakarya Anda dan _paste_ di kolom komentar!
 
 _(Artikel ini adalah Bagian ke-8 dari Seri Fundamental Python)._
 
-[Baca Selanjutnya: Bab 9 - Perulangan Tanpa Henti (Looping) >>](/blog/bab-9-perulangan-looping-python)
+[Baca Selanjutnya: Bab 9 - Perulangan Tanpa Henti (Looping) >>](/blog/bab-9-perulangan-looping-python/)

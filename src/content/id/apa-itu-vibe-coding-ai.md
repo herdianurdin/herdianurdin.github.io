@@ -69,7 +69,7 @@ AI ibarat kontraktor bangunan. Jika Anda hanya bilang, _"Bangunkan saya rumah ya
 Cara terbaik untuk melakukan _vibe coding_ adalah menyuapi AI dengan dokumen yang jelas:
 
 1.  **Dokumen PRD (Product Requirements Document):** Jelaskan fitur apa saja yang ada, batasan sistem, dan aturan bisnisnya.
-2.  **User Flow & Desain:** Seperti yang selalu saya tekankan dalam **[pentingnya merancang UI/UX sebelum ngoding](/blog/apa-itu-ui-ux-designer-wireframe-mockup)**, Anda harus punya _wireframe_ atau sistem desain yang jelas.
+2.  **User Flow & Desain:** Seperti yang selalu saya tekankan dalam **[pentingnya merancang UI/UX sebelum ngoding](/blog/apa-itu-ui-ux-designer-wireframe-mockup/)**, Anda harus punya _wireframe_ atau sistem desain yang jelas.
 3.  **Arsitektur & Skema Database:** Tentukan dari awal _framework_ apa yang dipakai dan bagaimana relasi datanya.
 
 Dengan menyertakan batasan yang ketat (_strict prompt_), AI akan bekerja di dalam koridor yang Anda buat, sehingga kode yang dihasilkan jauh lebih optimal dan tidak _ngelantur_.

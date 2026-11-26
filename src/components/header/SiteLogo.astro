@@ -5,7 +5,7 @@ export interface Props {
   currentLang: "id" | "en";
 }
 const { currentLang } = Astro.props;
-const homeUrl = currentLang === "id" ? "/" : "/en";
+const homeUrl = currentLang === "id" ? "/" : "/en/";
 ---
 
 <div class="font-black text-xl md:text-2xl tracking-tighter uppercase">

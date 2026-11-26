@@ -46,7 +46,7 @@ Banyak _programmer_ pemula yang meremehkan proses desain. _"Ah, buat apa gambar-
 
 Tolong, jangan ulangi kebodohan saya. Dulu, saat pertama kali mengenal pemrograman visual (di era Microsoft Visual Basic dan Delphi), saya melakukan hal tersebut. Tanpa pikir panjang soal rancangan tata letak, saya langsung _drag-and-drop_ komponen dan menulis kode. Hasilnya? Aplikasi saya acak-acakan, tidak responsif saat ukuran layar diubah, dan desainnya menyakitkan mata. Ujung-ujungnya, saya membuang semua kode itu dan merombak total dari awal, **setelah** memaksakan diri membuat desain kasarnya menggunakan... Microsoft PowerPoint!
 
-Dari pengalaman pahit itu, saya sadar bahwa **[merancang cetak biru aplikasi sebelum mulai ngoding](/blog/bab-3-cara-menulis-algoritma)** (baik dari sisi algoritma maupun desain) akan sangat menghemat waktu kita dari revisi kode yang menyiksa. Agar tidak berakhir menggunakan PowerPoint seperti saya dulu, alur desain aplikasi yang benar akan mengalir melalui tiga tahapan ini:
+Dari pengalaman pahit itu, saya sadar bahwa **[merancang cetak biru aplikasi sebelum mulai ngoding](/blog/bab-3-cara-menulis-algoritma/)** (baik dari sisi algoritma maupun desain) akan sangat menghemat waktu kita dari revisi kode yang menyiksa. Agar tidak berakhir menggunakan PowerPoint seperti saya dulu, alur desain aplikasi yang benar akan mengalir melalui tiga tahapan ini:
 
 ### 1. Mulai dari Kertas (Paper Prototype)
 

@@ -176,6 +176,13 @@ async function main() {
   }
 
   for (const location of locations) {
+    const pathname = new URL(location).pathname;
+    if (pathname !== "/" && !pathname.endsWith("/")) {
+      fail(`Sitemap URL must end with a trailing slash: ${location}`);
+    }
+  }
+
+  for (const location of locations) {
     let page;
     try {
       page = await loadPage(location);
@@ -192,6 +199,10 @@ async function main() {
 
     if (page.canonical.origin !== siteUrl.origin) {
       fail(`${location}: canonical uses a different origin (${page.canonical.origin})`);
+    }
+
+    if (page.canonical.pathname !== "/" && !page.canonical.pathname.endsWith("/")) {
+      fail(`${location}: canonical URL must end with a trailing slash (${page.canonical.href})`);
     }
 
     if (page.canonical.href !== page.url.href) {
@@ -214,6 +225,10 @@ async function main() {
       if (alternateUrl.origin !== siteUrl.origin) {
         fail(`${location}: hreflang ${attributes.hreflang} points off-site`);
         continue;
+      }
+
+      if (alternateUrl.pathname !== "/" && !alternateUrl.pathname.endsWith("/")) {
+        fail(`${location}: hreflang ${attributes.hreflang} URL must end with a trailing slash`);
       }
 
       checkedAlternates += 1;

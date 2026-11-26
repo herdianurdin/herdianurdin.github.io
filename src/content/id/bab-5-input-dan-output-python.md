@@ -7,7 +7,7 @@ tags: ["tutorial-python", "dasar-pemrograman", "input-output", "pemula"]
 isDraft: false
 ---
 
-Di akhir **[Bab 4 sebelumnya](/blog/bab-4-berkenalan-dengan-python)**, Anda telah berhasil menaklukkan mesin dengan mengeksekusi instruksi Python pertama Anda di dalam _Playground_.
+Di akhir **[Bab 4 sebelumnya](/blog/bab-4-berkenalan-dengan-python/)**, Anda telah berhasil menaklukkan mesin dengan mengeksekusi instruksi Python pertama Anda di dalam _Playground_.
 
 Namun, jika aplikasi yang Anda buat hanya mencetak satu kalimat lalu berhenti, bukankah itu sangat membosankan?
 
@@ -35,7 +35,7 @@ Dalam keseharian, komunikasi dasar terdiri dari aksi _berbicara_ (menyampaikan i
 
 Secara teori formal akademis, **Output** adalah proses pengiriman data dari dalam program menuju perangkat luar (biasanya layar atau monitor). Di bahasa Python, fungsi `print()` bertugas mencetak tipe data ke standar keluaran (_standard output_ atau _stdout_).
 
-Ini adalah komunikasi sepihak. Komputer menyampaikan informasi, dan ia tidak peduli apakah Anda ingin membalasnya atau tidak. Mari praktikkan. Buka **[Python Playground](/python-playground)**, lalu ketikkan:
+Ini adalah komunikasi sepihak. Komputer menyampaikan informasi, dan ia tidak peduli apakah Anda ingin membalasnya atau tidak. Mari praktikkan. Buka **[Python Playground](/python-playground/)**, lalu ketikkan:
 
 ```python
 print("Halo, saya adalah sistem bot otomatis.")
@@ -100,4 +100,4 @@ Di materi selanjutnya, kita akan membedah anatomi dari kotak memori (Variabel) s
 
 _(Artikel ini adalah Bagian ke-5 dari Seri Fundamental Python)._
 
-[Baca Selanjutnya: Bab 6 - Variabel dan Tipe Data >>](/blog/bab-6-variabel-dan-tipe-data-python)
+[Baca Selanjutnya: Bab 6 - Variabel dan Tipe Data >>](/blog/bab-6-variabel-dan-tipe-data-python/)

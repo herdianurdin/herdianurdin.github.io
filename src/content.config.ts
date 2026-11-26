@@ -12,11 +12,7 @@ const postSchema = z.object({
   description: z.string().min(10),
   pubDate: z.date(),
   updatedDate: z.date().optional(),
-  coverImage: z
-    .string()
-    .default(
-      "https://placehold.co/1200x600/000000/c6ff00?text=Journal+IT+|+herdianurdin.my.id",
-    ),
+  coverImage: z.string().optional(),
   tags: z.array(z.string()).optional(),
   isDraft: z.boolean().default(false),
   enSlug: contentIdSchema.optional(),

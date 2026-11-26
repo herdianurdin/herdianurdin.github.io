@@ -26,14 +26,14 @@ const currentYear = new Date().getFullYear();
     class="flex flex-wrap justify-center gap-4 text-sm font-mono text-neutral-400"
   >
     <a
-      href={language == "id" ? "/about" : "/en/about"}
+      href={language == "id" ? "/about/" : "/en/about/"}
       class="hover:text-[#c6ff00] hover:underline underline-offset-4 decoration-2 transition-colors"
     >
       {t.aboutMe}
     </a>
 
     <a
-      href={language == "id" ? "/privacy-policy" : "/en/privacy-policy"}
+      href={language == "id" ? "/privacy-policy/" : "/en/privacy-policy/"}
       aria-label={`${t.privacyPolicy} ${siteConfig.author}`}
       class="hover:text-[#c6ff00] hover:underline underline-offset-4 decoration-2 transition-colors"
     >
@@ -41,14 +41,14 @@ const currentYear = new Date().getFullYear();
     </a>
 
     <a
-      href={language == "id" ? "/disclaimer" : "/en/disclaimer"}
+      href={language == "id" ? "/disclaimer/" : "/en/disclaimer/"}
       class="hover:text-[#c6ff00] hover:underline underline-offset-4 decoration-2 transition-colors"
     >
       {t.disclaimer}
     </a>
 
     <a
-      href={language == "id" ? "/terms-of-service" : "/en/terms-of-service"}
+      href={language == "id" ? "/terms-of-service/" : "/en/terms-of-service/"}
       class="hover:text-[#c6ff00] hover:underline underline-offset-4 decoration-2 transition-colors"
     >
       {t.termsOfService}

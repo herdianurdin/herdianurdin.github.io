@@ -7,7 +7,7 @@ tags: ["dasar-komputer", "hardware", "komponen-komputer", "smk-rpl", "smk-tkj"]
 isDraft: false
 ---
 
-Pada **[materi sebelumnya](/blog/cara-kerja-komputer-siklus-input-proses-output)**, kita sudah sepakat bahwa wujud fisik (raga) komputer membutuhkan _software_ dan instruksi dari _brainware_ agar siklus kerjanya bisa berjalan. Kini, saatnya kita membuka pelindung _casing_ PC dan melihat langsung apa saja "organ dalam" yang menggerakkan mesin tersebut.
+Pada **[materi sebelumnya](/blog/cara-kerja-komputer-siklus-input-proses-output/)**, kita sudah sepakat bahwa wujud fisik (raga) komputer membutuhkan _software_ dan instruksi dari _brainware_ agar siklus kerjanya bisa berjalan. Kini, saatnya kita membuka pelindung _casing_ PC dan melihat langsung apa saja "organ dalam" yang menggerakkan mesin tersebut.
 
 Sebagai pemula, mengetahui cara menekan tombol _power_ saja tidaklah cukup. Kamu harus memahami fungsi spesifik dari setiap keping elektronik yang tertanam di dalamnya, agar kelak bisa melakukan perbaikan atau perakitan secara mandiri.
 
@@ -69,7 +69,7 @@ Berikut adalah tabel komparasi kecepatan baca maksimal dari berbagai media penyi
 
 Tabel di atas memperlihatkan lonjakan performa yang luar biasa. Jika kamu memasang SSD NVMe Gen 4, komputer bisa membaca data hingga 46 kali lipat lebih cepat daripada HDD cakram biasa!
 
-Bagi kamu yang mengambil fokus jurusan RPL, penggunaan **SSD untuk coding** adalah investasi perangkat keras yang tidak bisa ditawar. Saat kamu menjalankan program peramban besar atau me-_compile_ (menerjemahkan) **[ratusan baris kode algoritma](/blog/bab-1-mengenal-algoritma-dan-pola-pikir)**, CPU harus membaca ribuan _file_ berukuran kecil secara serentak. Menggunakan HDD lawas hanya akan membuang waktu produktifmu untuk menunggu proses _loading_.
+Bagi kamu yang mengambil fokus jurusan RPL, penggunaan **SSD untuk coding** adalah investasi perangkat keras yang tidak bisa ditawar. Saat kamu menjalankan program peramban besar atau me-_compile_ (menerjemahkan) **[ratusan baris kode algoritma](/blog/bab-1-mengenal-algoritma-dan-pola-pikir/)**, CPU harus membaca ribuan _file_ berukuran kecil secara serentak. Menggunakan HDD lawas hanya akan membuang waktu produktifmu untuk menunggu proses _loading_.
 
 ## 4. Jantung Kelistrikan (PSU) dan Pentingnya Wattage
 
