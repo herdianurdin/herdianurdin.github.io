@@ -6,7 +6,7 @@ const { id = "code-editor" } = Astro.props;
 ---
 
 <div
-  class="flex flex-col border-4 border-white shadow-[8px_8px_0px_0px_#00e5ff] relative h-full flex-1 min-w-0 bg-[#282a36]"
+  class="flex flex-col border-4 border-white shadow-neo-cyan-8 relative h-full flex-1 min-w-0 bg-editor"
 >
   <div
     class="bg-black flex border-b-4 border-white z-10 shrink-0 w-full justify-between overflow-hidden"
@@ -24,7 +24,7 @@ const { id = "code-editor" } = Astro.props;
         type="button"
         aria-label="Tambah modul Python baru"
         title="Tambah Modul Baru"
-        class="px-4 py-2 bg-[#1e1e1e] text-white font-black border-r-4 border-white hover:bg-[#00e5ff] hover:text-black transition-colors shrink-0"
+        class="px-4 py-2 bg-editor-panel text-white font-black border-r-4 border-white hover:bg-brand-cyan hover:text-black transition-colors shrink-0"
       >
         +
       </button>
@@ -34,7 +34,7 @@ const { id = "code-editor" } = Astro.props;
       id="run-btn"
       type="button"
       aria-controls="output-terminal"
-      class="px-6 py-2 bg-[#c6ff00] text-black font-black uppercase hover:bg-white transition-colors flex items-center justify-center gap-2 cursor-pointer border-l-4 border-white shrink-0"
+      class="px-6 py-2 bg-brand-lime text-black font-black uppercase hover:bg-white transition-colors flex items-center justify-center gap-2 cursor-pointer border-l-4 border-white shrink-0"
     >
       <svg
         class="w-5 h-5 hidden sm:block"

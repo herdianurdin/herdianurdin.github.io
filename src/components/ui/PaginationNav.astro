@@ -24,7 +24,7 @@ const nextText = language === "id" ? "Selanjutnya →" : "Next →";
     page.url.prev ? (
       <a
         href={page.url.prev}
-        class="bg-white text-black border-4 border-black px-4 md:px-6 py-2 shadow-[4px_4px_0px_0px_#d946ef] hover:shadow-[6px_6px_0px_0px_#c6ff00] hover:-translate-y-1 transition-all"
+        class="bg-white text-black border-4 border-black px-4 md:px-6 py-2 shadow-neo-fuchsia-4 hover:shadow-neo-lime-6 hover:-translate-y-1 transition-all"
         data-astro-prefetch="hover"
       >
         {prevText}
@@ -38,7 +38,7 @@ const nextText = language === "id" ? "Selanjutnya →" : "Next →";
 
   {/* Indikator Nomor Halaman */}
   <span
-    class="text-white bg-black border-4 border-white px-4 py-2 shadow-[4px_4px_0px_0px_#00e5ff]"
+    class="text-white bg-black border-4 border-white px-4 py-2 shadow-neo-cyan-4"
   >
     {page.currentPage} / {page.lastPage}
   </span>
@@ -48,7 +48,7 @@ const nextText = language === "id" ? "Selanjutnya →" : "Next →";
     page.url.next ? (
       <a
         href={page.url.next}
-        class="bg-[#c6ff00] text-black border-4 border-black px-4 md:px-6 py-2 shadow-[4px_4px_0px_0px_#d946ef] hover:shadow-[6px_6px_0px_0px_#00e5ff] hover:-translate-y-1 transition-all"
+        class="bg-brand-lime text-black border-4 border-black px-4 md:px-6 py-2 shadow-neo-fuchsia-4 hover:shadow-neo-cyan-6 hover:-translate-y-1 transition-all"
         data-astro-prefetch="hover"
       >
         {nextText}

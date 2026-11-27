@@ -41,7 +41,8 @@ export default defineConfig({
   },
 
   build: {
-    inlineStylesheets: "always",
+    // Keep tiny CSS inline; emit larger shared styles as cacheable assets.
+    inlineStylesheets: "auto",
   },
 
   // 2. Tambahkan blok vite ini untuk memproses Tailwind v4

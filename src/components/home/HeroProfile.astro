@@ -12,10 +12,10 @@ const t = siteTranslation[language as keyof typeof siteTranslation];
 ---
 
 <section
-  class="mb-20 mt-8 border-4 border-white bg-neutral-800 shadow-[12px_12px_0px_0px_#d946ef] relative flex flex-col md:flex-row"
+  class="mb-20 mt-8 border-4 border-white bg-neutral-800 shadow-neo-fuchsia-12 relative flex flex-col md:flex-row"
 >
   <div
-    class="absolute -top-6 -left-6 bg-white text-black font-mono font-bold px-4 py-2 border-4 border-black shadow-[4px_4px_0px_0px_#d946ef] z-10"
+    class="absolute -top-6 -left-6 bg-white text-black font-mono font-bold px-4 py-2 border-4 border-black shadow-neo-fuchsia-4 z-10"
   >
     {t.whoami}
   </div>
@@ -38,7 +38,7 @@ const t = siteTranslation[language as keyof typeof siteTranslation];
     <h1 class="text-4xl md:text-5xl font-black tracking-tight mb-2">
       {siteConfig.author}
     </h1>
-    <p class="text-xl text-[#c6ff00] font-bold mb-6 font-mono">
+    <p class="text-xl text-brand-lime font-bold mb-6 font-mono">
       {t.heroTitle}
     </p>
     <p class="text-lg text-neutral-300 mb-8 leading-relaxed flex-grow">
@@ -54,7 +54,7 @@ const t = siteTranslation[language as keyof typeof siteTranslation];
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Profil LinkedIn ${siteConfig.author}`}
-        class="bg-[#00e5ff] text-black font-mono font-bold px-6 py-2 border-2 border-white shadow-[4px_4px_0px_0px_#fff] hover:shadow-[6px_6px_0px_0px_#c6ff00] hover:-translate-y-1 active:translate-y-0 active:shadow-none transition-all"
+        class="bg-brand-cyan text-black font-mono font-bold px-6 py-2 border-2 border-white shadow-neo-paper-4 hover:shadow-neo-lime-6 hover:-translate-y-1 active:translate-y-0 active:shadow-none transition-all"
       >
         LinkedIn
       </a>
@@ -63,7 +63,7 @@ const t = siteTranslation[language as keyof typeof siteTranslation];
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Profil GitHub ${siteConfig.author}`}
-        class="bg-white text-black font-mono font-bold px-6 py-2 border-2 border-white shadow-[4px_4px_0px_0px_#d946ef] hover:shadow-[6px_6px_0px_0px_#c6ff00] hover:-translate-y-1 active:translate-y-0 active:shadow-none transition-all"
+        class="bg-white text-black font-mono font-bold px-6 py-2 border-2 border-white shadow-neo-fuchsia-4 hover:shadow-neo-lime-6 hover:-translate-y-1 active:translate-y-0 active:shadow-none transition-all"
       >
         GitHub
       </a>

@@ -9,7 +9,7 @@
   aria-labelledby="modal-title"
 >
   <div
-    class="bg-neutral-900 border-4 border-white shadow-[8px_8px_0px_0px_#00e5ff] p-6 w-full flex flex-col gap-4"
+    class="bg-neutral-900 border-4 border-white shadow-neo-cyan-8 p-6 w-full flex flex-col gap-4"
   >
     <h2
       id="modal-title"
@@ -22,7 +22,7 @@
       <input
         type="text"
         id="modal-input"
-        class="w-full border-4 border-white bg-black p-2 font-mono text-white focus:border-[#c6ff00] placeholder-neutral-600"
+        class="w-full border-4 border-white bg-black p-2 font-mono text-white focus:border-brand-lime placeholder-neutral-600"
         placeholder="nama_modul.py"
         autocomplete="off"
         spellcheck="false"
@@ -32,7 +32,7 @@
         id="modal-error"
         role="alert"
         aria-live="assertive"
-        class="text-[#ff0055] font-bold text-xs hidden"
+        class="text-brand-danger font-bold text-xs hidden"
       ></p>
     </div>
     <div class="flex justify-end gap-2 mt-2">
@@ -45,7 +45,7 @@
       <button
         id="modal-save"
         type="button"
-        class="px-4 py-2 bg-[#c6ff00] text-black font-black border-4 border-white hover:bg-white transition-colors uppercase text-sm"
+        class="px-4 py-2 bg-brand-lime text-black font-black border-4 border-white hover:bg-white transition-colors uppercase text-sm"
         >Simpan</button
       >
     </div>
@@ -60,7 +60,7 @@
   aria-describedby="delete-modal-text"
 >
   <div
-    class="bg-neutral-900 border-4 border-[#ff0055] shadow-[8px_8px_0px_0px_#ff0055] p-6 w-full flex flex-col gap-4"
+    class="bg-neutral-900 border-4 border-brand-danger shadow-neo-danger-8 p-6 w-full flex flex-col gap-4"
   >
     <h2
       id="delete-modal-title"
@@ -82,7 +82,7 @@
       <button
         id="delete-confirm"
         type="button"
-        class="px-4 py-2 bg-[#ff0055] text-white font-black border-4 border-white hover:bg-red-500 transition-colors uppercase text-sm"
+        class="px-4 py-2 bg-brand-danger text-white font-black border-4 border-white hover:bg-red-500 transition-colors uppercase text-sm"
         >Hapus</button
       >
     </div>
@@ -96,23 +96,23 @@
   aria-labelledby="guide-modal-title"
 >
   <div
-    class="bg-neutral-900 border-4 border-white shadow-[12px_12px_0px_0px_#00e5ff] w-full max-h-[85vh] overflow-y-auto relative p-6 md:p-10"
+    class="bg-neutral-900 border-4 border-white shadow-neo-cyan-12 w-full max-h-[85vh] overflow-y-auto relative p-6 md:p-10"
   >
     <button
       id="guide-close-btn"
       type="button"
-      class="absolute top-4 right-4 bg-white text-black border-4 border-black font-black w-10 h-10 flex justify-center items-center hover:bg-[#c6ff00] transition-colors shadow-[2px_2px_0px_0px_#000]"
+      class="absolute top-4 right-4 bg-white text-black border-4 border-black font-black w-10 h-10 flex justify-center items-center hover:bg-brand-lime transition-colors shadow-neo-ink-2"
       aria-label="Tutup panduan"
     >
       X
     </button>
 
     <article
-      class="prose prose-invert prose-p:font-sans prose-p:text-neutral-300 prose-headings:font-black prose-headings:uppercase prose-a:text-[#c6ff00] max-w-none"
+      class="prose prose-invert prose-p:font-sans prose-p:text-neutral-300 prose-headings:font-black prose-headings:uppercase prose-a:text-brand-lime max-w-none"
     >
       <h2
         id="guide-modal-title"
-        class="text-[#c6ff00] text-3xl mb-4 border-b-2 border-neutral-700 pb-4"
+        class="text-brand-lime text-3xl mb-4 border-b-2 border-neutral-700 pb-4"
       >
         Dokumentasi & Laboratorium Interaktif
       </h2>
@@ -163,7 +163,7 @@
         </li>
       </ol>
 
-      <p class="text-sm border-l-4 border-[#ff0055] bg-black p-4 text-neutral-300">
+      <p class="text-sm border-l-4 border-brand-danger bg-black p-4 text-neutral-300">
         Untuk menjaga browser tetap responsif, setiap eksekusi dibatasi maksimal
         10 detik dan output terminal dibatasi 100.000 karakter.
       </p>
@@ -176,7 +176,7 @@
       </p>
 
       <ul
-        class="font-sans text-neutral-300 list-disc list-inside space-y-2 my-4 p-4 border-l-4 border-[#c6ff00] bg-neutral-800"
+        class="font-sans text-neutral-300 list-disc list-inside space-y-2 my-4 p-4 border-l-4 border-brand-lime bg-neutral-800"
       >
         <li>
           <a
@@ -190,7 +190,7 @@
       </ul>
 
       <p
-        class="text-sm mt-8 p-4 bg-black border-l-4 border-[#00e5ff] text-neutral-400"
+        class="text-sm mt-8 p-4 bg-black border-l-4 border-brand-cyan text-neutral-400"
       >
         <em
           >*Peringatan Teknis: Seluruh <em>state</em> terminal dan <em>cache</em

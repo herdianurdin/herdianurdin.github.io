@@ -52,11 +52,11 @@ const seoDescription =
   ></script>
 
   <header
-    class="bg-black border-b-4 border-[#00e5ff] px-4 md:px-6 py-4 flex justify-between items-center shrink-0 z-20"
+    class="bg-black border-b-4 border-brand-cyan px-4 md:px-6 py-4 flex justify-between items-center shrink-0 z-20"
   >
     <a
       href="/"
-      class="text-white font-black text-base md:text-xl uppercase hover:text-[#00e5ff] transition-colors tracking-tighter"
+      class="text-white font-black text-base md:text-xl uppercase hover:text-brand-cyan transition-colors tracking-tighter"
     >
       <div class="flex items-center gap-2">
         <svg
@@ -73,7 +73,7 @@ const seoDescription =
           ></path>
         </svg>
         <div>
-          HERDIANURDIN.<span class="text-[#c6ff00]">MY.ID</span>
+          HERDIANURDIN.<span class="text-brand-lime">MY.ID</span>
         </div>
       </div>
     </a>
@@ -84,7 +84,7 @@ const seoDescription =
         type="button"
         aria-haspopup="dialog"
         aria-controls="modal-guide"
-        class="bg-[#c6ff00] text-black font-black text-xs md:text-sm px-3 py-1.5 border-2 border-white shadow-[2px_2px_0px_0px_#fff] hover:bg-white hover:translate-y-px hover:translate-x-px hover:shadow-none transition-all"
+        class="bg-brand-lime text-black font-black text-xs md:text-sm px-3 py-1.5 border-2 border-white shadow-neo-paper-2 hover:bg-white hover:translate-y-px hover:translate-x-px hover:shadow-none transition-all"
         aria-label="Buka Panduan Edukasi"
       >
         📖 PANDUAN
@@ -94,8 +94,12 @@ const seoDescription =
   </header>
 
   <div class="bg-neutral-900 px-4 md:px-8 pt-3">
-    <h1 class="text-white font-bold text-sm md:text-base uppercase tracking-widest">
-      PYTHON <span class="text-[#c6ff00]">PLAYGROUND</span>
+    <h1
+      id="playground-heading"
+      tabindex="-1"
+      class="text-white font-bold text-sm md:text-base uppercase tracking-widest scroll-mt-4"
+    >
+      PYTHON <span class="text-brand-lime">PLAYGROUND</span>
     </h1>
   </div>
 
@@ -121,34 +125,34 @@ const seoDescription =
       height: 100% !important;
     }
     .CodeMirror-gutters {
-      border-right: 2px solid #444 !important;
-      background-color: #282a36 !important;
+      border-right: 2px solid var(--color-editor-gutter) !important;
+      background-color: var(--color-editor) !important;
     }
     ::-webkit-scrollbar {
       width: 14px;
       height: 14px;
     }
     ::-webkit-scrollbar-track {
-      background: #1e1e1e;
-      border-left: 2px solid #fff;
+      background: var(--color-editor-panel);
+      border-left: 2px solid var(--color-white);
     }
     ::-webkit-scrollbar-thumb {
-      background: #c6ff00;
-      border: 2px solid #1e1e1e;
+      background: var(--color-brand-lime);
+      border: 2px solid var(--color-editor-panel);
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #00e5ff;
+      background: var(--color-brand-cyan);
     }
     .terminal-input {
       background: transparent;
       border: none;
       outline: none;
-      color: #fff;
+      color: var(--color-white);
       font-family: inherit;
       font-size: inherit;
       width: 60%;
       margin-left: 8px;
-      border-bottom: 2px solid #c6ff00;
+      border-bottom: 2px solid var(--color-brand-lime);
     }
     .no-scrollbar::-webkit-scrollbar {
       display: none;

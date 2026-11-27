@@ -141,12 +141,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const tabGroup = document.createElement("div");
       tabGroup.className =
-        `flex items-stretch shrink-0 border-r-4 border-white ${isActive ? "bg-white text-black" : "bg-[#1e1e1e] text-neutral-400 hover:bg-[#00e5ff] hover:text-black"}`;
+        `flex items-stretch shrink-0 border-r-4 border-white ${isActive ? "bg-white text-black" : "bg-editor-panel text-neutral-400 hover:bg-brand-cyan hover:text-black"}`;
 
       const selectBtn = document.createElement("button");
       selectBtn.type = "button";
       selectBtn.className =
-        "px-4 py-2 font-mono text-sm font-bold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c6ff00] focus-visible:outline-offset-[-3px]";
+        "px-4 py-2 font-mono text-sm font-bold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-lime focus-visible:outline-offset-[-3px]";
       selectBtn.textContent = filename;
       selectBtn.setAttribute("aria-pressed", String(isActive));
       selectBtn.setAttribute(
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
         renameBtn.type = "button";
         renameBtn.textContent = "✎";
         renameBtn.className =
-          "px-2 font-bold text-sm hover:bg-white hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c6ff00]";
+          "px-2 font-bold text-sm hover:bg-white hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-lime";
         renameBtn.title = "Ubah Nama Modul";
         renameBtn.setAttribute("aria-label", `Ubah nama modul ${filename}`);
         renameBtn.addEventListener("click", () =>
@@ -178,7 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
         deleteBtn.type = "button";
         deleteBtn.textContent = "×";
         deleteBtn.className =
-          "px-2 text-xl leading-none font-black hover:text-[#ff0055] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#c6ff00]";
+          "px-2 text-xl leading-none font-black hover:text-brand-danger focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-lime";
         deleteBtn.title = "Hapus Modul";
         deleteBtn.setAttribute("aria-label", `Hapus modul ${filename}`);
         deleteBtn.addEventListener("click", () =>

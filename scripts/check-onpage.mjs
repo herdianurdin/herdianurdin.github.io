@@ -89,6 +89,16 @@ function inspectPage(html, pageUrl) {
   const anchors = [...html.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a\s*>/gi)];
   for (const match of anchors) {
     const attrs = parseAttributes(match[1]);
+
+    // Decorative cover links are intentionally hidden from assistive technology
+    // and removed from sequential keyboard navigation. Their adjacent title and
+    // read-action links provide the accessible route to the same article.
+    // Ignore only this explicit combination; aria-hidden links that remain
+    // keyboard-focusable must still be audited.
+    const intentionallyHiddenLink =
+      attrs["aria-hidden"]?.toLowerCase() === "true" && attrs.tabindex === "-1";
+    if (intentionallyHiddenLink) continue;
+
     const inner = match[2];
     const imageAlts = [...inner.matchAll(/<img\b([^>]*)>/gi)]
       .map((image) => parseAttributes(image[1]).alt ?? "")

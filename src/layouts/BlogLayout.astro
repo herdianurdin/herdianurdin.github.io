@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import AuthorBox from "../components/article/AuthorBox.astro";
 import Giscus from "../components/article/Giscus.astro";
 import TableOfContents from "../components/article/TableOfContents.astro";
+import { siteTranslation } from "../config/site";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/700.css";
 import "@fontsource/inter/900.css";
@@ -12,7 +13,9 @@ import "@fontsource/fira-code/400.css";
 import "@fontsource/fira-code/700.css";
 import "../styles/global.css";
 
-const { frontmatter, headings, language } = Astro.props;
+const { frontmatter, headings } = Astro.props;
+const language = Astro.props.language as keyof typeof siteTranslation;
+const t = siteTranslation[language];
 const homeUrl = language === "id" ? "/" : "/en/";
 const translationHref = language === "id"
   ? (frontmatter.enSlug ? `/en/blog/${frontmatter.enSlug}/` : undefined)
@@ -34,13 +37,19 @@ const translationHref = language === "id"
     />
   </head>
   <body
-    class="overflow-x-hidden min-h-screen bg-neutral-900 text-white font-sans selection:bg-[#c6ff00] selection:text-black antialiased flex flex-col"
+    class="overflow-x-hidden min-h-screen bg-neutral-900 text-white font-sans selection:bg-brand-lime selection:text-black antialiased flex flex-col"
   >
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:border-4 focus:border-white focus:bg-brand-lime focus:px-4 focus:py-3 focus:font-mono focus:font-black focus:text-black focus:shadow-neo-ink-4"
+    >
+      {t.skipToContent}
+    </a>
     <Header currentLang={language} variant="article" translationHref={translationHref} />
 
-    <main class="max-w-4xl mx-auto p-4 md:p-8 mt-8 flex-grow w-full">
+    <main id="main-content" tabindex="-1" class="max-w-4xl mx-auto p-4 md:p-8 mt-8 flex-grow w-full">
       <article
-        class="bg-neutral-800 border-4 border-white shadow-[12px_12px_0px_0px_#c6ff00] mb-12"
+        class="bg-neutral-800 border-4 border-white shadow-neo-lime-12 mb-12"
       >
         {
           frontmatter.coverImage && (
@@ -64,7 +73,7 @@ const translationHref = language === "id"
             <div class="flex flex-wrap gap-2 mb-6">
               {
                 frontmatter.tags?.map((tag: string) => (
-                  <span class="bg-[#c6ff00] text-black font-mono text-xs font-bold px-3 py-1 border-2 border-black uppercase">
+                  <span class="bg-brand-lime text-black font-mono text-xs font-bold px-3 py-1 border-2 border-black uppercase">
                     {tag}
                   </span>
                 ))
@@ -84,7 +93,7 @@ const translationHref = language === "id"
                 {language === "id" ? "Oleh" : "By"}
                 <a
                   href={homeUrl}
-                  class="text-white hover:text-[#c6ff00] underline underline-offset-4 decoration-2 ml-1"
+                  class="text-white hover:text-brand-lime underline underline-offset-4 decoration-2 ml-1"
                 >
                   Herdi Herdianurdin
                 </a>
@@ -111,7 +120,7 @@ const translationHref = language === "id"
           <TableOfContents headings={headings} language={language} />
 
           <div
-            class="prose prose-invert prose-lg max-w-none prose-pre:border-4 prose-pre:border-white prose-pre:rounded-none prose-pre:shadow-[8px_8px_0px_0px_#00e5ff] prose-headings:font-black prose-headings:scroll-mt-24 prose-a:text-[#c6ff00] prose-a:underline-offset-4 hover:prose-a:bg-[#c6ff00] hover:prose-a:text-black"
+            class="prose prose-invert prose-lg max-w-none prose-pre:border-4 prose-pre:border-white prose-pre:rounded-none prose-pre:shadow-neo-cyan-8 prose-headings:font-black prose-headings:scroll-mt-24 prose-a:text-brand-lime prose-a:underline-offset-4 hover:prose-a:bg-brand-lime hover:prose-a:text-black"
           >
             <slot />
             {frontmatter.faq?.length > 0 && (
@@ -149,7 +158,7 @@ const translationHref = language === "id"
           if (table.parentElement?.classList.contains("overflow-x-auto")) return;
           const wrapper = document.createElement("div");
           wrapper.className =
-            "overflow-x-auto w-full shadow-[8px_8px_0px_0px_#c6ff00] my-10";
+            "overflow-x-auto w-full shadow-neo-lime-8 my-10";
           table.parentNode?.insertBefore(wrapper, table);
           wrapper.appendChild(table);
         });
@@ -166,7 +175,7 @@ const translationHref = language === "id"
           }
 
           container.className =
-            "youtube-defer relative w-full aspect-video cursor-pointer border-4 border-white shadow-[8px_8px_0px_0px_#00e5ff] my-10 group overflow-hidden bg-black";
+            "youtube-defer relative w-full aspect-video cursor-pointer border-4 border-white shadow-neo-cyan-8 my-10 group overflow-hidden bg-black";
           container.setAttribute("role", "button");
           container.setAttribute("tabindex", "0");
           container.setAttribute(
@@ -188,7 +197,7 @@ const translationHref = language === "id"
 
           const playLabel = document.createElement("span");
           playLabel.className =
-            "bg-[#c6ff00] text-black font-black px-6 py-3 border-4 border-white shadow-[4px_4px_0px_0px_#fff] text-lg md:text-xl transform group-hover:scale-105 transition-transform";
+            "bg-brand-lime text-black font-black px-6 py-3 border-4 border-white shadow-neo-paper-4 text-lg md:text-xl transform group-hover:scale-105 transition-transform";
           playLabel.textContent = language === "id"
             ? "▶ TAMPILKAN VIDEO"
             : "▶ PLAY VIDEO";

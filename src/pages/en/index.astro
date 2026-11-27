@@ -30,7 +30,7 @@ const latestPosts = allPosts
   language="en"
   headerVariant="home"
 >
-  <main class="max-w-5xl mx-auto p-6 md:p-12 w-full flex-grow">
+  <main id="main-content" tabindex="-1" class="max-w-5xl mx-auto p-6 md:p-12 w-full flex-grow">
     <HeroProfile language="en" />
     <Portfolio language="en" />
 
@@ -57,7 +57,7 @@ const latestPosts = allPosts
             ))}
           </div>
         ) : (
-          <div class="border-4 border-white bg-neutral-900 p-8 md:p-12 text-center shadow-[8px_8px_0px_0px_#00e5ff] mb-12 flex flex-col items-center justify-center">
+          <div class="border-4 border-white bg-neutral-900 p-8 md:p-12 text-center shadow-neo-cyan-8 mb-12 flex flex-col items-center justify-center">
             <h3 class="text-2xl md:text-3xl font-black uppercase text-white tracking-tight mb-4">
               {siteConfigs.emptyPostTitle}
             </h3>
@@ -74,7 +74,7 @@ const latestPosts = allPosts
             <a
               href="/en/blog/"
               aria-label={siteConfigs.ariaOpenArchive}
-              class="inline-block bg-black text-white font-mono font-bold text-lg border-4 border-white px-8 py-4 hover:bg-[#c6ff00] hover:text-black transition-all shadow-[6px_6px_0px_0px_#fff] hover:shadow-[8px_8px_0px_0px_#c6ff00] active:translate-x-1 active:translate-y-1 active:shadow-none"
+              class="inline-block bg-black text-white font-mono font-bold text-lg border-4 border-white px-8 py-4 hover:bg-brand-lime hover:text-black transition-all shadow-neo-paper-6 hover:shadow-neo-lime-8 active:translate-x-1 active:translate-y-1 active:shadow-none"
             >
               {siteConfigs.openArchive}
             </a>

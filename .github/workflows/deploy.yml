@@ -5,18 +5,19 @@ on:
     branches: [main]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+# Deny all token permissions by default. Each job grants only what it needs.
+permissions: {}
 
+# Keep runs from different refs isolated; newer runs replace older runs on the same ref.
 concurrency:
-  group: "pages"
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - name: Mengambil kode dari repositori
         uses: actions/checkout@v4
@@ -39,8 +40,13 @@ jobs:
           path: ./dist
 
   deploy:
+    # Manual runs from non-main branches may build, but must never publish production.
+    if: github.ref == 'refs/heads/main'
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

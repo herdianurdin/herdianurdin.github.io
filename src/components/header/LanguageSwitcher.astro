@@ -21,12 +21,12 @@ const enHref = currentLang === "id"
   : withTrailingSlash(currentPath);
 
 const idBtnClass = currentLang === "id"
-  ? "bg-white text-black font-bold border-2 border-white px-3 py-1 shadow-[2px_2px_0px_0px_#c6ff00]"
-  : "hover:bg-[#c6ff00] hover:text-black border-2 border-transparent hover:border-white px-3 py-1 transition-colors";
+  ? "bg-white text-black font-bold border-2 border-white px-3 py-1 shadow-neo-lime-2"
+  : "hover:bg-brand-lime hover:text-black border-2 border-transparent hover:border-white px-3 py-1 transition-colors";
 
 const enBtnClass = currentLang === "en"
-  ? "bg-white text-black font-bold border-2 border-white px-3 py-1 shadow-[2px_2px_0px_0px_#c6ff00]"
-  : "hover:bg-[#c6ff00] hover:text-black border-2 border-transparent hover:border-white px-3 py-1 transition-colors";
+  ? "bg-white text-black font-bold border-2 border-white px-3 py-1 shadow-neo-lime-2"
+  : "hover:bg-brand-lime hover:text-black border-2 border-transparent hover:border-white px-3 py-1 transition-colors";
 ---
 
 {
@@ -35,7 +35,7 @@ const enBtnClass = currentLang === "en"
         <div class="flex gap-4 font-mono text-sm">
           <a
             href={translationHref}
-            class="hover:bg-[#c6ff00] hover:text-black border-2 border-transparent hover:border-white px-3 py-1 transition-colors"
+            class="hover:bg-brand-lime hover:text-black border-2 border-transparent hover:border-white px-3 py-1 transition-colors"
             aria-label={currentLang === "id" ? t.switchEn : t.switchId}
           >
             {currentLang === "id" ? "/EN" : "/ID"}
