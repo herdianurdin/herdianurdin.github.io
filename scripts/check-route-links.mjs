@@ -9,7 +9,12 @@ const distDir = path.resolve(projectRoot, process.env.DIST_DIR ?? "dist");
 const siteUrl = new URL(
   process.env.SITE_URL ?? "https://herdianurdin.my.id",
 );
-const issues = new Map();
+const missingLinks = [];
+const nonCanonicalLinks = new Map();
+
+// Separately deployed applications mounted under this origin are not part of
+// this Astro project's dist/ output and must not be reported as missing pages.
+const externalAppPrefixes = ["/python-quest/"];
 
 function parseAttributes(tag) {
   const attributes = {};
@@ -47,10 +52,18 @@ function pageUrlForFile(filePath) {
 
 function outputPathForRoute(url) {
   if (url.origin !== siteUrl.origin) return null;
-  const relativePath = decodeURIComponent(url.pathname)
-    .replace(/^\/+/, "")
-    .replace(/\/+$/, "");
-  const outputPath = relativePath && /\.[a-z0-9]+$/i.test(relativePath)
+
+  let decodedPath;
+  try {
+    decodedPath = decodeURIComponent(url.pathname);
+  } catch {
+    return null;
+  }
+
+  const hasTrailingSlash = url.pathname.endsWith("/");
+  const relativePath = decodedPath.replace(/^\/+|\/+$/g, "");
+  const isFilePath = !hasTrailingSlash && relativePath !== "" && /\.[a-z0-9]+$/i.test(relativePath);
+  const outputPath = isFilePath
     ? path.resolve(distDir, relativePath)
     : path.resolve(distDir, relativePath, "index.html");
 
@@ -58,6 +71,13 @@ function outputPathForRoute(url) {
     return null;
   }
   return outputPath;
+}
+
+function isExternalAppRoute(pathname) {
+  return externalAppPrefixes.some((prefix) => {
+    const normalizedPrefix = prefix.endsWith("/") ? prefix : `${prefix}/`;
+    return pathname === normalizedPrefix.slice(0, -1) || pathname.startsWith(normalizedPrefix);
+  });
 }
 
 async function fileExists(filePath) {
@@ -75,7 +95,8 @@ async function main() {
   }
 
   const htmlFiles = await collectHtmlFiles(distDir);
-  let flaggedLinks = 0;
+  let checkedInternalLinks = 0;
+  let checkedExternalAppLinks = 0;
 
   for (const filePath of htmlFiles) {
     const html = await readFile(filePath, "utf8");
@@ -95,34 +116,62 @@ async function main() {
       }
 
       if (targetUrl.origin !== siteUrl.origin) continue;
-      const pathname = targetUrl.pathname;
-      if (pathname === "/" || pathname.endsWith("/") || /\.[a-z0-9]+$/i.test(pathname)) {
+
+      if (isExternalAppRoute(targetUrl.pathname)) {
+        checkedExternalAppLinks += 1;
         continue;
       }
 
-      const outputPath = outputPathForRoute(targetUrl);
-      if (!outputPath || !(await fileExists(outputPath))) continue;
+      checkedInternalLinks += 1;
 
-      flaggedLinks += 1;
-      const issue = issues.get(pathname) ?? { href, count: 0, examples: [] };
-      issue.count += 1;
-      if (issue.examples.length < 3 && !issue.examples.includes(relativeFile)) {
-        issue.examples.push(relativeFile);
+      const outputPath = outputPathForRoute(targetUrl);
+      if (!outputPath) {
+        missingLinks.push(`${relativeFile}: ${href} cannot be resolved to a safe local path.`);
+        continue;
       }
-      issues.set(pathname, issue);
+
+      if (!(await fileExists(outputPath))) {
+        const expectedFile = path.relative(distDir, outputPath).split(path.sep).join("/");
+        missingLinks.push(`${relativeFile}: ${href} points to missing dist/${expectedFile}.`);
+        continue;
+      }
+
+      const routePath = targetUrl.pathname.replace(/\/+$/, "");
+      const isFileUrl = /\.[a-z0-9]+$/i.test(routePath);
+      if (routePath && !isFileUrl && !targetUrl.pathname.endsWith("/")) {
+        const issue = nonCanonicalLinks.get(targetUrl.pathname) ?? {
+          href,
+          count: 0,
+          examples: [],
+        };
+        issue.count += 1;
+        if (issue.examples.length < 3 && !issue.examples.includes(relativeFile)) {
+          issue.examples.push(relativeFile);
+        }
+        nonCanonicalLinks.set(targetUrl.pathname, issue);
+      }
     }
   }
 
-  if (issues.size > 0) {
-    console.error(`Internal route link validation failed: ${flaggedLinks} non-canonical link(s) across ${issues.size} route(s) and ${htmlFiles.length} HTML files.`);
-    for (const [pathname, issue] of [...issues].sort(([a], [b]) => a.localeCompare(b))) {
-      console.error(`- ${pathname} (${issue.count} rendered link(s)); examples: ${issue.examples.join(", ")}`);
+  if (missingLinks.length > 0 || nonCanonicalLinks.size > 0) {
+    if (missingLinks.length > 0) {
+      console.error(`Internal link validation found ${missingLinks.length} missing or unsafe target(s):`);
+      for (const issue of missingLinks) console.error(`- ${issue}`);
     }
+
+    if (nonCanonicalLinks.size > 0) {
+      const count = [...nonCanonicalLinks.values()].reduce((total, issue) => total + issue.count, 0);
+      console.error(`Internal route link validation found ${count} non-canonical link(s) across ${nonCanonicalLinks.size} route(s):`);
+      for (const [pathname, issue] of [...nonCanonicalLinks].sort(([a], [b]) => a.localeCompare(b))) {
+        console.error(`- ${pathname} (${issue.count} rendered link(s)); examples: ${issue.examples.join(", ")}`);
+      }
+    }
+
     process.exitCode = 1;
     return;
   }
 
-  console.log(`Internal route link validation passed: ${htmlFiles.length} HTML files scanned; no links to non-canonical route URLs found.`);
+  console.log(`Internal link validation passed: ${checkedInternalLinks} local links and ${checkedExternalAppLinks} separately deployed app links checked across ${htmlFiles.length} HTML files.`);
 }
 
 main().catch((error) => {
