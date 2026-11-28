@@ -2,7 +2,7 @@
 title: "Fundamental Python Bab 4: Berkenalan dengan Python dan Senjata Utama Kita"
 description: "Mengapa hacker, inovator AI, dan raksasa teknologi memilih Python? Mari bongkar sejarahnya dan mulai eksekusi baris kode pertama Anda."
 pubDate: 2026-10-10T10:15:00+07:00
-coverImage: "/images/bab-4-berkenalan-dengan-python.webp"
+coverImage: "../../assets/images/bab-4-berkenalan-dengan-python.webp"
 tags: ["tutorial-python", "dasar-pemrograman", "sejarah-python", "pemula"]
 isDraft: false
 ---
@@ -37,7 +37,7 @@ Sintaksnya sangat manusiawi, bersih, ringkas, dan tidak dipenuhi oleh tanda kuru
 
 ## Bahasa Sakti Para Hacker dan Inovator
 
-![Ilustrasi Hacker dan Python](/images/hacker-python.webp)
+![Ilustrasi Hacker dan Python](../../assets/images/hacker-python.webp)
 
 Di tahun 2020 itu juga, saya sedang gemar-gemarnya mencoba berbagai distro Linux, hingga akhirnya jatuh hati pada Linux Mint edisi Debian. Di dalam ekosistem Linux, saya mencoba mempelajari berbagai _tools_ untuk _cybersecurity_.
 
@@ -48,7 +48,7 @@ Pernahkah Anda menonton serial _Mr. Robot_? Saat karakter utamanya, Elliot Alder
 
 ## Monty Python dan Misteri Logo Ular
 
-![Ilustrasi Sejarah Python](/images/sejarah-python.webp)
+![Ilustrasi Sejarah Python](../../assets/images/sejarah-python.webp)
 
 Meskipun saat ini ia menjadi tulang punggung AI dan teknologi masa depan, sejarah kelahiran Python ternyata sangat sederhana dan sedikit konyol.
 
@@ -68,7 +68,7 @@ Menguasai Python adalah sebuah investasi jangka panjang. Karena bahasa ini ibara
 
 ## Senjata Kita: Python Playground
 
-![Ilustrasi Cloud Playground](/images/playground-python.webp)
+![Ilustrasi Cloud Playground](../../assets/images/playground-python.webp)
 
 Biasanya, rintangan terberat bagi pemula (terutama yang memiliki laptop spesifikasi rendah atau prosesor Celeron lama) adalah saat proses instalasi. Menginstal Python, mengatur _Environment Variable_, dan memasang kode editor (IDE) di laptop sering kali menimbulkan banyak _error_ instalasi yang mematikan semangat belajar di hari pertama.
 

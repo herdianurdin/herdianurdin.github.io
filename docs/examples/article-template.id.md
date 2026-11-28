@@ -3,7 +3,8 @@ title: "Judul Artikel yang Jelas dan Spesifik"
 description: "Ringkasan singkat artikel yang menjelaskan topik dan manfaat utama bagi pembaca, minimal sepuluh karakter."
 pubDate: 2026-11-28T09:00:00+07:00
 # updatedDate: 2026-11-30T10:00:00+07:00
-# coverImage: "/images/nama-cover-artikel.webp"
+# coverImage: "../../assets/images/nama-cover-artikel.webp"
+# coverImageAlt: "Deskripsi singkat cover artikel"
 tags: ["topik-utama", "kategori", "pemula"]
 isDraft: true
 # enSlug: "english-article-slug" # Hanya jika pasangan EN sudah tersedia

@@ -24,7 +24,7 @@ Dokumentasi teknis terperinci tersedia di folder [`docs/`](docs/README.md).
 - SEO metadata: canonical, hreflang, Open Graph, Twitter Card, dan JSON-LD.
 - Giscus untuk diskusi yang dimuat sesuai interaksi.
 - Python Playground menggunakan CodeMirror dan Skulpt dari CDN.
-- Validator otomatis untuk konten, tautan, design tokens, UI baseline, SEO, metadata, structured data, aset gambar, dan on-page.
+- Validator otomatis untuk relasi konten, tautan internal, design tokens, UI baseline, layout, katalog Playground, Markdown wrappers, related articles, social profiles, author cards, responsive images, Sharp image service, SEO, metadata, structured data, aset gambar, dan on-page.
 
 ## Konfigurasi TypeScript
 
@@ -76,6 +76,12 @@ npm run preview
 
 Perintah validator dapat dijalankan secara terpisah. Daftar perintah dan fungsi masing-masing ada di [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
 
+## Aset gambar
+
+Gambar artikel, cover, dan gambar profil yang perlu diproses Astro disimpan di `src/assets/images/`. Untuk artikel di root koleksi (`src/content/id/` atau `src/content/en/`), gunakan path relatif dari file Markdown, misalnya `../../assets/images/nama-gambar.webp`. Artikel di subfolder harus menyesuaikan jumlah segmen `../`.
+
+Aset yang harus disalin sebagai file statis dan diakses melalui URL tetap—misalnya favicon, ikon manifest/PWA, ilustrasi dekoratif SVG, dan sertifikat unduhan—disimpan di `public/` pada folder sesuai fungsinya (`public/assets/icons/`, `public/assets/graphics/`, atau `public/certificates/`). Jangan menyimpan cover atau ilustrasi artikel baru di `public/images/`; direktori tersebut sudah dihapus dari struktur aktif.
+
 ## Membuat artikel
 
 Artikel ditulis manual sebagai Markdown (`.md`) atau MDX (`.mdx`) di koleksi bahasa yang sesuai:
@@ -117,7 +123,7 @@ Sebelum menerbitkan, ikuti [Panduan Penulisan Artikel](docs/ARTICLES.md) dan gun
 
 1. Buat branch kerja dari `main`.
 2. Buat atau edit artikel di `src/content/id/` atau `src/content/en/`.
-3. Simpan aset lokal baru di `public/images/` dan gunakan path `/images/nama-file.webp`.
+3. Simpan gambar artikel di `src/assets/images/`; referensikan secara relatif dari file Markdown/frontmatter. Simpan hanya aset statis ber-URL tetap di subfolder `public/` yang sesuai.
 4. Jalankan `npm run build`.
 5. Periksa hasil menggunakan `npm run preview`.
 6. Periksa perubahan Git, lalu commit dan push ke branch kerja atau `main` sesuai strategi rilis.

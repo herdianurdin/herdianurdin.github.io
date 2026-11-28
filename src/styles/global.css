@@ -11,7 +11,21 @@
   --color-brand-lime: #c6ff00;
   --color-brand-cyan: #00e5ff;
   --color-brand-fuchsia: #d946ef;
+  --color-brand-fuchsia-readable: #e35bf7;
   --color-brand-danger: #ff0055;
+
+  /* Social brand tones: pair each background with a contrast-tested text color in SocialLinks. */
+  --color-social-youtube: #ff0033;
+  --color-social-facebook: #1877f2;
+  --color-social-instagram: #b32b80;
+  --color-social-tiktok: #25f4ee;
+
+  /* Semantic surfaces and text roles shared by every page template. */
+  --color-surface-page: #171717;
+  --color-surface-panel: #262626;
+  --color-surface-card: #050505;
+  --color-border-muted: #525252;
+  --color-copy-muted: #a3a3a3;
 
   /* Playground/editor surfaces. */
   --color-editor: #282a36;
@@ -48,16 +62,104 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
-/* --- MODIFIKASI BLOK KODE NEO-BRUTALISM --- */
+/* Shared page geometry: every editorial page uses the same outer measure. */
+:root {
+  --site-container-max: 72rem;
+  --site-container-gutter: clamp(1rem, 3.5vw, 2rem);
+  --site-reading-measure: 45rem;
+}
+
+.site-container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: var(--site-container-max);
+  margin-inline: auto;
+  padding-inline: var(--site-container-gutter);
+}
+
+.site-reading {
+  width: 100%;
+  max-width: var(--site-reading-measure);
+  margin-inline: auto;
+}
+
+/* Keep prose at the same physical width even when its font-size changes. */
+.site-reading.prose {
+  max-width: var(--site-reading-measure);
+}
+
+.site-reading > .prose {
+  max-width: none;
+}
+
+.page-main {
+  min-width: 0;
+  flex: 1 0 auto;
+  padding-block: clamp(2rem, 4vw, 3.5rem);
+}
+
+.page-main--home {
+  padding-block-start: 0.75rem;
+  padding-block-end: 4rem;
+}
+
+.page-main--article {
+  padding-block: 1.5rem 3rem;
+}
+
+.page-main--archive,
+.page-main--legal,
+.page-main--directory {
+  padding-block: 3rem 4rem;
+}
+
+.page-main--profile {
+  padding-block: 2rem 4rem;
+}
+
+body {
+  min-width: 320px;
+}
+
+:target {
+  scroll-margin-block-start: 7rem;
+}
+
+/* --- NEO-BRUTALIST CONTENT SURFACES --- */
 pre.astro-code {
-  @apply p-6 border-4 border-white shadow-neo-cyan-8 my-8 rounded-none;
+  @apply my-8 rounded-none border-4 border-white p-5 shadow-neo-cyan-6 md:p-6;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.prose :not(pre) > code {
+  @apply border border-neutral-600 bg-black px-1.5 py-0.5 text-brand-cyan;
+}
+
+.prose blockquote {
+  @apply border-l-8 border-brand-fuchsia bg-black/50 py-2 pl-5 pr-4;
+}
+
+.prose img {
+  height: auto;
+  max-width: 100%;
+}
+
+/* Tables keep native table layout/semantics inside a compile-time scroll wrapper. */
+.prose .table-scroll {
+  max-width: 100%;
+  margin-block: 2.5rem;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: thin;
 }
 
 /* --- TABEL NEO-BRUTALISM --- */
-.prose table {
-  @apply w-full border-collapse border-4 border-white my-0;
+.prose .table-scroll > table {
+  @apply my-0 w-max min-w-full border-collapse border-4 border-white;
 }
 
 .prose thead {
@@ -69,7 +171,7 @@ pre.astro-code {
 }
 
 .prose tbody tr {
-  @apply border-b-4 border-white last:border-b-0 bg-neutral-800 hover:bg-neutral-700 transition-colors;
+  @apply border-b-4 border-white last:border-b-0 bg-surface-panel hover:bg-neutral-700 transition-colors;
 }
 
 .prose td {

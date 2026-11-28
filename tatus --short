@@ -1,0 +1,219 @@
+ README.md                                          |  10 [32m+[m[31m-[m
+ astro.config.mjs                                   |   8 [32m+[m
+ docs/ARCHITECTURE.md                               |  79 [32m+[m[31m-[m
+ docs/ARTICLES.md                                   |  76 [32m+[m[31m-[m
+ docs/DESIGN_SYSTEM.md                              |  30 [32m+[m[31m-[m
+ docs/DEVELOPMENT.md                                |  67 [32m+[m[31m-[m
+ docs/LICENSING.md                                  |   2 [32m+[m[31m-[m
+ docs/README.md                                     |   4 [32m+[m[31m-[m
+ docs/SEO.md                                        |   2 [32m+[m[31m-[m
+ docs/examples/article-template.id.md               |   3 [32m+[m[31m-[m
+ docs/examples/sample-article.en.md                 |   2 [32m+[m[31m-[m
+ docs/examples/sample-article.id.md                 |   2 [32m+[m[31m-[m
+ package-lock.json                                  | 862 [32m+++++++++++++++++++++[m
+ package.json                                       |  12 [32m+[m[31m-[m
+ .../assets/graphics/editorial-hero-blueprint.svg   |  32 [32m+[m
+ .../{images => assets/icons}/apple-touch-icon.png  | Bin
+ public/{images => assets/icons}/favicon-96x96.png  | Bin
+ public/{images => assets/icons}/icon-192.png       | Bin
+ public/{images => assets/icons}/icon-512.png       | Bin
+ .../sertifikat-dicoding-sib-kotlin.webp            | Bin
+ public/images/favicon.ico                          | Bin [31m15086[m -> [32m0[m bytes
+ public/images/ilustrasi-mesin-enigma.webp          | Bin [31m77444[m -> [32m0[m bytes
+ public/manifest.json                               |   4 [32m+[m[31m-[m
+ scripts/check-author-cards.mjs                     | 113 [32m+++[m
+ scripts/check-design-tokens.mjs                    |  34 [32m+[m
+ scripts/check-image-assets.mjs                     | 128 [32m++[m[31m-[m
+ scripts/check-layout-system.mjs                    | 124 [32m+++[m
+ scripts/check-markdown-wrappers.mjs                |  41 [32m+[m
+ scripts/check-playground-catalog.mjs               |  86 [32m++[m
+ scripts/check-related-articles.mjs                 |  39 [32m+[m
+ scripts/check-responsive-images.mjs                | 137 [32m++++[m
+ scripts/check-sharp-image-service.mjs              |  50 [32m++[m
+ scripts/check-social-profiles.mjs                  |  54 [32m++[m
+ scripts/check-structured-data.mjs                  |  10 [32m+[m
+ scripts/check-ui-basics.mjs                        | 329 [32m+++++++[m[31m-[m
+ scripts/rehype-content-wrappers.mjs                |  41 [32m+[m
+ scripts/report-build-size.mjs                      |  20 [32m+[m
+ .../admob-indonesia-revenue-reality-2026.webp      | Bin
+ .../assets}/images/analogi-nasi-goreng.webp        | Bin
+ .../assets}/images/analogi-os-mall-aplikasi.webp   | Bin
+ .../apa-itu-ui-ux-designer-wireframe-mockup.webp   | Bin
+ .../assets}/images/apa-itu-vibe-coding-ai.webp     | Bin
+ .../bab-1-mengenal-algoritma-dan-pola-pikir.webp   | Bin
+ .../bab-10-fungsi-dan-modularitas-python.webp      | Bin
+ .../bab-2-mengenal-pemrograman-dan-bahasa.webp     | Bin
+ .../images/bab-3-cara-menulis-algoritma.webp       | Bin
+ .../images/bab-4-berkenalan-dengan-python.webp     | Bin
+ .../images/bab-5-input-dan-output-python.webp      | Bin
+ .../bab-6-variabel-dan-tipe-data-python.webp       | Bin
+ .../images/bab-7-operator-aritmatika-python.webp   | Bin
+ .../images/bab-8-pengkondisian-if-else-python.webp | Bin
+ .../images/bab-9-perulangan-looping-python.webp    | Bin
+ {public => src/assets}/images/coding-mindset.webp  | Bin
+ .../contoh-flowchart-luas-persgi-panjang.webp      | Bin
+ .../assets}/images/daftar-revenua-aplikasi.webp    | Bin
+ .../dark-reality-of-google-play-ecosystem.webp     | Bin
+ {public => src/assets}/images/dashboard-admob.webp | Bin
+ .../images/etika-software-dan-pembajakan.webp      | Bin
+ {public => src/assets}/images/flowchart.webp       | Bin
+ {public => src/assets}/images/hacker-python.webp   | Bin
+ .../images/ilustrasi-arsitek-perangkat-lunak.webp  | Bin
+ .../ilustrasi-belajar-fundamental-coding.webp      | Bin
+ .../assets}/images/ilustrasi-blok-if-else.webp     | Bin
+ .../images/ilustrasi-compiler-dan-interpreter.webp | Bin
+ .../assets}/images/ilustrasi-data-dan-memori.webp  | Bin
+ .../assets}/images/ilustrasi-dependency-hell.webp  | Bin
+ .../images/ilustrasi-doctor-strange-time-loop.webp | Bin
+ .../assets}/images/ilustrasi-doctor-strange.webp   | Bin
+ .../ilustrasi-dokumen-prd-vs-dokumen-kosong.webp   | Bin
+ .../ilustrasi-gaji-besar-software-engineer.webp    | Bin
+ .../assets}/images/ilustrasi-ironman-suits.webp    | Bin
+ .../assets}/images/ilustrasi-jarvis-samantha.webp  | Bin
+ .../ilustrasi-jebakan-matematika-programmer.webp   | Bin
+ ...ilustrasi-just-in-time-scheduling-aplikasi.webp | Bin
+ .../assets}/images/ilustrasi-kendali-putaran.webp  | Bin
+ ...strasi-kesalahan-fatal-pemula-play-console.webp | Bin
+ .../assets}/images/ilustrasi-mesin-atm.webp        | Bin
+ ...ilustrasi-mitos-pasar-hindari-perfeksionis.webp | Bin
+ .../images/ilustrasi-offline-first-app.webp        | Bin
+ .../images/ilustrasi-paradigma-pemrograman.webp    | Bin
+ .../images/ilustrasi-play-console-anti-rakus.webp  | Bin
+ ...ustrasi-programmer-bersihkan-kode-hasil-ai.webp | Bin
+ .../ilustrasi-programmer-dengan-cetak-biru.webp    | Bin
+ .../ilustrasi-programmer-stress-ngoding.webp       | Bin
+ .../assets}/images/ilustrasi-pseudocode.webp       | Bin
+ .../images/ilustrasi-realita-vibe-coding.webp      | Bin
+ .../ilustrasi-riset-aplikasi-berantakan.webp       | Bin
+ .../ilustrasi-solo-developer-vs-birokrasi.webp     | Bin
+ .../images/ilustrasi-teks-putih-dokumen-pdf.webp   | Bin
+ .../assets}/images/ilustrasi-tipe-data-dasar.webp  | Bin
+ .../images/ilustrasi-tragedi-gudang-arsip.webp     | Bin
+ .../images/ilustrasi-update-server-kritis.webp     | Bin
+ .../assets}/images/ilutrasi-frustasi-koding.webp   | Bin
+ .../images/ilutrasi-jembatan-pemrograman.webp      | Bin
+ .../indonesian-solo-android-developer-journey.webp | Bin
+ ...-inti-komputer-motherboard-cpu-ram-ssd-psu.webp | Bin
+ .../lulusan-terbaik-bootcamp-aplikasi-android.webp | Bin
+ .../images/manajemen-file-shortcut-keyboard.webp   | Bin
+ ...a-depan-programmer-vibe-engineering-salary.webp | Bin
+ .../images/materi-dasar-komputer-pemula-smk.webp   | Bin
+ {public => src/assets}/images/og-default.webp      | Bin
+ .../opini-native-kotlin-xml-vs-cross-platform.webp | Bin
+ ...embuatan-aplikasi-berapa-lama-just-in-time.webp | Bin
+ .../assets}/images/perangkat-input-komputer.webp   | Bin
+ .../assets}/images/perangkat-output-komputer.webp  | Bin
+ .../images/perbedaan-ram-ssd-analogi-memori.webp   | Bin
+ .../images/perbedaan-ssd-sata-dan-nvme.webp        | Bin
+ .../perjalanan-android-developer-indonesia.webp    | Bin
+ .../perjalanan-belajar-ngoding-otodidak.webp       | Bin
+ .../images/persimpangan-karier-developer-guru.webp | Bin
+ .../assets}/images/playground-python.webp          | Bin
+ {public => src/assets}/images/profile.webp         | Bin
+ {public => src/assets}/images/prototype-step.webp  | Bin
+ .../images/quarter-life-crisis-tech-path.webp      | Bin
+ .../realita-coding-ai-vs-logika-manusia.webp       | Bin
+ .../realita-pendapatan-admob-indonesia-2026.webp   | Bin
+ .../realitas-gelap-ekosistem-google-play.webp      | Bin
+ .../images/realitas-menjadi-programmer.webp        | Bin
+ .../risiko-keamanan-sistem-informasi-ai.webp       | Bin
+ ...gitiga-sistem-komputer-input-proses-output.webp | Bin
+ {public => src/assets}/images/sejarah-python.webp  | Bin
+ .../images/seri-fundamental-python-pemula.webp     | Bin
+ .../siklus-kerja-komputer-input-proses-output.webp | Bin
+ .../assets}/images/software-ethics-and-piracy.webp | Bin
+ .../images/the-reality-of-being-a-programmer.webp  | Bin
+ .../images/vibe-engineering-vs-vibe-coding.webp    | Bin
+ .../what-is-ui-ux-designer-wireframe-mockup.webp   | Bin
+ src/components/EditorialPolicyContent.astro        | 140 [32m++++[m
+ src/components/Footer.astro                        |  79 [32m+[m[31m-[m
+ src/components/Header.astro                        |  78 [32m+[m[31m-[m
+ src/components/SeoHead.astro                       |  47 [32m+[m[31m-[m
+ src/components/archive/ArchivePage.astro           |  34 [32m+[m[31m-[m
+ src/components/archive/ArchiveSearch.astro         | 207 [32m+++++[m
+ src/components/article/AuthorBox.astro             |  74 [32m+[m[31m-[m
+ src/components/article/Giscus.astro                |   8 [32m+[m[31m-[m
+ src/components/article/RelatedArticles.astro       |  51 [32m++[m
+ src/components/article/TableOfContents.astro       |  11 [32m+[m[31m-[m
+ src/components/author/AuthorIdentityCard.astro     | 148 [32m++++[m
+ src/components/author/SocialLinks.astro            | 117 [32m+++[m
+ src/components/header/LanguageSwitcher.astro       |  14 [32m+[m[31m-[m
+ src/components/header/SiteLogo.astro               |   2 [32m+[m[31m-[m
+ src/components/home/EditorialHero.astro            |  81 [32m++[m
+ src/components/home/HeroProfile.astro              |  77 [32m+[m[31m-[m
+ src/components/home/Portfolio.astro                |   8 [32m+[m[31m-[m
+ src/components/playground/CodeEditor.astro         |   2 [32m+[m[31m-[m
+ src/components/playground/PlaygroundModals.astro   |  20 [32m+[m[31m-[m
+ src/components/playground/Terminal.astro           |   2 [32m+[m[31m-[m
+ src/components/playground/Toolbar.astro            |   4 [32m+[m[31m-[m
+ .../playgrounds/PlaygroundsDirectory.astro         |  83 [32m++[m
+ src/components/ui/ArticleCard.astro                |  69 [32m+[m[31m-[m
+ src/components/ui/PaginationNav.astro              |   6 [32m+[m[31m-[m
+ src/config/playgrounds.mjs                         |  32 [32m+[m
+ src/config/site.ts                                 |  67 [32m+[m[31m-[m
+ src/content.config.ts                              |  13 [32m+[m[31m-[m
+ .../en/admob-indonesia-revenue-reality-2026.md     |  12 [32m+[m[31m-[m
+ .../en/choosing-tech-path-low-end-laptop.md        |   2 [32m+[m[31m-[m
+ .../en/dark-reality-of-google-play-ecosystem.md    |   2 [32m+[m[31m-[m
+ .../indonesian-solo-android-developer-journey.md   |   2 [32m+[m[31m-[m
+ src/content/en/software-ethics-and-piracy.md       |   2 [32m+[m[31m-[m
+ src/content/en/the-impact-of-coding-on-life.md     |   2 [32m+[m[31m-[m
+ .../en/the-reality-of-being-a-programmer.md        |   2 [32m+[m[31m-[m
+ .../en/what-is-ui-ux-designer-wireframe-mockup.md  |  10 [32m+[m[31m-[m
+ .../en/why-i-stick-with-native-kotlin-xml.md       |   6 [32m+[m[31m-[m
+ .../id/apa-itu-ui-ux-designer-wireframe-mockup.md  |  10 [32m+[m[31m-[m
+ src/content/id/apa-itu-vibe-coding-ai.md           |   6 [32m+[m[31m-[m
+ .../id/bab-1-mengenal-algoritma-dan-pola-pikir.md  |   2 [32m+[m[31m-[m
+ .../id/bab-10-fungsi-dan-modularitas-python.md     |   6 [32m+[m[31m-[m
+ .../id/bab-2-mengenal-pemrograman-dan-bahasa.md    |  10 [32m+[m[31m-[m
+ src/content/id/bab-3-cara-menulis-algoritma.md     |  10 [32m+[m[31m-[m
+ src/content/id/bab-4-berkenalan-dengan-python.md   |   8 [32m+[m[31m-[m
+ src/content/id/bab-5-input-dan-output-python.md    |   6 [32m+[m[31m-[m
+ .../id/bab-6-variabel-dan-tipe-data-python.md      |   6 [32m+[m[31m-[m
+ src/content/id/bab-7-operator-aritmatika-python.md |   4 [32m+[m[31m-[m
+ .../id/bab-8-pengkondisian-if-else-python.md       |   6 [32m+[m[31m-[m
+ src/content/id/bab-9-perulangan-looping-python.md  |   6 [32m+[m[31m-[m
+ ...ra-kerja-komputer-siklus-input-proses-output.md |   8 [32m+[m[31m-[m
+ src/content/id/etika-software-dan-pembajakan.md    |   2 [32m+[m[31m-[m
+ .../id/fungsi-komponen-cpu-ram-ssd-psu-komputer.md |   6 [32m+[m[31m-[m
+ .../id/jejak-panjang-belajar-ngoding-otodidak.md   |  10 [32m+[m[31m-[m
+ ...asa-depan-programmer-vibe-engineering-salary.md |   6 [32m+[m[31m-[m
+ src/content/id/materi-dasar-komputer-pemula.md     |   6 [32m+[m[31m-[m
+ .../memilih-jalur-tech-dengan-laptop-seadanya.md   |   2 [32m+[m[31m-[m
+ .../opini-native-kotlin-xml-vs-cross-platform.md   |   6 [32m+[m[31m-[m
+ src/content/id/panduan_penulisan_jurnal.md         |  48 [32m+[m[31m-[m
+ .../pembuatan-aplikasi-berapa-lama-just-in-time.md |   6 [32m+[m[31m-[m
+ src/content/id/pengaruh-coding-dalam-kehidupan.md  |   2 [32m+[m[31m-[m
+ .../id/perjalanan-android-developer-indonesia.md   |   2 [32m+[m[31m-[m
+ .../id/realita-pendapatan-admob-indonesia-2026.md  |  12 [32m+[m[31m-[m
+ .../id/realitas-gelap-ekosistem-google-play.md     |   2 [32m+[m[31m-[m
+ src/content/id/realitas-menjadi-programmer.md      |   2 [32m+[m[31m-[m
+ .../id/risiko-keamanan-sistem-informasi-ai.md      |   6 [32m+[m[31m-[m
+ src/content/id/seri-fundamental-python-pemula.md   |   2 [32m+[m[31m-[m
+ src/content/id/vibe-engineering-vs-vibe-coding.md  |   6 [32m+[m[31m-[m
+ src/layouts/BaseLayout.astro                       |   2 [32m+[m[31m-[m
+ src/layouts/BlogLayout.astro                       | 220 [32m+++[m[31m---[m
+ src/layouts/PlaygroundLayout.astro                 |   2 [32m+[m[31m-[m
+ src/pages/404.astro                                |  12 [32m+[m[31m-[m
+ src/pages/about.astro                              |  40 [32m+[m[31m-[m
+ src/pages/blog/[...slug].astro                     |  16 [32m+[m[31m-[m
+ src/pages/disclaimer.astro                         |   8 [32m+[m[31m-[m
+ src/pages/editorial-policy.astro                   |  11 [32m+[m
+ src/pages/en/about.astro                           |  40 [32m+[m[31m-[m
+ src/pages/en/blog/[...slug].astro                  |  16 [32m+[m[31m-[m
+ src/pages/en/disclaimer.astro                      |   8 [32m+[m[31m-[m
+ src/pages/en/editorial-policy.astro                |  11 [32m+[m
+ src/pages/en/index.astro                           |  73 [32m+[m[31m-[m
+ src/pages/en/playgrounds/index.astro               |   5 [32m+[m
+ src/pages/en/privacy-policy.astro                  |  10 [32m+[m[31m-[m
+ src/pages/en/terms-of-service.astro                |   8 [32m+[m[31m-[m
+ src/pages/index.astro                              |  73 [32m+[m[31m-[m
+ src/pages/playgrounds/index.astro                  |   5 [32m+[m
+ src/pages/privacy-policy.astro                     |  10 [32m+[m[31m-[m
+ src/pages/python-playground.astro                  |   9 [32m+[m[31m-[m
+ src/pages/search-index.json.ts                     |  52 [32m++[m
+ src/pages/sitemap.xml.ts                           |   4 [32m+[m
+ src/pages/terms-of-service.astro                   |   8 [32m+[m[31m-[m
+ src/styles/global.css                              | 112 [32m++[m[31m-[m
+ src/utils/related-articles.mjs                     |  63 [32m++[m
+ 218 files changed, 4132 insertions(+), 815 deletions(-)

@@ -31,12 +31,16 @@ export async function GET() {
     "/privacy-policy/",
     "/disclaimer/",
     "/terms-of-service/",
+    "/editorial-policy/",
+    "/playgrounds/",
     "/python-playground/",
     "/en/",
     "/en/about/",
     "/en/privacy-policy/",
     "/en/disclaimer/",
     "/en/terms-of-service/",
+    "/en/editorial-policy/",
+    "/en/playgrounds/",
   ];
 
   // Archive pages intentionally use noindex, so they are not listed here.

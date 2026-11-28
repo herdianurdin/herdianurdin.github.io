@@ -2,7 +2,7 @@
 title: "Fundamental Python Bab 9: Menolak Jadi Pekerja Paksa (Perulangan / Looping)"
 description: "Kemalasan adalah kebajikan tertinggi seorang programmer. Pelajari cara menyuruh komputer melakukan pekerjaan repetitif dengan for, while, dan break."
 pubDate: 2026-10-10T10:40:00+07:00
-coverImage: "/images/bab-9-perulangan-looping-python.webp"
+coverImage: "../../assets/images/bab-9-perulangan-looping-python.webp"
 tags: ["tutorial-python", "dasar-pemrograman", "looping", "for-while", "pemula"]
 isDraft: false
 ---
@@ -27,7 +27,7 @@ Secara teori formal, **Iterasi (Perulangan)** adalah sebuah struktur kontrol ali
 
 ## Doctor Strange dan Jebakan Waktu
 
-![Ilustrasi Doctor Strange Time Loop](/images/ilustrasi-doctor-strange-time-loop.webp)
+![Ilustrasi Doctor Strange Time Loop](../../assets/images/ilustrasi-doctor-strange-time-loop.webp)
 
 Untuk memahami konsep perulangan yang bergantung pada kondisi, ingatlah momen klimaks dalam film _Doctor Strange_ (2016). Strange menghadapi entitas kosmik raksasa bernama Dormammu yang jauh lebih kuat darinya. Ia tahu ia tidak bisa menang secara fisik.
 
@@ -75,7 +75,7 @@ print("Baterai habis, mesin mati.")
 
 ## 3. Kendali Putaran (`break` dan `continue`)
 
-![Ilustrasi Kendali Putran](/images/ilustrasi-kendali-putaran.webp)
+![Ilustrasi Kendali Putran](../../assets/images/ilustrasi-kendali-putaran.webp)
 
 Terkadang, Anda ingin menginterupsi sebuah putaran waktu di tengah jalan, seperti Doctor Strange yang membatalkan mantranya saat Dormammu akhirnya menyerah. Untuk memanipulasi putaran mesin, kita menggunakan dua perintah khusus:
 

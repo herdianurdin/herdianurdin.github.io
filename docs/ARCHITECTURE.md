@@ -11,7 +11,7 @@ Konfigurasi penting di `astro.config.mjs`:
 - `trailingSlash`: `always`
 - prefetch: `prefetchAll: false`, strategi default `hover`
 - Markdown code highlighting: Shiki `dracula`, `wrap: true`
-- rehype plugin: external links dan atribut gambar lokal
+- rehype plugin: external-link attributes, local-image defaults, dan content wrappers
 - integrasi MDX
 - Tailwind CSS v4 melalui `@tailwindcss/vite`
 - `build.inlineStylesheets: "auto"`
@@ -21,41 +21,43 @@ Konfigurasi penting di `astro.config.mjs`:
 
 ```text
 .
-├── .github/workflows/deploy.yml  # CI dan deploy GitHub Pages
-├── public/                       # File statis yang disalin apa adanya
-│   ├── images/                   # Sampul artikel, ilustrasi, ikon
+├── .github/workflows/deploy.yml   # CI dan deploy GitHub Pages
+├── public/                        # Aset statis: disalin apa adanya ke dist/
+│   ├── assets/
+│   │   ├── graphics/              # SVG dekoratif
+│   │   └── icons/                 # Ikon favicon/manifest/PWA
+│   ├── certificates/              # Dokumen/gambar sertifikat yang ditautkan langsung
 │   ├── privacy/                  # Dokumen privasi aplikasi statis
-│   ├── ads.txt
-│   ├── app-ads.txt
-│   ├── CNAME
+│   ├── favicon.svg
 │   ├── manifest.json
-│   └── robots.txt
-├── scripts/                      # Validator dan build helper
+│   ├── ads.txt, app-ads.txt, CNAME, robots.txt
+│   └── ...
+├── scripts/                       # Validator dan build helper
 ├── src/
+│   ├── assets/images/             # Sumber gambar artikel, cover, profil, dan OG
 │   ├── components/
-│   │   ├── archive/               # ArchivePage
-│   │   ├── article/               # AuthorBox, Giscus, TableOfContents
+│   │   ├── archive/               # ArchivePage dan ArchiveSearch
+│   │   ├── article/               # AuthorBox, RelatedArticles, Giscus, TOC
+│   │   ├── author/                # AuthorIdentityCard dan SocialLinks
 │   │   ├── header/                # Logo dan language switcher
-│   │   ├── home/                  # HeroProfile dan Portfolio
+│   │   ├── home/                  # HeroProfile, EditorialHero, Portfolio
 │   │   ├── playground/            # Editor, terminal, toolbar, modal
+│   │   ├── playgrounds/           # Direktori Playground
 │   │   └── ui/                    # ArticleCard dan PaginationNav
-│   ├── config/site.ts             # Data situs dan terjemahan UI
-│   ├── content/
-│   │   ├── id/                    # Artikel bahasa Indonesia
-│   │   └── en/                    # Artikel bahasa Inggris
-│   ├── layouts/
-│   │   ├── BaseLayout.astro
-│   │   ├── BlogLayout.astro
-│   │   └── PlaygroundLayout.astro
+│   ├── config/                    # Data situs/i18n dan katalog Playground
+│   ├── content/                   # Koleksi artikel id/ dan en/
+│   ├── layouts/                   # BaseLayout, BlogLayout, PlaygroundLayout
 │   ├── pages/                     # File-based routing Astro
-│   ├── scripts/python-playground.js
-│   └── styles/global.css
+│   ├── styles/global.css
+│   └── utils/                     # Helper terkait konten
 ├── astro.config.mjs
-├── tsconfig.json                 # Astro strict TypeScript + JSX options
-├── LICENSE.md                    # Proprietary / All Rights Reserved
+├── tsconfig.json
+├── LICENSE.md
 ├── package.json
 └── package-lock.json
 ```
+
+**Aturan pemilihan lokasi aset:** simpan gambar yang perlu diproses/responsive oleh Astro di `src/assets/images/`. Gunakan `public/` untuk berkas statis yang memerlukan URL tetap, seperti favicon, ikon manifest, SVG dekoratif, atau sertifikat. `public/images/` bukan lagi lokasi aset aktif.
 
 ## 3. Routing halaman
 
@@ -95,7 +97,8 @@ Ada dua collection bernama `id` dan `en`, dengan schema sama.
 | `description` | string | Wajib, minimal 10 karakter |
 | `pubDate` | Date | Wajib |
 | `updatedDate` | Date | Opsional; tidak boleh lebih awal dari `pubDate` |
-| `coverImage` | string | Opsional |
+| `coverImage` | Astro image metadata atau URL string | Opsional; gambar lokal memakai path relatif menuju `src/assets/`, URL remote harus valid |
+| `coverImageAlt` | string | Opsional; teks alternatif cover untuk pembaca dan social preview |
 | `tags` | string[] | Opsional |
 | `isDraft` | boolean | Default `false` |
 | `enSlug` | string ID | Opsional; hanya untuk koleksi `id` |
@@ -104,7 +107,19 @@ Ada dua collection bernama `id` dan `en`, dengan schema sama.
 
 Content ID harus berupa lowercase kebab-case; dapat berupa segmen path yang dipisahkan `/`. Nama file relatif terhadap folder bahasa menjadi ID. Contoh `src/content/id/bab/python-dasar.md` akan memiliki ID `bab/python-dasar`.
 
-## 6. Relasi terjemahan
+## 6. Pipeline aset gambar
+
+- Sumber gambar editorial berada di `src/assets/images/`, bukan `public/images/`.
+- `coverImage` pada frontmatter diselesaikan relatif terhadap file Markdown oleh Astro Content Collections melalui helper `image()` pada `src/content.config.ts`. URL remote tetap didukung melalui `z.url()`.
+- Markdown images menggunakan path relatif ke `src/assets/`; validator `check-responsive-images.mjs` memastikan referensi lokal berada di dalam direktori aset dan file-nya tersedia.
+- `astro.config.mjs` memakai constrained image layout, responsive styles, dan breakpoint Markdown `[480, 800, 1440]`.
+- Cover pada `BlogLayout.astro` dan `ArticleCard.astro` memakai Astro `Image`, WebP, widths `[480, 800, 1200]`, dan quality 80. Komponen profil memakai kelompok width yang disesuaikan dengan ukuran tampil.
+- Default social preview berasal dari `src/assets/images/og-default.webp` dan diproses oleh `getImage()` di `SeoHead.astro` menjadi WebP 1200×630.
+- `public/assets/icons/`, `public/assets/graphics/`, dan `public/certificates/` berisi file statis yang tidak melalui pipeline transform Astro.
+
+Path gambar di artikel harus relatif terhadap file `.md`/`.mdx`. Untuk artikel root di `src/content/id/` atau `src/content/en/`, contoh path-nya adalah `../../assets/images/nama-gambar.webp`. Untuk file artikel bersarang, sesuaikan jumlah `../`.
+
+## 7. Relasi terjemahan
 
 Terjemahan tidak diwajibkan untuk setiap artikel. Bila relasi dibuat, pasangan harus timbal balik:
 
@@ -117,7 +132,7 @@ Contoh: `src/content/id/belajar-astro.md` dengan `enSlug: "learning-astro"` haru
 
 Validasi dilakukan oleh `scripts/check-content-relations.mjs`.
 
-## 7. Layout dan komponen
+## 8. Layout dan komponen
 
 ### BaseLayout
 
@@ -135,24 +150,24 @@ Layout khusus Python Playground dengan viewport `h-dvh`, skip link menuju headin
 
 `ArticleCard` digunakan di homepage dan arsip. `ArchivePage` mengelola presentasi halaman arsip dengan pagination berbahasa sesuai collection. Jumlah artikel per halaman berasal dari `siteConfig.maxPosts` (saat ini 4).
 
-## 8. SEO, RSS, dan sitemap
+## 9. SEO, RSS, dan sitemap
 
 `SeoHead.astro` menangani canonical, hreflang, Open Graph, Twitter Card, metadata artikel, JSON-LD Person/ProfilePage/BlogPosting, favicon, manifest, dan AdSense loader.
 
 RSS menggabungkan artikel ID dan EN yang bukan draft. Sitemap disusun dari daftar halaman statis dan seluruh artikel terbit. Halaman arsip sengaja `noindex` dan tidak masuk sitemap.
 
-## 9. Integrasi eksternal
+## 10. Integrasi eksternal
 
 - Giscus: komentar/diskusi artikel. Konfigurasi repository/category berada di `src/config/site.ts`.
 - AdSense: loader dibuat di `SeoHead.astro` dan dimuat setelah interaksi (scroll/mouse/touch) atau timeout 5 detik; halaman legal tertentu tidak menampilkan ads.
 - YouTube: `.youtube-defer` memakai facade dan memuat iframe setelah interaksi; jangan menyisipkan iframe YouTube langsung untuk konten biasa.
 - Python Playground: CodeMirror 5.65.16 dan Skulpt 1.2.0 melalui CDN; implementasi interaksi di `src/scripts/python-playground.js`.
 
-## 10. Sumber perubahan
+## 11. Sumber perubahan
 
 Saat menambah atau mengubah perilaku, periksa sekaligus route, komponen, metadata, validator, dan contoh artikel. Jangan menyimpulkan route atau field hanya dari nama file—periksa schema dan `getStaticPaths` aktual.
 
-## 11. Konfigurasi TypeScript
+## 12. Konfigurasi TypeScript
 
 `tsconfig.json` mewarisi `astro/tsconfigs/strict` dan saat ini menambahkan dua opsi JSX:
 
@@ -168,6 +183,6 @@ Saat menambah atau mengubah perilaku, periksa sekaligus route, komponen, metadat
 
 Konfigurasi strict adalah baseline pemeriksaan tipe. `jsx: "preserve"` membiarkan JSX diproses oleh toolchain Astro, sedangkan `jsxImportSource: "astro"` mengarahkan tipe JSX ke integrasi Astro. Perubahan konfigurasi harus diuji dengan `npx astro check` dan `npm run build`. Rincian praktik pengembangan ada di [DEVELOPMENT.md](DEVELOPMENT.md#konfigurasi-typescript).
 
-## 12. Lisensi dan kepemilikan
+## 13. Lisensi dan kepemilikan
 
 Repository menggunakan notice proprietary `LICENSE.md`. Notice ini berlaku untuk materi yang dimiliki pemegang hak cipta; dependency, library, font, merek, atau aset pihak ketiga tidak otomatis menjadi milik pemegang hak cipta dan tetap tunduk pada lisensi asalnya. Lihat [LICENSING.md](LICENSING.md) untuk batasan repository publik GitHub.

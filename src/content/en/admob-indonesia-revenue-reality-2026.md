@@ -3,7 +3,7 @@ title: "The Reality of AdMob Revenue in Indonesia (2026): From $1 to $80 a Month
 description: "Unveiling real AdMob revenue data from Indonesia with 1,500 daily impressions. A true case study on eCPM, ASO strategy, reskin failures, and Play Store loopholes."
 pubDate: 2026-10-12T08:00:00+07:00
 updatedDate: 2026-11-25
-coverImage: "/images/admob-indonesia-revenue-reality-2026.webp"
+coverImage: "../../assets/images/admob-indonesia-revenue-reality-2026.webp"
 idSlug: "realita-pendapatan-admob-indonesia-2026"
 tags:
   [
@@ -30,7 +30,7 @@ Today, I invite you to see the reality of the AdMob world in the Indonesian mark
 
 ## The Perfectionist Myth vs. Market Reality
 
-![Illustration of the Perfectionist vs. the Market Realist](/images/ilustrasi-mitos-pasar-hindari-perfeksionis.webp)
+![Illustration of the Perfectionist vs. the Market Realist](../../assets/images/ilustrasi-mitos-pasar-hindari-perfeksionis.webp)
 
 Before we get into the numbers, there is one reality check you must realize: **developing an app doesn't have to be perfect; what matters is solving the user's problem.**
 
@@ -46,7 +46,7 @@ The golden lesson: Don't waste months making a perfect app that people might not
 
 Let's dissect my AdMob revenue kitchen. The data below is the accumulation of all the native Android apps I currently manage.
 
-![Screenshot of AdMob Home Dashboard (Estimated IDR)](/images/dashboard-admob.webp)
+![Screenshot of AdMob Home Dashboard (Estimated IDR)](../../assets/images/dashboard-admob.webp)
 
 _(Note: The image above shows estimated daily and monthly earnings in Rupiah, eCPM, and organic impressions)._
 
@@ -65,11 +65,11 @@ This chart didn't spike overnight. This is a marathon:
 - **Year 2025:** Crawled to Rp600,000 / month (approx. $40).
 - **Year 2026:** Stable in the range of Rp900,000 to Rp1.2 million / month (approx. $60 - $80).
 
-![Screenshot of App Revenue List in USD](/images/daftar-revenua-aplikasi.webp)
+![Screenshot of App Revenue List in USD](../../assets/images/daftar-revenua-aplikasi.webp)
 
 ## The "Anti-Greed" Strategy: User Experience (UX) Over Money
 
-![Illustration of the Anti-Greed Strategy](/images/ilustrasi-play-console-anti-rakus.webp)
+![Illustration of the Anti-Greed Strategy](../../assets/images/ilustrasi-play-console-anti-rakus.webp)
 
 A junior of mine plays the reskin app game (like Twibbon). He rakes in **Rp1 million to Rp1.5 million per month** (around $65 - $100) from just one app. Sounds tempting? Wait until you download his app.
 
@@ -88,7 +88,7 @@ What about _Interstitials_ (full screen)? I limit them severely. I only display 
 
 ## 3 Other Fatal Mistakes Beginners Make
 
-![Illustration of Fatal Beginner Mistakes](/images/ilustrasi-kesalahan-fatal-pemula-play-console.webp)
+![Illustration of Fatal Beginner Mistakes](../../assets/images/ilustrasi-kesalahan-fatal-pemula-play-console.webp)
 
 Besides making silly clones like my first experience, avoid these three deadly sins:
 

@@ -45,7 +45,7 @@ Jangan membuat relasi terjemahan yang targetnya belum ada. Artikel tanpa versi t
 - `og:locale:alternate` jika relevan,
 - Twitter Card `summary_large_image` dan URL/title/description/image.
 
-Artikel memakai `coverImage`; jika tidak ada, default `/images/og-default.webp`.
+Artikel memakai `coverImage`; jika tidak ada, `SeoHead.astro` memakai `src/assets/images/og-default.webp` dan memprosesnya melalui `getImage()` menjadi WebP 1200×630. `coverImage` lokal harus berupa path relatif dari file Markdown ke `src/assets/`; URL remote yang valid tetap didukung.
 
 Rekomendasi editorial:
 

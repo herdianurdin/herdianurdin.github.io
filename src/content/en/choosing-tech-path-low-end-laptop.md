@@ -2,7 +2,7 @@
 title: "Choosing a Tech Path on a Low-End Laptop: A Software Engineer's Survival Guide"
 description: "Struggling to choose between Web, Mobile, Game, or AI development? Read this real-life guide on starting a software engineering career with a low-end laptop."
 pubDate: 2026-10-07T16:00:00+07:00
-coverImage: "/images/quarter-life-crisis-tech-path.webp"
+coverImage: "../../assets/images/quarter-life-crisis-tech-path.webp"
 tags:
   [
     "software-engineering",

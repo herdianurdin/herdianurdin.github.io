@@ -2,7 +2,7 @@
 title: "Masa Depan Programmer: Gaji Developer, Vibe Engineering, dan Realita 'Cleanup Specialist'"
 description: "Apakah AI akan merebut pekerjaan Anda? Mari bedah perbedaan vibe coding vs vibe engineering, realita gaji developer, dan cara mengenali kode AI yang buruk."
 pubDate: 2026-10-18T08:00:00+07:00
-coverImage: "/images/masa-depan-programmer-vibe-engineering-salary.webp"
+coverImage: "../../assets/images/masa-depan-programmer-vibe-engineering-salary.webp"
 tags:
   [
     "vibe-coding",
@@ -35,7 +35,7 @@ Pola pikir inilah yang membedakan seorang amatir dengan profesional. Sama halnya
 
 ## Tragedi "Bersih-Bersih" Kode AI: 3 Hari Bikin, Seminggu Perbaikan
 
-![Ilustrasi programmer kelelahan membersihkan tumpukan kabel dan kode berantakan hasil ketikan AI ke dalam tempat sampah digital](/images/ilustrasi-programmer-bersihkan-kode-hasil-ai.webp)
+![Ilustrasi programmer kelelahan membersihkan tumpukan kabel dan kode berantakan hasil ketikan AI ke dalam tempat sampah digital](../../assets/images/ilustrasi-programmer-bersihkan-kode-hasil-ai.webp)
 
 Lalu, seberapa burukkah hasil ketikan AI ini sampai kita butuh seorang insinyur untuk membersihkannya? Mari saya ceritakan pengalaman nyata saya.
 
@@ -61,7 +61,7 @@ Pada praktiknya, _Cleanup Specialist_ hanyalah sebutan gaul untuk peran yang seb
 
 ## Realita Gaji: Apakah Developer Akan Dibayar Lebih Murah?
 
-![Ilustrasi siluet insinyur perangkat lunak memegang cetak biru arsitektur sistem yang rapi dengan grafik pendapatan yang naik](/images/ilustrasi-gaji-besar-software-engineer.webp)
+![Ilustrasi siluet insinyur perangkat lunak memegang cetak biru arsitektur sistem yang rapi dengan grafik pendapatan yang naik](../../assets/images/ilustrasi-gaji-besar-software-engineer.webp)
 
 Inilah kekhawatiran terbesar para pemula. Jika kecerdasan buatan bisa menulis kode, apakah perusahaan akan menekan standar gaji _developer_?
 

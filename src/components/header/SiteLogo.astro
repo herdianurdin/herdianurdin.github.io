@@ -8,7 +8,7 @@ const { currentLang } = Astro.props;
 const homeUrl = currentLang === "id" ? "/" : "/en/";
 ---
 
-<div class="font-black text-xl md:text-2xl tracking-tighter uppercase">
+<div class="min-w-0 font-black text-sm tracking-tighter uppercase sm:text-lg md:text-2xl">
   <a href={homeUrl} class="hover:text-brand-lime transition-colors">
     {siteConfig.logoText}<span class="text-brand-lime">{siteConfig.logoHighlight}</span>
   </a>

@@ -2,7 +2,7 @@
 title: "Realitas Menjadi Programmer: Mengapa Membaca Kode Jauh Lebih Penting Daripada Menulisnya"
 description: "Panduan bertahan bagi calon software engineer: dari ilusi kecepatan AI generatif, pentingnya fondasi algoritma, realitas dokumentasi teknis, hingga pentingnya pengalaman magang."
 pubDate: 2026-10-05T10:00:00Z
-coverImage: "/images/realitas-menjadi-programmer.webp"
+coverImage: "../../assets/images/realitas-menjadi-programmer.webp"
 tags: ["jurnal", "software-engineer", "opini", "mindset", "pemula"]
 isDraft: false
 enSlug: "the-reality-of-being-a-programmer"

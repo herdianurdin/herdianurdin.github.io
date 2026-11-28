@@ -2,7 +2,7 @@
 title: "The Dark Reality of the Google Play Ecosystem: Between Instant Cash, Sabotage, and Digital Legacy"
 description: "Uncovering the dark side of app developer competition: from dirty ASO tactics and console account farming, to choosing the quiet path of building legitimate, halal digital assets."
 pubDate: 2026-10-07T09:00:00Z
-coverImage: "/images/dark-reality-of-google-play-ecosystem.webp"
+coverImage: "../../assets/images/dark-reality-of-google-play-ecosystem.webp"
 tags: ["journal", "google-play", "aso", "mindset", "indie-developer"]
 isDraft: false
 idSlug: "realitas-gelap-ekosistem-google-play"

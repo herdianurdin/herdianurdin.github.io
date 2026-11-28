@@ -2,7 +2,7 @@
 title: "What is a UI/UX Designer? Theory, The Fried Rice Analogy, & The Solo Developer Reality"
 description: "Understanding the difference between UI and UX, the dangers of coding without wireframes, and a real case study of a solo developer with 50,000+ users."
 pubDate: 2026-10-14T10:00:00+07:00
-coverImage: "/images/what-is-ui-ux-designer-wireframe-mockup.webp"
+coverImage: "../../assets/images/what-is-ui-ux-designer-wireframe-mockup.webp"
 tags:
   [
     "ui-ux-design",
@@ -24,7 +24,7 @@ But how does it work in practice if you are a **Solo Developer**? In this articl
 
 ## Analogizing UI and UX: Fried Rice and Sport Bikes
 
-![Illustration of the difference between UI and UX using a fried rice analogy](/images/analogi-nasi-goreng.webp)
+![Illustration of the difference between UI and UX using a fried rice analogy](../../assets/images/analogi-nasi-goreng.webp)
 
 Let's first clarify the fundamental difference between UI and UX using everyday analogies, so you don't get dizzy with technical jargon.
 
@@ -40,7 +40,7 @@ In short: **UX ensures your app solves a problem and is comfortable to use, whil
 
 ## The Danger of "Straight to Code" and the Flowing Design Evolution
 
-![Illustration of a stressed programmer coding without a wireframe design](/images/ilustrasi-programmer-stress-ngoding.webp)
+![Illustration of a stressed programmer coding without a wireframe design](../../assets/images/ilustrasi-programmer-stress-ngoding.webp)
 
 Many beginner _programmers_ underestimate the design process. _"Ah, what's the point of drawing first, it's better to just open Android Studio!"_
 
@@ -62,7 +62,7 @@ After the gray bones are sturdy, we breathe life into them. In this final stage,
 
 To prove this evolutionary flow, let's dissect the design transformation image of the Tasbih Page from my app:
 
-![Evolution of UI UX design for Asmaul Husna app from Paper Prototype, Wireframe, to Mockup](/images/prototype-step.webp)
+![Evolution of UI UX design for Asmaul Husna app from Paper Prototype, Wireframe, to Mockup](../../assets/images/prototype-step.webp)
 
 As you can see in the image above:
 
@@ -72,7 +72,7 @@ As you can see in the image above:
 
 ## The Solo Developer Case Study: Formulating UX Through Competitor Analysis
 
-![Illustration of researching messy competitor apps and designing a clean app blueprint](/images/ilustrasi-riset-aplikasi-berantakan.webp)
+![Illustration of researching messy competitor apps and designing a clean app blueprint](../../assets/images/ilustrasi-riset-aplikasi-berantakan.webp)
 
 Theory is beautiful, but reality demands speed. At the end of 2023, three weeks before I started serving as a teacher, I challenged myself to develop a religious app from scratch to release in just two weeks.
 

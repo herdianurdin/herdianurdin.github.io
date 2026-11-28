@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import EditorialHero from "../components/home/EditorialHero.astro";
 import HeroProfile from "../components/home/HeroProfile.astro";
 import Portfolio from "../components/home/Portfolio.astro";
 import ArticleCard from "../components/ui/ArticleCard.astro";
@@ -7,18 +8,13 @@ import { siteTranslation } from "../config/site";
 import { getCollection } from "astro:content";
 
 const siteConfigs = siteTranslation.id;
-const allPosts =
-  (await getCollection("id", ({ data }) => data.isDraft !== true)) || [];
+const allPosts = await getCollection("id", ({ data }) => data.isDraft !== true);
 
 const latestPosts = allPosts
   .sort((a, b) => {
     const timeA = a.data.pubDate.valueOf();
     const timeB = b.data.pubDate.valueOf();
-
-    if (timeA !== timeB) {
-      return timeB - timeA;
-    }
-
+    if (timeA !== timeB) return timeB - timeA;
     return a.data.title.localeCompare(b.data.title);
   })
   .slice(0, 4);
@@ -30,57 +26,44 @@ const latestPosts = allPosts
   language="id"
   headerVariant="home"
 >
-  <main id="main-content" tabindex="-1" class="max-w-5xl mx-auto p-6 md:p-12 w-full flex-grow">
-    <HeroProfile language="id" />
-    <Portfolio language="id" />
+  <main id="main-content" tabindex="-1" class="site-container page-main page-main--home">
+    <EditorialHero language="id" />
 
-    {/* Tambahkan aria-labelledby yang merujuk ke ID heading */}
-    <section aria-labelledby="latest-journal-heading">
-      <div class="flex items-center gap-4 mb-10">
-        {/* Tambahkan ID di sini */}
-        <h2
-          id="latest-journal-heading"
-          class="text-3xl font-black uppercase tracking-tight"
-        >
+    <section aria-labelledby="latest-journal-heading" class="mb-16">
+      <div class="mb-8 flex items-center gap-4">
+        <h2 id="latest-journal-heading" class="shrink-0 text-2xl font-black uppercase tracking-tight md:text-3xl">
           {siteConfigs.latestJournal}
         </h2>
-        {/* Sembunyikan garis dekoratif dari perayap dan screen reader */}
         <div class="h-1 flex-grow bg-white" aria-hidden="true"></div>
       </div>
 
-      {/* Loop Kartu Artikel */}
-      {
-        latestPosts.length > 0 ? (
-          <div class="grid md:grid-cols-2 gap-8 mb-12">
-            {latestPosts.map((post) => (
-              <ArticleCard post={post} language="id" />
-            ))}
+      {latestPosts.length > 0 ? (
+        <>
+          <div class="grid gap-6 md:grid-cols-2 md:gap-8">
+            {latestPosts.map((post) => <ArticleCard post={post} language="id" />)}
           </div>
-        ) : (
-          <div class="border-4 border-white bg-neutral-900 p-8 md:p-12 text-center shadow-neo-cyan-8 mb-12 flex flex-col items-center justify-center">
-            <h3 class="text-2xl md:text-3xl font-black uppercase text-white tracking-tight mb-4">
-              {siteConfigs.emptyPostTitle}
-            </h3>
-            <p class="font-mono text-neutral-400 max-w-lg">
-              {siteConfigs.emptyPostMessage}
-            </p>
-          </div>
-        )
-      }
-
-      {
-        allPosts.length > 4 && (
-          <div class="text-center">
+          <div class="mt-9 text-center">
             <a
               href="/blog/"
-              aria-label={siteConfigs.ariaOpenArchive}
-              class="inline-block bg-black text-white font-mono font-bold text-lg border-4 border-white px-8 py-4 hover:bg-brand-lime hover:text-black transition-all shadow-neo-paper-6 hover:shadow-neo-lime-8 active:translate-x-1 active:translate-y-1 active:shadow-none"
+              class="inline-flex min-h-12 items-center justify-center border-4 border-white bg-surface-card px-7 py-3 font-mono text-sm font-black uppercase text-white shadow-neo-paper-4 transition-transform hover:-translate-y-1 hover:bg-brand-lime hover:text-black hover:shadow-neo-lime-6 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-brand-lime active:translate-x-1 active:translate-y-1 active:shadow-none"
             >
               {siteConfigs.openArchive}
             </a>
           </div>
-        )
-      }
+        </>
+      ) : (
+        <div class="flex flex-col items-center justify-center border-4 border-white bg-surface-card px-6 py-12 text-center shadow-neo-cyan-6">
+          <h3 class="mb-3 text-2xl font-black uppercase tracking-tight text-white md:text-3xl">
+            {siteConfigs.emptyPostTitle}
+          </h3>
+          <p class="max-w-lg font-mono text-sm leading-relaxed text-copy-muted">
+            {siteConfigs.emptyPostMessage}
+          </p>
+        </div>
+      )}
     </section>
+
+    <HeroProfile language="id" />
+    <Portfolio language="id" />
   </main>
 </BaseLayout>

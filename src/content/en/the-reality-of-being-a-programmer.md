@@ -3,7 +3,7 @@ title: "The Reality of Being a Programmer: Why Reading Code is Far More Importan
 description: "A survival guide for aspiring software engineers: from the illusion of generative AI speed, the importance of algorithmic foundations, reading technical documentation, to the value of internships."
 pubDate: 2026-10-05T10:00:00Z
 updatedDate: 2026-11-25
-coverImage: "/images/the-reality-of-being-a-programmer.webp"
+coverImage: "../../assets/images/the-reality-of-being-a-programmer.webp"
 tags: ["journal", "software-engineer", "opinion", "mindset", "beginner"]
 isDraft: false
 idSlug: "realitas-menjadi-programmer"

@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { siteTranslation } from "../../config/site";
 
@@ -13,75 +14,85 @@ const postUrl = language === "id"
   ? `/blog/${post.id}/`
   : `/en/blog/${post.id}/`;
 
-const dateOptions: Intl.DateTimeFormatOptions = {
-  year: "numeric",
-  month: "long",
-  day: "numeric",
-};
 const formattedDate = post.data.pubDate.toLocaleDateString(
-  language === "id" ? "id" : "en",
-  dateOptions,
+  language === "id" ? "id-ID" : "en-US",
+  { year: "numeric", month: "long", day: "numeric" },
 );
 ---
 
 <article
-  class="border-4 border-white bg-black flex flex-col h-full hover:-translate-y-2 hover:shadow-neo-lime-8 transition-all duration-300"
+  class="group flex h-full flex-col border-4 border-white bg-surface-card transition-[transform,box-shadow] duration-200 hover:-translate-y-1 hover:shadow-neo-lime-8"
 >
   {
     post.data.coverImage && (
       <a
         href={postUrl}
-        class="block border-b-4 border-white overflow-hidden group"
+        class="block overflow-hidden border-b-4 border-white"
         aria-hidden="true"
         tabindex="-1"
       >
-        <img
-          src={post.data.coverImage}
-          alt=""
-          width="1200"
-          height="630"
-          loading="lazy"
-          decoding="async"
-          class="w-full aspect-[1200/630] object-cover grayscale group-hover:grayscale-0 transition-all duration-500 bg-neutral-900 border-b-4 border-white"
-          onerror="this.removeAttribute('onerror'); this.setAttribute('src', 'https://placehold.co/1200x630/000000/c6ff00.png?text=Gambar+Tidak+Tersedia');"
-        />
+        {typeof post.data.coverImage === "string" ? (
+          <img
+            src={post.data.coverImage}
+            alt=""
+            width="1200"
+            height="630"
+            loading="lazy"
+            decoding="async"
+            class="aspect-[1200/630] w-full bg-surface-page object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+          />
+        ) : (
+          <Image
+            src={post.data.coverImage}
+            format="webp"
+            widths={[480, 800, 1200]}
+            sizes="(max-width: 767px) calc(100vw - 2rem), (max-width: 1200px) calc((100vw - 5rem) / 2), 33rem"
+            quality={80}
+            alt=""
+            loading="lazy"
+            decoding="async"
+            class="aspect-[1200/630] w-full bg-surface-page object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+          />
+        )}
       </a>
     )
   }
 
-  <div class="p-6 flex flex-col flex-grow">
-    <div class="flex flex-wrap gap-2 mb-4">
+  <div class="flex flex-grow flex-col p-5 md:p-6">
+    <div class="mb-4 flex flex-wrap gap-2">
       {
         post.data.tags?.slice(0, 2).map((tag: string) => (
-          <span class="bg-white text-black text-xs font-bold px-2 py-1 uppercase border-2 border-black shadow-neo-fuchsia-2">
+          <span class="border-2 border-black bg-white px-2 py-1 font-mono text-[0.68rem] font-bold uppercase tracking-wide text-black shadow-neo-fuchsia-2">
             {tag}
           </span>
         ))
       }
     </div>
 
-    <a href={postUrl} class="group mb-2" data-astro-prefetch="hover">
-      <h3
-        class="text-2xl font-black text-white leading-tight group-hover:text-brand-cyan transition-colors"
-      >
+    <a
+      href={postUrl}
+      class="mb-3 rounded-sm focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-brand-lime"
+      data-astro-prefetch="hover"
+    >
+      <h3 class="text-xl font-black leading-tight text-white transition-colors group-hover:text-brand-cyan md:text-2xl">
         {post.data.title}
       </h3>
     </a>
 
     <time
       datetime={post.data.pubDate.toISOString()}
-      class="text-neutral-400 text-sm mb-4 font-mono block"
+      class="mb-4 block font-mono text-xs font-bold uppercase tracking-wide text-copy-muted"
     >
       {formattedDate}
     </time>
 
-    <p class="text-neutral-300 line-clamp-3 mb-6 flex-grow leading-relaxed">
+    <p class="mb-6 line-clamp-3 flex-grow leading-relaxed text-neutral-300">
       {post.data.description}
     </p>
 
     <a
       href={postUrl}
-      class="inline-block mt-auto text-brand-lime font-mono font-bold uppercase hover:underline w-fit"
+      class="mt-auto inline-flex min-h-10 w-fit items-center border-b-2 border-brand-lime py-1 font-mono text-sm font-black uppercase text-brand-lime transition-colors hover:border-brand-cyan hover:text-brand-cyan focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-brand-lime"
       aria-label={`${language === "id" ? "Baca artikel lengkap tentang" : "Read full article about"} ${post.data.title}`}
       data-astro-prefetch="hover"
     >

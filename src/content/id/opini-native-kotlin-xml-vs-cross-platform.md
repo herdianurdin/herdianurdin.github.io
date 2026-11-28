@@ -2,7 +2,7 @@
 title: "Mengapa Saya Bertahan dengan Native Kotlin (XML): Realita Developer Spesifikasi Menengah"
 description: "Di tengah tren Flutter dan Jetpack Compose, ini alasan pragmatis mengapa arsitektur Native Kotlin & XML tetap menjadi raja untuk laptop berspesifikasi terbatas."
 pubDate: 2026-10-16T10:00:00+07:00
-coverImage: "/images/opini-native-kotlin-xml-vs-cross-platform.webp"
+coverImage: "../../assets/images/opini-native-kotlin-xml-vs-cross-platform.webp"
 enSlug: "why-i-stick-with-native-kotlin-xml"
 tags:
   [
@@ -25,7 +25,7 @@ Di artikel ini, saya ingin membagikan opini teknis mengapa saya—setelah berkel
 
 ## Ilusi Cross-Platform: Dependency Hell dan Ukuran APK
 
-![Ilustrasi programmer frustrasi menghadapi error dependency package yang usang pada framework cross-platform](/images/ilustrasi-dependency-hell.webp)
+![Ilustrasi programmer frustrasi menghadapi error dependency package yang usang pada framework cross-platform](../../assets/images/ilustrasi-dependency-hell.webp)
 
 Jauh sebelum saya mendalami bahasa pemrograman Kotlin, cinta pertama saya jatuh pada **[React Native](https://reactnative.dev/)** dan **[Flutter](https://flutter.dev/)**. Janjinya amat manis: tulis kode satu kali, aplikasi bisa berjalan mulus di Android dan iOS.
 
@@ -50,7 +50,7 @@ Jetpack Compose adalah teknologi brilian, tetapi memaksakan diri menggunakannya 
 
 ## Keunggulan Native Kotlin + XML untuk Spesifikasi Terbatas
 
-![Ilustrasi aplikasi Android Native offline-first berukuran sangat kecil di bawah 10 MB dan stabil digunakan](/images/ilustrasi-offline-first-app.webp)
+![Ilustrasi aplikasi Android Native offline-first berukuran sangat kecil di bawah 10 MB dan stabil digunakan](../../assets/images/ilustrasi-offline-first-app.webp)
 
 Akhirnya, saya kembali ke pangkuan kombinasi klasik: Native Kotlin dan XML. Ini bukanlah sebuah kemunduran, melainkan keputusan paling pragmatis. Berikut adalah tiga keunggulan tak terbantahkan dari arsitektur ini:
 

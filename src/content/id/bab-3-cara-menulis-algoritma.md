@@ -2,7 +2,7 @@
 title: "Fundamental Python Bab 3: Cara Menulis Algoritma (Cetak Biru Aplikasi)"
 description: "Belajar menulis algoritma melalui kalimat deskriptif, flowchart, dan pseudocode. Jangan membuat kode berantakan hanya karena malas merancang cetak biru."
 pubDate: 2026-10-10T10:10:00+07:00
-coverImage: "/images/bab-3-cara-menulis-algoritma.webp"
+coverImage: "../../assets/images/bab-3-cara-menulis-algoritma.webp"
 tags:
   ["tutorial-python", "dasar-pemrograman", "pseudocode", "flowchart", "pemula"]
 isDraft: false
@@ -32,7 +32,7 @@ Itulah mengapa cetak biru sangat penting. Ia bukan sekadar panduan mengetik; ia 
 
 ## 3 Cara Menulis Algoritma (Aturan Baku yang Sebenarnya Bebas)
 
-![Ilustrasi Arsitek Perangkat Lunak](/images/ilustrasi-arsitek-perangkat-lunak.webp)
+![Ilustrasi Arsitek Perangkat Lunak](../../assets/images/ilustrasi-arsitek-perangkat-lunak.webp)
 
 Secara teknis, penulisan algoritma itu bersifat bebas. Tidak ada _compiler_ yang akan memberikan layar _error_ merah jika Anda salah eja. Syarat utamanya hanya tiga: **mudah dibaca, mudah dimengerti, dan mudah dipahami**.
 
@@ -67,7 +67,7 @@ Deskripsi:
 
 ### 2. Flowchart (Diagram Visual)
 
-![Ilustrasi Flowchart Pemrograman](/images/flowchart.webp)
+![Ilustrasi Flowchart Pemrograman](../../assets/images/flowchart.webp)
 
 Manusia memproses gambar lebih cepat daripada teks. _Flowchart_ mengubah kalimat deskriptif di atas menjadi notasi grafis atau diagram.
 
@@ -80,11 +80,11 @@ Untuk dasar ini, Anda hanya perlu fokus pada 5 simbol utama:
 5. **Decision (Belah Ketupat):** Titik persimpangan kondisi (_If/Else_), biasanya memiliki panah "Ya" dan "Tidak".
 
 **Contoh Kalimat Flowchart:**
-![Flowchart Luas Persegi Panjang](/images/contoh-flowchart-luas-persgi-panjang.webp)
+![Flowchart Luas Persegi Panjang](../../assets/images/contoh-flowchart-luas-persgi-panjang.webp)
 
 ### 3. Pseudocode (Jembatan Menuju Kode Asli)
 
-![Ilustrasi Pseudocode](/images/ilustrasi-pseudocode.webp)
+![Ilustrasi Pseudocode](../../assets/images/ilustrasi-pseudocode.webp)
 
 _Pseudocode_ secara harfiah berarti "kode semu". Ini adalah bahasa tingkat menengah yang menggabungkan logika pemrograman dengan bahasa manusia.
 

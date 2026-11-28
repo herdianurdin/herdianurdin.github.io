@@ -2,7 +2,7 @@
 title: "Fundamental Python Bab 10: Meracik Cetakan Pabrik (Fungsi / Function)"
 description: "Jangan menulis ulang kode yang sama. Pelajari konsep modularitas, beda parameter dan argumen, serta rahasia return melalui pembuatan Fungsi."
 pubDate: 2026-10-10T10:45:00+07:00
-coverImage: "/images/bab-10-fungsi-dan-modularitas-python.webp"
+coverImage: "../../assets/images/bab-10-fungsi-dan-modularitas-python.webp"
 tags:
   [
     "tutorial-python",
@@ -32,7 +32,7 @@ Di dunia nyata, konsep modularitas ini bekerja persis seperti mesin pabrik. Pabr
 
 ## Iron Man dan Otomatisasi Zirah
 
-![Ilustrasi Iron Man Suit Up](/images/ilustrasi-ironman-suits.webp)
+![Ilustrasi Iron Man Suit Up](../../assets/images/ilustrasi-ironman-suits.webp)
 
 Untuk memvisualisasikan cara kerjanya, bayangkan Tony Stark di film _Iron Man_. Saat tiba-tiba diserang musuh di jalanan, Tony Stark tidak punya waktu untuk melebur besi, memasang kabel sirkuit, dan merakit pelontar energi dari awal secara manual.
 
@@ -83,7 +83,7 @@ sapa_pengunjung("Tony Stark")
 
 ## 3. Pintu Keluar: `print` vs `return` (Analogi ATM)
 
-![Ilustrasi Mesin ATM Print vs Return](/images/ilustrasi-mesin-atm.webp)
+![Ilustrasi Mesin ATM Print vs Return](../../assets/images/ilustrasi-mesin-atm.webp)
 
 Ini adalah konsep paling krusial dalam pembuatan fungsi. Apa bedanya Fungsi yang diakhiri dengan perintah `print` dengan Fungsi yang diakhiri dengan perintah `return`? Mari gunakan analogi **Mesin ATM**.
 

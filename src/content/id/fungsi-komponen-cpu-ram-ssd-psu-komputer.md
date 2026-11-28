@@ -2,7 +2,7 @@
 title: "Materi Dasar Komputer: Fungsi Motherboard, CPU, RAM, SSD, dan PSU"
 description: "Membedah anatomi perangkat keras komputer. Pahami fungsi motherboard, CPU, perbedaan RAM dan SSD, komparasi kecepatan PCIe, hingga peran vital PSU dan Wattage."
 pubDate: 2026-11-05T08:00:00+07:00
-coverImage: "/images/komponen-inti-komputer-motherboard-cpu-ram-ssd-psu.webp"
+coverImage: "../../assets/images/komponen-inti-komputer-motherboard-cpu-ram-ssd-psu.webp"
 tags: ["dasar-komputer", "hardware", "komponen-komputer", "smk-rpl", "smk-tkj"]
 isDraft: false
 ---
@@ -25,7 +25,7 @@ CPU bertugas mengeksekusi semua instruksi dari _software_, melakukan perhitungan
 
 ## 2. Analogi Tipe Orang: Perbedaan RAM dan Penyimpanan
 
-![Ilustrasi dua karakter. Satu karakter berlari sangat cepat namun kehilangan kertas dari tangannya untuk melambangkan RAM, sedangkan karakter lain berjalan santai membawa brankas besi untuk melambangkan Storage](/images/perbedaan-ram-ssd-analogi-memori.webp)
+![Ilustrasi dua karakter. Satu karakter berlari sangat cepat namun kehilangan kertas dari tangannya untuk melambangkan RAM, sedangkan karakter lain berjalan santai membawa brankas besi untuk melambangkan Storage](../../assets/images/perbedaan-ram-ssd-analogi-memori.webp)
 
 Banyak siswa baru yang kebingungan mengapa komputer membutuhkan dua jenis memori sekaligus: RAM (_Random Access Memory_) dan Penyimpanan Utama (HDD/SSD). Untuk membedakan karakteristik keduanya, saya sering mengibaratkannya dengan sifat ingatan manusia:
 
@@ -46,7 +46,7 @@ Kesimpulannya: Kapasitas RAM yang besar memastikan CPU memiliki ruang yang luas 
 
 ## 3. Komparasi Storage: Mengapa SSD Lebih Cepat dari HDD?
 
-![Ilustrasi perbandingan visual antara bentuk SSD SATA yang berupa kotak pipih lebar di sebelah kiri, dan kepingan cip SSD NVMe M2 yang mungil serta tanpa kabel di sebelah kanan](/images/perbedaan-ssd-sata-dan-nvme.webp)
+![Ilustrasi perbandingan visual antara bentuk SSD SATA yang berupa kotak pipih lebar di sebelah kiri, dan kepingan cip SSD NVMe M2 yang mungil serta tanpa kabel di sebelah kanan](../../assets/images/perbedaan-ssd-sata-dan-nvme.webp)
 
 Banyak pengguna awam bertanya, mengapa SSD terasa lebih kencang? Jawabannya terletak pada arsitektur fisiknya. HDD mencari data secara mekanik dengan memutar piringan logam, sedangkan SSD membaca data secara elektrik melalui cip memori _flash_ (NAND), persis seperti _flashdisk_ namun berkapasitas raksasa. Ketiadaan komponen mekanik yang berputar ini membuat waktu respons SSD menjadi nyaris instan.
 

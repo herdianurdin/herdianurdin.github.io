@@ -3,7 +3,7 @@ title: "Vibe Engineering vs Vibe Coding: Analogi Liburan dan Tragedi Race Condit
 description: "Pahami perbedaan mendasar vibe engineering vs vibe coding. Belajar dari studi kasus LMS Python Quest, tragedi Firebase, dan rahasia prompt AI terstruktur."
 pubDate: 2026-10-19T08:00:00+07:00
 updatedDate: 2026-11-25
-coverImage: "/images/vibe-engineering-vs-vibe-coding.webp"
+coverImage: "../../assets/images/vibe-engineering-vs-vibe-coding.webp"
 tags:
   [
     "vibe-coding",
@@ -40,7 +40,7 @@ Hasil dari eksperimen itu adalah **[Python Quest](https://herdianurdin.my.id/pyt
 
 ## Praktik Vibe Engineering: Merancang Sebelum Mengetik
 
-![Ilustrasi programmer menyusun cetak biru arsitektur di papan tulis sebelum memberikan instruksi kepada robot AI](/images/ilustrasi-programmer-dengan-cetak-biru.webp)
+![Ilustrasi programmer menyusun cetak biru arsitektur di papan tulis sebelum memberikan instruksi kepada robot AI](../../assets/images/ilustrasi-programmer-dengan-cetak-biru.webp)
 
 Platform Python Quest dibangun menggunakan **[React JS](https://react.dev/)**, di-_hosting_ gratis melalui GitHub Pages, dan ditenagai oleh **[Firebase](https://firebase.google.com/)** untuk sistem autentikasi serta _database_ waktu nyata (_realtime_).
 
@@ -66,7 +66,7 @@ Coba bayangkan jika saya tidak memiliki **[fondasi logika algoritma dasar](/blog
 
 ## Perbedaan Prompt: Amatir vs Arsitek
 
-![Ilustrasi perbandingan dokumen spesifikasi PRD yang tebal dan rapi melawan selembar kertas kosong dengan satu coretan](/images/ilustrasi-dokumen-prd-vs-dokumen-kosong.webp)
+![Ilustrasi perbandingan dokumen spesifikasi PRD yang tebal dan rapi melawan selembar kertas kosong dengan satu coretan](../../assets/images/ilustrasi-dokumen-prd-vs-dokumen-kosong.webp)
 
 Dari rentetan tragedi di atas, kita bisa memetik satu kesimpulan penting: perbedaan utama antara kuli ketik dan insinyur terletak pada cara mereka meracik perintah (_Prompting_).
 

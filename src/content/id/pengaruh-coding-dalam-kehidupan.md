@@ -2,7 +2,7 @@
 title: "Pengaruh Coding Dalam Kehidupan: Mengubah Pola Pikir Acak Menjadi Sistematis"
 description: "Mempelajari algoritma dan pemrograman bukan hanya tentang mengetik sintaks, tetapi merombak total cara otak memproses masalah, merencanakan kehidupan, dan mengelola ekspektasi."
 pubDate: 2026-10-04T08:00:00Z
-coverImage: "/images/coding-mindset.webp"
+coverImage: "../../assets/images/coding-mindset.webp"
 tags: ["jurnal", "mindset", "algoritma", "sdlc", "pengembangan-diri"]
 isDraft: false
 enSlug: "the-impact-of-coding-on-life"

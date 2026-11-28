@@ -2,7 +2,7 @@
 title: "Quarter-Life Crisis di Ruang BEM: Memilih Jalur Tech dengan Laptop Seadanya"
 description: "Kisah nyata dari semester 7: kepanikan pra-kelulusan, tragedi laptop Celeron, janji manis Kampus Merdeka, dan realita memilih bidang Web, Mobile, Game, atau AI."
 pubDate: 2026-10-07T16:00:00+07:00
-coverImage: "/images/quarter-life-crisis-tech-path.webp"
+coverImage: "../../assets/images/quarter-life-crisis-tech-path.webp"
 tags: ["jurnal", "software-engineer", "kampus-merdeka", "mindset", "kehidupan"]
 isDraft: false
 enSlug: "choosing-tech-path-low-end-laptop"

@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import EditorialPolicyContent from "../../components/EditorialPolicyContent.astro";
+import { siteTranslation } from "../../config/site";
+
+const t = siteTranslation.en;
+---
+
+<BaseLayout title={t.editorialPolicy} description="Guidelines for topic selection, references, technical testing, AI assistance, and article corrections at Jurnal IT." language="en">
+  <EditorialPolicyContent language="en" />
+</BaseLayout>

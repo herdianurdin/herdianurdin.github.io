@@ -1,0 +1,83 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { siteTranslation } from "../../config/site";
+import { playgroundCatalog } from "../../config/playgrounds.mjs";
+
+export interface Props {
+  language: "id" | "en";
+}
+
+const { language } = Astro.props;
+const t = siteTranslation[language];
+---
+
+<BaseLayout
+  title={t.playgroundsTitle}
+  description={t.playgroundsDescription}
+  language={language}
+  headerVariant="page"
+>
+  <main id="main-content" tabindex="-1" class="site-container page-main page-main--directory">
+    <header class="mb-10 border-b-4 border-white pb-8">
+      <p class="mb-3 font-mono text-xs font-black uppercase tracking-widest text-brand-cyan">
+        {language === "id" ? "LABORATORIUM INTERAKTIF" : "INTERACTIVE LABS"}
+      </p>
+      <h1 class="mb-4 text-4xl font-black uppercase tracking-tight text-white md:text-5xl">
+        {t.playgroundsTitle}
+      </h1>
+      <p class="max-w-3xl text-base leading-relaxed text-neutral-300 md:text-lg">
+        {t.playgroundsDescription}
+      </p>
+    </header>
+
+    <section aria-labelledby="available-playgrounds-heading">
+      <div class="mb-6 flex items-center gap-4">
+        <h2 id="available-playgrounds-heading" class="text-xl font-black uppercase tracking-tight md:text-2xl">
+          {t.availablePlaygrounds}
+        </h2>
+        <div class="h-1 flex-grow bg-white" aria-hidden="true"></div>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {playgroundCatalog.map((playground) => (
+          <article class="flex h-full min-w-0 flex-col border-4 border-white bg-surface-card p-6 shadow-neo-cyan-6">
+            <div class="mb-5 flex flex-wrap items-center justify-between gap-3">
+              <span class="border-2 border-black bg-brand-lime px-2 py-1 font-mono text-xs font-black uppercase text-black">
+                {playground.category[language]}
+              </span>
+              <span class="inline-flex min-h-7 items-center border-2 border-brand-lime px-2 py-1 font-mono text-[0.65rem] font-black uppercase text-brand-lime">
+                {t.playgroundAvailable}
+              </span>
+            </div>
+
+            <h3 class="mb-3 text-2xl font-black leading-tight text-white">
+              {playground.title[language]}
+            </h3>
+            <p class="mb-6 flex-grow leading-relaxed text-neutral-300">
+              {playground.description[language]}
+            </p>
+
+            <ul class="mb-5 flex flex-wrap gap-2" aria-label={t.playgroundTechnologies}>
+              {playground.technologies.map((technology) => (
+                <li class="border border-border-muted bg-surface-panel px-2 py-1 font-mono text-[0.7rem] font-bold text-copy-muted">
+                  {technology}
+                </li>
+              ))}
+            </ul>
+            <p class="mb-5 font-mono text-xs text-copy-muted">
+              {playground.interfaceLanguage[language]}
+            </p>
+
+            <a
+              href={playground.href}
+              data-astro-prefetch="hover"
+              class="inline-flex min-h-12 items-center justify-center border-4 border-white bg-brand-lime px-5 py-3 text-center font-mono text-sm font-black uppercase text-black shadow-neo-paper-2 transition-transform hover:-translate-y-1 hover:shadow-neo-cyan-4 focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-brand-lime active:translate-x-1 active:translate-y-1 active:shadow-none"
+            >
+              {playground.cta[language]} <span aria-hidden="true" class="ml-2">→</span>
+            </a>
+          </article>
+        ))}
+      </div>
+    </section>
+  </main>
+</BaseLayout>

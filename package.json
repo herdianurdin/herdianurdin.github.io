@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev --host",
     "start": "astro dev --host",
-    "build": "npm run check:content && npm run check:links && npm run check:design-tokens && npm run check:ui-basics && astro check && astro build && npm run check:seo && npm run check:route-links && npm run check:structured-data && npm run check:page-metadata && npm run check:social-meta && npm run check:image-assets && npm run check:onpage",
+    "build": "npm run check:content && npm run check:links && npm run check:design-tokens && npm run check:ui-basics && npm run check:layout-system && npm run check:playground-catalog && npm run check:markdown-wrappers && npm run check:related-articles && npm run check:social-profiles && npm run check:author-cards && npm run check:responsive-images && npm run check:sharp-image-service && astro check && astro build && npm run check:seo && npm run check:route-links && npm run check:structured-data && npm run check:page-metadata && npm run check:social-meta && npm run check:image-assets && npm run check:onpage",
     "preview": "astro preview --host",
     "check:seo": "node scripts/check-seo.mjs",
     "check:route-links": "node scripts/check-route-links.mjs",
@@ -20,7 +20,15 @@
     "check:content": "node scripts/check-content-relations.mjs",
     "check:links": "node scripts/check-internal-links.mjs",
     "check:design-tokens": "node scripts/check-design-tokens.mjs",
-    "check:ui-basics": "node scripts/check-ui-basics.mjs"
+    "check:ui-basics": "node scripts/check-ui-basics.mjs",
+    "check:markdown-wrappers": "node scripts/check-markdown-wrappers.mjs",
+    "check:related-articles": "node scripts/check-related-articles.mjs",
+    "check:layout-system": "node scripts/check-layout-system.mjs",
+    "check:playground-catalog": "node scripts/check-playground-catalog.mjs",
+    "check:social-profiles": "node scripts/check-social-profiles.mjs",
+    "check:author-cards": "node scripts/check-author-cards.mjs",
+    "check:responsive-images": "node scripts/check-responsive-images.mjs",
+    "check:sharp-image-service": "node scripts/check-sharp-image-service.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.12",

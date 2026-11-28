@@ -3,7 +3,7 @@ title: "Apa Itu Vibe Coding? Realita AI Menggantikan Programmer & Jebakan Biayan
 description: "Membongkar apa itu vibe coding AI. Benarkah programmer entry-level mulai tergantikan? Pelajari studi kasusnya, pentingnya PRD, dan mitos efisiensi biaya AI."
 pubDate: 2026-10-17T08:00:00+07:00
 updatedDate: 2026-11-25
-coverImage: "/images/apa-itu-vibe-coding-ai.webp"
+coverImage: "../../assets/images/apa-itu-vibe-coding-ai.webp"
 tags:
   [
     "vibe-coding",
@@ -58,7 +58,7 @@ Ada sebuah ironi baru di industri saat ini. Pemilik bisnis berpikir menyuruh AI 
 
 ## Cara Menjinakkan Halusinasi AI: Semuanya Dimulai dari PRD
 
-![Ilustrasi programmer sedang menyusun dokumen PRD dan arsitektur sebelum memerintah robot AI untuk melakukan vibe coding](/images/ilustrasi-realita-vibe-coding.webp)
+![Ilustrasi programmer sedang menyusun dokumen PRD dan arsitektur sebelum memerintah robot AI untuk melakukan vibe coding](../../assets/images/ilustrasi-realita-vibe-coding.webp)
 
 Masalah terbesar dari _vibe coding_ AI adalah **halusinasi** dan **kode yang tidak terstruktur**. AI sering menciptakan _library_ fiktif, menulis kode _boilerplate_ yang tidak efisien, hingga gagal menyesuaikan kode antara lingkungan pengembangan (_local_) dan rilis (_production_).
 
@@ -87,7 +87,7 @@ Hasilnya? Kode yang dihasilkan sangat bersih, membuang baris yang tidak berguna,
 
 ## Nasihat untuk Pemula: Jangan Kehilangan "Esensi"
 
-![Ilustrasi transisi dari belajar logika fundamental pemrograman di buku menuju penggunaan teknologi AI modern](/images/ilustrasi-belajar-fundamental-coding.webp)
+![Ilustrasi transisi dari belajar logika fundamental pemrograman di buku menuju penggunaan teknologi AI modern](../../assets/images/ilustrasi-belajar-fundamental-coding.webp)
 
 Melihat mudahnya _vibe coding_, banyak pemula yang mengambil jalan pintas dan langsung menyuruh AI membuat aplikasi utuh tanpa paham cara kerjanya. Ini adalah bom waktu.
 

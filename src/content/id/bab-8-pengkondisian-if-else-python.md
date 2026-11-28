@@ -2,7 +2,7 @@
 title: "Fundamental Python Bab 8: Persimpangan Jalan (Gerbang Logika & Kondisi)"
 description: "Program yang cerdas harus bisa mengambil keputusan sendiri. Pelajari operator relasi, tabel logika, dan aturan ketat spasi (indentasi) di Python."
 pubDate: 2026-10-10T10:35:00+07:00
-coverImage: "/images/bab-8-pengkondisian-if-else-python.webp"
+coverImage: "../../assets/images/bab-8-pengkondisian-if-else-python.webp"
 tags:
   [
     "tutorial-python",
@@ -24,7 +24,7 @@ Aplikasi tidak boleh berjalan buta menabrak tembok; ia harus bisa "berpikir".
 
 ## Doctor Strange dan Pencarian Realitas
 
-![Ilustrasi Doctor Strange Infinity War](/images/ilustrasi-doctor-strange.webp)
+![Ilustrasi Doctor Strange Infinity War](../../assets/images/ilustrasi-doctor-strange.webp)
 
 Untuk memvisualisasikan bagaimana mekanisme "mengevaluasi syarat" ini bekerja, ingatlah momen epik dalam film _Avengers: Infinity War_. Saat itu, Doctor Strange menggunakan _Time Stone_ untuk menelusuri 14.000.605 kemungkinan masa depan dari pertarungan mereka melawan Thanos.
 
@@ -90,7 +90,7 @@ Tugasnya hanya satu: membalikkan realitas. Jika sebuah kondisi awalnya _True_, `
 
 ## 3. Eksekusi Pengkondisian (If, Elif, Else)
 
-![Ilustrasi Blok If Else Python](/images/ilustrasi-blok-if-else.webp)
+![Ilustrasi Blok If Else Python](../../assets/images/ilustrasi-blok-if-else.webp)
 
 Sekarang, mari kita terjemahkan logika di atas ke dalam struktur keputusan bahasa Python. Perhatikan baik-baik bagian yang menjorok ke dalam (Indentasi)!
 

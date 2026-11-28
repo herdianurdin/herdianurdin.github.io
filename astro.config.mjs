@@ -3,6 +3,7 @@ import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeLocalImageAttributes from "./scripts/rehype-local-image-attributes.mjs";
+import rehypeContentWrappers from "./scripts/rehype-content-wrappers.mjs";
 import { unified } from "@astrojs/markdown-remark";
 
 export default defineConfig({
@@ -32,12 +33,19 @@ export default defineConfig({
           },
         ],
         rehypeLocalImageAttributes,
+        rehypeContentWrappers,
       ],
     }),
   },
 
   image: {
     domains: ["placehold.co", "ui-avatars.com"],
+    // Markdown images stored under src/ receive a small responsive srcset at build time.
+    // Three breakpoints balance mobile, standard desktop, and high-density reading screens.
+    // Editorial cover/profile components use explicit, shared Image width sets.
+    layout: "constrained",
+    responsiveStyles: true,
+    breakpoints: [480, 800, 1440],
   },
 
   build: {

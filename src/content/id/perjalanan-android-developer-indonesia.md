@@ -3,7 +3,7 @@ title: "Realitas Solo Android Developer: Bertahan di Ekosistem Google Play Conso
 description: "Kisah nyata perjalanan dari blogger pemula, melewati fase banned akun, hingga membangun aset digital yang berkelanjutan di tengah kesibukan mengajar."
 pubDate: 2026-10-01T09:56:00Z
 updatedDate: 2026-11-25
-coverImage: "/images/perjalanan-android-developer-indonesia.webp"
+coverImage: "../../assets/images/perjalanan-android-developer-indonesia.webp"
 tags: ["solo-developer", "android", "google-play", "jurnal", "kotlin"]
 isDraft: false
 enSlug: "indonesian-solo-android-developer-journey"

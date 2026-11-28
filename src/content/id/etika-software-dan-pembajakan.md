@@ -2,7 +2,7 @@
 title: "Dari Pembajak Menjadi Pengembang: Memahami Harga Sebuah Karya dan Kode Etik Software"
 description: "Sebuah refleksi perjalanan meninggalkan doktrin sesat pembajakan perangkat lunak, migrasi ke Open Source, hingga memahami dilema monetisasi sebagai indie developer."
 pubDate: 2026-10-06T10:00:00Z
-coverImage: "/images/etika-software-dan-pembajakan.webp"
+coverImage: "../../assets/images/etika-software-dan-pembajakan.webp"
 tags: ["jurnal", "opini", "open-source", "indie-developer", "mindset"]
 isDraft: false
 enSlug: "software-ethics-and-piracy"

@@ -24,7 +24,17 @@ const requiredColorTokens = [
   '--color-brand-lime',
   '--color-brand-cyan',
   '--color-brand-fuchsia',
+  '--color-brand-fuchsia-readable',
   '--color-brand-danger',
+  '--color-social-youtube',
+  '--color-social-facebook',
+  '--color-social-instagram',
+  '--color-social-tiktok',
+  '--color-surface-page',
+  '--color-surface-panel',
+  '--color-surface-card',
+  '--color-border-muted',
+  '--color-copy-muted',
   '--color-editor',
   '--color-editor-panel',
   '--color-editor-gutter',
@@ -39,6 +49,15 @@ for (const token of requiredColorTokens) {
 const usedShadowTokens = new Set();
 const rawBrandUtilities = [];
 const rawBrandShadows = [];
+const requiredSemanticUtilities = [
+  ['bg-surface-page', '--color-surface-page'],
+  ['bg-surface-panel', '--color-surface-panel'],
+  ['bg-surface-card', '--color-surface-card'],
+  ['text-copy-muted', '--color-copy-muted'],
+  ['text-brand-fuchsia-readable', '--color-brand-fuchsia-readable'],
+  ['border-border-muted', '--color-border-muted'],
+];
+const semanticUtilitiesFound = new Set();
 
 for (const file of files) {
   const source = await readFile(file, 'utf8');
@@ -46,6 +65,12 @@ for (const file of files) {
 
   for (const match of source.matchAll(/\bshadow-neo-[a-z0-9-]+\b/g)) {
     usedShadowTokens.add(match[0]);
+  }
+
+  for (const [utility] of requiredSemanticUtilities) {
+    if (new RegExp(`(?:^|[\\s'"\\x60])${utility}(?:$|[\\s'"\\x60])`).test(source)) {
+      semanticUtilitiesFound.add(utility);
+    }
   }
 
   const colorUtilities = /(?:\b[a-z-]+:)*(?:bg|text|border|decoration|placeholder|outline|ring|fill|stroke)-\[\s*#(?:c6ff00|00e5ff|d946ef|ff0055|282a36|1e1e1e)\s*\]/gi;
@@ -63,6 +88,15 @@ for (const className of [...usedShadowTokens].sort()) {
   const themeName = `--${className}`;
   if (!globalCss.includes(`${themeName}:`)) {
     errors.push(`Class ${className} has no matching ${themeName} theme token.`);
+  }
+}
+
+for (const [utility, token] of requiredSemanticUtilities) {
+  if (!globalCss.includes(`${token}:`)) {
+    errors.push(`Missing semantic color token ${token} in ${globalCssPath}`);
+  }
+  if (!semanticUtilitiesFound.has(utility)) {
+    errors.push(`Semantic utility ${utility} is defined but not used by any source component.`);
   }
 }
 

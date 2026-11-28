@@ -2,7 +2,7 @@
 title: "Berapa Lama Pembuatan Aplikasi? Bongkar Rahasia 'Just In Time' Solo Developer"
 description: "Menjawab pertanyaan pembuatan aplikasi berapa lama. Membedah estimasi waktu, just in time management, dan perbandingan solo developer vs perusahaan IT."
 pubDate: 2026-10-28T08:00:00+07:00
-coverImage: "/images/pembuatan-aplikasi-berapa-lama-just-in-time.webp"
+coverImage: "../../assets/images/pembuatan-aplikasi-berapa-lama-just-in-time.webp"
 tags:
   [
     "manajemen-proyek",
@@ -30,7 +30,7 @@ Tidak ada patokan baku untuk durasi pembuatan aplikasi. Semuanya bergantung pada
 
 ## Rahasia Kecepatan: Just In Time Scheduling
 
-![Ilustrasi seorang developer dengan cepat merakit blok puzzle berbentuk antarmuka aplikasi dengan stopwatch bersinar di sebelahnya](/images/ilustrasi-just-in-time-scheduling-aplikasi.webp)
+![Ilustrasi seorang developer dengan cepat merakit blok puzzle berbentuk antarmuka aplikasi dengan stopwatch bersinar di sebelahnya](../../assets/images/ilustrasi-just-in-time-scheduling-aplikasi.webp)
 
 Banyak kolega yang heran bagaimana saya bisa menyeimbangkan jam mengajar di sekolah sembari terus memelihara dan merilis belasan aplikasi. Rahasia utamanya ada pada adaptasi **[Just in Time (JIT) Manufacturing](https://en.wikipedia.org/wiki/Just-in-time_manufacturing)** yang saya terapkan ke dalam arsitektur perangkat lunak.
 
@@ -42,7 +42,7 @@ Setelah aplikasi berjalan, barulah saya melakukan optimalisasi ke dalam. Jika _l
 
 ## Solo Developer vs Perusahaan IT: Kisah Nyata di Balik Layar
 
-![Ilustrasi layar terbelah membandingkan satu developer yang santai namun cepat melawan sekelompok orang yang terjebak di meja rapat penuh kertas berserakan](/images/ilustrasi-solo-developer-vs-birokrasi.webp)
+![Ilustrasi layar terbelah membandingkan satu developer yang santai namun cepat melawan sekelompok orang yang terjebak di meja rapat penuh kertas berserakan](../../assets/images/ilustrasi-solo-developer-vs-birokrasi.webp)
 
 Mengapa _software house_ memakan waktu berbulan-bulan? Jawabannya terletak pada lapisan birokrasi. Ada rapat koordinasi, persetujuan manajer proyek, desainer UI/UX, hingga divisi pemasaran. Standar operasional ini memang diperlukan untuk skala korporat, namun menciptakan waktu tunggu (_bottleneck_) yang sangat panjang.
 

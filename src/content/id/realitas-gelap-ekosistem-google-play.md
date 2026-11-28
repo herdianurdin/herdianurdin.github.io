@@ -2,7 +2,7 @@
 title: "Realitas Gelap Ekosistem Google Play: Antara Cuan Instan, Sabotase, dan Warisan Digital"
 description: "Membongkar sisi gelap persaingan developer aplikasi: dari taktik licik ASO, ternak akun konsol, hingga keputusan memilih jalan sunyi untuk membangun aset digital yang halal."
 pubDate: 2026-10-07T09:00:00Z
-coverImage: "/images/realitas-gelap-ekosistem-google-play.webp"
+coverImage: "../../assets/images/realitas-gelap-ekosistem-google-play.webp"
 tags: ["jurnal", "google-play", "aso", "mindset", "indie-developer"]
 isDraft: false
 enSlug: "dark-reality-of-google-play-ecosystem"

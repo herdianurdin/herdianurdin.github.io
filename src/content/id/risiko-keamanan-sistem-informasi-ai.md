@@ -2,7 +2,7 @@
 title: "Risiko Keamanan Sistem Informasi 2026: Deteksi AI PDF hingga Krisis PHP2Shell"
 description: "Membahas praktik mitigasi keamanan siber: dari deteksi AI pada dokumen PDF (teks putih) hingga krisis RCE PHP2Shell & Node2Shell Oktober 2026."
 pubDate: 2026-10-26T08:00:00+07:00
-coverImage: "/images/risiko-keamanan-sistem-informasi-ai.webp"
+coverImage: "../../assets/images/risiko-keamanan-sistem-informasi-ai.webp"
 tags:
   [
     "keamanan-siber",
@@ -27,7 +27,7 @@ Di artikel ini, kita akan membedah dua wajah ancaman digital saat ini: bagaimana
 
 ## Realita Akademik: Manipulasi Teks Putih dan Deteksi AI PDF
 
-![Ilustrasi seorang developer dengan kaca pembesar memeriksa lapisan dokumen digital yang bersinar dan menyembunyikan kode rahasia](/images/ilustrasi-teks-putih-dokumen-pdf.webp)
+![Ilustrasi seorang developer dengan kaca pembesar memeriksa lapisan dokumen digital yang bersinar dan menyembunyikan kode rahasia](../../assets/images/ilustrasi-teks-putih-dokumen-pdf.webp)
 
 Mari kita mulai dari tingkat yang paling dekat dengan keseharian: dokumen digital. Di sekolah tempat saya mengajar, saya hampir tidak pernah mengandalkan _tools_ pendeteksi AI otomatis untuk memeriksa kecurangan siswa. Dari sekadar melihat gaya bahasa atau menanyakan ulang logika programnya, saya sudah bisa menilai apakah itu murni ketikan mereka atau hasil menjiplak mesin.
 
@@ -51,7 +51,7 @@ Karena teman saya menolak bermigrasi ke Laravel dengan alasan kurva belajarnya y
 
 ## Peringatan Darurat: Krisis PHP2Shell & Node2Shell (Oktober 2026)
 
-![Ilustrasi seorang system administrator berdiri siaga di depan kumpulan server digital raksasa yang menyala merah dengan tanda peringatan](/images/ilustrasi-update-server-kritis.webp)
+![Ilustrasi seorang system administrator berdiri siaga di depan kumpulan server digital raksasa yang menyala merah dengan tanda peringatan](../../assets/images/ilustrasi-update-server-kritis.webp)
 
 Jika Anda merasa CMS yang baru diperbarui ke _framework_ modern sudah kebal dari serangan, Anda harus membaca laporan bulan ini. Tepat pada 21 Oktober 2026, komunitas _cybersecurity_ dikejutkan oleh rilis pembaruan (_patch_) darurat untuk dua raksasa _backend_: PHP dan Node.js.
 

@@ -2,7 +2,7 @@
 title: "Fundamental Python Bab 2: Mengenal Pemrograman sebagai Jembatan Manusia dan Mesin"
 description: "Komputer itu cepat tapi bodoh. Manusia itu lambat tapi pintar. Mari pelajari bagaimana bahasa pemrograman menjembatani keduanya."
 pubDate: 2026-10-10T10:05:00+07:00
-coverImage: "/images/bab-2-mengenal-pemrograman-dan-bahasa.webp"
+coverImage: "../../assets/images/bab-2-mengenal-pemrograman-dan-bahasa.webp"
 tags:
   ["tutorial-python", "dasar-pemrograman", "compiler-vs-interpreter", "pemula"]
 isDraft: false
@@ -16,7 +16,7 @@ Setelah Anda memiliki rancangan urutan tersebut di kepala Anda, pertanyaan selan
 
 Di sinilah kita berhadapan dengan sebuah realitas ironis. Komputer adalah mesin yang luar biasa cepat, tetapi pada dasarnya ia sangatlah bodoh. Sebaliknya, manusia adalah makhluk yang kemampuan berhitungnya lambat, tetapi sangat pintar dan kreatif.
 
-![Ilustrasi Jembatan Pemrograman](/images/ilutrasi-jembatan-pemrograman.webp)
+![Ilustrasi Jembatan Pemrograman](../../assets/images/ilutrasi-jembatan-pemrograman.webp)
 
 Jika Anda pernah menonton film _Iron Man_, ingatkah Anda pada adegan ikonis saat Tony Stark merakit _armor_ pertamanya di laboratorium bawah tanah? Tony yang jenius dibantu oleh sebuah robot lengan mekanik bernama **DUM-E** (_Dummy_). DUM-E ini sangat kuat dan cepat, tapi karena ia hanyalah mesin, ia menelan instruksi secara mentah dan harfiah. Ketika instruksi Tony kurang spesifik, DUM-E justru menyemprotkan pemadam api ke wajah Tony.
 
@@ -26,7 +26,7 @@ Jembatan penerjemah itulah yang kita sebut sebagai **Bahasa Pemrograman**.
 
 ## Tragedi Titik Koma (Sebuah Pengalaman Pribadi)
 
-![Ilustrasi Frustrasi Koding](/images/ilutrasi-frustasi-koding.webp)
+![Ilustrasi Frustrasi Koding](../../assets/images/ilutrasi-frustasi-koding.webp)
 
 Pemrograman adalah proses menerjemahkan rancangan solusi (algoritma) ke dalam serangkaian kode instruksi yang dapat dieksekusi oleh komputer.
 
@@ -54,7 +54,7 @@ Manusia tentu akan gila jika harus membuat program menggunakan rentetan angka `1
 
 ## Bagaimana Kode Kita Diterjemahkan? (Compiler vs Interpreter)
 
-![Ilustrasi Compiler dan Interpreter](/images/ilustrasi-compiler-dan-interpreter.webp)
+![Ilustrasi Compiler dan Interpreter](../../assets/images/ilustrasi-compiler-dan-interpreter.webp)
 
 Jika kita menulis kode Python menggunakan bahasa Inggris (Tingkat Tinggi), bagaimana caranya mesin (Biner 0 dan 1) bisa memahaminya? Kode kita harus diterjemahkan melalui salah satu dari dua metode ini:
 
@@ -63,7 +63,7 @@ Jika kita menulis kode Python menggunakan bahasa Inggris (Tingkat Tinggi), bagai
 
 ## Resep Masakan vs Pabrik Kue (Paradigma Pemrograman)
 
-![Ilustrasi Paradigma Pemrograman](/images/ilustrasi-paradigma-pemrograman.webp)
+![Ilustrasi Paradigma Pemrograman](../../assets/images/ilustrasi-paradigma-pemrograman.webp)
 
 Sama seperti pelukis yang memiliki aliran seni (realisme, kubisme), seorang _programmer_ juga memiliki cara pandang atau gaya dalam menstrukturkan kodenya. Ini disebut **Paradigma Pemrograman**.
 

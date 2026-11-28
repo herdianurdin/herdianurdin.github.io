@@ -2,7 +2,7 @@
 title: "Seri Fundamental Python: Peta Jalan Menguasai Logika Mesin dari Nol"
 description: "Panduan lengkap belajar Python untuk pemula. Mematahkan mitos matematika rumit, membangun pola pikir komputasional, dan belajar coding tanpa pusing instalasi."
 pubDate: 2026-10-15T09:00:00+07:00
-coverImage: "/images/seri-fundamental-python-pemula.webp"
+coverImage: "../../assets/images/seri-fundamental-python-pemula.webp"
 tags:
   [
     "tutorial-python",

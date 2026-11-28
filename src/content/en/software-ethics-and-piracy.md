@@ -2,7 +2,7 @@
 title: "From Pirate to Developer: Understanding the Value of Work and Software Ethics"
 description: "A reflection on the journey of leaving the misguided doctrine of software piracy, migrating to Open Source, and understanding the monetization dilemma as an indie developer."
 pubDate: 2026-10-06T10:00:00Z
-coverImage: "/images/software-ethics-and-piracy.webp"
+coverImage: "../../assets/images/software-ethics-and-piracy.webp"
 tags: ["journal", "opinion", "open-source", "indie-developer", "mindset"]
 isDraft: false
 idSlug: "etika-software-dan-pembajakan"

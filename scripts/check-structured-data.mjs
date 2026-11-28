@@ -101,6 +101,13 @@ async function main() {
     }
 
     const pathname = new URL(location).pathname;
+    const expectedProfileUrl = new URL(
+      pathname.startsWith("/en/") ? "/en/about/" : "/about/",
+      siteUrl,
+    ).href;
+    if (person?.url !== expectedProfileUrl) {
+      fail(`${location}: Person url must match the localized author profile (${expectedProfileUrl})`);
+    }
     const isProfilePage = pathname === "/about/" || pathname === "/en/about/";
     if (isProfilePage) {
       const profile = schemas.find((schema) => hasType(schema, "ProfilePage"));
@@ -132,6 +139,9 @@ async function main() {
         }
         if (!person || article.author?.["@id"] !== person["@id"]) {
           fail(`${location}: BlogPosting author does not reference the Person entity`);
+        }
+        if (article.author?.url !== expectedProfileUrl) {
+          fail(`${location}: BlogPosting author.url does not match the localized author profile`);
         }
         if (article.mainEntityOfPage?.["@id"] !== location) {
           fail(`${location}: BlogPosting mainEntityOfPage does not match the sitemap URL`);

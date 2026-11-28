@@ -53,45 +53,62 @@ npm run preview   # Preview dist hasil build
 
 ## 4. Scripts validasi
 
+### Validasi source sebelum build
+
 | Perintah | Script | Tujuan |
 |---|---|---|
-| `npm run check:content` | `scripts/check-content-relations.mjs` | Validasi file collection, content ID, relasi ID/EN dan status draft |
+| `npm run check:content` | `scripts/check-content-relations.mjs` | Validasi file collection, content ID, relasi ID/EN, dan status draft |
 | `npm run check:links` | `scripts/check-internal-links.mjs` | Memastikan link artikel internal menuju artikel terbit |
-| `npm run check:design-tokens` | `scripts/check-design-tokens.mjs` | Mencegah penggunaan warna/shadow brand hardcoded dan memeriksa token shadow |
-| `npm run check:ui-basics` | `scripts/check-ui-basics.mjs` | Memeriksa landmark main, skip link, Playground target, reading progress, pagination dan cover dekoratif |
-| `npm run check:seo` | `scripts/check-seo.mjs` | Validasi SEO output build |
-| `npm run check:route-links` | `scripts/check-route-links.mjs` | Scan link internal di static HTML |
-| `npm run check:structured-data` | `scripts/check-structured-data.mjs` | Validasi JSON-LD dan BlogPosting |
-| `npm run check:page-metadata` | `scripts/check-page-metadata.mjs` | Title dan meta description pada halaman sitemap |
-| `npm run check:social-meta` | `scripts/check-social-meta.mjs` | Open Graph/Twitter metadata |
-| `npm run check:image-assets` | `scripts/check-image-assets.mjs` | Gambar lokal, dimensi, format, social images, dan warning atribut |
-| `npm run check:onpage` | `scripts/check-onpage.mjs` | H1/heading, accessible name tautan, teks anchor generik |
-| `npm run check:production-seo` | `scripts/check-production-seo.mjs` | Pemeriksaan SEO terhadap situs live; tidak termasuk build default |
-| `npm run report:build-size -- <dir...>` | `scripts/report-build-size.mjs` | Perbandingan ukuran HTML/CSS output build |
+| `npm run check:design-tokens` | `scripts/check-design-tokens.mjs` | Memvalidasi warna dan shadow tokens |
+| `npm run check:ui-basics` | `scripts/check-ui-basics.mjs` | Landmark, skip link, navigasi, TOC, Playground, pagination, dan gambar dekoratif |
+| `npm run check:layout-system` | `scripts/check-layout-system.mjs` | Container, reading measure, dan konsistensi layout editorial |
+| `npm run check:playground-catalog` | `scripts/check-playground-catalog.mjs` | ID, route, metadata lokal, dan direktori Playground |
+| `npm run check:markdown-wrappers` | `scripts/check-markdown-wrappers.mjs` | Struktur wrapper tabel dan urutan konten Markdown |
+| `npm run check:related-articles` | `scripts/check-related-articles.mjs` | Relevansi tag, deduplikasi, urutan deterministik, dan batas tiga artikel |
+| `npm run check:social-profiles` | `scripts/check-social-profiles.mjs` | URL profil sosial, link terlihat, keamanan external-link, dan `Person.sameAs` |
+| `npm run check:author-cards` | `scripts/check-author-cards.mjs` | Layout profil/About/footer penulis, foto, hover/focus, dan kontras sosial |
+| `npm run check:responsive-images` | `scripts/check-responsive-images.mjs` | Lokasi source image, path konten, breakpoint, width sets, dan format output |
+| `npm run check:sharp-image-service` | `scripts/check-sharp-image-service.mjs` | Sharp, binary platform, Node.js CI, dan konfigurasi image service |
 
-`npm run build` menjalankan content, links, design tokens, UI basics, `astro check`, `astro build`, SEO, route links, structured data, page metadata, social metadata, image assets, dan on-page checker.
+### Post-build checks dan utilitas
+
+| Perintah | Script | Tujuan |
+|---|---|---|
+| `npm run check:seo` | `scripts/check-seo.mjs` | Sitemap, canonical, noindex, trailing slash, hreflang |
+| `npm run check:route-links` | `scripts/check-route-links.mjs` | Link internal pada static HTML menuju route canonical |
+| `npm run check:structured-data` | `scripts/check-structured-data.mjs` | JSON-LD dan BlogPosting |
+| `npm run check:page-metadata` | `scripts/check-page-metadata.mjs` | Title dan meta description |
+| `npm run check:social-meta` | `scripts/check-social-meta.mjs` | Open Graph dan Twitter metadata |
+| `npm run check:image-assets` | `scripts/check-image-assets.mjs` | Gambar lokal, srcset, social preview, dan atribut aksesibilitas |
+| `npm run check:onpage` | `scripts/check-onpage.mjs` | Heading kosong, accessible link name, anchor generik, dan heading-level skips |
+| `npm run check:production-seo` | `scripts/check-production-seo.mjs` | Smoke test SEO pada situs live; dijalankan terpisah |
+| `npm run report:build-size` | `scripts/report-build-size.mjs` | Ringkasan ukuran HTML/CSS/gambar dalam `dist/` |
+
+`npm run build` menjalankan 12 source validators, `astro check`, `astro build`, kemudian seluruh post-build checks (SEO, route links, structured data, page metadata, social metadata, image assets, dan on-page). `check:production-seo` dan `report:build-size` tidak termasuk dalam build default.
 
 ## 5. Urutan kerja konten lokal
 
 1. Buat file baru dengan `isDraft: true` saat belum siap terbit.
-2. Tambahkan gambar ke `public/images/` bila perlu.
-3. Jalankan `npm run check:content` dan `npm run check:links`.
-4. Jalankan `npm run build`.
-5. Jalankan `npm run preview`.
-6. Periksa artikel, link, gambar, TOC, tabel, code block, dan layout mobile.
-7. Ubah draft status menjadi false saat siap.
-8. Build ulang dan pastikan sitemap/RSS memiliki item yang sesuai.
+2. Simpan gambar artikel/cover di `src/assets/images/`; gunakan path relatif dari file Markdown.
+3. Gunakan `public/assets/` atau subfolder `public/` lain hanya untuk aset statis yang perlu URL tetap.
+4. Jalankan `npm run check:content`, `npm run check:links`, dan `npm run check:responsive-images`.
+5. Jalankan `npm run build`.
+6. Jalankan `npm run preview`.
+7. Periksa artikel, link, gambar, TOC, tabel, code block, dan layout mobile.
+8. Ubah draft status menjadi false saat siap, lalu build ulang dan pastikan sitemap/RSS memiliki item yang sesuai.
 
 ## 6. Menangani gambar
 
 Jika checker menyatakan image file missing:
 
-- Pastikan file benar-benar ada di `public/images/`.
-- Path di Markdown harus `/images/filename.webp`.
+- Pastikan sumber lokal ada di `src/assets/images/`.
+- Pastikan path pada Markdown/frontmatter relatif terhadap file `.md`/`.mdx`; untuk artikel root koleksi biasanya diawali `../../assets/images/`.
+- Pastikan resolusi path tetap berada di dalam `src/assets/`; jangan memakai `/images/...` atau path ke `public/images/`.
 - Perhatikan kapitalisasi nama file; production Linux case-sensitive.
-- Hindari spasi/karakter khusus.
+- Hindari spasi/karakter khusus pada nama aset.
+- Untuk favicon, ikon manifest, grafis SVG statis, dan sertifikat, periksa folder `public/` sesuai jenisnya.
 
-Peringatan `decoding` pada `profile.webp` yang telah terlihat pada baseline adalah warning, bukan error build. Jangan menambahkan atribut secara serampangan pada gambar LCP/hero; nilai strategi loading dan decoding sesuai posisi dan konteks render.
+`check:responsive-images` juga memastikan breakpoint Markdown dan kelompok ukuran komponen tetap sesuai konfigurasi yang telah diuji. Jangan mengubah kandidat ukuran secara massal tanpa membandingkan hasil build dan kualitas visual.
 
 ## 7. Tipe data dan schema
 

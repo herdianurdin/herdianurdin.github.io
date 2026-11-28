@@ -2,7 +2,7 @@
 title: "Understanding Python Variables Through Simple Examples"
 description: "Learn what Python variables are, how to name them, and how to use values in a small beginner-friendly program."
 pubDate: 2026-11-28T09:00:00+07:00
-coverImage: "/images/ilustrasi-tipe-data-dasar.webp"
+coverImage: "../../assets/images/ilustrasi-tipe-data-dasar.webp"
 tags: ["python", "programming", "beginner", "variables"]
 isDraft: true
 idSlug: "mengenal-variabel-python-melalui-contoh-sederhana"

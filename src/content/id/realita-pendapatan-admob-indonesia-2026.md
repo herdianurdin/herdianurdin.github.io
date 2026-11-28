@@ -3,7 +3,7 @@ title: "Bongkar Realita AdMob Indonesia 2026: Dari Rp14 Ribu Menjadi Rp1,2 Juta 
 description: "Membongkar data asli penghasilan AdMob Indonesia dari 1.500 tayangan per hari. Studi kasus nyata eCPM, strategi ASO, kegagalan reskin, dan celah aturan Play Store."
 pubDate: 2026-10-12T08:00:00+07:00
 updatedDate: 2026-11-25
-coverImage: "/images/realita-pendapatan-admob-indonesia-2026.webp"
+coverImage: "../../assets/images/realita-pendapatan-admob-indonesia-2026.webp"
 enSlug: "admob-indonesia-revenue-reality-2026"
 tags:
   [
@@ -30,7 +30,7 @@ Hari ini, saya ingin mengajak Anda melihat realitas dunia AdMob di pasar Indones
 
 ## Mitos Perfeksionis vs Realita Pasar
 
-![Ilustrasi perbedaan programmer perfeksionis yang gagal rilis dengan programmer realistis yang merajai pasar](/images/ilustrasi-mitos-pasar-hindari-perfeksionis.webp)
+![Ilustrasi perbedaan programmer perfeksionis yang gagal rilis dengan programmer realistis yang merajai pasar](../../assets/images/ilustrasi-mitos-pasar-hindari-perfeksionis.webp)
 
 Sebelum kita masuk ke angka rupiah, ada satu tamparan realita yang harus Anda sadari: **mengembangkan aplikasi itu tidak harus perfeksionis, yang penting memecahkan masalah pengguna.**
 
@@ -46,7 +46,7 @@ Pelajaran emasnya: Jangan membuang waktu berbulan-bulan membuat aplikasi sempurn
 
 Mari kita bedah dapur pendapatan AdMob saya. Data di bawah ini adalah akumulasi dari keseluruhan aplikasi _native_ Android yang saya kelola.
 
-![Tangkapan layar dasbor Google AdMob yang menampilkan estimasi pendapatan harian dan nilai eCPM Indonesia](/images/dashboard-admob.webp)
+![Tangkapan layar dasbor Google AdMob yang menampilkan estimasi pendapatan harian dan nilai eCPM Indonesia](../../assets/images/dashboard-admob.webp)
 
 Matriksnya sebenarnya sangat sederhana dan realistis:
 
@@ -63,11 +63,11 @@ Grafik ini tidak naik dalam semalam, ini adalah sebuah maraton:
 - **Tahun 2025:** Merangkak ke Rp600.000 / bulan.
 - **Tahun 2026:** Stabil di kisaran Rp900.000 hingga Rp1,2 juta / bulan.
 
-![Screenshot Daftar Aplikasi USD](/images/daftar-revenua-aplikasi.webp)
+![Screenshot Daftar Aplikasi USD](../../assets/images/daftar-revenua-aplikasi.webp)
 
 ## Strategi "Anti-Rakus": Pengalaman Pengguna (UX) di Atas Uang
 
-![Ilustrasi Strategi Anti Rakus](/images/ilustrasi-play-console-anti-rakus.webp)
+![Ilustrasi Strategi Anti Rakus](../../assets/images/ilustrasi-play-console-anti-rakus.webp)
 
 Ada seorang adik tingkat saya yang bermain aplikasi _reskin_ Twibbon dan meraup Rp1,5 juta per bulan dari satu aplikasi. Terdengar menggiurkan? Tunggu sampai Anda mengunduhnya.
 
@@ -86,7 +86,7 @@ _Interstitial_? Saya sangat membatasinya. Hanya muncul pada jeda istirahat alami
 
 ## 3 Kesalahan Fatal Pemula di Google Play Console
 
-![Ilustrasi Kesalahan Fatal Pemula](/images/ilustrasi-kesalahan-fatal-pemula-play-console.webp)
+![Ilustrasi Kesalahan Fatal Pemula](../../assets/images/ilustrasi-kesalahan-fatal-pemula-play-console.webp)
 
 Selain _cloning_ konyol, hindari tiga dosa besar yang berpotensi menghancurkan akun _developer_ Anda ini:
 

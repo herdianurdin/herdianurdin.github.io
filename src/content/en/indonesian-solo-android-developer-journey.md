@@ -3,7 +3,7 @@ title: "The Reality of a Solo Android Developer: Surviving the Google Play Conso
 description: "A true story of a journey from a beginner blogger, through account bans, to building sustainable digital assets while working as a full-time teacher."
 pubDate: 2026-10-01T09:56:00Z
 updatedDate: 2026-11-25
-coverImage: "/images/indonesian-solo-android-developer-journey.webp"
+coverImage: "../../assets/images/indonesian-solo-android-developer-journey.webp"
 tags: ["solo-developer", "android", "google-play", "journal", "kotlin"]
 isDraft: false
 idSlug: "perjalanan-android-developer-indonesia"

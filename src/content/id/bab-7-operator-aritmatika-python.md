@@ -2,7 +2,7 @@
 title: "Fundamental Python Bab 7: Matematika Mesin (Operator Aritmatika)"
 description: "Singkirkan mitos programmer harus jago kalkulus. Pelajari operator aritmatika Python (+, -, *, /, //, %) dan aturan urutan prioritas (PEMDAS)."
 pubDate: 2026-10-10T10:30:00+07:00
-coverImage: "/images/bab-7-operator-aritmatika-python.webp"
+coverImage: "../../assets/images/bab-7-operator-aritmatika-python.webp"
 tags: ["tutorial-python", "dasar-pemrograman", "operator-matematika", "pemula"]
 isDraft: false
 ---
@@ -29,7 +29,7 @@ Kecuali Anda kelak memilih spesialisasi di bidang _Data Science_ atau _Artificia
 
 ## Jebakan Input: Mengapa di Python 5 + 10 = 510?
 
-![Ilustrasi programmer pemula yang kebingungan karena komputer menyambung angka teks alih-alih menjumlahkannya](/images/ilustrasi-jebakan-matematika-programmer.webp)
+![Ilustrasi programmer pemula yang kebingungan karena komputer menyambung angka teks alih-alih menjumlahkannya](../../assets/images/ilustrasi-jebakan-matematika-programmer.webp)
 
 Namun, sebelum Anda mulai menyuruh mesin Python Anda berhitung, ada satu "jebakan" konyol yang sering menelan korban pemula. Buka **[Python Playground](/python-playground/)** Anda, dan ketikkan kode di bawah ini:
 

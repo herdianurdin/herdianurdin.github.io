@@ -2,7 +2,7 @@
 title: "Fundamental Python Bab 1: Mengenal Algoritma dan Pola Pikir Komputasional"
 description: "Menghancurkan mitos hacker Hollywood dan memulai langkah pertama belajar pemrograman dengan memahami esensi algoritma dan computational thinking."
 pubDate: 2026-10-10T10:00:00+07:00
-coverImage: "/images/bab-1-mengenal-algoritma-dan-pola-pikir.webp"
+coverImage: "../../assets/images/bab-1-mengenal-algoritma-dan-pola-pikir.webp"
 tags: ["tutorial-python", "algoritma", "edukasi", "pemula"]
 isDraft: false
 ---

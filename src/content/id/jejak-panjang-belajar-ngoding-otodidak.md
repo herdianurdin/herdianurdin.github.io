@@ -3,7 +3,7 @@ title: "Pengalaman Belajar Coding Otodidak: Dari Warisan Delphi hingga Realita E
 description: "Kisah nyata belajar coding otodidak dari nol, lulusan terbaik bootcamp, merilis 15 aplikasi di Play Store, hingga tantangan menjadi programmer di era AI."
 pubDate: 2026-11-23T08:00:00+07:00
 updatedDate: 2026-11-25
-coverImage: "/images/perjalanan-belajar-ngoding-otodidak.webp"
+coverImage: "../../assets/images/perjalanan-belajar-ngoding-otodidak.webp"
 tags:
   [
     "belajar-coding-otodidak",
@@ -47,11 +47,11 @@ Secara prinsip, kalimat itu memang tidak sepenuhnya salah. Tapi sebagai mahasisw
 
 ## Titik Balik: Lulusan Terbaik Bootcamp dan Aplikasi Play Store (2021–2023)
 
-![Ilustrasi pencapaian lulusan terbaik bootcamp dan perilisan aplikasi Android ke Play Store](/images/lulusan-terbaik-bootcamp-aplikasi-android.webp)
+![Ilustrasi pencapaian lulusan terbaik bootcamp dan perilisan aplikasi Android ke Play Store](../../assets/images/lulusan-terbaik-bootcamp-aplikasi-android.webp)
 
 Di tengah rasa kecewa itu, saya menolak berhenti. Pada tahun 2021, saya mendaftar **Jabar Coding Camp (JCC) Batch 1** dan mengambil kelas _React Native Mobile_. Entah kenapa, adaptasi saya terhadap ekosistem JavaScript saat itu berjalan sangat cepat. Kerja keras belajar tanpa mentor kampus itu terbayar lunas ketika nama saya diumumkan sebagai **[lulusan terbaik di kelas tersebut](https://www.instagram.com/p/CYghiZ4lKF1/)**.
 
-Merasa mulai menemukan ritme di pembuatan aplikasi HP, saya melanjutkan langkah pada tahun 2022 lewat program **Dicoding x Kampus Merdeka** di jalur _Android Native Kotlin_. Sekali lagi, saya berhasil menyelesaikannya dan dinobatkan sebagai **[salah satu lulusan terbaik](/images/sertifikat-dicoding-sib-kotlin.webp)**.
+Merasa mulai menemukan ritme di pembuatan aplikasi HP, saya melanjutkan langkah pada tahun 2022 lewat program **Dicoding x Kampus Merdeka** di jalur _Android Native Kotlin_. Sekali lagi, saya berhasil menyelesaikannya dan dinobatkan sebagai **[salah satu lulusan terbaik](/certificates/sertifikat-dicoding-sib-kotlin.webp)**.
 
 Lucunya, tidak ada euforia berlebihan saat menyandang predikat tersebut. Di kepala saya justru muncul pertanyaan-pertanyaan sunyi: _Habis ini ke mana? Apakah perjalanannya cuma sampai di sini? Bakal kerja di tempat yang saya inginkan atau tidak?_
 
@@ -63,7 +63,7 @@ Hingga akhirnya lulus kuliah pada tahun **2023**, total ada **15 aplikasi** yang
 
 ## Persimpangan Finansial, Badai AI, dan Ruang Kelas (2023–2026)
 
-![Ilustrasi persimpangan jalan antara pengembangan aplikasi mobile dan dunia pendidikan](/images/persimpangan-karier-developer-guru.webp)
+![Ilustrasi persimpangan jalan antara pengembangan aplikasi mobile dan dunia pendidikan](../../assets/images/persimpangan-karier-developer-guru.webp)
 
 Ketika tiba waktunya menatap dunia kerja setelah lulus pada 2023, kondisi industri teknologi justru sedang tidak baik-baik saja. Lulusan baru membludak, sementara kemunculan kecerdasan buatan (AI) mengubah peta kebutuhan tenaga kerja secara drastis.
 
@@ -81,7 +81,7 @@ Memasuki penghujung tahun 2026 ini, ritme pekerjaan di sekolah sebenarnya mulai 
 
 ## Realita Mengandalkan Kode AI dari Pengalaman Lapangan
 
-![Ilustrasi programmer memeriksa dan memperbaiki bug pada potongan kode hasil kecerdasan buatan](/images/realita-coding-ai-vs-logika-manusia.webp)
+![Ilustrasi programmer memeriksa dan memperbaiki bug pada potongan kode hasil kecerdasan buatan](../../assets/images/realita-coding-ai-vs-logika-manusia.webp)
 
 Sebagai praktisi yang juga menjajal berbagai alat AI dalam pengembangan aplikasi, saya melihat banyak pemula terjebak ilusi bahwa AI bisa menggantikan proses belajar fundamental. Faktanya, studi kualitas kode dari **GitClear** menemukan bahwa penggunaan asisten AI tanpa pemahaman arsitektur yang kuat justru memicu lonjakan duplikasi kode hingga **81%** dan menurunkan aktivitas perapian kode (_refactoring_) secara drastis.
 

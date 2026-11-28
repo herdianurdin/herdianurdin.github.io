@@ -52,10 +52,11 @@ const seoDescription =
   ></script>
 
   <header
-    class="bg-black border-b-4 border-brand-cyan px-4 md:px-6 py-4 flex justify-between items-center shrink-0 z-20"
+    class="bg-surface-card border-b-4 border-brand-cyan px-4 md:px-6 py-4 flex justify-between items-center shrink-0 z-20"
   >
     <a
-      href="/"
+      href="/playgrounds/"
+      aria-label="Kembali ke daftar Playgrounds"
       class="text-white font-black text-base md:text-xl uppercase hover:text-brand-cyan transition-colors tracking-tighter"
     >
       <div class="flex items-center gap-2">
@@ -93,7 +94,7 @@ const seoDescription =
     </div>
   </header>
 
-  <div class="bg-neutral-900 px-4 md:px-8 pt-3">
+  <div class="bg-surface-page px-4 md:px-8 pt-3">
     <h1
       id="playground-heading"
       tabindex="-1"
@@ -104,7 +105,7 @@ const seoDescription =
   </div>
 
   <div
-    class="flex flex-1 flex-col lg:flex-row overflow-y-auto lg:overflow-hidden p-4 md:p-8 gap-6 md:gap-8 bg-neutral-900"
+    class="flex flex-1 flex-col lg:flex-row overflow-y-auto lg:overflow-hidden p-4 md:p-8 gap-6 md:gap-8 bg-surface-page"
   >
     <div class="flex-1 flex min-w-0 min-h-[400px] lg:min-h-0">
       <CodeEditor />

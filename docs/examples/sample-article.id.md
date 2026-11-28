@@ -2,7 +2,7 @@
 title: "Mengenal Variabel Python Melalui Contoh Sederhana"
 description: "Belajar memahami variabel Python, aturan penamaan, dan cara memakai nilai dalam program kecil untuk pembaca pemula."
 pubDate: 2026-11-28T09:00:00+07:00
-coverImage: "/images/ilustrasi-tipe-data-dasar.webp"
+coverImage: "../../assets/images/ilustrasi-tipe-data-dasar.webp"
 tags: ["python", "pemrograman", "pemula", "variabel"]
 isDraft: true
 enSlug: "understanding-python-variables"

@@ -1,0 +1,51 @@
+---
+import { RELATED_ARTICLES_LIMIT } from "../../utils/related-articles.mjs";
+
+export interface RelatedArticle {
+  id: string;
+  title: string;
+  description: string;
+  tags: string[];
+}
+
+export interface Props {
+  posts: RelatedArticle[];
+  language: "id" | "en";
+}
+
+const { posts, language } = Astro.props;
+const title = language === "id" ? "Artikel Terkait" : "Related Articles";
+// Show no more than three; fewer are shown when the collection has fewer tag matches.
+const visiblePosts = posts.slice(0, RELATED_ARTICLES_LIMIT);
+---
+
+{
+  visiblePosts.length > 0 && (
+    <section class="mb-12" aria-labelledby="related-articles-heading">
+      <div class="mb-5 flex items-center gap-4">
+        <h2 id="related-articles-heading" class="text-xl font-black uppercase tracking-tight text-white md:text-2xl">
+          {title}
+        </h2>
+        <div class="h-1 flex-grow bg-white" aria-hidden="true"></div>
+      </div>
+      <ul class="grid list-none gap-4 p-0 md:grid-cols-3">
+        {visiblePosts.map((post) => (
+          <li class="flex h-full flex-col border-2 border-white bg-surface-card p-4 shadow-neo-ink-2">
+            <a
+              href={language === "id" ? `/blog/${post.id}/` : `/en/blog/${post.id}/`}
+              class="mb-3 text-lg font-black leading-tight text-white underline decoration-brand-lime decoration-2 underline-offset-4 transition-colors hover:text-brand-cyan focus-visible:outline focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-brand-lime"
+            >
+              {post.title}
+            </a>
+            <p class="mb-4 flex-grow text-sm leading-relaxed text-neutral-300">{post.description}</p>
+            {post.tags.length > 0 && (
+              <p class="font-mono text-[0.68rem] font-bold uppercase tracking-wide text-brand-cyan">
+                {post.tags.slice(0, 2).join(" · ")}
+              </p>
+            )}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}

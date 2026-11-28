@@ -2,7 +2,7 @@
 title: "Fundamental Python Bab 6: Variabel dan Tipe Data (Menyortir Memori Mesin)"
 description: "Jangan biarkan kode Anda menjadi gudang yang berantakan. Pelajari teori formal variabel, aturan penamaan, dan klasifikasi tipe data dasar di Python."
 pubDate: 2026-10-10T10:25:00+07:00
-coverImage: "/images/bab-6-variabel-dan-tipe-data-python.webp"
+coverImage: "../../assets/images/bab-6-variabel-dan-tipe-data-python.webp"
 tags:
   ["tutorial-python", "dasar-pemrograman", "variabel", "tipe-data", "pemula"]
 isDraft: false
@@ -14,7 +14,7 @@ Agar komputer memiliki "ingatan", kita harus mengatur ruang penyimpanannya. Dan 
 
 ## Tragedi Gudang Arsip dan Logika WALL-E
 
-![Ilustrasi Tragedi Gudang Arsip](/images/ilustrasi-tragedi-gudang-arsip.webp)
+![Ilustrasi Tragedi Gudang Arsip](../../assets/images/ilustrasi-tragedi-gudang-arsip.webp)
 
 Beberapa tahun yang lalu, saya pernah merangkap tugas untuk mengelola arsip dokumen kesiswaan. Suatu hari, ada pihak yang mendadak membutuhkan satu dokumen Kartu Keluarga spesifik milik seorang siswa.
 
@@ -76,7 +76,7 @@ Selain itu, ada tiga larangan keras yang akan membuat sistem Python Anda langsun
 
 ## 3. Tipe Data Dasar
 
-![Ilustrasi Tipe Data Dasar](/images/ilustrasi-tipe-data-dasar.webp)
+![Ilustrasi Tipe Data Dasar](../../assets/images/ilustrasi-tipe-data-dasar.webp)
 
 Setelah ruang memori disiapkan dan diberi nama yang benar, hal selanjutnya adalah menentukan **jenis** datanya. Komputer memproses teks, angka bulat, dan angka desimal dengan cara dan alokasi memori yang sangat berbeda.
 

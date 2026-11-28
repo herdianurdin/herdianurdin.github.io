@@ -2,7 +2,7 @@
 title: "Why I Stick with Native Kotlin (XML): The Reality of a Mid-Range Laptop Developer"
 description: "Amidst the hype of Flutter and Jetpack Compose, here is a pragmatic look at why Native Kotlin & XML remains king for developers with limited hardware specs."
 pubDate: 2026-10-16T10:00:00+07:00
-coverImage: "/images/opini-native-kotlin-xml-vs-cross-platform.webp"
+coverImage: "../../assets/images/opini-native-kotlin-xml-vs-cross-platform.webp"
 tags:
   [
     "android-developer",
@@ -25,7 +25,7 @@ In this article, I want to share my technical opinion on why—after wandering t
 
 ## The Cross-Platform Illusion: Dependency Hell and APK Size
 
-![Illustration of a frustrated programmer dealing with outdated dependency errors and massive node_modules in cross-platform frameworks](/images/ilustrasi-dependency-hell.webp)
+![Illustration of a frustrated programmer dealing with outdated dependency errors and massive node_modules in cross-platform frameworks](../../assets/images/ilustrasi-dependency-hell.webp)
 
 Long before I dove deep into Kotlin, my first loves were actually **[React Native](https://reactnative.dev/)** and **[Flutter](https://flutter.dev/)**. The promise was incredibly sweet: write code once, and your app runs flawlessly on both Android and iOS.
 
@@ -50,7 +50,7 @@ Jetpack Compose is brilliant technology, but forcing yourself to use it on a lim
 
 ## The Power of Native Kotlin + XML for Limited Specs
 
-![Illustration of an offline-first Android Native app with a tiny APK size under 10MB running perfectly stable](/images/ilustrasi-offline-first-app.webp)
+![Illustration of an offline-first Android Native app with a tiny APK size under 10MB running perfectly stable](../../assets/images/ilustrasi-offline-first-app.webp)
 
 Eventually, I returned to the classic combination: Native Kotlin and XML. This is not a step backward; rather, it is the most pragmatic decision. Here are three undeniable advantages of this architecture:
 

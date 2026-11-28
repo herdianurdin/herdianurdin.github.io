@@ -83,22 +83,23 @@ sapaPengembang("Herdi");
 
 ## Tabel Neo-Brutalism
 
-Berkat kelas `.prose table` khusus yang telah kita modifikasi di `global.css`, tabel standar Markdown akan otomatis disulap menjadi tabel bergaya retro dengan tajuk (header) berwarna neon dan garis batas yang tegas. Pembungkus gulir horizontal ( _horizontal scroll_ ) juga akan ditambahkan secara otomatis oleh skrip di `BlogLayout`.
+Plugin `scripts/rehype-content-wrappers.mjs` membungkus tabel Markdown/MDX dengan `.table-scroll` pada tahap kompilasi konten. CSS di `global.css` menangani overflow horizontal, sementara elemen tabel native (`table`, `thead`, `tbody`, `th`, dan `td`) tetap dipertahankan. Tidak ada manipulasi DOM setelah halaman dimuat.
 
 | Nama Properti | Tipe Data | Keterangan                                     | Status Wajib |
 | :------------ | :-------: | :--------------------------------------------- | :----------: |
 | `title`       |  String   | Judul utama artikel jurnal.                    |      Ya      |
 | `pubDate`     |   Date    | Tanggal publikasi (Gunakan format ISO 8601).   |      Ya      |
-| `coverImage`  |    URL    | Tautan gambar sampul.                          |    Tidak     |
+| `coverImage`  | Asset | Path gambar sampul relatif terhadap file artikel.                          |    Tidak     |
+| `coverImageAlt` | String | Alt text sampul yang menjelaskan isi visual.  |    Tidak     |
 | `isDraft`     |  Boolean  | Jika `true`, artikel disembunyikan dari rilis. |      Ya      |
 
 ---
 
 ## Menyisipkan Gambar
 
-Gunakan sintaks standar Markdown untuk menyisipkan gambar. Astro akan merendernya di dalam aliran teks.
+Simpan gambar artikel di `src/assets/images/`, lalu gunakan path relatif dari file artikel. Astro akan menghasilkan beberapa ukuran WebP responsif saat build. Untuk gambar isi Markdown, gunakan sintaks `![]()` dengan path relatif. Jangan memakai `/images/...` untuk aset baru yang ingin dioptimalkan. Folder `public/` hanya untuk aset yang memang membutuhkan URL publik tetap seperti favicon, icon aplikasi, atau file unduhan. Tulis alt text yang menjelaskan informasi visual yang benar-benar terlihat; jangan hanya menyalin judul artikel jika gambar berisi diagram, screenshot, atau bukti teknis yang lebih spesifik.
 
-![Ilustrasi Koding di Malam Hari](https://placehold.co/800x400/000000/00e5ff.png?text=Ilustrasi+Gambar+Markdown)
+![Ilustrasi dasar komputer untuk pemula](../../assets/images/materi-dasar-komputer-pemula-smk.webp)
 
 ---
 
@@ -114,4 +115,41 @@ _(Contoh: Jika URL videonya adalah `https://www.youtube.com/watch?v=dQw4w9WgXcQ`
 
 ---
 
-Semua elemen di atas telah dioptimalkan untuk memastikan pengalaman membaca yang maksimal, rasio kontras yang lolos uji aksesibilitas, dan performa pemuatan laman secepat kilat!
+## Metadata dan transparansi artikel
+
+Contoh frontmatter untuk artikel:
+
+```yaml
+---
+title: "Contoh Judul Artikel"
+description: "Ringkasan singkat yang menjelaskan manfaat dan isi artikel."
+pubDate: 2026-11-28
+updatedDate: 2026-11-29 # opsional; isi hanya jika ada pembaruan substantif
+coverImage: "../../assets/images/materi-dasar-komputer-pemula-smk.webp"
+coverImageAlt: "Tangkapan layar editor yang menampilkan contoh kode Python."
+tags: ["python", "pemrograman"]
+isDraft: true
+---
+```
+
+Pedoman:
+
+- `description` harus menjadi ringkasan yang akurat, bukan daftar kata kunci.
+- `coverImageAlt` disarankan ketika sampul mengandung informasi yang relevan. Jelaskan gambar secara spesifik.
+- Gunakan `updatedDate` hanya jika isi diperbarui secara substantif. Jangan mengubah tanggal hanya untuk memberi kesan artikel baru.
+- Jika tutorial diuji, sebutkan versi bahasa, framework, sistem operasi, atau lingkungan yang benar-benar digunakan di dalam artikel.
+- Bedakan pengalaman pribadi, hasil pengujian, pendapat, dan fakta yang berasal dari sumber.
+- Untuk klaim teknis yang penting, berikan tautan ke dokumentasi resmi atau sumber primer dengan teks tautan yang menjelaskan sumbernya.
+- Jangan menulis bahwa kode telah diuji bila hanya disusun atau dibaca tanpa dijalankan.
+
+## Prinsip kualitas editorial
+
+Sebelum menerbitkan artikel, pastikan pembaca dapat memahami:
+
+1. Siapa penulisnya dan konteks pengalamannya.
+2. Apa tujuan artikel dan siapa pembacanya.
+3. Bagaimana contoh, eksperimen, atau riset dilakukan jika relevan.
+4. Referensi apa yang mendukung klaim faktual.
+5. Batasan atau versi teknologi yang dapat memengaruhi hasil.
+
+Neobrutalism adalah identitas visual, bukan pengganti bukti. Tampilan artikel harus membantu membaca dan memeriksa informasi, bukan menutupi sumber atau konteks.

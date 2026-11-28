@@ -3,7 +3,7 @@ title: "Materi Dasar Komputer: Evolusi, OS, dan Literasi Digital Pemula"
 description: "Panduan dasar komputer untuk pemula dan siswa SMK. Pelajari sejarah komputer, sistem operasi, manajemen file, dan konsep dasar internet."
 pubDate: 2026-11-01T08:00:00+07:00
 updatedDate: 2026-11-25
-coverImage: "/images/materi-dasar-komputer-pemula-smk.webp"
+coverImage: "../../assets/images/materi-dasar-komputer-pemula-smk.webp"
 tags:
   ["dasar-komputer", "literasi-digital", "smk-rpl", "smk-tkj", "sistem-operasi"]
 isDraft: false
@@ -31,7 +31,7 @@ Lalu, siapa yang bertugas mengubah mesin yang rumit itu menjadi tampilan visual 
 
 ## 2. Sistem Operasi vs Aplikasi: Analogi Pusat Perbelanjaan
 
-![Ilustrasi sebuah gedung pusat perbelanjaan digital raksasa dengan banyak kotak toko bercahaya di dalamnya](/images/analogi-os-mall-aplikasi.webp)
+![Ilustrasi sebuah gedung pusat perbelanjaan digital raksasa dengan banyak kotak toko bercahaya di dalamnya](../../assets/images/analogi-os-mall-aplikasi.webp)
 
 Bagi pemula, istilah Sistem Operasi (OS) dan Aplikasi sering kali tertukar. Apa bedanya Windows, Android, dan Chrome?
 
@@ -56,7 +56,7 @@ Selain itu, kamu wajib mengenali **Ekstensi File** (akhiran pada nama file). Eks
 
 ## 4. Akurasi Mouse dan 4 Pintasan Keyboard (Survival Skill)
 
-![Ilustrasi layar komputer dengan laci file yang rapi dan sebuah kursor mouse besar yang dikendalikan dengan presisi](/images/manajemen-file-shortcut-keyboard.webp)
+![Ilustrasi layar komputer dengan laci file yang rapi dan sebuah kursor mouse besar yang dikendalikan dengan presisi](../../assets/images/manajemen-file-shortcut-keyboard.webp)
 
 Selain manajemen file, cara fisik kita berinteraksi dengan komputer juga butuh adaptasi. Jari yang terbiasa mengusap layar sentuh sering kali terasa kaku saat harus mengendalikan kursor _mouse_ dengan presisi.
 

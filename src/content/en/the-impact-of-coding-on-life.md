@@ -2,7 +2,7 @@
 title: "The Impact of Coding on Life: Shifting from a Random to a Systematic Mindset"
 description: "Learning algorithms isn't just about typing syntax; it's about completely rewiring how your brain processes problems, plans life, and manages expectations."
 pubDate: 2026-10-04T08:00:00Z
-coverImage: "/images/coding-mindset.webp"
+coverImage: "../../assets/images/coding-mindset.webp"
 tags: ["journal", "mindset", "algorithms", "sdlc", "self-improvement"]
 isDraft: false
 idSlug: "pengaruh-coding-dalam-kehidupan"

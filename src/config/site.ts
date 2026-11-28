@@ -1,3 +1,5 @@
+import profileImage from "../assets/images/profile.webp";
+
 // src/config/site.ts
 
 // 1. Data Universal (Tidak terpengaruh bahasa)
@@ -6,9 +8,15 @@ export const siteConfig = {
   url: "https://herdianurdin.my.id",
   github: "https://github.com/herdianurdin",
   linkedin: "https://www.linkedin.com/in/herdianurdin",
+  socials: {
+    youtube: "https://www.youtube.com/@herdianurdin",
+    facebook: "https://web.facebook.com/herdianurdin3",
+    instagram: "https://instagram.com/herdianurdin",
+    tiktok: "https://tiktok.com/@herdianurdin",
+  },
   playStore:
     "https://play.google.com/store/apps/developer?id=Herdi+Herdianurdin",
-  profileImage: "/images/profile.webp",
+  profileImage,
   giscus: {
     repo: "herdianurdin/herdianurdin.github.io",
     repoId: "R_kgDOHl0njQ",
@@ -28,14 +36,36 @@ export const siteTranslation = {
   id: {
     siteTitle: "Jurnal IT & Arsitektur Kode",
     siteDescription:
-      "Portofolio dan catatan teknis seputar rekayasa perangkat lunak, pengembangan Android, dan arsitektur kode.",
+      "Jurnal teknologi dan pemrograman yang membahas dasar komputer, logika, dan pengembangan perangkat lunak melalui penjelasan serta pengalaman praktik.",
+    editorialHeading: "Memahami teknologi, satu konsep dan praktik dalam satu waktu.",
+    editorialIntro:
+      "Catatan tentang komputer, pemrograman, dan pengembangan perangkat lunak. Berisi penjelasan dasar, eksperimen, serta pengalaman membangun aplikasi.",
+    journalNav: "Jurnal",
+    playgroundsNav: "Playgrounds",
+    menuLabel: "Menu",
+    languageLabel: "Bahasa",
+    browseJournal: "Jelajahi Jurnal",
+    browsePlaygrounds: "Jelajahi Playgrounds",
+    playgroundsTitle: "Playgrounds & Laboratorium",
+    playgroundsDescription: "Kumpulan lingkungan praktik dan alat interaktif berbasis browser untuk mencoba konsep pemrograman dan teknologi. Direktori ini menjadi tempat untuk menemukan playground yang tersedia.",
+    availablePlaygrounds: "Playgrounds Tersedia",
+    playgroundAvailable: "Tersedia",
+    playgroundTechnologies: "Teknologi yang digunakan",
+    searchLabel: "Cari artikel",
+    searchPlaceholder: "Judul, ringkasan, atau tag...",
+    searchHint: "Cari di seluruh artikel berdasarkan judul, ringkasan, dan tag.",
+    searchTooShort: "Masukkan minimal 2 karakter untuk mencari.",
+    searchLoading: "Sedang mencari artikel...",
+    searchNoResults: "Tidak ada artikel yang cocok dengan pencarian ini.",
+    searchError: "Pencarian tidak dapat dimuat. Coba muat ulang halaman.",
+    searchResultsLabel: "Hasil pencarian",
     heroGreeting: "Halo, saya Herdi.",
     latestJournal: "Jurnal Terbaru",
     openArchive: "Buka Arsip Jurnal Lengkap ->",
     ariaOpenArchive: "Buka arsip jurnal lengkap bahasa Indonesia",
     writtenBy: "Oleh",
     readArticle: "Baca Artikel ->",
-    heroTitle: "Professional Android Developer", // Anda bisa mengubahnya menjadi bahasa Indonesia jika mau
+    heroTitle: "Solo Android Developer",
     heroBio:
       "Pengembang perangkat lunak independen yang membangun ekosistem aplikasi Android native berskala produksi. Berfokus pada arsitektur Kotlin berkinerja tinggi, manajemen memori (Room DB), dan optimasi monetisasi (AdMob).",
     whoami: "/ WHOAMI",
@@ -43,8 +73,6 @@ export const siteTranslation = {
     authorBio:
       "Herdi Herdianurdin adalah seorang pengembang perangkat lunak profesional. Berfokus pada perancangan ekosistem Android native (Kotlin), optimasi memori, dan arsitektur web berkinerja tinggi.",
     profileBtn: "Lihat Profil & Portofolio ->",
-    ariaProfileBtn:
-      "Kembali ke halaman utama untuk melihat portofolio lengkap Herdi",
     discussionTitle: "Diskusi & Komentar",
     portfolioTitle: "Aplikasi Play Store",
     githubBtnDesktop: "GitHub Repositories ->",
@@ -74,6 +102,7 @@ export const siteTranslation = {
     aboutMe: "Tentang Saya",
     disclaimer: "Penafian",
     termsOfService: "Ketentuan Layanan",
+    editorialPolicy: "Kebijakan Editorial",
     backToHome: "Kembali ke Beranda",
     skipToContent: "Lewati ke konten utama",
     switchId: "Ganti bahasa ke Indonesia",
@@ -105,14 +134,36 @@ export const siteTranslation = {
   en: {
     siteTitle: "IT Journal & Code Architecture",
     siteDescription:
-      "Portfolio and technical notes on software engineering, Android development, and code architecture.",
+      "A technology and programming journal covering computer fundamentals, logic, and software development through practical explanations and experience.",
+    editorialHeading: "Understand technology, one concept and practice at a time.",
+    editorialIntro:
+      "Notes on computers, programming, and software development, including foundational explanations, experiments, and experience building applications.",
+    journalNav: "Journal",
+    playgroundsNav: "Playgrounds",
+    menuLabel: "Menu",
+    languageLabel: "Language",
+    browseJournal: "Explore the Journal",
+    browsePlaygrounds: "Explore Playgrounds",
+    playgroundsTitle: "Playgrounds & Labs",
+    playgroundsDescription: "A collection of browser-based practice environments and interactive tools for exploring programming and technology concepts. Use this directory to find the available playgrounds.",
+    availablePlaygrounds: "Available Playgrounds",
+    playgroundAvailable: "Available",
+    playgroundTechnologies: "Technologies used",
+    searchLabel: "Search articles",
+    searchPlaceholder: "Title, summary, or tag...",
+    searchHint: "Search all articles by title, summary, and tag.",
+    searchTooShort: "Enter at least 2 characters to search.",
+    searchLoading: "Searching articles...",
+    searchNoResults: "No articles match this search.",
+    searchError: "Search could not be loaded. Please reload the page.",
+    searchResultsLabel: "Search results",
     heroGreeting: "Hi, I'm Herdi.",
     latestJournal: "Latest Journals",
     openArchive: "Open Full Journal Archive ->",
     ariaOpenArchive: "Open full English journal archive",
     writtenBy: "By",
     readArticle: "Read Article ->",
-    heroTitle: "Professional Android Developer",
+    heroTitle: "Solo Android Developer",
     heroBio:
       "Independent software engineer building production-scale native Android applications. Focused on high-performance Kotlin architectures, memory management (Room DB), and monetization optimization (AdMob).",
     whoami: "/ WHOAMI",
@@ -120,7 +171,6 @@ export const siteTranslation = {
     authorBio:
       "Herdi Herdianurdin is a professional software engineer focusing on the native Android ecosystem (Kotlin), memory optimization, and high-performance web architecture.",
     profileBtn: "View Profile & Portfolio ->",
-    ariaProfileBtn: "Return to homepage to view Herdi's full portfolio",
     discussionTitle: "Discussions & Comments",
     portfolioTitle: "Play Store Applications",
     githubBtnDesktop: "GitHub Repositories ->",
@@ -150,6 +200,7 @@ export const siteTranslation = {
     aboutMe: "About",
     disclaimer: "Disclaimer",
     termsOfService: "Terms of Service",
+    editorialPolicy: "Editorial Policy",
     backToHome: "Back to Home",
     skipToContent: "Skip to main content",
     switchId: "Switch language to Indonesian",

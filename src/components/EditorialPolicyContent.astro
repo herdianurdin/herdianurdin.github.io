@@ -1,0 +1,140 @@
+---
+import { siteConfig } from "../config/site";
+
+export interface Props {
+  language: "id" | "en";
+}
+
+const { language } = Astro.props;
+const isId = language === "id";
+const lastReviewed = "28 November 2026";
+---
+
+<main id="main-content" tabindex="-1" class="site-container page-main page-main--legal">
+  <article class="border-4 border-white bg-surface-panel p-6 shadow-neo-cyan-8 md:p-10">
+    <div class="site-reading">
+    <header class="mb-8 border-b-4 border-white pb-7">
+      <p class="mb-3 font-mono text-xs font-black uppercase tracking-widest text-brand-cyan">
+        {isId ? "TRANSPARANSI KONTEN" : "CONTENT TRANSPARENCY"}
+      </p>
+      <h1 class="mb-4 border-l-8 border-brand-lime pl-5 text-4xl font-black uppercase tracking-tight md:text-5xl">
+        {isId ? "Kebijakan Editorial" : "Editorial Policy"}
+      </h1>
+      <p class="max-w-2xl text-base leading-relaxed text-neutral-300 md:text-lg">
+        {isId
+          ? "Pedoman tentang cara topik dipilih, informasi diperiksa, contoh teknis disajikan, dan koreksi ditangani di Jurnal IT."
+          : "Guidelines explaining how topics are selected, information is checked, technical examples are presented, and corrections are handled at Jurnal IT."}
+      </p>
+      <p class="mt-5 font-mono text-xs font-bold uppercase tracking-wide text-copy-muted">
+        {isId ? "Terakhir ditinjau" : "Last reviewed"}: {lastReviewed}
+      </p>
+    </header>
+
+    <div class="prose prose-invert prose-lg max-w-none prose-headings:font-black prose-headings:tracking-tight prose-a:text-brand-lime prose-a:underline-offset-4">
+      {isId ? (
+        <>
+          <h2>1. Tujuan dan pemilihan topik</h2>
+          <p>
+            Jurnal IT membahas teknologi, dasar komputer, pemrograman, pengembangan perangkat lunak, serta pengalaman belajar dan praktik sebagai developer. Topik dipilih berdasarkan manfaatnya bagi pembaca, relevansi teknis, dan ruang untuk memberikan penjelasan atau pengalaman yang berguna.
+          </p>
+
+          <h2>2. Pengalaman, pengetahuan, dan opini</h2>
+          <p>
+            Artikel yang menceritakan pengalaman pribadi seharusnya menjelaskan konteks pengalaman tersebut. Penjelasan konseptual, rangkuman dokumentasi, contoh ilustratif, dan opini penulis tidak akan diposisikan seolah-olah semuanya merupakan hasil pengalaman atau pengujian langsung.
+          </p>
+          <p>
+            Apabila sebuah artikel menyatakan bahwa kode, aplikasi, perangkat, atau prosedur telah diuji, informasi pengujian dan batasannya akan dicantumkan sejauh relevan dan tersedia. Contoh kode yang hanya bersifat ilustrasi tidak akan disebut sebagai hasil pengujian.
+          </p>
+
+          <h2>3. Referensi dan pemeriksaan fakta</h2>
+          <p>
+            Untuk klaim yang bergantung pada informasi eksternal, referensi yang relevan akan dicantumkan sedekat mungkin dengan pembahasan. Dokumentasi resmi, standar, spesifikasi, publikasi primer, dan sumber asli lebih diutamakan ketika tersedia. Informasi yang cepat berubah perlu diperiksa kembali sebelum diterbitkan atau diperbarui.
+          </p>
+          <p>
+            Referensi mendukung penjelasan, tetapi tidak otomatis menjamin bahwa setiap interpretasi atau kesimpulan penulis benar. Pembaca tetap perlu memperhatikan konteks, versi teknologi, dan batasan yang dijelaskan dalam artikel.
+          </p>
+
+          <h2>4. Contoh teknis dan lingkungan pengujian</h2>
+          <p>
+            Tutorial dapat menyertakan langkah, konfigurasi, kode, atau tangkapan layar. Versi bahasa, framework, sistem operasi, atau lingkungan pengujian akan disebutkan ketika perbedaannya dapat memengaruhi hasil. Pembaca disarankan memeriksa dokumentasi terbaru untuk versi yang mereka gunakan.
+          </p>
+
+          <h2>5. Penggunaan alat bantu dan AI</h2>
+          <p>
+            Alat bantu digital, termasuk AI, dapat digunakan untuk mendukung riset, penyusunan struktur, atau penyuntingan. Alat tersebut bukan sumber kebenaran yang berdiri sendiri. Fakta, contoh teknis, referensi, dan hasil akhir tetap perlu ditinjau oleh penulis. Penggunaan AI yang secara material memengaruhi cara konten dibuat atau dinilai pembaca akan dijelaskan ketika relevan.
+          </p>
+
+          <h2>6. Pembaruan dan koreksi</h2>
+          <p>
+            Artikel dapat diperbarui ketika terdapat koreksi, perubahan teknologi, atau informasi tambahan yang substantif. Tanggal publikasi awal tetap dipertahankan. Tanggal pembaruan digunakan untuk perubahan yang benar-benar memengaruhi isi, bukan sekadar perubahan format atau kosmetik.
+          </p>
+          <p>
+            Pembaca dapat menyampaikan koreksi atau laporan kesalahan melalui <a href={siteConfig.github} target="_blank" rel="noopener noreferrer">profil GitHub penulis</a>. Laporan sebaiknya menyertakan URL artikel, bagian yang dimaksud, dan referensi atau langkah reproduksi bila tersedia.
+          </p>
+
+          <h2>7. Iklan dan independensi editorial</h2>
+          <p>
+            Situs dapat menampilkan iklan atau tautan ke layanan pihak ketiga. Keberadaan iklan tidak seharusnya mengubah kesimpulan teknis atau rekomendasi editorial. Hubungan komersial atau bentuk kompensasi yang relevan dengan suatu pembahasan perlu diungkapkan kepada pembaca.
+          </p>
+
+          <h2>8. Tanggung jawab dan batasan</h2>
+          <p>
+            Artikel disediakan untuk tujuan informasi dan pembelajaran. Teknologi, layanan, dan lingkungan pengguna dapat berbeda; pembaca perlu menilai kesesuaian langkah sebelum menerapkannya pada sistem atau data penting. Kebijakan ini merupakan pedoman editorial dan tidak menggantikan dokumentasi resmi, nasihat profesional, atau ketentuan layanan pihak terkait.
+          </p>
+        </>
+      ) : (
+        <>
+          <h2>1. Purpose and topic selection</h2>
+          <p>
+            Jurnal IT covers technology, computer fundamentals, programming, software development, and the author's learning and development experiences. Topics are selected based on reader usefulness, technical relevance, and the opportunity to provide meaningful explanations or first-hand insight.
+          </p>
+
+          <h2>2. Experience, expertise, and opinion</h2>
+          <p>
+            Articles describing personal experience should explain the context of that experience. Conceptual explanations, documentation summaries, illustrative examples, and the author's opinions should not be presented as though they all came from direct experience or hands-on testing.
+          </p>
+          <p>
+            When an article states that code, an application, a device, or a procedure was tested, the testing context and limitations should be described where relevant and available. Illustrative code examples should not be described as tested results.
+          </p>
+
+          <h2>3. References and fact-checking</h2>
+          <p>
+            Relevant references should appear close to claims that depend on external information. Official documentation, standards, specifications, primary publications, and original sources are preferred when available. Time-sensitive information should be rechecked before publication or revision.
+          </p>
+          <p>
+            A reference supports an explanation but does not automatically guarantee that every interpretation or conclusion is correct. Readers should consider the context, technology versions, and limitations described in each article.
+          </p>
+
+          <h2>4. Technical examples and test environments</h2>
+          <p>
+            Tutorials may include steps, configuration, code, or screenshots. Language, framework, operating system, or test-environment versions should be stated when differences could affect the result. Readers should consult current documentation for the versions they use.
+          </p>
+
+          <h2>5. Assistive tools and AI</h2>
+          <p>
+            Digital tools, including AI, may support research, outlining, or editing. They are not independent sources of truth. Facts, technical examples, references, and final content still require author review. Material AI use that affects how content was created or how readers should assess it should be disclosed when relevant.
+          </p>
+
+          <h2>6. Updates and corrections</h2>
+          <p>
+            Articles may be updated to correct errors, reflect technology changes, or add substantive information. The original publication date is retained. An updated date is reserved for changes that materially affect the content, not merely formatting or cosmetic edits.
+          </p>
+          <p>
+            Readers can report corrections or errors through the author's <a href={siteConfig.github} target="_blank" rel="noopener noreferrer">GitHub profile</a>. Reports should include the article URL, the relevant section, and a reference or reproduction steps when available.
+          </p>
+
+          <h2>7. Advertising and editorial independence</h2>
+          <p>
+            The site may display advertisements or links to third-party services. Advertising should not determine technical conclusions or editorial recommendations. Relevant commercial relationships or compensation should be disclosed to readers.
+          </p>
+
+          <h2>8. Responsibility and limitations</h2>
+          <p>
+            Articles are provided for informational and educational purposes. Technologies, services, and user environments vary; readers should assess whether instructions are appropriate before applying them to important systems or data. This policy is an editorial guideline and does not replace official documentation, professional advice, or the terms of relevant services.
+          </p>
+        </>
+      )}
+    </div>
+    </div>
+  </article>
+</main>

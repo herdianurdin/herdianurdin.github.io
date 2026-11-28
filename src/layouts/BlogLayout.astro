@@ -1,11 +1,13 @@
 ---
+import { Image } from "astro:assets";
 import SeoHead from "../components/SeoHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import AuthorBox from "../components/article/AuthorBox.astro";
 import Giscus from "../components/article/Giscus.astro";
 import TableOfContents from "../components/article/TableOfContents.astro";
-import { siteTranslation } from "../config/site";
+import RelatedArticles from "../components/article/RelatedArticles.astro";
+import { siteConfig, siteTranslation } from "../config/site";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/700.css";
 import "@fontsource/inter/900.css";
@@ -13,10 +15,14 @@ import "@fontsource/fira-code/400.css";
 import "@fontsource/fira-code/700.css";
 import "../styles/global.css";
 
-const { frontmatter, headings } = Astro.props;
+const { frontmatter, headings, relatedPosts = [] } = Astro.props;
 const language = Astro.props.language as keyof typeof siteTranslation;
 const t = siteTranslation[language];
-const homeUrl = language === "id" ? "/" : "/en/";
+const profileUrl = language === "id" ? "/about/" : "/en/about/";
+const defaultCoverImageAlt = language === "id"
+  ? `Sampul artikel: ${frontmatter.title}`
+  : `Article cover: ${frontmatter.title}`;
+const journalUrl = language === "id" ? "/blog/" : "/en/blog/";
 const translationHref = language === "id"
   ? (frontmatter.enSlug ? `/en/blog/${frontmatter.enSlug}/` : undefined)
   : (frontmatter.idSlug ? `/blog/${frontmatter.idSlug}/` : undefined);
@@ -28,6 +34,7 @@ const translationHref = language === "id"
       title={frontmatter.title}
       description={frontmatter.description}
       image={frontmatter.coverImage}
+      imageAlt={frontmatter.coverImageAlt || frontmatter.title}
       isArticle={true}
       language={language}
       enSlug={frontmatter.enSlug}
@@ -37,7 +44,7 @@ const translationHref = language === "id"
     />
   </head>
   <body
-    class="overflow-x-hidden min-h-screen bg-neutral-900 text-white font-sans selection:bg-brand-lime selection:text-black antialiased flex flex-col"
+    class="overflow-x-hidden min-h-screen bg-surface-page text-white font-sans selection:bg-brand-lime selection:text-black antialiased flex flex-col"
   >
     <a
       href="#main-content"
@@ -47,102 +54,136 @@ const translationHref = language === "id"
     </a>
     <Header currentLang={language} variant="article" translationHref={translationHref} />
 
-    <main id="main-content" tabindex="-1" class="max-w-4xl mx-auto p-4 md:p-8 mt-8 flex-grow w-full">
+    <main id="main-content" tabindex="-1" class="site-container page-main page-main--article">
+      <nav
+        aria-label={language === "id" ? "Jejak navigasi" : "Breadcrumb"}
+        class="mb-5 font-mono text-xs font-bold uppercase tracking-wide text-copy-muted"
+      >
+        <ol class="flex flex-wrap items-center gap-2">
+          <li><a href={journalUrl} class="underline decoration-2 underline-offset-4 transition-colors hover:text-brand-lime">{t.journalNav}</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" class="max-w-full text-white">{frontmatter.title}</li>
+        </ol>
+      </nav>
+
       <article
-        class="bg-neutral-800 border-4 border-white shadow-neo-lime-12 mb-12"
+        class="mb-12 border-4 border-white bg-surface-panel shadow-neo-lime-8"
       >
         {
           frontmatter.coverImage && (
             <div class="border-b-4 border-white relative">
-              <img
-                src={frontmatter.coverImage}
-                alt={`Ilustrasi: ${frontmatter.title}`}
-                width="1200"
-                height="630"
-                loading="eager"
-                fetchpriority="high"
-                decoding="async"
-                class="w-full aspect-[1200/630] object-cover object-center grayscale hover:grayscale-0 transition-all duration-500 border-4 border-white"
-                onerror="this.removeAttribute('onerror'); this.setAttribute('src', 'https://placehold.co/1200x630/000000/c6ff00.png?text=Gambar+Tidak+Tersedia');"
-              />
+              {typeof frontmatter.coverImage === "string" ? (
+                <img
+                  src={frontmatter.coverImage}
+                  alt={frontmatter.coverImageAlt || defaultCoverImageAlt}
+                  width="1200"
+                  height="630"
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                  class="aspect-[1200/630] w-full bg-surface-page object-cover object-center"
+                />
+              ) : (
+                <Image
+                  src={frontmatter.coverImage}
+                  format="webp"
+                  widths={[480, 800, 1200]}
+                  sizes="(max-width: 768px) 100vw, 72rem"
+                  quality={80}
+                  alt={frontmatter.coverImageAlt || defaultCoverImageAlt}
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                  class="aspect-[1200/630] w-full bg-surface-page object-cover object-center"
+                />
+              )}
             </div>
           )
         }
-        <div class="p-6 md:p-12">
-          <header class="mb-10">
-            <div class="flex flex-wrap gap-2 mb-6">
-              {
-                frontmatter.tags?.map((tag: string) => (
-                  <span class="bg-brand-lime text-black font-mono text-xs font-bold px-3 py-1 border-2 border-black uppercase">
-                    {tag}
-                  </span>
-                ))
-              }
-            </div>
-
-            <h1
-              class="text-4xl md:text-5xl font-black tracking-tight mb-6 leading-tight"
-            >
-              {frontmatter.title}
-            </h1>
-
-            <div
-              class="font-mono text-sm text-neutral-400 font-bold border-t-2 border-neutral-600 pt-4 flex flex-col md:flex-row justify-between gap-2"
-            >
-              <span>
-                {language === "id" ? "Oleh" : "By"}
-                <a
-                  href={homeUrl}
-                  class="text-white hover:text-brand-lime underline underline-offset-4 decoration-2 ml-1"
-                >
-                  Herdi Herdianurdin
-                </a>
-              </span>
-              <time datetime={frontmatter.pubDate.toISOString()}>
+        <div class="p-5 md:p-10 lg:p-12">
+          <div class="site-reading">
+            <header class="mb-9">
+              <p class="mb-4 font-mono text-xs font-black uppercase tracking-widest text-brand-cyan">
+                {language === "id" ? "JURNAL TEKNOLOGI" : "TECHNOLOGY JOURNAL"}
+              </p>
+              <div class="mb-6 flex flex-wrap gap-2">
                 {
-                  new Date(frontmatter.pubDate).toLocaleDateString(
-                    language === "id" ? "id-ID" : "en-US",
-                    { year: "numeric", month: "long", day: "numeric" },
-                  )
+                  frontmatter.tags?.map((tag: string) => (
+                    <span class="border-2 border-black bg-brand-lime px-3 py-1 font-mono text-xs font-bold uppercase text-black">
+                      {tag}
+                    </span>
+                  ))
                 }
-              </time>
-              {frontmatter.updatedDate && (
-                <time datetime={frontmatter.updatedDate.toISOString()}>
-                  {language === "id" ? "Diperbarui" : "Updated"}: {new Date(frontmatter.updatedDate).toLocaleDateString(
-                    language === "id" ? "id-ID" : "en-US",
-                    { year: "numeric", month: "long", day: "numeric" },
-                  )}
-                </time>
+              </div>
+
+              <h1 class="mb-4 text-4xl font-black leading-[1.08] tracking-tight text-white md:text-5xl">
+                {frontmatter.title}
+              </h1>
+
+              <p class="mb-7 text-lg leading-relaxed text-neutral-300 md:text-xl">
+                {frontmatter.description}
+              </p>
+
+              <div class="flex flex-col gap-3 border-t-2 border-border-muted pt-4 font-mono text-sm font-bold text-copy-muted sm:flex-row sm:flex-wrap sm:items-center sm:gap-x-6">
+                <span>
+                  {t.writtenBy}
+                  <a
+                    href={profileUrl}
+                    class="ml-1 text-white underline decoration-2 underline-offset-4 transition-colors hover:text-brand-lime"
+                  >
+                    {siteConfig.author}
+                  </a>
+                </span>
+                <span class="flex flex-wrap items-center gap-1">
+                  <span>{language === "id" ? "Diterbitkan" : "Published"}:</span>
+                  <time datetime={frontmatter.pubDate.toISOString()}>
+                    {new Date(frontmatter.pubDate).toLocaleDateString(
+                      language === "id" ? "id-ID" : "en-US",
+                      { year: "numeric", month: "long", day: "numeric" },
+                    )}
+                  </time>
+                </span>
+                {frontmatter.updatedDate && (
+                  <span class="flex flex-wrap items-center gap-1">
+                    <span>{language === "id" ? "Diperbarui" : "Updated"}:</span>
+                    <time datetime={frontmatter.updatedDate.toISOString()}>
+                      {new Date(frontmatter.updatedDate).toLocaleDateString(
+                        language === "id" ? "id-ID" : "en-US",
+                        { year: "numeric", month: "long", day: "numeric" },
+                      )}
+                    </time>
+                  </span>
+                )}
+              </div>
+            </header>
+
+            <TableOfContents headings={headings} language={language} />
+
+            <div class="prose prose-invert prose-lg max-w-none prose-headings:scroll-mt-28 prose-headings:font-black prose-headings:tracking-tight prose-a:text-brand-lime prose-a:underline-offset-4 hover:prose-a:bg-brand-lime hover:prose-a:text-black prose-pre:my-8 prose-pre:rounded-none prose-pre:border-4 prose-pre:border-white prose-pre:shadow-neo-cyan-6 prose-img:mx-auto prose-img:border-2 prose-img:border-white prose-img:shadow-neo-ink-2">
+              <slot />
+              {frontmatter.faq?.length > 0 && (
+                <section class="mt-12" aria-labelledby="article-faq-heading">
+                  <h2 id="article-faq-heading">
+                    {language === "id" ? "Pertanyaan yang Sering Diajukan" : "Frequently Asked Questions"}
+                  </h2>
+                  {frontmatter.faq.map((item: { q: string; a: string }) => (
+                    <div class="mb-8">
+                      <h3>{item.q}</h3>
+                      <p>{item.a}</p>
+                    </div>
+                  ))}
+                </section>
               )}
             </div>
-          </header>
-
-          <TableOfContents headings={headings} language={language} />
-
-          <div
-            class="prose prose-invert prose-lg max-w-none prose-pre:border-4 prose-pre:border-white prose-pre:rounded-none prose-pre:shadow-neo-cyan-8 prose-headings:font-black prose-headings:scroll-mt-24 prose-a:text-brand-lime prose-a:underline-offset-4 hover:prose-a:bg-brand-lime hover:prose-a:text-black"
-          >
-            <slot />
-            {frontmatter.faq?.length > 0 && (
-              <section class="mt-12" aria-labelledby="article-faq-heading">
-                <h2 id="article-faq-heading">
-                  {language === "id" ? "Pertanyaan yang Sering Diajukan" : "Frequently Asked Questions"}
-                </h2>
-                {frontmatter.faq.map((item: { q: string; a: string }) => (
-                  <div class="mb-8">
-                    <h3>{item.q}</h3>
-                    <p>{item.a}</p>
-                  </div>
-                ))}
-              </section>
-            )}
           </div>
 
-          <footer class="mt-16 pt-8 border-t-4 border-white">
+          <footer class="mt-16 border-t-4 border-white pt-8">
             <AuthorBox language={language} />
           </footer>
         </div>
       </article>
+
+      <RelatedArticles posts={relatedPosts} language={language} />
 
       <section class="mt-12">
         <Giscus language={language} />
@@ -152,17 +193,6 @@ const translationHref = language === "id"
     <Footer language={language} />
     <script is:inline>
       document.addEventListener("DOMContentLoaded", () => {
-        // Keep wide Markdown tables scrollable on narrow screens.
-        const tables = document.querySelectorAll(".prose table");
-        tables.forEach((table) => {
-          if (table.parentElement?.classList.contains("overflow-x-auto")) return;
-          const wrapper = document.createElement("div");
-          wrapper.className =
-            "overflow-x-auto w-full shadow-neo-lime-8 my-10";
-          table.parentNode?.insertBefore(wrapper, table);
-          wrapper.appendChild(table);
-        });
-
         // Load YouTube only after an explicit user action.
         const ytPlaceholders = document.querySelectorAll(".youtube-defer");
         ytPlaceholders.forEach((container) => {
@@ -175,7 +205,7 @@ const translationHref = language === "id"
           }
 
           container.className =
-            "youtube-defer relative w-full aspect-video cursor-pointer border-4 border-white shadow-neo-cyan-8 my-10 group overflow-hidden bg-black";
+            "youtube-defer relative w-full aspect-video cursor-pointer border-4 border-white shadow-neo-cyan-8 my-10 group overflow-hidden bg-surface-card";
           container.setAttribute("role", "button");
           container.setAttribute("tabindex", "0");
           container.setAttribute(
@@ -221,7 +251,7 @@ const translationHref = language === "id"
             iframe.className = "absolute top-0 left-0 w-full h-full";
 
             container.className =
-              "youtube-defer relative w-full aspect-video my-10 bg-black";
+              "youtube-defer relative w-full aspect-video my-10 bg-surface-card";
             container.removeAttribute("role");
             container.removeAttribute("tabindex");
             container.removeAttribute("aria-label");

@@ -10,31 +10,71 @@ export interface Props {
 }
 
 const { currentLang, variant = 'page', translationHref } = Astro.props;
-const homeUrl = currentLang === 'id' ? '/' : '/en/';
 const t = siteTranslation[currentLang];
+const currentPath = Astro.url.pathname;
+const journalUrl = currentLang === 'id' ? '/blog/' : '/en/blog/';
+const aboutUrl = currentLang === 'id' ? '/about/' : '/en/about/';
+const isJournal = /^\/(?:en\/)?blog(?:\/|$)/.test(currentPath);
+const playgroundsUrl = currentLang === 'id' ? '/playgrounds/' : '/en/playgrounds/';
+const isPlaygrounds = /^\/(?:en\/)?playgrounds(?:\/|$)/.test(currentPath) || currentPath === '/python-playground/';
+const isAbout = currentPath === '/about/' || currentPath === '/en/about/';
+
+const linkBase = 'inline-flex min-h-11 items-center border-2 border-transparent px-3 py-2 font-mono text-xs font-bold uppercase tracking-wide transition-colors hover:border-white hover:bg-brand-lime hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-lime';
+const activeLink = 'border-white bg-white text-black shadow-neo-lime-2';
 ---
 
-<header class="sticky top-0 z-50 bg-black border-b-4 border-white relative">
-  <nav class="p-4 md:px-8 flex justify-between items-center">
-    <div class="flex items-center gap-4">
-      {variant === 'article' && (
-        <a
-          href={homeUrl}
-          class="hidden md:flex text-neutral-400 hover:text-brand-cyan font-mono font-bold text-2xl border-r-2 border-neutral-700 pr-4 hover:-translate-x-1 transition-all"
-          aria-label={t.backToHome}
-        >
-          &larr;
-        </a>
-      )}
-      <SiteLogo currentLang={currentLang} />
+<header class="sticky top-0 z-50 border-b-4 border-white bg-surface-card">
+  <div class="site-container flex items-center justify-between gap-2 py-3 sm:gap-3">
+    <SiteLogo currentLang={currentLang} />
+
+    <nav class="hidden items-center gap-1 md:flex" aria-label={currentLang === 'id' ? 'Navigasi utama' : 'Main navigation'}>
+      <a href={journalUrl} class={`${linkBase} ${isJournal ? activeLink : 'text-neutral-300'}`} aria-current={isJournal ? 'page' : undefined}>
+        {t.journalNav}
+      </a>
+      <a href={playgroundsUrl} class={`${linkBase} ${isPlaygrounds ? activeLink : 'text-neutral-300'}`} aria-current={isPlaygrounds ? 'page' : undefined}>
+        {t.playgroundsNav}
+      </a>
+      <a href={aboutUrl} class={`${linkBase} ${isAbout ? activeLink : 'text-neutral-300'}`} aria-current={isAbout ? 'page' : undefined}>
+        {t.aboutMe}
+      </a>
+    </nav>
+
+    <div class="hidden shrink-0 items-center gap-2 md:flex md:gap-4">
+      <LanguageSwitcher currentLang={currentLang} variant={variant} translationHref={translationHref} />
     </div>
 
-    <LanguageSwitcher currentLang={currentLang} variant={variant} translationHref={translationHref} />
-  </nav>
+    <details class="group relative md:hidden">
+      <summary class="flex min-h-11 list-none cursor-pointer items-center border-2 border-white px-3 py-2 font-mono text-xs font-black uppercase text-white marker:hidden transition-colors hover:bg-brand-lime hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-lime">
+        {t.menuLabel}
+        <span aria-hidden="true" class="ml-2 transition-transform group-open:rotate-45">+</span>
+      </summary>
+      <div class="absolute right-0 top-full z-50 mt-3 w-[min(22rem,calc(100vw-2rem))] border-4 border-white bg-surface-card shadow-neo-cyan-6">
+        <nav class="flex flex-col p-2" aria-label={currentLang === 'id' ? 'Navigasi utama' : 'Main navigation'}>
+          <a href={journalUrl} class={`${linkBase} ${isJournal ? activeLink : 'text-neutral-300'}`} aria-current={isJournal ? 'page' : undefined}>
+            {t.journalNav}
+          </a>
+          <a href={playgroundsUrl} class={`${linkBase} ${isPlaygrounds ? activeLink : 'text-neutral-300'}`} aria-current={isPlaygrounds ? 'page' : undefined}>
+            {t.playgroundsNav}
+          </a>
+          <a href={aboutUrl} class={`${linkBase} ${isAbout ? activeLink : 'text-neutral-300'}`} aria-current={isAbout ? 'page' : undefined}>
+            {t.aboutMe}
+          </a>
+        </nav>
+        {(variant !== 'article' || translationHref) && (
+          <div class="border-t-2 border-border-muted px-4 py-3">
+            <p class="mb-2 font-mono text-[0.65rem] font-black uppercase tracking-widest text-copy-muted">
+              {t.languageLabel}
+            </p>
+            <LanguageSwitcher currentLang={currentLang} variant={variant} translationHref={translationHref} />
+          </div>
+        )}
+      </div>
+    </details>
+  </div>
 
   {variant === 'article' && (
     <div
-      class="absolute bottom-[-4px] left-0 h-1 bg-brand-cyan w-0 z-50 transition-all duration-100 ease-out"
+      class="absolute bottom-[-4px] left-0 z-50 h-1 w-0 bg-brand-cyan transition-[width] duration-100 ease-out"
       id="reading-progress"
       role="progressbar"
       aria-label={currentLang === "id" ? "Progres membaca" : "Reading progress"}
@@ -58,10 +98,8 @@ const t = siteTranslation[currentLang];
         const progress = scrollableHeight > 0
           ? Math.min(Math.max((scrollTop / scrollableHeight) * 100, 0), 100)
           : 0;
-        const roundedProgress = Math.round(progress);
-
         progressBar.style.width = `${progress}%`;
-        progressBar.setAttribute('aria-valuenow', String(roundedProgress));
+        progressBar.setAttribute('aria-valuenow', String(Math.round(progress)));
         updatePending = false;
       };
 

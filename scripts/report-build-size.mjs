@@ -41,6 +41,13 @@ function readReport(inputDir) {
   const files = walk(root);
   const htmlFiles = files.filter((file) => file.toLowerCase().endsWith(".html"));
   const cssFiles = files.filter((file) => file.toLowerCase().endsWith(".css"));
+  const imageExtensions = /\.(?:avif|webp|png|jpe?g|gif|svg)$/i;
+  const generatedImageFiles = files.filter((file) =>
+    file.includes(`${path.sep}_astro${path.sep}`) && imageExtensions.test(file),
+  );
+  const legacyPublicImageFiles = files.filter((file) =>
+    file.includes(`${path.sep}images${path.sep}`) && imageExtensions.test(file),
+  );
 
   let htmlRaw = 0;
   let htmlGzip = 0;
@@ -108,6 +115,12 @@ function readReport(inputDir) {
   }
 
   const allCssRaw = cssFiles.reduce((sum, file) => sum + fs.statSync(file).size, 0);
+  const generatedImageRaw = generatedImageFiles.reduce((sum, file) => sum + fs.statSync(file).size, 0);
+  const legacyPublicImageRaw = legacyPublicImageFiles.reduce((sum, file) => sum + fs.statSync(file).size, 0);
+  const imageFormats = Object.fromEntries(["avif", "webp", "png", "jpg", "jpeg", "gif", "svg"].map((extension) => [
+    extension,
+    generatedImageFiles.filter((file) => path.extname(file).toLowerCase() === `.${extension}`).length,
+  ]));
   const totalRaw = htmlRaw + cssRaw;
   const totalGzip = htmlGzip + cssGzip;
   const totalBrotli = htmlBrotli + cssBrotli;
@@ -131,6 +144,11 @@ function readReport(inputDir) {
     cssGzip,
     cssBrotli,
     allCssRaw,
+    generatedImageCount: generatedImageFiles.length,
+    generatedImageRaw,
+    legacyPublicImageCount: legacyPublicImageFiles.length,
+    legacyPublicImageRaw,
+    imageFormats,
     totalRaw,
     totalGzip,
     totalBrotli,
@@ -149,6 +167,8 @@ for (const report of reports) {
   console.log(`Stylesheet references:       ${report.stylesheetReferenceCount} total (${report.externalStylesheetReferenceCount} external)`);
   console.log(`Unique referenced CSS:       ${report.referencedCssCount} file(s), ${format(report.cssRaw)} raw | ${format(report.cssGzip)} gzip | ${format(report.cssBrotli)} brotli`);
   console.log(`All CSS emitted:             ${format(report.allCssRaw)} raw`);
+  console.log(`Generated optimized images:  ${report.generatedImageCount} file(s), ${format(report.generatedImageRaw)} raw (${Object.entries(report.imageFormats).filter(([, count]) => count).map(([format, count]) => `${format.toUpperCase()} ${count}`).join(", ") || "none"})`);
+  console.log(`Legacy public images:        ${report.legacyPublicImageCount} file(s), ${format(report.legacyPublicImageRaw)} raw (retained for direct-URL compatibility)`);
   console.log(`HTML + unique CSS estimate:  ${format(report.totalRaw)} raw | ${format(report.totalGzip)} gzip | ${format(report.totalBrotli)} brotli`);
 }
 

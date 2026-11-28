@@ -35,7 +35,8 @@ Schema didefinisikan dalam `src/content.config.ts`.
 | `description` | Ya | Ringkasan, minimal 10 karakter. Dipakai sebagai deskripsi SEO/social. |
 | `pubDate` | Ya | Tanggal publikasi; harus dapat diparse sebagai Date. Gunakan ISO 8601. |
 | `updatedDate` | Tidak | Tanggal pembaruan nyata; jika diisi tidak boleh lebih awal dari `pubDate`. |
-| `coverImage` | Tidak | URL gambar, sebaiknya path lokal `/images/...`. |
+| `coverImage` | Tidak | Gambar lokal dari `src/assets/` dengan path relatif terhadap file artikel, atau URL remote yang valid. |
+| `coverImageAlt` | Tidak | Alt khusus untuk cover; bila kosong layout memakai judul artikel sebagai alternatif. |
 | `tags` | Tidak | Array string untuk label artikel. |
 | `isDraft` | Tidak | Boolean; default `false`. Untuk pekerjaan belum siap, set `true` secara eksplisit. |
 | `enSlug` | ID saja | Content ID artikel terjemahan Inggris. |
@@ -60,7 +61,7 @@ Untuk waktu UTC dapat memakai `Z`. Hindari tanggal pembaruan palsu; isi `updated
 3. Buat file baru di `src/content/id/`.
 4. Isi frontmatter valid.
 5. Tulis isi artikel memakai Markdown.
-6. Siapkan cover bila ada; taruh file di `public/images/`.
+6. Siapkan cover bila ada; simpan di `src/assets/images/` dan gunakan path relatif dari file artikel.
 7. Tambahkan tautan internal hanya ke artikel yang benar-benar ada dan sudah terbit.
 8. Jalankan validator dan build.
 9. Periksa preview lokal sebelum publish.
@@ -72,7 +73,8 @@ Contoh file minimal:
 title: "Mengenal Variabel dalam Python"
 description: "Penjelasan variabel Python untuk pemula, mulai dari konsep penyimpanan nilai hingga contoh kode sederhana."
 pubDate: 2026-11-28T09:00:00+07:00
-coverImage: "/images/mengenal-variabel-python.webp"
+coverImage: "../../assets/images/mengenal-variabel-python.webp"
+coverImageAlt: "Ilustrasi variabel Python"
 tags: ["python", "pemrograman", "pemula"]
 isDraft: true
 ---
@@ -183,34 +185,45 @@ Hindari tabel terlalu lebar. Pada mobile, tabel digulir horizontal.
 
 ### Gambar lokal (disarankan)
 
-1. Simpan aset di `public/images/`.
+1. Simpan sumber gambar editorial di `src/assets/images/`.
 2. Gunakan nama file deskriptif lowercase kebab-case.
-3. Gunakan WebP bila sesuai dan kompres gambar.
-4. Referensikan dengan path `/images/nama-file.webp`.
+3. Gunakan WebP untuk gambar raster bila sesuai dan kompres aset secara wajar.
+4. Referensikan file menggunakan path relatif dari file Markdown/MDX. Untuk artikel yang berada langsung di `src/content/id/` atau `src/content/en/`, bentuk umumnya `../../assets/images/nama-file.webp`.
+
+Contoh di dalam Markdown:
 
 ```markdown
-Gunakan path gambar lokal seperti `/images/diagram-input-proses-output.webp` pada Markdown.
+![Diagram siklus input, proses, dan output komputer](../../assets/images/siklus-kerja-komputer-input-proses-output.webp)
 ```
 
-Plugin `rehype-local-image-attributes.mjs` mencoba menambahkan:
-
-- `loading="lazy"` bila belum tersedia,
-- `decoding="async"` bila belum tersedia,
-- `width` dan `height` dari dimensi intrinsik file lokal bila dapat dibaca.
-
-Jangan menganggap fitur ini bekerja pada URL eksternal. Untuk URL eksternal, pastikan sumber stabil, punya izin pakai, dan berikan keterangan/atribut dimensi bila perlu.
-
-### Cover image
-
-Contoh frontmatter:
+Contoh path frontmatter untuk cover:
 
 ```yaml
-coverImage: "/images/mengenal-variabel-python.webp"
+coverImage: "../../assets/images/mengenal-variabel-python.webp"
+coverImageAlt: "Ilustrasi variabel Python"
 ```
 
-Layout artikel menampilkan cover 1200×630 dengan eager load dan fetch priority tinggi. Cover di artikel juga digunakan sebagai dasar gambar social preview dan `BlogPosting` schema. Pastikan cover benar-benar tersedia.
+Jika artikel berada pada subfolder koleksi, sesuaikan jumlah segmen `../` agar path tetap menuju `src/assets/images/`. Semua path lokal gambar artikel/cover harus terselesaikan di dalam `src/assets/`; checker akan menolak referensi lokal yang mengarah ke luar direktori tersebut.
 
-Jika `coverImage` tidak diisi, SEO head memakai `/images/og-default.webp` sebagai gambar default.
+Astro memproses gambar lokal untuk menghasilkan varian responsive. Konfigurasi Markdown menggunakan constrained layout dan breakpoint `[480, 800, 1440]`. Cover pada kartu artikel dan layout artikel menggunakan WebP dengan kandidat lebar bersama `[480, 800, 1200]`. Jangan menyalin hasil transformasi dari `dist/_astro/` ke konten; file di `src/assets/images/` adalah sumbernya.
+
+### Aset statis yang memakai URL langsung
+
+Gunakan `public/` untuk aset yang memang harus tersedia pada URL tetap dan tidak membutuhkan transformasi gambar Astro, misalnya:
+
+- favicon dan ikon manifest/PWA: `public/favicon.svg` serta `public/assets/icons/`;
+- ilustrasi dekoratif SVG: `public/assets/graphics/`;
+- sertifikat yang ditautkan langsung: `public/certificates/`.
+
+Jangan menaruh cover, avatar, atau ilustrasi artikel baru di `public/images/`; folder legacy tersebut telah dihapus dari struktur aktif.
+
+### Cover image dan social preview
+
+`coverImage` lokal diproses sebagai Astro image metadata. URL remote yang valid tetap didukung sebagai string URL. `BlogLayout.astro` menggunakan `coverImageAlt` bila tersedia; jika tidak, judul artikel dipakai untuk membuat alt fallback.
+
+Cover artikel ditampilkan pada rasio 1200×630, memakai eager loading dan fetch priority tinggi karena berada di bagian awal halaman. Cover juga menjadi sumber Open Graph, Twitter Card, dan `BlogPosting` image.
+
+Jika `coverImage` tidak diisi, `SeoHead.astro` menggunakan sumber default `src/assets/images/og-default.webp`, lalu memprosesnya menjadi WebP berukuran 1200×630.
 
 ## 7. Menyematkan video YouTube
 
@@ -243,13 +256,13 @@ FAQ ditampilkan setelah slot konten artikel dalam bagian yang berjudul sesuai ba
 Gunakan link Markdown ke URL artikel canonical yang diakhiri slash:
 
 ```markdown
-[Baca pengenalan algoritma] (contoh URL: `/blog/bab-1-mengenal-algoritma-dan-pola-pikir/`)
+Teks anchor contoh: “Baca pengenalan algoritma” (URL: `/blog/bab-1-mengenal-algoritma-dan-pola-pikir/`).
 ```
 
 Link ke koleksi Inggris:
 
 ```markdown
-[Read the Python introduction] (example URL: `/en/blog/python-introduction/`)
+Example anchor text: “Read the Python introduction” (URL: `/en/blog/python-introduction/`).
 ```
 
 `check:links` memeriksa tautan artikel internal di artikel terbit agar target sesuai dengan artikel yang terbit. Hindari tautan ke draft atau slug yang tidak ada. URL path artikel harus sesuai dengan nama file relatif.
@@ -283,7 +296,8 @@ Jangan menulis canonical/hreflang manual di Markdown. Jangan memakai `updatedDat
 - [ ] `title`, `description`, `pubDate` tersedia dan valid.
 - [ ] `description` minimal 10 karakter dan merangkum isi, bukan keyword stuffing.
 - [ ] `updatedDate` valid dan tidak lebih awal dari `pubDate`.
-- [ ] `coverImage` ada di `public/images/` dan path benar.
+- [ ] `coverImage` lokal tersimpan di `src/assets/images/` dan path relatif dari file artikel benar.
+- [ ] `coverImageAlt` menjelaskan cover bila dibutuhkan; gambar inline memiliki alt yang sesuai.
 - [ ] `isDraft` sesuai rencana publikasi.
 - [ ] Jika punya terjemahan, `enSlug`/`idSlug` dua arah dan status draft sama.
 - [ ] Body tidak memiliki H1 kedua.
@@ -300,13 +314,19 @@ Jangan menulis canonical/hreflang manual di Markdown. Jangan memakai `updatedDat
 ```bash
 npm run check:content
 npm run check:links
-npm run check:seo
-npm run check:structured-data
-npm run check:page-metadata
-npm run check:social-meta
-npm run check:image-assets
-npm run check:onpage
+npm run check:design-tokens
+npm run check:ui-basics
+npm run check:layout-system
+npm run check:playground-catalog
+npm run check:markdown-wrappers
+npm run check:related-articles
+npm run check:social-profiles
+npm run check:author-cards
+npm run check:responsive-images
+npm run check:sharp-image-service
 npm run build
 ```
+
+`npm run build` juga menjalankan `astro check`, `astro build`, lalu seluruh post-build checks untuk SEO, route links, structured data, metadata, image assets, dan on-page. Lihat [DEVELOPMENT.md](DEVELOPMENT.md) untuk daftar lengkap. `npm run check:production-seo` adalah smoke test terpisah untuk situs live, bukan bagian dari build default.
 
 Untuk panduan setup dan arti tiap validator, lihat [DEVELOPMENT.md](DEVELOPMENT.md).

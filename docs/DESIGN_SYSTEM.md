@@ -116,15 +116,27 @@ Shiki memakai tema Dracula dan `wrap: true`. Blok `pre.astro-code` diberi paddin
 
 Gaya khusus berlaku pada elemen di `.prose`. Penulis cukup memakai Markdown standar untuk heading, paragraf, daftar, blockquote, tabel, gambar, dan fenced code block. Hindari HTML/CSS inline kecuali fitur memang memerlukannya (misalnya YouTube facade).
 
-## 7. Gambar
+## 7. Gambar dan profil penulis
 
-- Simpan gambar lokal artikel di `public/images/`.
-- Referensikan dengan path absolut dari root situs: `/images/nama-file.webp`.
-- Gunakan rasio cover 1200×630 (1.905:1) agar konsisten dengan layout dan Open Graph.
-- Pilih WebP untuk gambar raster bila sesuai dan kompres aset secara wajar.
-- Plugin `scripts/rehype-local-image-attributes.mjs` memberikan default `loading="lazy"`, `decoding="async"` dan membaca dimensi intrinsik gambar lokal yang dapat diparse.
-- Atribut otomatis hanya berlaku untuk gambar lokal yang path-nya dapat diselesaikan ke folder `public`. Gambar eksternal tidak memperoleh dimensi dari plugin ini.
-- Berikan alt yang menjelaskan gambar bermakna. Alt kosong hanya untuk gambar dekoratif yang konteksnya sudah tersedia lewat teks lain.
+### Sumber dan transformasi gambar
+
+- Gambar artikel, cover, profil, dan OG default yang perlu diproses Astro berada di `src/assets/images/`.
+- Path Markdown/frontmatter bersifat relatif terhadap file konten. Contoh untuk artikel root koleksi: `../../assets/images/nama-file.webp`.
+- `astro.config.mjs` memakai constrained layout, `responsiveStyles: true`, dan breakpoint Markdown `[480, 800, 1440]`.
+- Cover pada `ArticleCard` dan `BlogLayout` memakai Astro `Image`, WebP, widths `[480, 800, 1200]`, dan quality 80.
+- Foto profil menggunakan varian WebP yang disesuaikan dengan kebutuhan ukuran tampil pada homepage, About, dan footer artikel. Foto profil memakai `object-contain` agar komposisi foto tidak terpotong.
+- Default social preview diimpor dari `src/assets/images/og-default.webp` dan diproses menjadi WebP 1200×630.
+- `public/` hanya untuk aset statis ber-URL langsung, seperti `public/favicon.svg`, ikon di `public/assets/icons/`, SVG dekoratif di `public/assets/graphics/`, dan sertifikat di `public/certificates/`.
+
+### Profil dan media sosial
+
+- `src/components/author/AuthorIdentityCard.astro` menampilkan foto terpusat di atas informasi profil dan mengisi lebar konten yang tersedia.
+- `src/components/article/AuthorBox.astro` memakai susunan vertikal dan foto terpusat pada mobile, lalu dapat sejajar secara horizontal pada layar lebih lebar.
+- `src/components/author/SocialLinks.astro` menggunakan tampilan netral pada kondisi normal. Warna brand YouTube, Facebook, Instagram, dan TikTok hanya muncul ketika hover atau keyboard focus.
+- Setiap tautan sosial harus memiliki focus-visible yang jelas, target interaksi minimal 44 px, kontras teks minimal 4.5:1, dan dukungan `prefers-reduced-motion`.
+- `npm run check:author-cards` memeriksa struktur responsif, foto tidak terpotong, warna hover/focus, dan kontras sosial.
+
+Berikan alt yang menjelaskan gambar bermakna. Alt kosong hanya untuk gambar dekoratif yang konteksnya sudah tersedia lewat teks lain.
 
 ## 8. Perubahan design system
 

@@ -1,6 +1,6 @@
 # Dokumentasi Teknis Jurnal IT
 
-Dokumentasi ini ditulis berdasarkan struktur dan implementasi repository `herdianurdin/herdianurdin.github.io` pada branch `main`, commit `efddaefc8cec1b6852b3e91e29faaab3bf0f79a3` yang diaudit saat penyusunan.
+Dokumentasi ini diselaraskan dengan implementasi lokal proyek pada 28 November 2026, termasuk pipeline gambar Astro, validator author/profile UI, layout responsif, dan struktur aset terbaru. Setelah perubahan di-merge ke `main`, perbarui catatan audit ini bila struktur atau script berubah. Jika dokumentasi berbeda dari source, source code dan validator yang berjalan menjadi sumber kebenaran.
 
 ## Mulai dari sini
 
@@ -36,7 +36,7 @@ Dokumentasi menjelaskan perilaku yang saat ini ditemukan pada source. Jika ada p
 - Layout artikel: `src/layouts/BlogLayout.astro`
 - Metadata SEO: `src/components/SeoHead.astro`
 - Route artikel: `src/pages/blog/[...slug].astro` dan `src/pages/en/blog/[...slug].astro`
-- Validator: `scripts/*.mjs`
+- Validator dan image pipeline: `scripts/*.mjs`, `astro.config.mjs`, `src/content.config.ts`, serta komponen `Image`/`getImage` terkait.
 - TypeScript: `tsconfig.json`
 - Lisensi: `LICENSE.md` dan `docs/LICENSING.md`
 - CI/CD: `.github/workflows/deploy.yml`

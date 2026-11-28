@@ -1,0 +1,148 @@
+---
+import { Image } from "astro:assets";
+import { siteConfig, siteTranslation } from "../../config/site";
+import SocialLinks from "./SocialLinks.astro";
+
+export interface Props {
+  language: "id" | "en";
+}
+
+const { language } = Astro.props;
+const t = siteTranslation[language];
+const isId = language === "id";
+---
+
+<section
+  class="mb-10 grid w-full max-w-none grid-cols-1 overflow-hidden border-2 border-white bg-surface-card shadow-neo-fuchsia-4"
+  aria-labelledby="author-identity-heading"
+>
+  <div
+    class="flex w-full items-center justify-center border-b-2 border-white bg-surface-page px-5 py-6 sm:py-8"
+  >
+    <Image
+      src={siteConfig.profileImage}
+      format="webp"
+      widths={[128, 256, 384, 512]}
+      sizes="(max-width: 640px) 7rem, 9rem"
+      quality={80}
+      alt={isId ? `Foto profil ${siteConfig.author}` : `Profile photo of ${siteConfig.author}`}
+      loading="eager"
+      fetchpriority="high"
+      decoding="async"
+      class="aspect-square w-28 max-w-full object-contain sm:w-36"
+    />
+  </div>
+
+  <div class="flex min-w-0 w-full flex-col p-5 sm:p-7 md:p-8">
+    <p class="mb-1.5 font-mono text-[0.68rem] font-black uppercase tracking-widest text-brand-fuchsia">
+      {isId ? "PROFIL PENULIS" : "AUTHOR PROFILE"}
+    </p>
+    <h2
+      id="author-identity-heading"
+      class="text-2xl font-black tracking-tight text-white sm:text-3xl"
+    >
+      {siteConfig.author}
+    </h2>
+    <p class="mt-1 font-mono text-sm font-bold text-brand-lime">{t.heroTitle}</p>
+    <p class="mt-3 text-sm leading-relaxed text-neutral-300 sm:text-base">
+      {t.heroBio}
+    </p>
+
+    <div class="mt-6 grid w-full gap-5 border-t-2 border-border-muted pt-5 sm:mt-7 sm:gap-6 sm:pt-6">
+      <div class="space-y-2.5">
+        <p class="font-mono text-[0.65rem] font-black uppercase tracking-widest text-copy-muted">
+          {isId ? "PROFIL & KARYA" : "PROFILES & WORK"}
+        </p>
+        <nav
+          aria-label={isId ? "Profil profesional dan karya penulis" : "Author professional profiles and work"}
+          class="flex w-full flex-wrap gap-2"
+        >
+          <a
+            href={siteConfig.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="profile-link"
+          >
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            href={siteConfig.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="profile-link"
+          >
+            LinkedIn <span aria-hidden="true">↗</span>
+          </a>
+          <a
+            href={siteConfig.playStore}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="profile-link"
+          >
+            Google Play <span aria-hidden="true">↗</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="space-y-2.5">
+        <p class="font-mono text-[0.65rem] font-black uppercase tracking-widest text-copy-muted">
+          {isId ? "MEDIA SOSIAL" : "SOCIAL MEDIA"}
+        </p>
+        <SocialLinks language={language} />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .profile-link {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    gap: 0.4rem;
+    border: 2px solid var(--color-white);
+    padding: 0.55rem 0.75rem;
+    background: var(--color-surface-page);
+    color: var(--color-white);
+    font-family: var(--font-mono, monospace);
+    font-size: 0.7rem;
+    font-weight: 800;
+    line-height: 1.1;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 0 var(--color-white);
+    transition:
+      background-color 160ms ease,
+      color 160ms ease,
+      transform 160ms ease,
+      box-shadow 160ms ease;
+  }
+
+  .profile-link:is(:hover, :focus-visible) {
+    background: var(--color-brand-cyan);
+    color: var(--color-black);
+    transform: translateY(-2px);
+    box-shadow: 3px 3px 0 var(--color-brand-lime);
+  }
+
+  .profile-link:focus-visible {
+    outline: 3px solid var(--color-brand-lime);
+    outline-offset: 3px;
+  }
+
+  .profile-link:active {
+    transform: translate(1px, 1px);
+    box-shadow: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .profile-link {
+      transition: none;
+    }
+
+    .profile-link:hover,
+    .profile-link:active {
+      transform: none;
+    }
+  }
+</style>

@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import EditorialPolicyContent from "../components/EditorialPolicyContent.astro";
+import { siteTranslation } from "../config/site";
+
+const t = siteTranslation.id;
+---
+
+<BaseLayout title={t.editorialPolicy} description="Pedoman pemilihan topik, pemeriksaan referensi, pengujian contoh teknis, penggunaan AI, dan koreksi artikel Jurnal IT." language="id">
+  <EditorialPolicyContent language="id" />
+</BaseLayout>

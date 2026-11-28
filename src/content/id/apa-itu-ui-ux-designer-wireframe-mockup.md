@@ -2,7 +2,7 @@
 title: "Apa Itu UI/UX Designer? Membedah Teori, Analogi Nasi Goreng, dan Realita Solo Developer"
 description: "Mengenal perbedaan UI dan UX, bahaya langsung ngoding tanpa desain, dan studi kasus nyata peraih juara IDCamp dengan 50.000+ pengguna."
 pubDate: 2026-10-14T10:00:00+07:00
-coverImage: "/images/apa-itu-ui-ux-designer-wireframe-mockup.webp"
+coverImage: "../../assets/images/apa-itu-ui-ux-designer-wireframe-mockup.webp"
 tags:
   [
     "ui-ux-design",
@@ -24,7 +24,7 @@ Namun, bagaimana praktiknya jika Anda adalah seorang **Solo Developer**? Di arti
 
 ## Menganalogikan UI dan UX: Nasi Goreng dan Motor Sport
 
-![Ilustrasi perbedaan UI dan UX menggunakan analogi nasi goreng dan orang makan bahagia](/images/analogi-nasi-goreng.webp)
+![Ilustrasi perbedaan UI dan UX menggunakan analogi nasi goreng dan orang makan bahagia](../../assets/images/analogi-nasi-goreng.webp)
 
 Mari kita luruskan dulu perbedaan fundamental dari UI dan UX menggunakan analogi kehidupan sehari-hari, agar Anda tidak pusing dengan istilah teknis.
 
@@ -40,7 +40,7 @@ Singkatnya: **UX memastikan aplikasi Anda memecahkan masalah dan nyaman dipakai,
 
 ## Bahaya Langsung "Ngoding" dan Evolusi Desain yang Mengalir
 
-![Ilustrasi programmer stres yang langsung ngoding tanpa merancang desain wireframe](/images/ilustrasi-programmer-stress-ngoding.webp)
+![Ilustrasi programmer stres yang langsung ngoding tanpa merancang desain wireframe](../../assets/images/ilustrasi-programmer-stress-ngoding.webp)
 
 Banyak _programmer_ pemula yang meremehkan proses desain. _"Ah, buat apa gambar-gambar dulu, mending langsung buka Android Studio!"_
 
@@ -62,7 +62,7 @@ Setelah tulang abu-abunya kokoh, barulah kita meniupkan nyawa ke dalamnya. Di ta
 
 Untuk membuktikan aliran evolusi ini, mari kita bedah gambar transformasi desain dari Halaman Tasbih aplikasi buatan saya:
 
-![Evolusi desain UI UX aplikasi Asmaul Husna dari Paper Prototype, Wireframe, hingga Mockup](/images/prototype-step.webp)
+![Evolusi desain UI UX aplikasi Asmaul Husna dari Paper Prototype, Wireframe, hingga Mockup](../../assets/images/prototype-step.webp)
 
 Bisa Anda lihat pada gambar di atas:
 
@@ -72,7 +72,7 @@ Bisa Anda lihat pada gambar di atas:
 
 ## Studi Kasus Solo Developer: Merumuskan UX Lewat Analisis Kompetitor
 
-![Ilustrasi meriset aplikasi kompetitor yang penuh iklan dan merancang blueprint aplikasi bersih](/images/ilustrasi-riset-aplikasi-berantakan.webp)
+![Ilustrasi meriset aplikasi kompetitor yang penuh iklan dan merancang blueprint aplikasi bersih](../../assets/images/ilustrasi-riset-aplikasi-berantakan.webp)
 
 Teori memang indah, tapi realita menuntut kecepatan. Pada akhir 2023, tiga minggu sebelum saya mulai mengabdi sebagai guru, saya menantang diri sendiri untuk mengembangkan aplikasi keagamaan dari nol hingga rilis dalam waktu dua minggu.
 

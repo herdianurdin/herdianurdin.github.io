@@ -1,0 +1,117 @@
+---
+import { siteConfig } from "../../config/site";
+
+export interface Props {
+  language?: "id" | "en";
+}
+
+const { language = "id" } = Astro.props;
+const isId = language === "id";
+const links = [
+  { platform: "youtube", label: "YouTube", href: siteConfig.socials.youtube },
+  { platform: "facebook", label: "Facebook", href: siteConfig.socials.facebook },
+  { platform: "instagram", label: "Instagram", href: siteConfig.socials.instagram },
+  { platform: "tiktok", label: "TikTok", href: siteConfig.socials.tiktok },
+];
+---
+
+<nav
+  aria-label={isId ? "Media sosial penulis" : "Author social media"}
+  class="social-links"
+>
+  {links.map((link) => (
+    <a
+      href={link.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      class={`social-link social-link--${link.platform}`}
+    >
+      <span>{link.label}</span>
+      <span aria-hidden="true">↗</span>
+      <span class="sr-only">{isId ? "(membuka tab baru)" : "(opens in a new tab)"}</span>
+    </a>
+  ))}
+</nav>
+
+<style>
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  .social-link {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    border: 2px solid var(--color-white);
+    padding: 0.55rem 0.75rem;
+    background: var(--color-surface-page);
+    color: var(--color-white);
+    font-family: var(--font-mono, monospace);
+    font-size: 0.7rem;
+    font-weight: 800;
+    line-height: 1.1;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 0 var(--color-white);
+    transition:
+      background-color 160ms ease,
+      color 160ms ease,
+      transform 160ms ease,
+      box-shadow 160ms ease;
+  }
+
+  /* Brand colors are intentionally revealed only by pointer hover or keyboard focus. */
+  .social-link--youtube {
+    --social-hover-bg: var(--color-social-youtube);
+    --social-hover-fg: var(--color-black);
+  }
+
+  .social-link--facebook {
+    --social-hover-bg: var(--color-social-facebook);
+    --social-hover-fg: var(--color-black);
+  }
+
+  .social-link--instagram {
+    --social-hover-bg: var(--color-social-instagram);
+    --social-hover-fg: var(--color-white);
+  }
+
+  .social-link--tiktok {
+    --social-hover-bg: var(--color-social-tiktok);
+    --social-hover-fg: var(--color-black);
+  }
+
+  .social-link:is(:hover, :focus-visible) {
+    background: var(--social-hover-bg);
+    color: var(--social-hover-fg);
+    transform: translateY(-2px);
+    box-shadow: 3px 3px 0 var(--color-brand-lime);
+  }
+
+  .social-link:focus-visible {
+    outline: 3px solid var(--color-brand-lime);
+    outline-offset: 3px;
+  }
+
+  .social-link:active {
+    transform: translate(1px, 1px);
+    box-shadow: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .social-link {
+      transition: none;
+    }
+
+    .social-link:hover,
+    .social-link:active {
+      transform: none;
+    }
+  }
+</style>

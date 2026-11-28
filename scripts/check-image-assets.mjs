@@ -8,6 +8,7 @@ const errors = [];
 const warnings = [];
 const checkedAssets = new Map();
 let imageOccurrences = 0;
+let responsiveCandidates = 0;
 let externalImages = 0;
 let pagesChecked = 0;
 
@@ -79,6 +80,7 @@ function expectedFormat(filePath) {
     ".jpeg": "jpeg",
     ".gif": "gif",
     ".svg": "svg",
+    ".avif": "avif",
   })[ext] ?? null;
 }
 
@@ -102,7 +104,7 @@ async function readSitemap() {
     .map((match) => decodeXml(match[1].trim()));
 }
 
-async function checkAssetUrl(src, pageUrl, label) {
+async function checkAssetUrl(src, pageUrl, label, { requireDimensions = true } = {}) {
   let resolved;
   try {
     resolved = assetOutputPath(src, pageUrl);
@@ -117,62 +119,113 @@ async function checkAssetUrl(src, pageUrl, label) {
   }
 
   const key = resolved.url.href;
-  if (!checkedAssets.has(key)) {
+  let asset = checkedAssets.get(key);
+  if (!asset) {
     try {
       await access(resolved.filePath);
       const fileStat = await stat(resolved.filePath);
       const dimensions = readImageDimensions(resolved.filePath);
-      const format = expectedFormat(resolved.filePath);
-
-      if (!dimensions || !(dimensions.width > 0) || !(dimensions.height > 0)) {
-        fail(`${label}: cannot read intrinsic image dimensions for ${resolved.url.pathname}`);
-      } else if (format && dimensions.format !== format) {
-        fail(`${label}: file extension indicates ${format}, but file content is ${dimensions.format}: ${resolved.url.pathname}`);
-      }
+      asset = {
+        size: fileStat.size,
+        dimensions,
+        format: expectedFormat(resolved.filePath),
+      };
+      checkedAssets.set(key, asset);
 
       if (fileStat.size > 400 * 1024) {
         warn(`${resolved.url.pathname}: ${(fileStat.size / 1024).toFixed(1)} KiB; consider compression or a smaller responsive variant`);
       }
-
-      checkedAssets.set(key, { size: fileStat.size, dimensions, format });
     } catch {
       fail(`${label}: image file does not exist in dist/: ${resolved.url.pathname}`);
       return null;
     }
   }
 
+  if (requireDimensions) {
+    if (!asset.dimensions || !(asset.dimensions.width > 0) || !(asset.dimensions.height > 0)) {
+      fail(`${label}: cannot read intrinsic image dimensions for ${resolved.url.pathname}`);
+    } else if (asset.format && asset.dimensions.format !== asset.format) {
+      fail(`${label}: file extension indicates ${asset.format}, but file content is ${asset.dimensions.format}: ${resolved.url.pathname}`);
+    }
+  } else if (asset.format === "avif") {
+    try {
+      const header = await readFile(resolved.filePath);
+      const isAvif = header.toString("ascii", 4, 8) === "ftyp" && /avif|avis/.test(header.toString("ascii", 8, 24));
+      if (!isAvif) fail(`${label}: .avif extension does not contain an AVIF file: ${resolved.url.pathname}`);
+    } catch {
+      fail(`${label}: could not read AVIF candidate: ${resolved.url.pathname}`);
+    }
+  } else if (asset.dimensions && asset.format && asset.dimensions.format !== asset.format) {
+    fail(`${label}: file extension indicates ${asset.format}, but file content is ${asset.dimensions.format}: ${resolved.url.pathname}`);
+  }
+
   return resolved;
 }
 
-async function checkImage(tag, pageUrl, pageFile) {
+function parseSrcset(value) {
+  return value
+    .split(",")
+    .map((candidate) => candidate.trim().split(/\s+/))
+    .filter((parts) => parts[0])
+    .map(([url, descriptor]) => ({ url, descriptor: descriptor ?? "" }));
+}
+
+async function checkResponsiveSrcset(attrs, pageUrl, label) {
+  if (!attrs.srcset?.trim()) return;
+  const candidates = parseSrcset(attrs.srcset);
+  if (candidates.length === 0) {
+    fail(`${label}: srcset is present but contains no valid candidates`);
+    return;
+  }
+  if (candidates.some((candidate) => /\d+w$/.test(candidate.descriptor)) && !attrs.sizes?.trim()) {
+    fail(`${label}: width-descriptor srcset is missing a sizes attribute`);
+  }
+  for (const candidate of candidates) {
+    responsiveCandidates += 1;
+    await checkAssetUrl(candidate.url, pageUrl, `${label} srcset candidate`, { requireDimensions: false });
+  }
+}
+
+function isInsideHiddenDecorativeAnchor(html, tagIndex) {
+  const before = html.slice(0, tagIndex);
+  const anchorOpenIndex = before.lastIndexOf("<a");
+  const anchorCloseIndex = before.lastIndexOf("</a>");
+  if (anchorOpenIndex < 0 || anchorCloseIndex > anchorOpenIndex) return false;
+
+  const anchorTag = before.slice(anchorOpenIndex).match(/^<a\b[^>]*>/i)?.[0];
+  if (!anchorTag) return false;
+  const anchorAttrs = parseAttributes(anchorTag);
+  return anchorAttrs["aria-hidden"] === "true" && anchorAttrs.tabindex === "-1";
+}
+
+async function checkImage(tag, pageUrl, pageFile, html, tagIndex) {
   imageOccurrences += 1;
   const attrs = parseAttributes(tag);
   const label = `${pageFile} (${pageUrl.pathname})`;
+  const decorativeHidden = isInsideHiddenDecorativeAnchor(html, tagIndex);
 
-  if (!Object.hasOwn(attrs, "alt")) {
+  // HTML minification can remove alt="". Allow that only for the article-card
+  // thumbnail link that is itself removed from the accessibility tree.
+  if (!Object.hasOwn(attrs, "alt") && !decorativeHidden) {
     fail(`${label}: img is missing the alt attribute: ${tag.slice(0, 180)}`);
   }
 
   if (!attrs.src?.trim()) {
     fail(`${label}: img is missing a non-empty src attribute: ${tag.slice(0, 180)}`);
-    return;
+  } else {
+    const resolved = await checkAssetUrl(attrs.src, pageUrl, label);
+    if (resolved) {
+      const width = Number(attrs.width);
+      const height = Number(attrs.height);
+      if (!(width > 0) || !(height > 0)) {
+        fail(`${label}: local image is missing positive width and height attributes: ${resolved.url.pathname}`);
+      }
+      if (!attrs.loading) warn(`${label}: image has no loading attribute: ${resolved.url.pathname}`);
+      if (!attrs.decoding) warn(`${label}: image has no decoding attribute: ${resolved.url.pathname}`);
+    }
   }
 
-  const resolved = await checkAssetUrl(attrs.src, pageUrl, label);
-  if (!resolved) return;
-
-  const width = Number(attrs.width);
-  const height = Number(attrs.height);
-  if (!(width > 0) || !(height > 0)) {
-    fail(`${label}: local image is missing positive width and height attributes: ${resolved.url.pathname}`);
-  }
-
-  if (!attrs.loading) {
-    warn(`${label}: image has no loading attribute: ${resolved.url.pathname}`);
-  }
-  if (!attrs.decoding) {
-    warn(`${label}: image has no decoding attribute: ${resolved.url.pathname}`);
-  }
+  await checkResponsiveSrcset(attrs, pageUrl, `${label} <img>`);
 }
 
 async function checkSocialImages(html, pageUrl, pageFile) {
@@ -209,8 +262,19 @@ async function main() {
       const html = await readFile(pageFile, "utf8");
       pagesChecked += 1;
 
-      const tags = [...html.matchAll(/<img\b[^>]*>/gi)].map((match) => match[0]);
-      for (const tag of tags) await checkImage(tag, pageUrl, pageFile);
+      const tags = [...html.matchAll(/<img\b[^>]*>/gi)];
+      for (const match of tags) await checkImage(match[0], pageUrl, pageFile, html, match.index ?? 0);
+      const sourceTags = [...html.matchAll(/<source\b[^>]*>/gi)].map((match) => match[0]);
+      for (const tag of sourceTags) {
+        const attrs = parseAttributes(tag);
+        if (!attrs.srcset) continue;
+        const label = `${pageFile} (${pageUrl.pathname}) <source>`;
+        const candidates = parseSrcset(attrs.srcset);
+        if (attrs.type === "image/avif" && candidates.some((item) => !item.url.toLowerCase().endsWith(".avif"))) {
+          fail(`${label}: AVIF source contains a non-AVIF srcset URL`);
+        }
+        await checkResponsiveSrcset(attrs, pageUrl, label);
+      }
       await checkSocialImages(html, pageUrl, pageFile);
     } catch (error) {
       fail(`${location}: ${error instanceof Error ? error.message : String(error)}`);
@@ -229,7 +293,7 @@ async function main() {
   }
 
   console.log(
-    `Image asset validation passed: ${imageOccurrences} HTML image occurrence(s), social preview metadata on ${pagesChecked} sitemap page(s), ${checkedAssets.size} unique local asset(s) checked.`,
+    `Image asset validation passed: ${imageOccurrences} HTML image occurrence(s), ${responsiveCandidates} responsive srcset candidate(s), social preview metadata on ${pagesChecked} sitemap page(s), ${checkedAssets.size} unique local asset(s) checked.`,
   );
   console.log(`External images not checked: ${externalImages}.`);
   console.log(`Image warnings: ${warnings.length}.`);

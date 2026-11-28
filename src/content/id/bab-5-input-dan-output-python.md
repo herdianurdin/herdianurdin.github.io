@@ -2,7 +2,7 @@
 title: "Fundamental Python Bab 5: Berbicara dengan Mesin (Input & Output)"
 description: "Aplikasi yang diam saja itu membosankan. Belajar merancang komunikasi interaktif dengan Python, lengkap dengan teori formal dan praktik langsung."
 pubDate: 2026-10-10T10:20:00+07:00
-coverImage: "/images/bab-5-input-dan-output-python.webp"
+coverImage: "../../assets/images/bab-5-input-dan-output-python.webp"
 tags: ["tutorial-python", "dasar-pemrograman", "input-output", "pemula"]
 isDraft: false
 ---
@@ -17,7 +17,7 @@ Sebuah aplikasi yang hebat adalah aplikasi yang hidup dan interaktif—ia tidak 
 
 ## Iron Man, Her, dan Realitas "Asisten SPMB Sekolah"
 
-![Ilustrasi JARVIS dan Samantha](/images/ilustrasi-jarvis-samantha.webp)
+![Ilustrasi JARVIS dan Samantha](../../assets/images/ilustrasi-jarvis-samantha.webp)
 
 Berbicara tentang interaksi mesin yang sempurna, kita mungkin langsung teringat pada JARVIS di film _Iron Man_. JARVIS adalah asisten yang sangat patuh; ia diam menunggu instruksi (_input_) dari Tony Stark, memprosesnya, lalu memberikan balasan atau tindakan presisi (_output_). Di sisi lain, jika Anda pernah menonton film _Her (2013)_, Anda akan melihat spektrum yang lebih emosional: sebuah sistem operasi AI bernama Samantha yang merespons obrolan dengan sangat hangat, humoris, dan berempati, hingga membuat manusia nyata jatuh cinta padanya.
 
@@ -46,7 +46,7 @@ Saat Anda menekan **Jalankan**, teks tersebut langsung tercetak. Sistem selesai 
 
 ## 2. Komunikasi Dua Arah (Input dengan `input`)
 
-![Ilustrasi Data Stdin dan Memori](/images/ilustrasi-data-dan-memori.webp)
+![Ilustrasi Data Stdin dan Memori](../../assets/images/ilustrasi-data-dan-memori.webp)
 
 Sekarang kita ingin komputer berhenti bersikap egois dan mulai mendengarkan. Kita menggunakan fungsi `input()`.
 

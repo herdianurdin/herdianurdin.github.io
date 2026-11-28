@@ -19,7 +19,7 @@ Sumber resmi: [GitHub Docs — Licensing a repository](https://docs.github.com/e
 
 ## Materi pihak ketiga
 
-Repository menggunakan dependency, framework, font, library, dan mungkin materi/aset pihak ketiga. `LICENSE.md` tidak mengubah lisensi atau hak pihak ketiga. Sebelum menggunakan ulang aset tertentu, periksa notice dan sumber aslinya. Jangan menganggap seluruh isi `public/images/` atau seluruh dependency sebagai hak eksklusif pemilik repository.
+Repository menggunakan dependency, framework, font, library, dan mungkin materi/aset pihak ketiga. `LICENSE.md` tidak mengubah lisensi atau hak pihak ketiga. Sebelum menggunakan ulang aset tertentu, periksa notice dan sumber aslinya. Jangan menganggap seluruh isi `src/assets/images/`, `public/assets/`, `public/certificates/`, atau seluruh dependency sebagai hak eksklusif pemilik repository.
 
 ## Catatan legal
 

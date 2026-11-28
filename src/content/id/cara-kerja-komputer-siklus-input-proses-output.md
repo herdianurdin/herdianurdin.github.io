@@ -3,7 +3,7 @@ title: "Materi Dasar Komputer: Segitiga Sistem dan Siklus Input Proses Output"
 description: "Mengenal pengertian hardware, software, brainware, dan cara kerja komputer berdasarkan siklus input, proses, output beserta contoh perangkatnya."
 pubDate: 2026-11-03T08:00:00+07:00
 updatedDate: 2026-11-25
-coverImage: "/images/segitiga-sistem-komputer-input-proses-output.webp"
+coverImage: "../../assets/images/segitiga-sistem-komputer-input-proses-output.webp"
 tags:
   [
     "dasar-komputer",
@@ -41,7 +41,7 @@ Berbicara tentang _Brainware_, istilah ini tidak hanya merujuk pada satu jenis o
 
 ## 3. Siklus Seblak: Memahami Alur Kerja Komputer
 
-![Ilustrasi panah alur dari sebuah keyboard, menuju prosesor bercahaya, dan berakhir pada layar monitor yang menampilkan hasil](/images/siklus-kerja-komputer-input-proses-output.webp)
+![Ilustrasi panah alur dari sebuah keyboard, menuju prosesor bercahaya, dan berakhir pada layar monitor yang menampilkan hasil](../../assets/images/siklus-kerja-komputer-input-proses-output.webp)
 
 Setelah ketiga elemen di atas saling terhubung, bagaimana cara mereka berkomunikasi?
 
@@ -63,7 +63,7 @@ Untuk bisa menjalankan siklus tersebut dengan lancar, raga komputer (_hardware_)
 **A. Perangkat Input (Alat Pemberi Perintah)**
 Alat-alat ini berfungsi untuk memasukkan data dari dunia nyata ke dalam sistem digital komputer.
 
-![Ilustrasi deretan perangkat input komputer yang terdiri dari keyboard modern, mouse presisi, dan mikrofon studio](/images/perangkat-input-komputer.webp)
+![Ilustrasi deretan perangkat input komputer yang terdiri dari keyboard modern, mouse presisi, dan mikrofon studio](../../assets/images/perangkat-input-komputer.webp)
 
 - **_Keyboard_:** Papan ketik untuk memasukkan instruksi berupa teks dan angka.
 - **_Mouse_:** Tetikus untuk mengendalikan pergerakan kursor visual di layar.
@@ -72,7 +72,7 @@ Alat-alat ini berfungsi untuk memasukkan data dari dunia nyata ke dalam sistem d
 **B. Perangkat Output (Alat Penampil Hasil)**
 Setelah data diproses oleh komputer, alat-alat ini bertugas menerjemahkan kembali data digital tersebut agar bisa dilihat atau didengar oleh manusia.
 
-![Ilustrasi perangkat output komputer yang terdiri dari layar monitor lebar, mesin pencetak kertas atau printer, dan sepasang speaker audio](/images/perangkat-output-komputer.webp)
+![Ilustrasi perangkat output komputer yang terdiri dari layar monitor lebar, mesin pencetak kertas atau printer, dan sepasang speaker audio](../../assets/images/perangkat-output-komputer.webp)
 
 - **Monitor:** Layar yang menampilkan hasil pemrosesan berupa gambar visual.
 - **_Printer_:** Mesin pencetak yang mengubah dokumen digital menjadi lembaran kertas fisik.
